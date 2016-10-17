@@ -94,12 +94,16 @@ $(WORKDIR)\delay.obj :  \
 
 $(WORKDIR)\main.obj :  \
             C:\Users\Jordan\DOCUME~1\GitHub\THIRDY~1\main.C  \
+            $(INCLUDE)\std\STDARG.H  \
             $(INCLUDE)\zilog\defines.h  \
             $(INCLUDE)\zilog\dmadefs.h  \
             $(INCLUDE)\zilog\gpio.h  \
             $(INCLUDE)\zilog\uart.h  \
             $(INCLUDE)\zilog\uartdefs.h  \
+            $(INCLUDE)\std\STDARG.H  \
+            $(INCLUDE)\std\STDIO.H  \
             $(INCLUDE)\std\STRING.H  \
+            $(INCLUDE)\zilog\FORMAT.H  \
             $(INCLUDE)\zilog\Zconst.h  \
             $(INCLUDE)\zilog\ez8.h  \
             C:\Users\Jordan\Documents\GitHub\thirdyearproject\LCD.H  \

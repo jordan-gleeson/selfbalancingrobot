@@ -4,7 +4,7 @@ Copyright (C) 1999-2008 Zilog, Inc. All Rights Reserved
 
 LINK MAP:
 
-DATE:      Mon Oct 17 23:42:33 2016
+DATE:      Tue Oct 18 01:25:11 2016
 PROCESSOR: assembler
 FILES:     C:\PROGRA~2\ZiLOG\ZDSII_~1.0\lib\zilog\startupl.obj
            .\delay.obj            .\main.obj             .\LCD.obj              
@@ -95,9 +95,9 @@ SPACE ALLOCATION:
 
 Space                     Base         Top      Size      Used    Unused
 ------------------ ----------- ----------- --------- --------- ---------
-EDATA                   E:0100      E:014A      3584        75      3509
+EDATA                   E:0100      E:017C      3584       125      3459
 RDATA                     R:20        R:EF       224        17       207
-ROM                     C:0000      C:05D5     65536      1494     64042
+ROM                     C:0000      C:0B83     65536      2948     62588
 
 
 SEGMENTS WITHIN SPACE:
@@ -105,8 +105,8 @@ SEGMENTS WITHIN SPACE:
 
 EDATA              Type                Base        Top         Size
 ------------------ ------------------- ----------- ----------- ---------
-FAR_BSS            normal data              E:0100      E:0118       19h
-FAR_DATA           normal data              E:0119      E:014A       32h
+FAR_BSS            normal data              E:0100      E:0139       3ah
+FAR_DATA           normal data              E:013A      E:017C       43h
 
 
 RDATA              Type                Base        Top         Size
@@ -146,15 +146,22 @@ __VECTORS_030      absolute data            C:0030      C:0031        2h
 __VECTORS_032      absolute data            C:0032      C:0033        2h
 __VECTORS_034      absolute data            C:0034      C:0035        2h
 __VECTORS_036      absolute data            C:0036      C:0037        2h
-CODE               normal data              C:0058      C:00C9       72h
-delay_TEXT         normal data              C:012C      C:019A       6fh
-FAR_DATA           * segment copy *         C:05A4      C:05D5       32h
-lcd_TEXT           normal data              C:01B4      C:0582      3cfh
-main_TEXT          normal data              C:019B      C:01B3       19h
-NEAR_DATA          * segment copy *         C:05A3      C:05A3        1h
-ROM_DATA           normal data              C:0038      C:0057       20h
-startup            normal data              C:00CA      C:012B       62h
-strlen_TEXT        normal data              C:0583      C:05A2       20h
+_sputch_TEXT       normal data              C:076F      C:0780       12h
+abs_TEXT           normal data              C:0A71      C:0AA0       30h
+CODE               normal data              C:007C      C:0187      10ch
+delay_TEXT         normal data              C:01EA      C:0258       6fh
+FAR_DATA           * segment copy *         C:0B41      C:0B83       43h
+lcd_TEXT           normal data              C:0364      C:0732      3cfh
+main_TEXT          normal data              C:0259      C:0363      10bh
+NEAR_DATA          * segment copy *         C:0B40      C:0B40        1h
+nt_send_TEXT       normal data              C:0901      C:0A70      170h
+reverse_TEXT       normal data              C:0AA1      C:0B2B       8bh
+ROM_DATA           normal data              C:0038      C:007B       44h
+startup            normal data              C:0188      C:01E9       62h
+strlen_TEXT        normal data              C:074F      C:076E       20h
+t_putch_TEXT       normal data              C:0B2C      C:0B3F       14h
+uultoa_TEXT        normal data              C:0781      C:0900      180h
+uustoa_TEXT        normal data              C:0733      C:074E       1ch
 
 SEGMENTS WITHIN MODULES:
 ========================
@@ -163,25 +170,28 @@ Module: ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\DELAY.C (File: delay.obj) Version: 
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: delay_TEXT                          C:012C      C:019A       6fh
+    Segment: delay_TEXT                          C:01EA      C:0258       6fh
 
 
-Module: ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\LCD.C (File: LCD.obj) Version: 1:0 10/17/2016 23:42:33
+Module: ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\LCD.C (File: LCD.obj) Version: 1:0 10/18/2016 01:01:45
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: FAR_DATA                            E:011C      E:014A       2fh
-    Segment: lcd_TEXT                            C:01B4      C:0582      3cfh
+    Segment: FAR_DATA                            E:013D      E:016B       2fh
+    Segment: lcd_TEXT                            C:0364      C:0732      3cfh
     Segment: ROM_DATA                            C:0038      C:0057       20h
 
 
-Module: ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MAIN.C (File: main.obj) Version: 1:0 10/17/2016 23:42:32
+Module: ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MAIN.C (File: main.obj) Version: 1:0 10/18/2016 01:25:10
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
+    Segment: __VECTORS_00E                       C:000E      C:000F        2h
+    Segment: __VECTORS_010                       C:0010      C:0011        2h
     Segment: FAR_BSS                             E:0100      E:0118       19h
-    Segment: FAR_DATA                            E:0119      E:011B        3h
-    Segment: main_TEXT                           C:019B      C:01B3       19h
+    Segment: FAR_DATA                            E:013A      E:013C        3h
+    Segment: FAR_DATA (was TEXT)                 E:016E      E:017C        fh
+    Segment: main_TEXT                           C:0259      C:0363      10bh
 
 
 Module: ..\..\src\boot\common\startupl.asm (File: startupl.obj) Version: 1:0 01/07/2011 18:49:53
@@ -189,8 +199,15 @@ Module: ..\..\src\boot\common\startupl.asm (File: startupl.obj) Version: 1:0 01/
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
     Segment: __VECTORS_002                       C:0002      C:0003        2h
-    Segment: startup                             C:00CA      C:012B       62h
+    Segment: startup                             C:0188      C:01E9       62h
     Segment: workingreg                            R:E0        R:EF       10h
+
+
+Module: COMMON\ABS.C (Library: crtldfd.lib) Version: 1:0 01/07/2011 18:57:03
+
+    Name                                        Base        Top      Size
+    --------------------------------------- ----------- ----------- ---------
+    Segment: abs_TEXT                            C:0A71      C:0AA0       30h
 
 
 Module: COMMON\FLASH1.C (Library: chelpd.lib) Version: 1:0 01/07/2011 19:00:33
@@ -211,14 +228,21 @@ Module: common\frame.asm (Library: chelpd.lib) Version: 1:0 01/07/2011 19:00:34
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: CODE                                C:0097      C:00BA       24h
+    Segment: CODE                                C:0155      C:0178       24h
 
 
 Module: common\framer.asm (Library: chelpd.lib) Version: 1:0 01/07/2011 19:00:34
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: CODE                                C:00BB      C:00C9        fh
+    Segment: CODE                                C:0179      C:0187        fh
+
+
+Module: common\iframer.asm (Library: chelpd.lib) Version: 1:0 01/07/2011 19:00:34
+
+    Name                                        Base        Top      Size
+    --------------------------------------- ----------- ----------- ---------
+    Segment: CODE                                C:0138      C:0154       1dh
 
 
 Module: COMMON\INTRP.C (Library: chelpd.lib) Version: 1:0 01/07/2011 19:00:33
@@ -228,18 +252,90 @@ Module: COMMON\INTRP.C (Library: chelpd.lib) Version: 1:0 01/07/2011 19:00:33
     Segment: NEAR_DATA                             R:20        R:20        1h
 
 
+Module: common\ldxlr0.asm (Library: chelpd.lib) Version: 1:0 01/07/2011 19:00:35
+
+    Name                                        Base        Top      Size
+    --------------------------------------- ----------- ----------- ---------
+    Segment: CODE                                C:00DF      C:00F9       1bh
+
+
+Module: COMMON\PRINT_GLOBALS.C (Library: crtldfd.lib) Version: 1:0 01/07/2011 18:57:06
+
+    Name                                        Base        Top      Size
+    --------------------------------------- ----------- ----------- ---------
+    Segment: FAR_BSS                             E:0119      E:0139       21h
+    Segment: FAR_DATA                            E:016C      E:016D        2h
+
+
+Module: COMMON\PRINT_PUTCH.C (Library: crtldfd.lib) Version: 1:0 01/07/2011 18:57:06
+
+    Name                                        Base        Top      Size
+    --------------------------------------- ----------- ----------- ---------
+    Segment: t_putch_TEXT                        C:0B2C      C:0B3F       14h
+
+
+Module: COMMON\PRINT_SEND.C (Library: crtldfd.lib) Version: 1:0 01/07/2011 18:57:07
+
+    Name                                        Base        Top      Size
+    --------------------------------------- ----------- ----------- ---------
+    Segment: nt_send_TEXT                        C:0901      C:0A70      170h
+
+
+Module: COMMON\PRINT_SPUTCH.C (Library: crtldfd.lib) Version: 1:0 01/07/2011 18:57:07
+
+    Name                                        Base        Top      Size
+    --------------------------------------- ----------- ----------- ---------
+    Segment: _sputch_TEXT                        C:076F      C:0780       12h
+
+
 Module: COMMON\STRLEN.C (Library: crtldfd.lib) Version: 1:0 01/07/2011 18:57:09
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: strlen_TEXT                         C:0583      C:05A2       20h
+    Segment: strlen_TEXT                         C:074F      C:076E       20h
+
+
+Module: common\stxlr0.asm (Library: chelpd.lib) Version: 1:0 01/07/2011 19:00:35
+
+    Name                                        Base        Top      Size
+    --------------------------------------- ----------- ----------- ---------
+    Segment: CODE                                C:007D      C:0089        dh
 
 
 Module: common\ucase.asm (Library: chelpd.lib) Version: 1:0 01/07/2011 19:00:34
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: CODE                                C:0059      C:0096       3eh
+    Segment: CODE                                C:00FA      C:0137       3eh
+
+
+Module: common\uldiv.asm (Library: chelpd.lib) Version: 1:0 01/07/2011 19:00:34
+
+    Name                                        Base        Top      Size
+    --------------------------------------- ----------- ----------- ---------
+    Segment: CODE                                C:008A      C:00DE       55h
+
+
+Module: COMMON\UREVERSE.C (Library: crtldfd.lib) Version: 1:0 01/07/2011 18:57:12
+
+    Name                                        Base        Top      Size
+    --------------------------------------- ----------- ----------- ---------
+    Segment: reverse_TEXT                        C:0AA1      C:0B2B       8bh
+
+
+Module: COMMON\UULTOA.C (Library: crtldfd.lib) Version: 1:0 01/07/2011 18:57:13
+
+    Name                                        Base        Top      Size
+    --------------------------------------- ----------- ----------- ---------
+    Segment: ROM_DATA                            C:0058      C:007B       24h
+    Segment: uultoa_TEXT                         C:0781      C:0900      180h
+
+
+Module: COMMON\UUSTOA.C (Library: crtldfd.lib) Version: 1:0 01/07/2011 18:57:13
+
+    Name                                        Base        Top      Size
+    --------------------------------------- ----------- ----------- ---------
+    Segment: uustoa_TEXT                         C:0733      C:074E       1ch
 
 
 Module: common\vect04.asm (Library: chelpd.lib) Version: 1:0 01/07/2011 19:00:34
@@ -275,20 +371,6 @@ Module: common\vect0c.asm (Library: chelpd.lib) Version: 1:0 01/07/2011 19:00:34
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
     Segment: __VECTORS_00C                       C:000C      C:000D        2h
-
-
-Module: common\vect0e.asm (Library: chelpd.lib) Version: 1:0 01/07/2011 19:00:34
-
-    Name                                        Base        Top      Size
-    --------------------------------------- ----------- ----------- ---------
-    Segment: __VECTORS_00E                       C:000E      C:000F        2h
-
-
-Module: common\vect10.asm (Library: chelpd.lib) Version: 1:0 01/07/2011 19:00:34
-
-    Name                                        Base        Top      Size
-    --------------------------------------- ----------- ----------- ---------
-    Segment: __VECTORS_010                       C:0010      C:0011        2h
 
 
 Module: common\vect12.asm (Library: chelpd.lib) Version: 1:0 01/07/2011 19:00:34
@@ -428,28 +510,46 @@ Module: zsldevinitdummy.asm (Library: zsldevinitdummy.lib) Version: 1:0 01/07/20
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: CODE                                C:0058      C:0058        1h
+    Segment: CODE                                C:007C      C:007C        1h
 
 EXTERNAL DEFINITIONS:
 =====================
 
 Symbol                             Address   Module          Segment
 -------------------------------- ----------- --------------- --------------------------------
-__b_framereset                        C:00BB framer          CODE                            
-__b_frameset                          C:00A3 frame           CODE                            
-__b_frameset0                         C:00A1 frame           CODE                            
-__b_frameset00                        C:009F frame           CODE                            
-__b_iframeset00                       C:0097 frame           CODE                            
-__b_ucase                             C:0059 ucase           CODE                            
-__close_periphdevice                  C:0058 zsldevinitdummy CODE                            
-__framereset                          C:00BB framer          CODE                            
-__frameset                            C:00A3 frame           CODE                            
-__frameset0                           C:00A1 frame           CODE                            
-__frameset00                          C:009F frame           CODE                            
-__iframeset00                         C:0097 frame           CODE                            
+___print_buff                         E:0119 PRINT_GLOBALS   FAR_BSS                         
+___print_fmt                          E:0126 PRINT_GLOBALS   FAR_BSS                         
+___print_leading_char                 E:0137 PRINT_GLOBALS   FAR_BSS                         
+___print_len                          E:0136 PRINT_GLOBALS   FAR_BSS                         
+___print_out                          E:0138 PRINT_GLOBALS   FAR_BSS                         
+___print_putch                        C:0B2C PRINT_PUTCH     t_putch_TEXT                    
+___print_send                         C:0901 PRINT_SEND      nt_send_TEXT                    
+___print_sputch                       C:076F PRINT_SPUTCH    _sputch_TEXT                    
+___print_xputch                       E:016C PRINT_GLOBALS   FAR_DATA                        
+__b_framereset                        C:0179 framer          CODE                            
+__b_frameset                          C:0161 frame           CODE                            
+__b_frameset0                         C:015F frame           CODE                            
+__b_frameset00                        C:015D frame           CODE                            
+__b_iframereset                       C:0138 iframer         CODE                            
+__b_iframeset00                       C:0155 frame           CODE                            
+__b_ldxlr0                            C:00DF ldxlr0          CODE                            
+__b_stxlr0                            C:007D stxlr0          CODE                            
+__b_ucase                             C:00FA ucase           CODE                            
+__b_uldiv                             C:008A uldiv           CODE                            
+__close_periphdevice                  C:007C zsldevinitdummy CODE                            
+__framereset                          C:0179 framer          CODE                            
+__frameset                            C:0161 frame           CODE                            
+__frameset0                           C:015F frame           CODE                            
+__frameset00                          C:015D frame           CODE                            
+__iframereset                         C:0138 iframer         CODE                            
+__iframeset00                         C:0155 frame           CODE                            
 __intrp                                 R:20 INTRP           NEAR_DATA                       
-__open_periphdevice                   C:0058 zsldevinitdummy CODE                            
-__ucase                               C:0059 ucase           CODE                            
+__open_periphdevice                   C:007C zsldevinitdummy CODE                            
+__u_reverse                           C:0AA1 UREVERSE        reverse_TEXT                    
+__u_ultoa                             C:0781 UULTOA          uultoa_TEXT                     
+__u_ustoa                             C:0733 UUSTOA          uustoa_TEXT                     
+__ucase                               C:00FA ucase           CODE                            
+__uldiv                               C:008A uldiv           CODE                            
 __user_frequency                    01194000 (User Defined)
 __VECTOR_002                          C:0000 startupl        __VECTORS_002                   
 __VECTOR_004                          C:0004 vect04          __VECTORS_004                   
@@ -457,8 +557,8 @@ __VECTOR_006                          C:0006 vect06          __VECTORS_006
 __VECTOR_008                          C:0008 vect08          __VECTORS_008                   
 __VECTOR_00A                          C:000A vect0a          __VECTORS_00A                   
 __VECTOR_00C                          C:000C vect0c          __VECTORS_00C                   
-__VECTOR_00E                          C:000E vect0e          __VECTORS_00E                   
-__VECTOR_010                          C:0010 vect10          __VECTORS_010                   
+__VECTOR_00E                          C:0000 MAIN            __VECTORS_00E                   
+__VECTOR_010                          C:0000 MAIN            __VECTORS_010                   
 __VECTOR_012                          C:0012 vect12          __VECTORS_012                   
 __VECTOR_014                          C:0014 vect14          __VECTORS_014                   
 __VECTOR_016                          C:0016 vect16          __VECTORS_016                   
@@ -479,84 +579,144 @@ __VECTOR_032                          C:0032 vect32          __VECTORS_032
 __VECTOR_034                          C:0034 vect34          __VECTORS_034                   
 __VECTOR_036                          C:0036 vect36          __VECTORS_036                   
 __VECTOR_reset                        C:0000 startupl        __VECTORS_002                   
-_c_startup                            C:00CA startupl        startup                         
-_close_periphdevice                   C:0058 zsldevinitdummy CODE                            
-_command                              E:011B MAIN            FAR_DATA                        
-_dly                                  C:012C DELAY           delay_TEXT                      
-_errorMessage                         C:042C LCD             lcd_TEXT                        
-_exit                                 C:012A startupl        startup                         
-_far_heapbot                        0000014A (User Defined)
+__VECTOR_uart0_rx                     C:0000 MAIN            __VECTORS_00E                   
+__VECTOR_uart0_tx                     C:0000 MAIN            __VECTORS_010                   
+_abs                                  C:0A71 ABS             abs_TEXT                        
+_c_startup                            C:0188 startupl        startup                         
+_close_periphdevice                   C:007C zsldevinitdummy CODE                            
+_command                              E:013C MAIN            FAR_DATA                        
+_dly                                  C:01EA DELAY           delay_TEXT                      
+_errorMessage                         C:05DC LCD             lcd_TEXT                        
+_exit                                 C:01E8 startupl        startup                         
+_far_heapbot                        0000017C (User Defined)
 _far_heaptop                        00000EFF (User Defined)
 _far_stack                          00000EFF (User Defined)
 _flash_option1                        C:0000 FLASH1          ___flash_option1_segment        
 _flash_option2                        C:0001 FLASH2          ___flash_option2_segment        
-_inChar                               E:0119 MAIN            FAR_DATA                        
-_init_IO                              C:01AD MAIN            main_TEXT                       
-_init_LCD                             C:01B4 LCD             lcd_TEXT                        
-_LCD_clear                            C:0419 LCD             lcd_TEXT                        
-_LCD_command                          C:0335 LCD             lcd_TEXT                        
-_LCD_data_disp                        C:0375 LCD             lcd_TEXT                        
-_LCD_data_push                        C:02B0 LCD             lcd_TEXT                        
-_len_farbss                         00000019 (User Defined)
-_len_fardata                        00000032 (User Defined)
+_inChar                               E:013A MAIN            FAR_DATA                        
+_init_coms                            C:02AB MAIN            main_TEXT                       
+_init_IO                              C:02A4 MAIN            main_TEXT                       
+_init_LCD                             C:0364 LCD             lcd_TEXT                        
+_isr_U1_RX                            C:0342 MAIN            main_TEXT                       
+_isr_U1_TX                            C:0356 MAIN            main_TEXT                       
+_LCD_clear                            C:05C9 LCD             lcd_TEXT                        
+_LCD_command                          C:04E5 LCD             lcd_TEXT                        
+_LCD_data_disp                        C:0525 LCD             lcd_TEXT                        
+_LCD_data_push                        C:0460 LCD             lcd_TEXT                        
+_len_farbss                         0000003A (User Defined)
+_len_fardata                        00000043 (User Defined)
 _len_nearbss                        00000000 (User Defined)
 _len_neardata                       00000001 (User Defined)
-_low_far_romdata                    000005A4 (User Defined)
+_low_far_romdata                    00000B41 (User Defined)
 _low_farbss                         00000100 (User Defined)
-_low_fardata                        00000119 (User Defined)
-_low_near_romdata                   000005A3 (User Defined)
+_low_fardata                        0000013A (User Defined)
+_low_near_romdata                   00000B40 (User Defined)
 _low_nearbss                        00000000 (User Defined)
 _low_neardata                       00000020 (User Defined)
-_main                                 C:019B MAIN            main_TEXT                       
+_main                                 C:0259 MAIN            main_TEXT                       
 _near_heapbot                       000000EF (User Defined)
 _near_heaptop                       000000FF (User Defined)
 _near_stack                         000000FF (User Defined)
-_open_periphdevice                    C:0058 zsldevinitdummy CODE                            
-_printMessage                         C:0506 LCD             lcd_TEXT                        
+_open_periphdevice                    C:007C zsldevinitdummy CODE                            
+_printMessage                         C:06B6 LCD             lcd_TEXT                        
 _READ_NVDS                          00001000 (User Defined)
 _READ_NVDS_GET_STATUS               00001000 (User Defined)
-_sdly                                 C:017F DELAY           delay_TEXT                      
-_set_LCD_control_bus                  C:0266 LCD             lcd_TEXT                        
-_signon                               C:03B5 LCD             lcd_TEXT                        
+_sdly                                 C:023D DELAY           delay_TEXT                      
+_sendString                           C:02F3 MAIN            main_TEXT                       
+_set_LCD_control_bus                  C:0416 LCD             lcd_TEXT                        
+_signon                               C:0565 LCD             lcd_TEXT                        
 _string                               E:0100 MAIN            FAR_BSS                         
-_strlen                               C:0583 STRLEN          strlen_TEXT                     
-_successMessage                       C:0499 LCD             lcd_TEXT                        
-_txFinished                           E:011A MAIN            FAR_DATA                        
+_strlen                               C:074F STRLEN          strlen_TEXT                     
+_successMessage                       C:0649 LCD             lcd_TEXT                        
+_txFinished                           E:013B MAIN            FAR_DATA                        
 _WRITE_NVDS                         000010B3 (User Defined)
 _WRITE_NVDS_GET_STATUS              000010B3 (User Defined)
 
-89 external symbol(s).
+114 external symbol(s).
 
 SYMBOL CROSS REFERENCE:
 =======================
 Name                              Use         Module
 --------------------------------- ----------- -------------------------
+___print_buff                     Defined     COMMON\PRINT_GLOBALS.C
+                                  Referenced  COMMON\UULTOA.C
+                                  Referenced  COMMON\PRINT_SEND.C
+___print_fmt                      Defined     COMMON\PRINT_GLOBALS.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MAIN.C
+                                  Referenced  COMMON\UULTOA.C
+                                  Referenced  COMMON\PRINT_SEND.C
+___print_leading_char             Defined     COMMON\PRINT_GLOBALS.C
+                                  Referenced  COMMON\PRINT_SEND.C
+___print_len                      Defined     COMMON\PRINT_GLOBALS.C
+                                  Referenced  COMMON\PRINT_SEND.C
+___print_out                      Defined     COMMON\PRINT_GLOBALS.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MAIN.C
+                                  Referenced  COMMON\PRINT_SPUTCH.C
+___print_putch                    Defined     COMMON\PRINT_PUTCH.C
+                                  Referenced  COMMON\PRINT_SEND.C
+___print_send                     Defined     COMMON\PRINT_SEND.C
+                                  Referenced  COMMON\UULTOA.C
+___print_sputch                   Defined     COMMON\PRINT_SPUTCH.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MAIN.C
+                                  Referenced  COMMON\PRINT_GLOBALS.C
+___print_xputch                   Defined     COMMON\PRINT_GLOBALS.C
+                                  Referenced  COMMON\PRINT_PUTCH.C
 __b_framereset                    Defined     common\framer.asm
                                   Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\DELAY.C
                                   Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MAIN.C
                                   Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\LCD.C
+                                  Referenced  COMMON\UUSTOA.C
+                                  Referenced  COMMON\UULTOA.C
+                                  Referenced  COMMON\PRINT_SEND.C
+                                  Referenced  COMMON\UREVERSE.C
+                                  Referenced  COMMON\PRINT_PUTCH.C
 __b_frameset                      Defined     common\frame.asm
 __b_frameset0                     Defined     common\frame.asm
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MAIN.C
                                   Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\LCD.C
+                                  Referenced  COMMON\UUSTOA.C
+                                  Referenced  COMMON\UULTOA.C
+                                  Referenced  COMMON\PRINT_SEND.C
+                                  Referenced  COMMON\UREVERSE.C
+                                  Referenced  COMMON\PRINT_PUTCH.C
 __b_frameset00                    Defined     common\frame.asm
                                   Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\DELAY.C
                                   Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MAIN.C
                                   Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\LCD.C
+__b_iframereset                   Defined     common\iframer.asm
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MAIN.C
 __b_iframeset00                   Defined     common\frame.asm
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MAIN.C
+__b_ldxlr0                        Defined     common\ldxlr0.asm
+                                  Referenced  COMMON\UULTOA.C
+__b_stxlr0                        Defined     common\stxlr0.asm
+                                  Referenced  COMMON\UULTOA.C
 __b_ucase                         Defined     common\ucase.asm
                                   Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\LCD.C
+                                  Referenced  COMMON\UULTOA.C
+__b_uldiv                         Defined     common\uldiv.asm
+                                  Referenced  COMMON\UULTOA.C
 __close_periphdevice              Defined     zsldevinitdummy.asm
                                   Referenced  ..\..\src\boot\common\startupl.asm
 __framereset                      Defined     common\framer.asm
 __frameset                        Defined     common\frame.asm
 __frameset0                       Defined     common\frame.asm
 __frameset00                      Defined     common\frame.asm
+__iframereset                     Defined     common\iframer.asm
 __iframeset00                     Defined     common\frame.asm
 __intrp                           Defined     COMMON\INTRP.C
+                                  Referenced  common\iframer.asm
                                   Referenced  common\frame.asm
 __open_periphdevice               Defined     zsldevinitdummy.asm
                                   Referenced  ..\..\src\boot\common\startupl.asm
+__u_reverse                       Defined     COMMON\UREVERSE.C
+                                  Referenced  COMMON\UULTOA.C
+__u_ultoa                         Defined     COMMON\UULTOA.C
+                                  Referenced  COMMON\UUSTOA.C
+__u_ustoa                         Defined     COMMON\UUSTOA.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MAIN.C
 __ucase                           Defined     common\ucase.asm
+__uldiv                           Defined     common\uldiv.asm
 __user_frequency                  Defined     LINKER
 __VECTOR_002                      Defined     ..\..\src\boot\common\startupl.asm
 __VECTOR_004                      Defined     common\vect04.asm
@@ -569,9 +729,9 @@ __VECTOR_00A                      Defined     common\vect0a.asm
                                   Referenced  ..\..\src\boot\common\startupl.asm
 __VECTOR_00C                      Defined     common\vect0c.asm
                                   Referenced  ..\..\src\boot\common\startupl.asm
-__VECTOR_00E                      Defined     common\vect0e.asm
+__VECTOR_00E                      Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MAIN.C
                                   Referenced  ..\..\src\boot\common\startupl.asm
-__VECTOR_010                      Defined     common\vect10.asm
+__VECTOR_010                      Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MAIN.C
                                   Referenced  ..\..\src\boot\common\startupl.asm
 __VECTOR_012                      Defined     common\vect12.asm
                                   Referenced  ..\..\src\boot\common\startupl.asm
@@ -612,6 +772,10 @@ __VECTOR_034                      Defined     common\vect34.asm
 __VECTOR_036                      Defined     common\vect36.asm
                                   Referenced  ..\..\src\boot\common\startupl.asm
 __VECTOR_reset                    Defined     ..\..\src\boot\common\startupl.asm
+__VECTOR_uart0_rx                 Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MAIN.C
+__VECTOR_uart0_tx                 Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MAIN.C
+_abs                              Defined     COMMON\ABS.C
+                                  Referenced  COMMON\PRINT_SEND.C
 _c_startup                        Defined     ..\..\src\boot\common\startupl.asm
 _close_periphdevice               Defined     zsldevinitdummy.asm
 _command                          Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MAIN.C
@@ -628,9 +792,12 @@ _flash_option1                    Defined     COMMON\FLASH1.C
 _flash_option2                    Defined     COMMON\FLASH2.C
                                   Referenced  ..\..\src\boot\common\startupl.asm
 _inChar                           Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MAIN.C
+_init_coms                        Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MAIN.C
 _init_IO                          Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MAIN.C
 _init_LCD                         Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\LCD.C
                                   Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MAIN.C
+_isr_U1_RX                        Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MAIN.C
+_isr_U1_TX                        Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MAIN.C
 _LCD_clear                        Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\LCD.C
 _LCD_command                      Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\LCD.C
 _LCD_data_disp                    Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\LCD.C
@@ -662,15 +829,20 @@ _near_heaptop                     Defined     LINKER
 _near_stack                       Defined     LINKER
 _open_periphdevice                Defined     zsldevinitdummy.asm
 _printMessage                     Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\LCD.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MAIN.C
 _READ_NVDS                        Defined     LINKER
 _READ_NVDS_GET_STATUS             Defined     LINKER
 _sdly                             Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\DELAY.C
+_sendString                       Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MAIN.C
 _set_LCD_control_bus              Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\LCD.C
 _signon                           Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\LCD.C
                                   Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MAIN.C
 _string                           Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MAIN.C
 _strlen                           Defined     COMMON\STRLEN.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MAIN.C
                                   Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\LCD.C
+                                  Referenced  COMMON\PRINT_SEND.C
+                                  Referenced  COMMON\UREVERSE.C
 _successMessage                   Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\LCD.C
 _txFinished                       Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MAIN.C
 _WRITE_NVDS                       Defined     LINKER
@@ -679,7 +851,7 @@ _WRITE_NVDS_GET_STATUS            Defined     LINKER
 
 START ADDRESS:
 ==============
-(C:00CA) set in module ..\..\src\boot\common\startupl.asm.
+(C:0188) set in module ..\..\src\boot\common\startupl.asm.
 
 CALL GRAPH
 ==========
@@ -689,77 +861,113 @@ Depth Address    CF Function                       Calls Function
                                                    ->_f_strlen
                                                    ->_f_LCD_data_disp
                                                    ->_f_dly
-    2 E:0100      0 _f_printMessage                ->_f_LCD_clear
+    2 E:0100      0 _f_errorMessage                ->_f_LCD_clear
                                                    ->_f_strlen
                                                    ->_f_LCD_data_disp
                                                    ->_f_dly
-    3 E:0100      0 _f_errorMessage                ->_f_LCD_clear
-                                                   ->_f_strlen
-                                                   ->_f_LCD_data_disp
-                                                   ->_f_dly
-    4 R:20        0 _n_printMessage                ->_n_LCD_clear
+    3 R:20        0 _n_errorMessage                ->_n_LCD_clear
                                                    ->_n_strlen
                                                    ->_n_LCD_data_disp
                                                    ->_n_dly
-    5 R:20        0 _n_errorMessage                ->_n_LCD_clear
+    4 R:20        0 _n_successMessage              ->_n_LCD_clear
                                                    ->_n_strlen
                                                    ->_n_LCD_data_disp
                                                    ->_n_dly
-    6 R:20        0 _n_successMessage              ->_n_LCD_clear
-                                                   ->_n_strlen
-                                                   ->_n_LCD_data_disp
-                                                   ->_n_dly
-    7 R:20        0 _n_main                        ->_n_init_IO
+    5 R:20        0 _n_main                        ->_n_init_IO
                                                    ->_n_init_LCD
                                                    ->_n_signon
-    8 E:0100      0 _f_main                        ->_f_init_IO
+                                                   ->_n_init_coms
+                                                   ->_n__u_ustoa
+                                                   ->_n___print_sputch
+                                                   ->_n_printMessage
+    6 E:0100      0 _f_isr_U1_RX                   ->
+    7 R:20        0 _n_isr_U1_RX                   ->
+    8 E:0100      0 _f_isr_U1_TX                   ->
+    9 E:0100      0 _f_main                        ->_f_init_IO
                                                    ->_f_init_LCD
                                                    ->_f_signon
-    9 R:20        0 _n_sdly                        ->
-   10 E:0100      0 _f_sdly                        ->
-   11 E:0100      1 _f_signon                      ->_f_strlen
+                                                   ->_f_init_coms
+                                                   ->_f__u_ustoa
+                                                   ->_f___print_sputch
+                                                   ->_f_printMessage
+   10 R:20        0 _n_isr_U1_TX                   ->
+   11 R:20        0 _n_sdly                        ->
+   12 E:0100      0 _f_sdly                        ->
+   13 R:20        1 _n___print_sputch              ->
+   13 E:0100      1 _f___print_sputch              ->
+   13 R:20        1 _n__u_ustoa                    ->_n__u_ultoa
+   13 E:0100      1 _f__u_ustoa                    ->_f__u_ultoa
+   13 E:0100      1 _f_signon                      ->_f_strlen
                                                    ->_f_LCD_data_disp
                                                    ->_f_dly
-   11 E:0100      1 _f_init_LCD                    ->_f_dly
+   13 E:0100      1 _f_printMessage                ->_f_LCD_clear
+                                                   ->_f_strlen
+                                                   ->_f_LCD_data_disp
+                                                   ->_f_dly
+   13 E:0100      1 _f_init_LCD                    ->_f_dly
                                                    ->_f_LCD_command
                                                    ->_f_LCD_clear
-   11 R:20        1 _n_init_LCD                    ->_n_dly
-                                                   ->_n_LCD_command
-                                                   ->_n_LCD_clear
-   11 R:20        1 _n_signon                      ->_n_strlen
+   13 R:20        1 _n_printMessage                ->_n_LCD_clear
+                                                   ->_n_strlen
                                                    ->_n_LCD_data_disp
                                                    ->_n_dly
-   11 R:20        1 _n_init_IO                     ->
-   11 E:0100      1 _f_init_IO                     ->
-   12 R:20        4 _n_strlen                      ->
-   12 E:0100      4 _f_strlen                      ->
-   12 R:20        4 _n_LCD_clear                   ->_n_LCD_command
+   13 R:20        1 _n_init_LCD                    ->_n_dly
+                                                   ->_n_LCD_command
+                                                   ->_n_LCD_clear
+   13 R:20        1 _n_signon                      ->_n_strlen
+                                                   ->_n_LCD_data_disp
                                                    ->_n_dly
-   12 E:0100      4 _f_LCD_clear                   ->_f_LCD_command
+   13 R:20        1 _n_init_IO                     ->
+   13 R:20        1 _n_init_coms                   ->_n_sendString
+   13 E:0100      1 _f_init_IO                     ->
+   13 E:0100      1 _f_init_coms                   ->_f_sendString
+   14 R:20        1 _n_sendString                  ->_n_strlen
+   14 R:20        1 _n__u_ultoa                    ->_n__u_reverse
+                                                   ->_n___print_send
+   14 E:0100      1 _f__u_ultoa                    ->_f__u_reverse
+                                                   ->_f___print_send
+   14 E:0100      1 _f_sendString                  ->_f_strlen
+   14 R:20        4 _n_LCD_clear                   ->_n_LCD_command
+                                                   ->_n_dly
+   14 E:0100      4 _f_LCD_clear                   ->_f_LCD_command
                                                    ->_f_dly
-   12 R:20        4 _n_LCD_data_disp               ->_n_set_LCD_control_bus
+   14 R:20        4 _n_LCD_data_disp               ->_n_set_LCD_control_bus
                                                    ->_n_dly
                                                    ->_n_LCD_data_push
-   12 E:0100      4 _f_LCD_data_disp               ->_f_set_LCD_control_bus
+   14 E:0100      4 _f_LCD_data_disp               ->_f_set_LCD_control_bus
                                                    ->_f_dly
                                                    ->_f_LCD_data_push
-   13 E:0100      2 _f_LCD_command                 ->_f_set_LCD_control_bus
+   15 R:20        1 _n__u_reverse                  ->_n_strlen
+   15 E:0100      1 _f__u_reverse                  ->_f_strlen
+   15 E:0100      1 _f___print_send                ->_f___print_putch
+                                                   ->_f_abs
+                                                   ->_f_strlen
+   15 R:20        1 _n___print_send                ->_n___print_putch
+                                                   ->_n_abs
+                                                   ->_n_strlen
+   15 E:0100      2 _f_LCD_command                 ->_f_set_LCD_control_bus
                                                    ->_f_dly
                                                    ->_f_LCD_data_push
-   13 R:20        2 _n_LCD_command                 ->_n_set_LCD_control_bus
+   15 R:20        2 _n_LCD_command                 ->_n_set_LCD_control_bus
                                                    ->_n_dly
                                                    ->_n_LCD_data_push
-   14 E:0100      2 _f_LCD_data_push               ->
-   14 R:20        2 _n_set_LCD_control_bus         ->
-   14 E:0100      2 _f_set_LCD_control_bus         ->
-   14 R:20        2 _n_LCD_data_push               ->
-   14 E:0100      8 _f_dly                         ->
-   14 R:20        8 _n_dly                         ->
+   16 E:0100      1 _f___print_putch               ->
+   16 R:20        1 _n___print_putch               ->
+   16 R:20        1 _n_abs                         ->
+   16 E:0100      1 _f_abs                         ->
+   16 E:0100      2 _f_LCD_data_push               ->
+   16 R:20        2 _n_set_LCD_control_bus         ->
+   16 E:0100      2 _f_set_LCD_control_bus         ->
+   16 R:20        2 _n_LCD_data_push               ->
+   16 R:20        7 _n_strlen                      ->
+   16 E:0100      7 _f_strlen                      ->
+   16 E:0100      8 _f_dly                         ->
+   16 R:20        8 _n_dly                         ->
 
 OUTPUT CHECKSUM
 ===============
-selfbalancingrobot.hex 0297
-selfbalancingrobot.lod 0297
+selfbalancingrobot.hex 08F4
+selfbalancingrobot.lod 08F4
 
 
 
