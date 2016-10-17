@@ -1,0 +1,1367 @@
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 17-Oct-16     23:42:33     page:   1
+
+
+PC     Object              I  Line    Source 
+                           A     1    ; Zilog Z8 Encore! ANSI C Compiler Release 3.62
+                           A     2    ; -nolocalcse -optsize -fastcall -const=RAM -mo
+                           A     3    ; -nooptlink -regvar -reduceopt -debug -norevaa
+                           A     4    ; -alias 
+                           A     5    	DEFINE lcd_TEXT,SPACE=ROM
+                           A     6    	FILE	"..\..\..\..\DOCUME~1\GITHUB\THIRDY
+                           A     7    .debug "C"
+                           A     8    	SEGMENT ROM_DATA
+                           A     9    
+                           A    10    
+                           A    11    ;**************************** _init_LCD *******
+                           A    12    ;Name                         Addr/Register   S
+                           A    13    ;_LCD_clear                          IMPORT  --
+                           A    14    ;_LCD_command                        IMPORT  --
+                           A    15    ;_dly                                IMPORT  --
+                           A    16    
+                           A    17    
+                           A    18    ; Aggregate Stack Size: 0 (words)
+                           A    19    
+                           A    20    
+                           A    21    	.FRAME _n_init_LCD,?_n_init_LCD,RDATA
+                           A    22    	.FCALL _n_dly
+                           A    23    	.FCALL _n_LCD_command
+                           A    24    	.FCALL _n_LCD_clear
+                           A    25    	.FRAME _f_init_LCD,?_f_init_LCD,EDATA
+                           A    26    	.FCALL _f_dly
+                           A    27    	.FCALL _f_LCD_command
+                           A    28    	.FCALL _f_LCD_clear
+                           A    29    	SEGMENT lcd_TEXT
+000000                     A    30    _init_LCD:
+                           A    31    .define "_init_LCD"
+                           A    32    .value _init_LCD
+                           A    33    .class 2
+                           A    34    .type 65
+                           A    35    .type 0
+                           A    36    .endef
+                           A    37    .begfunc "init_LCD",6,"_init_LCD"
+000000 D6 0000             A    38    	CALL	__b_frameset00
+                           A    39    ;    1	#include <ez8.h>
+                           A    40    ;    2	#include <LCD.H>
+                           A    41    ;    3	#include <delay.h>
+                           A    42    ;    4	#include <STRING.H>
+                           A    43    ;    5	
+                           A    44    ;    6	void init_LCD(void){
+                           A    45    ;    7		dly(40);
+                           A    46    .line 7
+000003 B0E8                A    47    	CLR	R8
+000005 9C28                A    48    	LD	R9,#40
+000007 D6 0000             A    49    	CALL	_dly
+                           A    50    ;    8	
+                           A    51    ;    9		//LCD pins
+                           A    52    ;   10		//PB1 = 0
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 17-Oct-16     23:42:33     page:   2
+
+
+PC     Object              I  Line    Source lcd.src
+                           A    53    ;   11		//PB4 = 1
+                           A    54    ;   12		//PB5 = 2
+                           A    55    ;   13		//PB6 = 3
+                           A    56    ;   14		//PB7 = 4
+                           A    57    ;   15		//PB3 = 5
+                           A    58    ;   16		//PB2 = 6
+                           A    59    ;   17		//PH2 = 7
+                           A    60    ;   18	
+                           A    61    ;   19		//Initialse data bit ports
+                           A    62    ;   20		PBAF &= ~0xFE;
+                           A    63    .line 20
+00000A E9020FD4            A    64    	LDX	4052,#2
+00000E 59010FD5            A    65    	ANDX	4053,#1
+                           A    66    ;   21		PBDD &= ~0xFE;
+                           A    67    .line 21
+000012 E9010FD4            A    68    	LDX	4052,#1
+000016 59010FD5            A    69    	ANDX	4053,#1
+                           A    70    ;   22		PBADDR &= ~0xFE;
+                           A    71    .line 22
+00001A 59010FD4            A    72    	ANDX	4052,#1
+                           A    73    ;   23		PBOUT &= ~0xFE;
+                           A    74    .line 23
+00001E 59010FD7            A    75    	ANDX	4055,#1
+                           A    76    ;   24		PHAF &= ~0x04;
+                           A    77    .line 24
+000022 E9020FEC            A    78    	LDX	4076,#2
+000026 59FB0FED            A    79    	ANDX	4077,#-5
+                           A    80    ;   25		PHDD &= ~0x04;
+                           A    81    .line 25
+00002A E9010FEC            A    82    	LDX	4076,#1
+00002E 59FB0FED            A    83    	ANDX	4077,#-5
+                           A    84    ;   26		PHADDR &= ~0x04;
+                           A    85    .line 26
+000032 59FB0FEC            A    86    	ANDX	4076,#-5
+                           A    87    ;   27		PHOUT &= ~0x04;
+                           A    88    .line 27
+000036 59FB0FEF            A    89    	ANDX	4079,#-5
+                           A    90    ;   28	
+                           A    91    ;   29		//PB0 = LCD_E
+                           A    92    ;   30		//PH0 = LCD_RS
+                           A    93    ;   31		//PH1 = LCD_RW
+                           A    94    ;   32		//PC1 = Backlight
+                           A    95    ;   33	
+                           A    96    ;   34		//Initialise Port D
+                           A    97    ;   35		PBAF &= ~0x01;
+                           A    98    .line 35
+00003A E9020FD4            A    99    	LDX	4052,#2
+00003E 59FE0FD5            A   100    	ANDX	4053,#-2
+                           A   101    ;   36		PBDD &= ~0x01;
+                           A   102    .line 36
+000042 E9010FD4            A   103    	LDX	4052,#1
+000046 59FE0FD5            A   104    	ANDX	4053,#-2
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 17-Oct-16     23:42:33     page:   3
+
+
+PC     Object              I  Line    Source lcd.src
+                           A   105    ;   37		PBADDR &= ~0x01;
+                           A   106    .line 37
+00004A 59FE0FD4            A   107    	ANDX	4052,#-2
+                           A   108    ;   38		PBOUT &= ~0x01;
+                           A   109    .line 38
+00004E 59FE0FD7            A   110    	ANDX	4055,#-2
+                           A   111    ;   39		PHAF &= ~0x03;
+                           A   112    .line 39
+000052 E9020FEC            A   113    	LDX	4076,#2
+000056 59FC0FED            A   114    	ANDX	4077,#-4
+                           A   115    ;   40		PHDD &= ~0x03;
+                           A   116    .line 40
+00005A E9010FEC            A   117    	LDX	4076,#1
+00005E 59FC0FED            A   118    	ANDX	4077,#-4
+                           A   119    ;   41		PHADDR &= ~0x03;
+                           A   120    .line 41
+000062 59FC0FEC            A   121    	ANDX	4076,#-4
+                           A   122    ;   42		PHOUT &= ~0x03;
+                           A   123    .line 42
+000066 59FC0FEF            A   124    	ANDX	4079,#-4
+                           A   125    ;   43		PCAF &= ~0x02;
+                           A   126    .line 43
+00006A E9020FD8            A   127    	LDX	4056,#2
+00006E 59FD0FD9            A   128    	ANDX	4057,#-3
+                           A   129    ;   44		PCDD &= ~0x02;
+                           A   130    .line 44
+000072 E9010FD8            A   131    	LDX	4056,#1
+000076 59FD0FD9            A   132    	ANDX	4057,#-3
+                           A   133    ;   45		PCADDR &= ~0x02;
+                           A   134    .line 45
+00007A 59FD0FD8            A   135    	ANDX	4056,#-3
+                           A   136    ;   46	
+                           A   137    ;   47		//LCD Initialisation sequence
+                           A   138    ;   48		LCD_command(0x3C);
+                           A   139    .line 48
+00007E 8C3C                A   140    	LD	R8,#60
+000080 D6 0181             A   141    	CALL	_LCD_command
+                           A   142    ;   49		dly(1);
+                           A   143    .line 49
+000083 B0E8                A   144    	CLR	R8
+000085 9C01                A   145    	LD	R9,#1
+000087 D6 0000             A   146    	CALL	_dly
+                           A   147    ;   50		LCD_command(0x0F);
+                           A   148    .line 50
+00008A 8C0F                A   149    	LD	R8,#15
+00008C D6 0181             A   150    	CALL	_LCD_command
+                           A   151    ;   51		dly(1);
+                           A   152    .line 51
+00008F B0E8                A   153    	CLR	R8
+000091 9C01                A   154    	LD	R9,#1
+000093 D6 0000             A   155    	CALL	_dly
+                           A   156    ;   52		LCD_command(0x01);
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 17-Oct-16     23:42:33     page:   4
+
+
+PC     Object              I  Line    Source lcd.src
+                           A   157    .line 52
+000096 8C01                A   158    	LD	R8,#1
+000098 D6 0181             A   159    	CALL	_LCD_command
+                           A   160    ;   53		dly(3);
+                           A   161    .line 53
+00009B B0E8                A   162    	CLR	R8
+00009D 9C03                A   163    	LD	R9,#3
+00009F D6 0000             A   164    	CALL	_dly
+                           A   165    ;   54		LCD_command(0x06);
+                           A   166    .line 54
+0000A2 8C06                A   167    	LD	R8,#6
+0000A4 D6 0181             A   168    	CALL	_LCD_command
+                           A   169    ;   55	
+                           A   170    ;   56		//Turn on the backlight
+                           A   171    ;   57		PCOUT |= 0x02;
+                           A   172    .line 57
+0000A7 49020FDB            A   173    	ORX	4059,#2
+                           A   174    ;   58	
+                           A   175    ;   59		LCD_clear();
+                           A   176    .line 59
+0000AB D6 0265             A   177    	CALL	_LCD_clear
+                           A   178    ;   60	
+                           A   179    ;   61	}
+                           A   180    .line 61
+0000AE D6 0000             A   181    	CALL	__b_framereset
+0000B1 AF                  A   182    	RET	
+                           A   183    .endfunc "init_LCD",61,"_init_LCD"
+                           A   184    	SEGMENT ROM_DATA
+                           A   185    ;	Jump Table for Switch Statement at line 65
+000000                     A   186    L__2:
+000000 0007                A   187    	DW	7
+000002 0000                A   188    	DW	0
+000004 00EC                A   189    	DW	_2_L_7
+000006 0001                A   190    	DW	1
+000008 00C8                A   191    	DW	_2_L_1
+00000A 0002                A   192    	DW	2
+00000C 00CE                A   193    	DW	_2_L_2
+00000E 0003                A   194    	DW	3
+000010 00D4                A   195    	DW	_2_L_3
+000012 0004                A   196    	DW	4
+000014 00DA                A   197    	DW	_2_L_4
+000016 0005                A   198    	DW	5
+000018 00E0                A   199    	DW	_2_L_5
+00001A 0006                A   200    	DW	6
+00001C 00E6                A   201    	DW	_2_L_6
+00001E 00F8                A   202    	DW	_2_L_9
+                           A   203    
+                           A   204    
+                           A   205    ;**************************** _set_LCD_control_
+                           A   206    ;Name                         Addr/Register   S
+                           A   207    ;data                                    R8    
+                           A   208    
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 17-Oct-16     23:42:33     page:   5
+
+
+PC     Object              I  Line    Source lcd.src
+                           A   209    
+                           A   210    ; Aggregate Stack Size: 0 (words)
+                           A   211    
+                           A   212    
+                           A   213    	.FRAME _n_set_LCD_control_bus,?_n_set_LCD_c
+                           A   214    	.FRAME _f_set_LCD_control_bus,?_f_set_LCD_c
+                           A   215    	SEGMENT lcd_TEXT
+0000B2                     A   216    _set_LCD_control_bus:
+                           A   217    .define "_set_LCD_control_bus"
+                           A   218    .value _set_LCD_control_bus
+                           A   219    .class 2
+                           A   220    .type 65
+                           A   221    .type 0
+                           A   222    .endef
+                           A   223    .begfunc "set_LCD_control_bus",63,"_set_LCD_con
+                           A   224    .define "data"
+                           A   225    .class 17
+                           A   226    .reg 9
+                           A   227    .type 2
+                           A   228    .type 0
+                           A   229    .endef
+0000B2 D6 0000             A   230    	CALL	__b_frameset00
+                           A   231    ;   62	
+                           A   232    ;   63	void set_LCD_control_bus(char data){
+                           A   233    ;   64		char temp;
+                           A   234    ;   65		switch(data){
+                           A   235    .line 65
+0000B5 E4E8E0              A   236    	LD	R0,R8
+0000B8 90E0                A   237    	RL	R0
+0000BA 3200                A   238    	SBC	R0,R0
+0000BC E4E8E1              A   239    	LD	R1,R8
+0000BF 2C 00               A   240    	LD	R2,#high(L__2)
+0000C1 3C 00               A   241    	LD	R3,#low(L__2)
+0000C3 D6 0000             A   242    	CALL	__b_ucase
+0000C6 C4E0                A   243    	JP	@RR0
+                           A   244    ;   66			case LCD_DATA:
+0000C8                     A   245    _2_L_1:
+                           A   246    .line 66
+                           A   247    ;   67				PHOUT |= 0x01;
+                           A   248    .line 67
+0000C8 49010FEF            A   249    	ORX	4079,#1
+                           A   250    ;   68			break;//set RS bit to 1
+                           A   251    .line 68
+0000CC 8B 2A               A   252    	JR	_2_L_9
+                           A   253    ;   69			case LCD_CONTROL:
+0000CE                     A   254    _2_L_2:
+                           A   255    .line 69
+                           A   256    ;   70				PHOUT &= ~0x01;
+                           A   257    .line 70
+0000CE 59FE0FEF            A   258    	ANDX	4079,#-2
+                           A   259    ;   71			break; //set RS bit to 0;
+                           A   260    .line 71
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 17-Oct-16     23:42:33     page:   6
+
+
+PC     Object              I  Line    Source lcd.src
+0000D2 8B 24               A   261    	JR	_2_L_9
+                           A   262    ;   72			case LCD_READ:
+0000D4                     A   263    _2_L_3:
+                           A   264    .line 72
+                           A   265    ;   73				PHOUT |= 0x02;
+                           A   266    .line 73
+0000D4 49020FEF            A   267    	ORX	4079,#2
+                           A   268    ;   74			break; //set RW bit to 1
+                           A   269    .line 74
+0000D8 8B 1E               A   270    	JR	_2_L_9
+                           A   271    ;   75			case LCD_WRITE:
+0000DA                     A   272    _2_L_4:
+                           A   273    .line 75
+                           A   274    ;   76				PHOUT &= ~0x02;
+                           A   275    .line 76
+0000DA 59FD0FEF            A   276    	ANDX	4079,#-3
+                           A   277    ;   77			break; //set RW bit to 0;
+                           A   278    .line 77
+0000DE 8B 18               A   279    	JR	_2_L_9
+                           A   280    ;   78			case LCD_ENABLE_HIGH:
+0000E0                     A   281    _2_L_5:
+                           A   282    .line 78
+                           A   283    ;   79				PBOUT |= 0x01;
+                           A   284    .line 79
+0000E0 49010FD7            A   285    	ORX	4055,#1
+                           A   286    ;   80			break; //set E clk bit to 1
+                           A   287    .line 80
+0000E4 8B 12               A   288    	JR	_2_L_9
+                           A   289    ;   81			case LCD_ENABLE_LOW:
+0000E6                     A   290    _2_L_6:
+                           A   291    .line 81
+                           A   292    ;   82				PBOUT &= ~0x01;
+                           A   293    .line 82
+0000E6 59FE0FD7            A   294    	ANDX	4055,#-2
+                           A   295    ;   83			break; //set E clk bit to 0
+                           A   296    .line 83
+0000EA 8B 0C               A   297    	JR	_2_L_9
+                           A   298    ;   84			case LCD_INACTIVE:
+0000EC                     A   299    _2_L_7:
+                           A   300    .line 84
+                           A   301    ;   85			//FROM DATA PINS
+                           A   302    ;   86				//Set backlight to 0
+                           A   303    ;   87				//PCOUT &= ~(0x02);
+                           A   304    ;   88				//Set RS and RW to 1
+                           A   305    ;   89				PHOUT |= 0x03;
+                           A   306    .line 89
+0000EC 49030FEF            A   307    	ORX	4079,#3
+                           A   308    ;   90	
+                           A   309    ;   91				//John's code		PHOUT |
+                           A   310    ;   92				PHOUT |= 0x01;
+                           A   311    .line 92
+0000F0 49010FEF            A   312    	ORX	4079,#1
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 17-Oct-16     23:42:33     page:   7
+
+
+PC     Object              I  Line    Source lcd.src
+                           A   313    ;   93				PHOUT &= ~0x02;
+                           A   314    .line 93
+0000F4 59FD0FEF            A   315    	ANDX	4079,#-3
+                           A   316    ;   94			break;
+                           A   317    ;   95			// inactice sets RS = 1 & R/W*=
+                           A   318    ;   96			default:
+                           A   319    ;   97	
+                           A   320    ;   98			break;
+                           A   321    ;   99		}
+                           A   322    ;  100	}
+0000F8                     A   323    _2_L_9:
+                           A   324    .line 100
+0000F8 D6 0000             A   325    	CALL	__b_framereset
+0000FB AF                  A   326    	RET	
+                           A   327    .endfunc "set_LCD_control_bus",100,"_set_LCD_co
+                           A   328    	SEGMENT ROM_DATA
+                           A   329    
+                           A   330    
+                           A   331    ;**************************** _LCD_data_push **
+                           A   332    ;Name                         Addr/Register   S
+                           A   333    ;data                                    R8    
+                           A   334    
+                           A   335    
+                           A   336    ; Aggregate Stack Size: 0 (words)
+                           A   337    
+                           A   338    
+                           A   339    	.FRAME _n_LCD_data_push,?_n_LCD_data_push,R
+                           A   340    	.FRAME _f_LCD_data_push,?_f_LCD_data_push,E
+                           A   341    	SEGMENT lcd_TEXT
+0000FC                     A   342    _LCD_data_push:
+                           A   343    .define "_LCD_data_push"
+                           A   344    .value _LCD_data_push
+                           A   345    .class 2
+                           A   346    .type 65
+                           A   347    .type 0
+                           A   348    .endef
+                           A   349    .begfunc "LCD_data_push",102,"_LCD_data_push"
+                           A   350    .define "data"
+                           A   351    .class 17
+                           A   352    .reg 9
+                           A   353    .type 2
+                           A   354    .type 0
+                           A   355    .endef
+0000FC D6 0000             A   356    	CALL	__b_frameset00
+                           A   357    ;  101	
+                           A   358    ;  102	void LCD_data_push(char data){
+                           A   359    ;  103		// if((data & 0x01) != 0x00){
+                           A   360    ;  104		// 	PBOUT |= 0x02;
+                           A   361    ;  105		// }
+                           A   362    ;  106		// if((data & 0x02) != 0x00){
+                           A   363    ;  107		// 	PBOUT |= 0x10;
+                           A   364    ;  108		// }
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 17-Oct-16     23:42:33     page:   8
+
+
+PC     Object              I  Line    Source lcd.src
+                           A   365    ;  109		// if((data & 0x04) != 0x00){
+                           A   366    ;  110		// 	PBOUT |= 0x20;
+                           A   367    ;  111		// }
+                           A   368    ;  112		// if((data & 0x08) != 0x00){
+                           A   369    ;  113		// 	PBOUT |= 0x40;
+                           A   370    ;  114		// }
+                           A   371    ;  115		// if((data & 0x10) != 0x00){
+                           A   372    ;  116		// 	PBOUT |= 0x80;
+                           A   373    ;  117		// }
+                           A   374    ;  118		// if((data & 0x20) != 0x00){
+                           A   375    ;  119		// 	PBOUT |= 0x08;
+                           A   376    ;  120		// }
+                           A   377    ;  121		// if((data & 0x40) != 0x00){
+                           A   378    ;  122		// 	PBOUT |= 0x04;
+                           A   379    ;  123		// }
+                           A   380    ;  124		// if((data & 0x80) != 0x00){
+                           A   381    ;  125		// 	PHOUT |= 0x04;
+                           A   382    ;  126		// }
+                           A   383    ;  127			//Shuffles data around so that 
+                           A   384    ;  128	
+                           A   385    ;  129				PBOUT =
+                           A   386    ;  130			 ((data & LCD_D0) << 1) |
+                           A   387    ;  131			 ((data & LCD_D1) << 3) |
+                           A   388    ;  132			 ((data & LCD_D2) << 3) |
+                           A   389    ;  133			 ((data & LCD_D3) << 3) |
+                           A   390    ;  134			 ((data & LCD_D4) << 3) |
+                           A   391    ;  135			 ((data & LCD_D5) >> 2) |
+                           A   392    ;  136			 ((data & LCD_D6) >> 4) |
+                           A   393    ;  137			 (PBOUT & 0x01); //Mask Enable 
+                           A   394    .line 137
+0000FF E4E8E0              A   395    	LD	R0,R8
+000102 56E001              A   396    	AND	R0,#1
+000105 0200                A   397    	ADD	R0,R0
+000107 E4E8E1              A   398    	LD	R1,R8
+00010A 56E102              A   399    	AND	R1,#2
+00010D 0211                A   400    	ADD	R1,R1
+00010F 0211                A   401    	ADD	R1,R1
+000111 0211                A   402    	ADD	R1,R1
+000113 4201                A   403    	OR	R0,R1
+000115 E4E8E1              A   404    	LD	R1,R8
+000118 56E104              A   405    	AND	R1,#4
+00011B 0211                A   406    	ADD	R1,R1
+00011D 0211                A   407    	ADD	R1,R1
+00011F 0211                A   408    	ADD	R1,R1
+000121 4201                A   409    	OR	R0,R1
+000123 E4E8E1              A   410    	LD	R1,R8
+000126 56E108              A   411    	AND	R1,#8
+000129 0211                A   412    	ADD	R1,R1
+00012B 0211                A   413    	ADD	R1,R1
+00012D 0211                A   414    	ADD	R1,R1
+00012F 4201                A   415    	OR	R0,R1
+000131 E4E8E1              A   416    	LD	R1,R8
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 17-Oct-16     23:42:33     page:   9
+
+
+PC     Object              I  Line    Source lcd.src
+000134 56E110              A   417    	AND	R1,#16
+000137 0211                A   418    	ADD	R1,R1
+000139 0211                A   419    	ADD	R1,R1
+00013B 0211                A   420    	ADD	R1,R1
+00013D 4201                A   421    	OR	R0,R1
+00013F E4E8E1              A   422    	LD	R1,R8
+000142 D0E1                A   423    	SRA	R1
+000144 D0E1                A   424    	SRA	R1
+000146 56E108              A   425    	AND	R1,#8
+000149 4201                A   426    	OR	R0,R1
+00014B E4E8E1              A   427    	LD	R1,R8
+00014E D0E1                A   428    	SRA	R1
+000150 D0E1                A   429    	SRA	R1
+000152 D0E1                A   430    	SRA	R1
+000154 D0E1                A   431    	SRA	R1
+000156 56E104              A   432    	AND	R1,#4
+000159 4201                A   433    	OR	R0,R1
+00015B 841FD7              A   434    	LDX	R1,4055
+00015E 56E101              A   435    	AND	R1,#1
+000161 4201                A   436    	OR	R0,R1
+000163 940FD7              A   437    	LDX	4055,R0
+                           A   438    ;  138	
+                           A   439    ;  139			PHOUT = ((data & LCD_D7) >> 5) 
+                           A   440    .line 139
+000166 D0E8                A   441    	SRA	R8
+000168 D0E8                A   442    	SRA	R8
+00016A D0E8                A   443    	SRA	R8
+00016C D0E8                A   444    	SRA	R8
+00016E D0E8                A   445    	SRA	R8
+000170 56E804              A   446    	AND	R8,#4
+000173 840FEF              A   447    	LDX	R0,4079
+000176 E220                A   448    	BCLR	2,R0
+000178 4280                A   449    	OR	R8,R0
+00017A 948FEF              A   450    	LDX	4079,R8
+                           A   451    ;  140	}
+                           A   452    .line 140
+00017D D6 0000             A   453    	CALL	__b_framereset
+000180 AF                  A   454    	RET	
+                           A   455    .endfunc "LCD_data_push",140,"_LCD_data_push"
+                           A   456    	SEGMENT ROM_DATA
+                           A   457    
+                           A   458    
+                           A   459    ;**************************** _LCD_command ****
+                           A   460    ;Name                         Addr/Register   S
+                           A   461    ;_LCD_data_push                      IMPORT  --
+                           A   462    ;_dly                                IMPORT  --
+                           A   463    ;data                                 R15-1    
+                           A   464    
+                           A   465    
+                           A   466    ; Aggregate Stack Size: -1 (words)
+                           A   467    
+                           A   468    
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 17-Oct-16     23:42:33     page:  10
+
+
+PC     Object              I  Line    Source lcd.src
+                           A   469    	.FRAME _n_LCD_command,?_n_LCD_command,RDATA
+                           A   470    	.FCALL _n_set_LCD_control_bus
+                           A   471    	.FCALL _n_dly
+                           A   472    	.FCALL _n_LCD_data_push
+                           A   473    	.FRAME _f_LCD_command,?_f_LCD_command,EDATA
+                           A   474    	.FCALL _f_set_LCD_control_bus
+                           A   475    	.FCALL _f_dly
+                           A   476    	.FCALL _f_LCD_data_push
+                           A   477    	SEGMENT lcd_TEXT
+000181                     A   478    _LCD_command:
+                           A   479    .define "_LCD_command"
+                           A   480    .value _LCD_command
+                           A   481    .class 2
+                           A   482    .type 65
+                           A   483    .type 0
+                           A   484    .endef
+                           A   485    .begfunc "LCD_command",142,"_LCD_command"
+                           A   486    .define "data"
+                           A   487    .class 9
+                           A   488    .value -1
+                           A   489    .type 2
+                           A   490    .type 0
+                           A   491    .endef
+000181 5C01                A   492    	LD	R5,#1
+000183 D6 0000             A   493    	CALL	__b_frameset0
+000186 89E8FF              A   494    	LDX	-1(RR14),R8
+                           A   495    ;  141	
+                           A   496    ;  142	void LCD_command(char data) {
+                           A   497    ;  143	// Set_LCD_Control (LCD_INACTIVE); // s
+                           A   498    ;  144		set_LCD_control_bus(LCD_INACTIVE);
+                           A   499    .line 144
+000189 B0E8                A   500    	CLR	R8
+00018B D6 00B2             A   501    	CALL	_set_LCD_control_bus
+                           A   502    ;  145	// Set_LCD_Control (???); // set R/W to
+                           A   503    ;  146		set_LCD_control_bus(LCD_WRITE);
+                           A   504    .line 146
+00018E 8C04                A   505    	LD	R8,#4
+000190 D6 00B2             A   506    	CALL	_set_LCD_control_bus
+                           A   507    ;  147	// Set_LCD_Control (???); // set RS for
+                           A   508    ;  148		set_LCD_control_bus(LCD_CONTROL);
+                           A   509    .line 148
+000193 8C02                A   510    	LD	R8,#2
+000195 D6 00B2             A   511    	CALL	_set_LCD_control_bus
+                           A   512    ;  149	//  ??? ; // wait for enable pulse widt
+                           A   513    ;  150		dly(1);
+                           A   514    .line 150
+000198 B0E8                A   515    	CLR	R8
+00019A 9C01                A   516    	LD	R9,#1
+00019C D6 0000             A   517    	CALL	_dly
+                           A   518    ;  151	//  ??? ; // set enable to high
+                           A   519    ;  152		set_LCD_control_bus(LCD_ENABLE_HIGH
+                           A   520    .line 152
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 17-Oct-16     23:42:33     page:  11
+
+
+PC     Object              I  Line    Source lcd.src
+00019F 8C05                A   521    	LD	R8,#5
+0001A1 D6 00B2             A   522    	CALL	_set_LCD_control_bus
+                           A   523    ;  153	//  LCD_data_push = data; // make a val
+                           A   524    ;  154		LCD_data_push(data);
+                           A   525    .line 154
+0001A4 888EFF              A   526    	LDX	R8,-1(RR14)
+0001A7 D6 00FC             A   527    	CALL	_LCD_data_push
+                           A   528    ;  155	//  ??? ; // wait for enable pulse widt
+                           A   529    ;  156		dly(1);
+                           A   530    .line 156
+0001AA B0E8                A   531    	CLR	R8
+0001AC 9C01                A   532    	LD	R9,#1
+0001AE D6 0000             A   533    	CALL	_dly
+                           A   534    ;  157	//  ??? ; // set enable to low to latch
+                           A   535    ;  158		set_LCD_control_bus(LCD_ENABLE_LOW)
+                           A   536    .line 158
+0001B1 8C06                A   537    	LD	R8,#6
+0001B3 D6 00B2             A   538    	CALL	_set_LCD_control_bus
+                           A   539    ;  159	//  ??? ; // A delay of ??? after each 
+                           A   540    ;  160		dly(1);
+                           A   541    .line 160
+0001B6 B0E8                A   542    	CLR	R8
+0001B8 9C01                A   543    	LD	R9,#1
+0001BA D6 0000             A   544    	CALL	_dly
+                           A   545    ;  161	//  required instruction before the nex
+                           A   546    ;  162	}
+                           A   547    .line 162
+0001BD D6 0000             A   548    	CALL	__b_framereset
+0001C0 AF                  A   549    	RET	
+                           A   550    .endfunc "LCD_command",162,"_LCD_command"
+                           A   551    	SEGMENT ROM_DATA
+                           A   552    
+                           A   553    
+                           A   554    ;**************************** _LCD_data_disp **
+                           A   555    ;Name                         Addr/Register   S
+                           A   556    ;_LCD_data_push                      IMPORT  --
+                           A   557    ;_dly                                IMPORT  --
+                           A   558    ;data                                 R15-1    
+                           A   559    
+                           A   560    
+                           A   561    ; Aggregate Stack Size: -1 (words)
+                           A   562    
+                           A   563    
+                           A   564    	.FRAME _n_LCD_data_disp,?_n_LCD_data_disp,R
+                           A   565    	.FCALL _n_set_LCD_control_bus
+                           A   566    	.FCALL _n_dly
+                           A   567    	.FCALL _n_LCD_data_push
+                           A   568    	.FRAME _f_LCD_data_disp,?_f_LCD_data_disp,E
+                           A   569    	.FCALL _f_set_LCD_control_bus
+                           A   570    	.FCALL _f_dly
+                           A   571    	.FCALL _f_LCD_data_push
+                           A   572    	SEGMENT lcd_TEXT
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 17-Oct-16     23:42:33     page:  12
+
+
+PC     Object              I  Line    Source lcd.src
+0001C1                     A   573    _LCD_data_disp:
+                           A   574    .define "_LCD_data_disp"
+                           A   575    .value _LCD_data_disp
+                           A   576    .class 2
+                           A   577    .type 65
+                           A   578    .type 0
+                           A   579    .endef
+                           A   580    .begfunc "LCD_data_disp",164,"_LCD_data_disp"
+                           A   581    .define "data"
+                           A   582    .class 9
+                           A   583    .value -1
+                           A   584    .type 2
+                           A   585    .type 0
+                           A   586    .endef
+0001C1 5C01                A   587    	LD	R5,#1
+0001C3 D6 0000             A   588    	CALL	__b_frameset0
+0001C6 89E8FF              A   589    	LDX	-1(RR14),R8
+                           A   590    ;  163	
+                           A   591    ;  164	void LCD_data_disp(char data) {
+                           A   592    ;  165	// Set_LCD_Control (LCD_INACTIVE); // s
+                           A   593    ;  166		set_LCD_control_bus(LCD_INACTIVE);
+                           A   594    .line 166
+0001C9 B0E8                A   595    	CLR	R8
+0001CB D6 00B2             A   596    	CALL	_set_LCD_control_bus
+                           A   597    ;  167	// Set_LCD_Control (???); // set R/W to
+                           A   598    ;  168		set_LCD_control_bus(LCD_WRITE);
+                           A   599    .line 168
+0001CE 8C04                A   600    	LD	R8,#4
+0001D0 D6 00B2             A   601    	CALL	_set_LCD_control_bus
+                           A   602    ;  169	// Set_LCD_Control (???); // set RS for
+                           A   603    ;  170		set_LCD_control_bus(LCD_DATA);
+                           A   604    .line 170
+0001D3 8C01                A   605    	LD	R8,#1
+0001D5 D6 00B2             A   606    	CALL	_set_LCD_control_bus
+                           A   607    ;  171	//  ??? ; // wait for enable pulse widt
+                           A   608    ;  172		dly(1);
+                           A   609    .line 172
+0001D8 B0E8                A   610    	CLR	R8
+0001DA 9C01                A   611    	LD	R9,#1
+0001DC D6 0000             A   612    	CALL	_dly
+                           A   613    ;  173	//  ??? ; // set enable to high
+                           A   614    ;  174		set_LCD_control_bus(LCD_ENABLE_HIGH
+                           A   615    .line 174
+0001DF 8C05                A   616    	LD	R8,#5
+0001E1 D6 00B2             A   617    	CALL	_set_LCD_control_bus
+                           A   618    ;  175	//  PAOUT = data; // make a valid data
+                           A   619    ;  176		LCD_data_push(data);
+                           A   620    .line 176
+0001E4 888EFF              A   621    	LDX	R8,-1(RR14)
+0001E7 D6 00FC             A   622    	CALL	_LCD_data_push
+                           A   623    ;  177	//  ??? ; // wait for enable pulse widt
+                           A   624    ;  178		dly(1);
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 17-Oct-16     23:42:33     page:  13
+
+
+PC     Object              I  Line    Source lcd.src
+                           A   625    .line 178
+0001EA B0E8                A   626    	CLR	R8
+0001EC 9C01                A   627    	LD	R9,#1
+0001EE D6 0000             A   628    	CALL	_dly
+                           A   629    ;  179	//  ??? ; // set enable to low to latch
+                           A   630    ;  180		set_LCD_control_bus(LCD_ENABLE_LOW)
+                           A   631    .line 180
+0001F1 8C06                A   632    	LD	R8,#6
+0001F3 D6 00B2             A   633    	CALL	_set_LCD_control_bus
+                           A   634    ;  181	//  ??? ; // A delay of ??? after each 
+                           A   635    ;  182		dly(1);
+                           A   636    .line 182
+0001F6 B0E8                A   637    	CLR	R8
+0001F8 9C01                A   638    	LD	R9,#1
+0001FA D6 0000             A   639    	CALL	_dly
+                           A   640    ;  183	//  required instruction before the nex
+                           A   641    ;  184	}
+                           A   642    .line 184
+0001FD D6 0000             A   643    	CALL	__b_framereset
+000200 AF                  A   644    	RET	
+                           A   645    .endfunc "LCD_data_disp",184,"_LCD_data_disp"
+                           A   646    	SEGMENT ROM_DATA
+                           A   647    
+                           A   648    
+                           A   649    ;**************************** _signon *********
+                           A   650    ;Name                         Addr/Register   S
+                           A   651    ;_dly                                IMPORT  --
+                           A   652    ;_LCD_data_disp                      IMPORT  --
+                           A   653    ;_strlen                             IMPORT  --
+                           A   654    ;_0temp13                            STATIC    
+                           A   655    ;init_string                         R15-17    
+                           A   656    ;i                                       R2    
+                           A   657    
+                           A   658    
+                           A   659    ; Aggregate Stack Size: -18 (words)
+                           A   660    
+                           A   661    
+                           A   662    	.FRAME _n_signon,?_n_signon,RDATA
+                           A   663    	.FCALL _n_strlen
+                           A   664    	.FCALL _n_LCD_data_disp
+                           A   665    	.FCALL _n_dly
+                           A   666    	.FRAME _f_signon,?_f_signon,EDATA
+                           A   667    	.FCALL _f_strlen
+                           A   668    	.FCALL _f_LCD_data_disp
+                           A   669    	.FCALL _f_dly
+                           A   670    	SEGMENT FAR_DATA
+000000                     A   671    _0temp13:
+000000 4C                  A   672    	DB	76
+000001 43                  A   673    	DB	67
+000002 44                  A   674    	DB	68
+000003 20                  A   675    	DB	32
+000004 49                  A   676    	DB	73
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 17-Oct-16     23:42:33     page:  14
+
+
+PC     Object              I  Line    Source lcd.src
+000005 6E                  A   677    	DB	110
+000006 69                  A   678    	DB	105
+000007 74                  A   679    	DB	116
+000008 69                  A   680    	DB	105
+000009 61                  A   681    	DB	97
+00000A 6C                  A   682    	DB	108
+00000B 69                  A   683    	DB	105
+00000C 73                  A   684    	DB	115
+00000D 65                  A   685    	DB	101
+00000E 64                  A   686    	DB	100
+00000F 21                  A   687    	DB	33
+000010 00                  A   688    	DB	0
+                           A   689    	SEGMENT lcd_TEXT
+000201                     A   690    _signon:
+                           A   691    .define "_signon"
+                           A   692    .value _signon
+                           A   693    .class 2
+                           A   694    .type 65
+                           A   695    .type 0
+                           A   696    .endef
+                           A   697    .begfunc "signon",186,"_signon"
+                           A   698    ;  185	
+                           A   699    ;  186	void signon(void){
+                           A   700    .define "U‹ìjÿh0/J"
+                           A   701    .class 4
+                           A   702    .reg 3
+                           A   703    .type 2
+                           A   704    .type 0
+                           A   705    .endef
+                           A   706    .define "init_string"
+                           A   707    .class 1
+                           A   708    .value -17
+                           A   709    .dim 17
+                           A   710    .type 98
+                           A   711    .type 0
+                           A   712    .endef
+000201 5C12                A   713    	LD	R5,#18
+000203 D6 0000             A   714    	CALL	__b_frameset0
+                           A   715    ;  187		char i;
+                           A   716    ;  188	
+                           A   717    ;  189		//Define the string to be printed
+                           A   718    ;  190		char init_string[] = {"LCD Initiali
+                           A   719    .line 190
+000206 0C11                A   720    	LD	R0,#17
+000208 996EEF              A   721    	LEA	RR6,239(RR14)
+00020B 4C 00               A   722    	LD	R4,#high(_0temp13)
+00020D 5C 00               A   723    	LD	R5,#low(_0temp13)
+00020F                     A   724    L__12:
+00020F 86E4E1              A   725    	LDX	R1,@RR4
+000212 96E1E6              A   726    	LDX	@RR6,R1
+000215 A0E6                A   727    	INCW	RR6
+000217 A0E4                A   728    	INCW	RR4
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 17-Oct-16     23:42:33     page:  15
+
+
+PC     Object              I  Line    Source lcd.src
+000219 0A F4               A   729    	DJNZ	R0,L__12
+00021B 8B 1C               A   730    	JR	_6_L_15
+                           A   731    ;  191	
+                           A   732    ;  192		//Loop through each element in the 
+                           A   733    ;  193		for(i=0;i<strlen(init_string);i++){
+00021D                     A   734    _6_L_16:
+                           A   735    .line 193
+00021D 998EEF              A   736    	LEA	RR8,239(RR14)
+000220 89E2EE              A   737    	LDX	-18(RR14),R2
+000223 D6 0000             A   738    	CALL	_strlen
+000226 882EEE              A   739    	LDX	R2,-18(RR14)
+000229 E4E2E3              A   740    	LD	R3,R2
+00022C 90E3                A   741    	RL	R3
+00022E 3233                A   742    	SBC	R3,R3
+000230 A212                A   743    	CP	R1,R2
+000232 1FA203              A   744    	CPC	R0,R3
+000235 BB 06               A   745    	JR	UGT,_6_L_18
+000237 8B 21               A   746    	JR	_6_L_19
+000239                     A   747    _6_L_15:
+000239 B0E2                A   748    	CLR	R2
+00023B 8B E0               A   749    	JR	_6_L_16
+00023D                     A   750    _6_L_18:
+                           A   751    ;  194			LCD_data_disp(init_string[i]);
+                           A   752    .line 194
+00023D E4E2E0              A   753    	LD	R0,R2
+000240 90E0                A   754    	RL	R0
+000242 3200                A   755    	SBC	R0,R0
+000244 994EEF              A   756    	LEA	RR4,239(RR14)
+000247 0252                A   757    	ADD	R5,R2
+000249 1240                A   758    	ADC	R4,R0
+00024B 86E4E8              A   759    	LDX	R8,@RR4
+00024E 89E2EE              A   760    	LDX	-18(RR14),R2
+000251 D6 01C1             A   761    	CALL	_LCD_data_disp
+000254 882EEE              A   762    	LDX	R2,-18(RR14)
+                           A   763    .line 193
+000257 2E                  A   764    	INC	R2
+                           A   765    ;  195		}
+                           A   766    .line 195
+000258 8B C3               A   767    	JR	_6_L_16
+00025A                     A   768    _6_L_19:
+                           A   769    ;  196	
+                           A   770    ;  197		//Delay for a second
+                           A   771    ;  198		dly(1000);
+                           A   772    .line 198
+00025A 8C03                A   773    	LD	R8,#3
+00025C 9CE8                A   774    	LD	R9,#232
+00025E D6 0000             A   775    	CALL	_dly
+                           A   776    ;  199	
+                           A   777    ;  200	}
+                           A   778    .line 200
+000261 D6 0000             A   779    	CALL	__b_framereset
+000264 AF                  A   780    	RET	
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 17-Oct-16     23:42:33     page:  16
+
+
+PC     Object              I  Line    Source lcd.src
+                           A   781    .endfunc "signon",200,"_signon"
+                           A   782    	SEGMENT ROM_DATA
+                           A   783    
+                           A   784    
+                           A   785    ;**************************** _LCD_clear ******
+                           A   786    ;Name                         Addr/Register   S
+                           A   787    ;_dly                                IMPORT  --
+                           A   788    ;_LCD_command                        IMPORT  --
+                           A   789    
+                           A   790    
+                           A   791    ; Aggregate Stack Size: 0 (words)
+                           A   792    
+                           A   793    
+                           A   794    	.FRAME _n_LCD_clear,?_n_LCD_clear,RDATA
+                           A   795    	.FCALL _n_LCD_command
+                           A   796    	.FCALL _n_dly
+                           A   797    	.FRAME _f_LCD_clear,?_f_LCD_clear,EDATA
+                           A   798    	.FCALL _f_LCD_command
+                           A   799    	.FCALL _f_dly
+                           A   800    	SEGMENT lcd_TEXT
+000265                     A   801    _LCD_clear:
+                           A   802    .define "_LCD_clear"
+                           A   803    .value _LCD_clear
+                           A   804    .class 2
+                           A   805    .type 65
+                           A   806    .type 0
+                           A   807    .endef
+                           A   808    .begfunc "LCD_clear",203,"_LCD_clear"
+000265 D6 0000             A   809    	CALL	__b_frameset00
+                           A   810    ;  201	
+                           A   811    ;  202	//Clears the LCD
+                           A   812    ;  203	void LCD_clear(void){
+                           A   813    ;  204		LCD_command(0x01);
+                           A   814    .line 204
+000268 8C01                A   815    	LD	R8,#1
+00026A D6 0181             A   816    	CALL	_LCD_command
+                           A   817    ;  205		dly(2);
+                           A   818    .line 205
+00026D B0E8                A   819    	CLR	R8
+00026F 9C02                A   820    	LD	R9,#2
+000271 D6 0000             A   821    	CALL	_dly
+                           A   822    ;  206	}
+                           A   823    .line 206
+000274 D6 0000             A   824    	CALL	__b_framereset
+000277 AF                  A   825    	RET	
+                           A   826    .endfunc "LCD_clear",206,"_LCD_clear"
+                           A   827    	SEGMENT ROM_DATA
+                           A   828    
+                           A   829    
+                           A   830    ;**************************** _errorMessage ***
+                           A   831    ;Name                         Addr/Register   S
+                           A   832    ;_dly                                IMPORT  --
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 17-Oct-16     23:42:33     page:  17
+
+
+PC     Object              I  Line    Source lcd.src
+                           A   833    ;_LCD_data_disp                      IMPORT  --
+                           A   834    ;_strlen                             IMPORT  --
+                           A   835    ;_LCD_clear                          IMPORT  --
+                           A   836    ;_1temp22                            STATIC    
+                           A   837    ;errorMessage                        R15-19    
+                           A   838    ;i                                       R2    
+                           A   839    
+                           A   840    
+                           A   841    ; Aggregate Stack Size: -20 (words)
+                           A   842    
+                           A   843    
+                           A   844    	.FRAME _n_errorMessage,?_n_errorMessage,RDA
+                           A   845    	.FCALL _n_LCD_clear
+                           A   846    	.FCALL _n_strlen
+                           A   847    	.FCALL _n_LCD_data_disp
+                           A   848    	.FCALL _n_dly
+                           A   849    	.FRAME _f_errorMessage,?_f_errorMessage,EDA
+                           A   850    	.FCALL _f_LCD_clear
+                           A   851    	.FCALL _f_strlen
+                           A   852    	.FCALL _f_LCD_data_disp
+                           A   853    	.FCALL _f_dly
+                           A   854    	SEGMENT FAR_DATA
+000011                     A   855    _1temp22:
+000011 54                  A   856    	DB	84
+000012 68                  A   857    	DB	104
+000013 65                  A   858    	DB	101
+000014 72                  A   859    	DB	114
+000015 65                  A   860    	DB	101
+000016 20                  A   861    	DB	32
+000017 77                  A   862    	DB	119
+000018 61                  A   863    	DB	97
+000019 73                  A   864    	DB	115
+00001A 20                  A   865    	DB	32
+00001B 61                  A   866    	DB	97
+00001C 6E                  A   867    	DB	110
+00001D 20                  A   868    	DB	32
+00001E 65                  A   869    	DB	101
+00001F 72                  A   870    	DB	114
+000020 72                  A   871    	DB	114
+000021 6F                  A   872    	DB	111
+000022 72                  A   873    	DB	114
+000023 00                  A   874    	DB	0
+                           A   875    	SEGMENT lcd_TEXT
+000278                     A   876    _errorMessage:
+                           A   877    .define "_errorMessage"
+                           A   878    .value _errorMessage
+                           A   879    .class 2
+                           A   880    .type 65
+                           A   881    .type 0
+                           A   882    .endef
+                           A   883    .begfunc "errorMessage",208,"_errorMessage"
+                           A   884    ;  207	
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 17-Oct-16     23:42:33     page:  18
+
+
+PC     Object              I  Line    Source lcd.src
+                           A   885    ;  208	void errorMessage(void){
+                           A   886    .define "U‹ìjÿh0/J"
+                           A   887    .class 4
+                           A   888    .reg 3
+                           A   889    .type 2
+                           A   890    .type 0
+                           A   891    .endef
+                           A   892    .define "errorMessage"
+                           A   893    .class 1
+                           A   894    .value -19
+                           A   895    .dim 19
+                           A   896    .type 98
+                           A   897    .type 0
+                           A   898    .endef
+000278 5C14                A   899    	LD	R5,#20
+00027A D6 0000             A   900    	CALL	__b_frameset0
+                           A   901    ;  209		char i;
+                           A   902    ;  210		//Define the string to be printed
+                           A   903    ;  211		char errorMessage[] = {"There was a
+                           A   904    .line 211
+00027D 0C13                A   905    	LD	R0,#19
+00027F 996EED              A   906    	LEA	RR6,237(RR14)
+000282 4C 00               A   907    	LD	R4,#high(_1temp22)
+000284 5C 11               A   908    	LD	R5,#low(_1temp22)
+000286                     A   909    L__19:
+000286 86E4E1              A   910    	LDX	R1,@RR4
+000289 96E1E6              A   911    	LDX	@RR6,R1
+00028C A0E6                A   912    	INCW	RR6
+00028E A0E4                A   913    	INCW	RR4
+000290 0A F4               A   914    	DJNZ	R0,L__19
+                           A   915    ;  212	
+                           A   916    ;  213		//Clear what was there already
+                           A   917    ;  214		LCD_clear();
+                           A   918    .line 214
+000292 89E2EC              A   919    	LDX	-20(RR14),R2
+000295 D6 0265             A   920    	CALL	_LCD_clear
+000298 882EEC              A   921    	LDX	R2,-20(RR14)
+00029B 8B 1C               A   922    	JR	_8_L_24
+                           A   923    ;  215	
+                           A   924    ;  216		//Loop through each element in the 
+                           A   925    ;  217		for(i=0;i<strlen(errorMessage);i++)
+00029D                     A   926    _8_L_25:
+                           A   927    .line 217
+00029D 998EED              A   928    	LEA	RR8,237(RR14)
+0002A0 89E2EC              A   929    	LDX	-20(RR14),R2
+0002A3 D6 0000             A   930    	CALL	_strlen
+0002A6 882EEC              A   931    	LDX	R2,-20(RR14)
+0002A9 E4E2E3              A   932    	LD	R3,R2
+0002AC 90E3                A   933    	RL	R3
+0002AE 3233                A   934    	SBC	R3,R3
+0002B0 A212                A   935    	CP	R1,R2
+0002B2 1FA203              A   936    	CPC	R0,R3
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 17-Oct-16     23:42:33     page:  19
+
+
+PC     Object              I  Line    Source lcd.src
+0002B5 BB 06               A   937    	JR	UGT,_8_L_27
+0002B7 8B 21               A   938    	JR	_8_L_28
+0002B9                     A   939    _8_L_24:
+0002B9 B0E2                A   940    	CLR	R2
+0002BB 8B E0               A   941    	JR	_8_L_25
+0002BD                     A   942    _8_L_27:
+                           A   943    ;  218			LCD_data_disp(errorMessage[i]);
+                           A   944    .line 218
+0002BD E4E2E0              A   945    	LD	R0,R2
+0002C0 90E0                A   946    	RL	R0
+0002C2 3200                A   947    	SBC	R0,R0
+0002C4 994EED              A   948    	LEA	RR4,237(RR14)
+0002C7 0252                A   949    	ADD	R5,R2
+0002C9 1240                A   950    	ADC	R4,R0
+0002CB 86E4E8              A   951    	LDX	R8,@RR4
+0002CE 89E2EC              A   952    	LDX	-20(RR14),R2
+0002D1 D6 01C1             A   953    	CALL	_LCD_data_disp
+0002D4 882EEC              A   954    	LDX	R2,-20(RR14)
+                           A   955    .line 217
+0002D7 2E                  A   956    	INC	R2
+                           A   957    ;  219		}
+                           A   958    .line 219
+0002D8 8B C3               A   959    	JR	_8_L_25
+0002DA                     A   960    _8_L_28:
+                           A   961    ;  220	
+                           A   962    ;  221		//Delay for a bit
+                           A   963    ;  222		dly(2);
+                           A   964    .line 222
+0002DA B0E8                A   965    	CLR	R8
+0002DC 9C02                A   966    	LD	R9,#2
+0002DE D6 0000             A   967    	CALL	_dly
+                           A   968    ;  223	
+                           A   969    ;  224	}
+                           A   970    .line 224
+0002E1 D6 0000             A   971    	CALL	__b_framereset
+0002E4 AF                  A   972    	RET	
+                           A   973    .endfunc "errorMessage",224,"_errorMessage"
+                           A   974    	SEGMENT ROM_DATA
+                           A   975    
+                           A   976    
+                           A   977    ;**************************** _successMessage *
+                           A   978    ;Name                         Addr/Register   S
+                           A   979    ;_dly                                IMPORT  --
+                           A   980    ;_LCD_data_disp                      IMPORT  --
+                           A   981    ;_strlen                             IMPORT  --
+                           A   982    ;_LCD_clear                          IMPORT  --
+                           A   983    ;_2temp30                            STATIC    
+                           A   984    ;successMessage                      R15-11    
+                           A   985    ;i                                       R2    
+                           A   986    
+                           A   987    
+                           A   988    ; Aggregate Stack Size: -12 (words)
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 17-Oct-16     23:42:33     page:  20
+
+
+PC     Object              I  Line    Source lcd.src
+                           A   989    
+                           A   990    
+                           A   991    	.FRAME _n_successMessage,?_n_successMessage
+                           A   992    	.FCALL _n_LCD_clear
+                           A   993    	.FCALL _n_strlen
+                           A   994    	.FCALL _n_LCD_data_disp
+                           A   995    	.FCALL _n_dly
+                           A   996    	.FRAME _f_successMessage,?_f_successMessage
+                           A   997    	.FCALL _f_LCD_clear
+                           A   998    	.FCALL _f_strlen
+                           A   999    	.FCALL _f_LCD_data_disp
+                           A  1000    	.FCALL _f_dly
+                           A  1001    	SEGMENT FAR_DATA
+000024                     A  1002    _2temp30:
+000024 49                  A  1003    	DB	73
+000025 74                  A  1004    	DB	116
+000026 20                  A  1005    	DB	32
+000027 77                  A  1006    	DB	119
+000028 6F                  A  1007    	DB	111
+000029 72                  A  1008    	DB	114
+00002A 6B                  A  1009    	DB	107
+00002B 65                  A  1010    	DB	101
+00002C 64                  A  1011    	DB	100
+00002D 21                  A  1012    	DB	33
+00002E 00                  A  1013    	DB	0
+                           A  1014    	SEGMENT lcd_TEXT
+0002E5                     A  1015    _successMessage:
+                           A  1016    .define "_successMessage"
+                           A  1017    .value _successMessage
+                           A  1018    .class 2
+                           A  1019    .type 65
+                           A  1020    .type 0
+                           A  1021    .endef
+                           A  1022    .begfunc "successMessage",226,"_successMessage"
+                           A  1023    ;  225	
+                           A  1024    ;  226	void successMessage(void){
+                           A  1025    .define "U‹ìjÿh0/J"
+                           A  1026    .class 4
+                           A  1027    .reg 3
+                           A  1028    .type 2
+                           A  1029    .type 0
+                           A  1030    .endef
+                           A  1031    .define "successMessage"
+                           A  1032    .class 1
+                           A  1033    .value -11
+                           A  1034    .dim 11
+                           A  1035    .type 98
+                           A  1036    .type 0
+                           A  1037    .endef
+0002E5 5C0C                A  1038    	LD	R5,#12
+0002E7 D6 0000             A  1039    	CALL	__b_frameset0
+                           A  1040    ;  227		char i;
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 17-Oct-16     23:42:33     page:  21
+
+
+PC     Object              I  Line    Source lcd.src
+                           A  1041    ;  228		//Define the string to be printed
+                           A  1042    ;  229		char successMessage[] = {"It worked
+                           A  1043    .line 229
+0002EA 0C0B                A  1044    	LD	R0,#11
+0002EC 996EF5              A  1045    	LEA	RR6,245(RR14)
+0002EF 4C 00               A  1046    	LD	R4,#high(_2temp30)
+0002F1 5C 24               A  1047    	LD	R5,#low(_2temp30)
+0002F3                     A  1048    L__24:
+0002F3 86E4E1              A  1049    	LDX	R1,@RR4
+0002F6 96E1E6              A  1050    	LDX	@RR6,R1
+0002F9 A0E6                A  1051    	INCW	RR6
+0002FB A0E4                A  1052    	INCW	RR4
+0002FD 0A F4               A  1053    	DJNZ	R0,L__24
+                           A  1054    ;  230	
+                           A  1055    ;  231		//Clear what was there already
+                           A  1056    ;  232		LCD_clear();
+                           A  1057    .line 232
+0002FF 89E2F4              A  1058    	LDX	-12(RR14),R2
+000302 D6 0265             A  1059    	CALL	_LCD_clear
+000305 882EF4              A  1060    	LDX	R2,-12(RR14)
+000308 8B 1C               A  1061    	JR	_9_L_32
+                           A  1062    ;  233	
+                           A  1063    ;  234		//Loop through each element in the 
+                           A  1064    ;  235		for(i=0;i<strlen(successMessage);i+
+00030A                     A  1065    _9_L_33:
+                           A  1066    .line 235
+00030A 998EF5              A  1067    	LEA	RR8,245(RR14)
+00030D 89E2F4              A  1068    	LDX	-12(RR14),R2
+000310 D6 0000             A  1069    	CALL	_strlen
+000313 882EF4              A  1070    	LDX	R2,-12(RR14)
+000316 E4E2E3              A  1071    	LD	R3,R2
+000319 90E3                A  1072    	RL	R3
+00031B 3233                A  1073    	SBC	R3,R3
+00031D A212                A  1074    	CP	R1,R2
+00031F 1FA203              A  1075    	CPC	R0,R3
+000322 BB 06               A  1076    	JR	UGT,_9_L_35
+000324 8B 21               A  1077    	JR	_9_L_36
+000326                     A  1078    _9_L_32:
+000326 B0E2                A  1079    	CLR	R2
+000328 8B E0               A  1080    	JR	_9_L_33
+00032A                     A  1081    _9_L_35:
+                           A  1082    ;  236			LCD_data_disp(successMessage[i]
+                           A  1083    .line 236
+00032A E4E2E0              A  1084    	LD	R0,R2
+00032D 90E0                A  1085    	RL	R0
+00032F 3200                A  1086    	SBC	R0,R0
+000331 994EF5              A  1087    	LEA	RR4,245(RR14)
+000334 0252                A  1088    	ADD	R5,R2
+000336 1240                A  1089    	ADC	R4,R0
+000338 86E4E8              A  1090    	LDX	R8,@RR4
+00033B 89E2F4              A  1091    	LDX	-12(RR14),R2
+00033E D6 01C1             A  1092    	CALL	_LCD_data_disp
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 17-Oct-16     23:42:33     page:  22
+
+
+PC     Object              I  Line    Source lcd.src
+000341 882EF4              A  1093    	LDX	R2,-12(RR14)
+                           A  1094    .line 235
+000344 2E                  A  1095    	INC	R2
+                           A  1096    ;  237		}
+                           A  1097    .line 237
+000345 8B C3               A  1098    	JR	_9_L_33
+000347                     A  1099    _9_L_36:
+                           A  1100    ;  238	
+                           A  1101    ;  239		//Delay for a bit
+                           A  1102    ;  240		dly(2);
+                           A  1103    .line 240
+000347 B0E8                A  1104    	CLR	R8
+000349 9C02                A  1105    	LD	R9,#2
+00034B D6 0000             A  1106    	CALL	_dly
+                           A  1107    ;  241	
+                           A  1108    ;  242	}
+                           A  1109    .line 242
+00034E D6 0000             A  1110    	CALL	__b_framereset
+000351 AF                  A  1111    	RET	
+                           A  1112    .endfunc "successMessage",242,"_successMessage"
+                           A  1113    	SEGMENT ROM_DATA
+                           A  1114    
+                           A  1115    
+                           A  1116    ;**************************** _printMessage ***
+                           A  1117    ;Name                         Addr/Register   S
+                           A  1118    ;_dly                                IMPORT  --
+                           A  1119    ;_LCD_data_disp                      IMPORT  --
+                           A  1120    ;_strlen                             IMPORT  --
+                           A  1121    ;_LCD_clear                          IMPORT  --
+                           A  1122    ;i                                       R2    
+                           A  1123    ;clear                                R15-3    
+                           A  1124    ;message                              R15-2    
+                           A  1125    
+                           A  1126    
+                           A  1127    ; Aggregate Stack Size: -6 (words)
+                           A  1128    
+                           A  1129    
+                           A  1130    	.FRAME _n_printMessage,?_n_printMessage,RDA
+                           A  1131    	.FCALL _n_LCD_clear
+                           A  1132    	.FCALL _n_strlen
+                           A  1133    	.FCALL _n_LCD_data_disp
+                           A  1134    	.FCALL _n_dly
+                           A  1135    	.FRAME _f_printMessage,?_f_printMessage,EDA
+                           A  1136    	.FCALL _f_LCD_clear
+                           A  1137    	.FCALL _f_strlen
+                           A  1138    	.FCALL _f_LCD_data_disp
+                           A  1139    	.FCALL _f_dly
+                           A  1140    	SEGMENT lcd_TEXT
+000352                     A  1141    _printMessage:
+                           A  1142    .define "_printMessage"
+                           A  1143    .value _printMessage
+                           A  1144    .class 2
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 17-Oct-16     23:42:33     page:  23
+
+
+PC     Object              I  Line    Source lcd.src
+                           A  1145    .type 65
+                           A  1146    .type 0
+                           A  1147    .endef
+                           A  1148    .begfunc "printMessage",244,"_printMessage"
+                           A  1149    .define "message"
+                           A  1150    .class 9
+                           A  1151    .value -2
+                           A  1152    .type 162
+                           A  1153    .type 0
+                           A  1154    .endef
+                           A  1155    .define "clear"
+                           A  1156    .class 9
+                           A  1157    .value -3
+                           A  1158    .type 2
+                           A  1159    .type 0
+                           A  1160    .endef
+000352 5C06                A  1161    	LD	R5,#6
+000354 D6 0000             A  1162    	CALL	__b_frameset0
+000357 89E8FE              A  1163    	LDX	-2(RR14),R8
+00035A 89E9FF              A  1164    	LDX	-1(RR14),R9
+00035D 89EAFD              A  1165    	LDX	-3(RR14),R10
+                           A  1166    ;  243	
+                           A  1167    ;  244	void printMessage(char message[], char 
+                           A  1168    .define "U‹ìjÿh0/J"
+                           A  1169    .class 4
+                           A  1170    .reg 3
+                           A  1171    .type 2
+                           A  1172    .type 0
+                           A  1173    .endef
+                           A  1174    ;  245		char i;
+                           A  1175    ;  246	
+                           A  1176    ;  247		if(clear){
+                           A  1177    .line 247
+000360 880EFD              A  1178    	LDX	R0,-3(RR14)
+000363 4200                A  1179    	OR	R0,R0
+000365 6B 39               A  1180    	JR	Z,_10_L_40
+                           A  1181    ;  248			LCD_clear();
+                           A  1182    .line 248
+000367 89E2FC              A  1183    	LDX	-4(RR14),R2
+00036A D6 0265             A  1184    	CALL	_LCD_clear
+00036D 882EFC              A  1185    	LDX	R2,-4(RR14)
+                           A  1186    ;  249		}
+                           A  1187    .line 249
+000370 8B 2E               A  1188    	JR	_10_L_40
+                           A  1189    ;  250	
+                           A  1190    ;  251		//Loop through each element in the 
+                           A  1191    ;  252		for(i=0;i<strlen(message);i++){
+000372                     A  1192    _10_L_41:
+                           A  1193    .line 252
+000372 E4E2E4              A  1194    	LD	R4,R2
+000375 E4E4E3              A  1195    	LD	R3,R4
+000378 90E3                A  1196    	RL	R3
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 17-Oct-16     23:42:33     page:  24
+
+
+PC     Object              I  Line    Source lcd.src
+00037A 3233                A  1197    	SBC	R3,R3
+00037C 888EFE              A  1198    	LDX	R8,-2(RR14)
+00037F 889EFF              A  1199    	LDX	R9,-1(RR14)
+000382 89E2FC              A  1200    	LDX	-4(RR14),R2
+000385 89E3FB              A  1201    	LDX	-5(RR14),R3
+000388 89E4FA              A  1202    	LDX	-6(RR14),R4
+00038B D6 0000             A  1203    	CALL	_strlen
+00038E 884EFA              A  1204    	LDX	R4,-6(RR14)
+000391 883EFB              A  1205    	LDX	R3,-5(RR14)
+000394 882EFC              A  1206    	LDX	R2,-4(RR14)
+000397 A241                A  1207    	CP	R4,R1
+000399 1FA230              A  1208    	CPC	R3,R0
+00039C 7B 06               A  1209    	JR	C,_10_L_43
+00039E 8B 24               A  1210    	JR	_10_L_45
+0003A0                     A  1211    _10_L_40:
+0003A0 B0E2                A  1212    	CLR	R2
+0003A2 8B CE               A  1213    	JR	_10_L_41
+0003A4                     A  1214    _10_L_43:
+                           A  1215    ;  253			LCD_data_disp(message[i]);
+                           A  1216    .line 253
+0003A4 E4E2E0              A  1217    	LD	R0,R2
+0003A7 90E0                A  1218    	RL	R0
+0003A9 3200                A  1219    	SBC	R0,R0
+0003AB 884EFE              A  1220    	LDX	R4,-2(RR14)
+0003AE 885EFF              A  1221    	LDX	R5,-1(RR14)
+0003B1 0252                A  1222    	ADD	R5,R2
+0003B3 1240                A  1223    	ADC	R4,R0
+0003B5 86E4E8              A  1224    	LDX	R8,@RR4
+0003B8 89E2FC              A  1225    	LDX	-4(RR14),R2
+0003BB D6 01C1             A  1226    	CALL	_LCD_data_disp
+0003BE 882EFC              A  1227    	LDX	R2,-4(RR14)
+                           A  1228    .line 252
+0003C1 2E                  A  1229    	INC	R2
+                           A  1230    ;  254		}
+                           A  1231    .line 254
+0003C2 8B AE               A  1232    	JR	_10_L_41
+0003C4                     A  1233    _10_L_45:
+                           A  1234    ;  255	
+                           A  1235    ;  256		//Delay for a bit
+                           A  1236    ;  257		dly(2);
+                           A  1237    .line 257
+0003C4 B0E8                A  1238    	CLR	R8
+0003C6 9C02                A  1239    	LD	R9,#2
+0003C8 D6 0000             A  1240    	CALL	_dly
+                           A  1241    ;  258	}
+                           A  1242    .line 258
+0003CB D6 0000             A  1243    	CALL	__b_framereset
+0003CE AF                  A  1244    	RET	
+                           A  1245    .endfunc "printMessage",258,"_printMessage"
+                           A  1246    	XREF _strlen:ROM
+                           A  1247    	XREF _dly:ROM
+                           A  1248    	XREF __b_ucase:ROM
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 17-Oct-16     23:42:33     page:  25
+
+
+PC     Object              I  Line    Source lcd.src
+                           A  1249    	XREF __b_framereset:ROM
+                           A  1250    	XREF __b_frameset0:ROM
+                           A  1251    	XREF __b_frameset00:ROM
+                           A  1252    	XDEF _printMessage
+                           A  1253    	XDEF _successMessage
+                           A  1254    	XDEF _errorMessage
+                           A  1255    	XDEF _LCD_clear
+                           A  1256    	XDEF _signon
+                           A  1257    	XDEF _LCD_data_disp
+                           A  1258    	XDEF _LCD_command
+                           A  1259    	XDEF _LCD_data_push
+                           A  1260    	XDEF _set_LCD_control_bus
+                           A  1261    	XDEF _init_LCD
+                           A  1262    	END
+
+
+Errors: 0
+Warnings: 0
+Lines Assembled: 1263

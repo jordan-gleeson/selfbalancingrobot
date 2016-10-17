@@ -1,4 +1,4 @@
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 15-Oct-16     11:53:48     page:   1
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 17-Oct-16     23:42:32     page:   1
 
 
 PC     Object              I  Line    Source 
@@ -54,463 +54,140 @@ PC     Object              I  Line    Source
                            A    50    
                            A    51    ;**************************** _main ***********
                            A    52    ;Name                         Addr/Register   S
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 15-Oct-16     11:53:48     page:   2
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 17-Oct-16     23:42:32     page:   2
 
 
 PC     Object              I  Line    Source main.src
-                           A    53    ;_txFinished                         STATIC    
-                           A    54    ;_command                            STATIC    
-                           A    55    ;_init_coms                          IMPORT  --
-                           A    56    ;_init_IO                            IMPORT  --
+                           A    53    ;_signon                             IMPORT  --
+                           A    54    ;_init_LCD                           IMPORT  --
+                           A    55    ;_init_IO                            IMPORT  --
+                           A    56    
                            A    57    
-                           A    58    
-                           A    59    ; Aggregate Stack Size: 0 (words)
+                           A    58    ; Aggregate Stack Size: 0 (words)
+                           A    59    
                            A    60    
-                           A    61    
-                           A    62    	.FRAME _n_main,?_n_main,RDATA
-                           A    63    	.FCALL _n_init_IO
-                           A    64    	.FCALL _n_init_coms
+                           A    61    	.FRAME _n_main,?_n_main,RDATA
+                           A    62    	.FCALL _n_init_IO
+                           A    63    	.FCALL _n_init_LCD
+                           A    64    	.FCALL _n_signon
                            A    65    	.FRAME _f_main,?_f_main,EDATA
                            A    66    	.FCALL _f_init_IO
-                           A    67    	.FCALL _f_init_coms
-                           A    68    	SEGMENT main_TEXT
-000000                     A    69    _main:
-                           A    70    .define "_main"
-                           A    71    .value _main
-                           A    72    .class 2
-                           A    73    .type 65
-                           A    74    .type 0
-                           A    75    .endef
-                           A    76    .begfunc "main",17,"_main"
-000000 D6 0000             A    77    	CALL	__b_frameset00
-                           A    78    ;    1	#include <ez8.h>
-                           A    79    ;    2	#include <delay.h>
-                           A    80    ;    3	
-                           A    81    ;    4	void init_IO(void);
-                           A    82    ;    5	void isr_U1_RX(void);
-                           A    83    ;    6	void isr_U1_TX(void);
-                           A    84    ;    7	void sendString(char stringSend[25]);
-                           A    85    ;    8	
-                           A    86    ;    9	
-                           A    87    ;   10	char inChar = 0;
-                           A    88    ;   11	char string[25];
-                           A    89    ;   12	// char current = 0;
-                           A    90    ;   13	char txFinished = 1;
-                           A    91    ;   14	char command = 0;
-                           A    92    ;   15	
-                           A    93    ;   16	
-                           A    94    ;   17	void main(void){
-                           A    95    ;   18		init_IO();
-                           A    96    .line 18
-000003 D6 0019             A    97    	CALL	_init_IO
-                           A    98    ;   19	  init_coms();
-                           A    99    .line 19
-000006 D6 0020             A   100    	CALL	_init_coms
-                           A   101    ;   20	
-                           A   102    ;   21		while(1){
-000009                     A   103    _1_L_1:
-                           A   104    .line 21
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 15-Oct-16     11:53:48     page:   3
+                           A    67    	.FCALL _f_init_LCD
+                           A    68    	.FCALL _f_signon
+                           A    69    	SEGMENT main_TEXT
+000000                     A    70    _main:
+                           A    71    .define "_main"
+                           A    72    .value _main
+                           A    73    .class 2
+                           A    74    .type 65
+                           A    75    .type 0
+                           A    76    .endef
+                           A    77    .begfunc "main",20,"_main"
+000000 D6 0000             A    78    	CALL	__b_frameset00
+                           A    79    ;    1	#include <ez8.h>
+                           A    80    ;    2	#include <delay.h>
+                           A    81    ;    3	#include <STRING.H>
+                           A    82    ;    4	#include <LCD.H>
+                           A    83    ;    5	
+                           A    84    ;    6	void init_IO(void);
+                           A    85    ;    7	void isr_U1_RX(void);
+                           A    86    ;    8	void isr_U1_TX(void);
+                           A    87    ;    9	void init_coms(void);
+                           A    88    ;   10	void sendString(char stringSend[25]);
+                           A    89    ;   11	
+                           A    90    ;   12	
+                           A    91    ;   13	char inChar = 0;
+                           A    92    ;   14	char string[25];
+                           A    93    ;   15	// char current = 0;
+                           A    94    ;   16	char txFinished = 1;
+                           A    95    ;   17	char command = 0;
+                           A    96    ;   18	
+                           A    97    ;   19	
+                           A    98    ;   20	void main(void){
+                           A    99    ;   21		init_IO();
+                           A   100    .line 21
+000003 D6 0012             A   101    	CALL	_init_IO
+                           A   102    ;   22		init_LCD();
+                           A   103    .line 22
+000006 D6 0000             A   104    	CALL	_init_LCD
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 17-Oct-16     23:42:32     page:   3
 
 
 PC     Object              I  Line    Source main.src
-                           A   105    ;   22	    if(command != 0){
-                           A   106    .line 22
-000009 A9000002            A   107    	CPX	_command,#-0
-00000D 6B FA               A   108    	JR	Z,_1_L_1
-                           A   109    ;   23	
-                           A   110    ;   24	      txFinished = 1;
-                           A   111    .line 24
-00000F E9010001            A   112    	LDX	_txFinished,#1
-                           A   113    ;   25	    }
-                           A   114    ;   26		}
-                           A   115    .line 26
-000013 8B F4               A   116    	JR	_1_L_1
-                           A   117    ;   27	}
-                           A   118    .line 27
-000015 D6 0000             A   119    	CALL	__b_framereset
-000018 AF                  A   120    	RET	
-                           A   121    .endfunc "main",27,"_main"
-                           A   122    	SEGMENT ROM_DATA
-                           A   123    
-                           A   124    
-                           A   125    ;**************************** _init_IO ********
-                           A   126    ;Name                         Addr/Register   S
+                           A   105    ;   23		signon();
+                           A   106    .line 23
+000009 D6 0000             A   107    	CALL	_signon
+                           A   108    ;   24		// init_coms();
+                           A   109    ;   25	
+                           A   110    ;   26		while(1){
+00000C                     A   111    _1_L_0:
+                           A   112    .line 26
+                           A   113    ;   27	    // if(command != 0){
+                           A   114    ;   28	    //
+                           A   115    ;   29	    //   txFinished = 1;
+                           A   116    ;   30	    // }
+                           A   117    ;   31		}
+                           A   118    .line 31
+00000C 8B FE               A   119    	JR	_1_L_0
+                           A   120    ;   32	}
+                           A   121    .line 32
+00000E D6 0000             A   122    	CALL	__b_framereset
+000011 AF                  A   123    	RET	
+                           A   124    .endfunc "main",32,"_main"
+                           A   125    	SEGMENT ROM_DATA
+                           A   126    
                            A   127    
-                           A   128    
-                           A   129    ; Aggregate Stack Size: 0 (words)
+                           A   128    ;**************************** _init_IO ********
+                           A   129    ;Name                         Addr/Register   S
                            A   130    
                            A   131    
-                           A   132    	.FRAME _n_init_IO,?_n_init_IO,RDATA
-                           A   133    	.FRAME _f_init_IO,?_f_init_IO,EDATA
-                           A   134    	SEGMENT main_TEXT
-000019                     A   135    _init_IO:
-                           A   136    .define "_init_IO"
-                           A   137    .value _init_IO
-                           A   138    .class 2
-                           A   139    .type 65
-                           A   140    .type 0
-                           A   141    .endef
-                           A   142    .begfunc "init_IO",30,"_init_IO"
-000019 D6 0000             A   143    	CALL	__b_frameset00
-                           A   144    ;   28	
-                           A   145    ;   29	
-                           A   146    ;   30	void init_IO(void){
-                           A   147    ;   31	
-                           A   148    ;   32		//Initialise Port G to be entirely 
-                           A   149    ;   33		// PGAF = 0x00;
-                           A   150    ;   34		// PGDD = 0x00;
-                           A   151    ;   35		// PGADDR = 0x00;
-                           A   152    ;   36		// PGOUT = 0x00;
-                           A   153    ;   37	
-                           A   154    ;   38	}
-                           A   155    .line 38
-00001C D6 0000             A   156    	CALL	__b_framereset
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 15-Oct-16     11:53:48     page:   4
+                           A   132    ; Aggregate Stack Size: 0 (words)
+                           A   133    
+                           A   134    
+                           A   135    	.FRAME _n_init_IO,?_n_init_IO,RDATA
+                           A   136    	.FRAME _f_init_IO,?_f_init_IO,EDATA
+                           A   137    	SEGMENT main_TEXT
+000012                     A   138    _init_IO:
+                           A   139    .define "_init_IO"
+                           A   140    .value _init_IO
+                           A   141    .class 2
+                           A   142    .type 65
+                           A   143    .type 0
+                           A   144    .endef
+                           A   145    .begfunc "init_IO",35,"_init_IO"
+000012 D6 0000             A   146    	CALL	__b_frameset00
+                           A   147    ;   33	
+                           A   148    ;   34	
+                           A   149    ;   35	void init_IO(void){
+                           A   150    ;   36	
+                           A   151    ;   37		//Initialise Port G to be entirely 
+                           A   152    ;   38		// PGAF = 0x00;
+                           A   153    ;   39		// PGDD = 0x00;
+                           A   154    ;   40		// PGADDR = 0x00;
+                           A   155    ;   41		// PGOUT = 0x00;
+                           A   156    ;   42	
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 17-Oct-16     23:42:32     page:   4
 
 
 PC     Object              I  Line    Source main.src
-00001F AF                  A   157    	RET	
-                           A   158    .endfunc "init_IO",38,"_init_IO"
-                           A   159    	SEGMENT ROM_DATA
-                           A   160    
-                           A   161    
-                           A   162    ;**************************** _init_coms ******
-                           A   163    ;Name                         Addr/Register   S
-                           A   164    ;_sendString                         IMPORT  --
-                           A   165    ;_EI                                 IMPORT  --
-                           A   166    ;_isr_U1_TX                          IMPORT  --
-                           A   167    ;_isr_U1_RX                          IMPORT  --
-                           A   168    ;_SET_VECTOR                         IMPORT  --
-                           A   169    ;_DI                                 IMPORT  --
-                           A   170    
-                           A   171    
-                           A   172    ; Aggregate Stack Size: 0 (words)
-                           A   173    
-                           A   174    
-                           A   175    	.FRAME _n_init_coms,?_n_init_coms,RDATA
-                           A   176    	.FCALL _n_sendString
-                           A   177    	.FRAME _f_init_coms,?_f_init_coms,EDATA
-                           A   178    	.FCALL _f_sendString
-                           A   179    	SEGMENT TEXT
-000000                     A   180    L__5:
-000000 48656C6C 6F204C61   A   181    	DB	"Hello Latrobe "
-000008 74726F62 6520 
-00000E 00                  A   182    	DB	0
-                           A   183    	SEGMENT main_TEXT
-000020                     A   184    _init_coms:
-                           A   185    .define "_init_coms"
-                           A   186    .value _init_coms
-                           A   187    .class 2
-                           A   188    .type 65
-                           A   189    .type 0
-                           A   190    .endef
-                           A   191    .begfunc "init_coms",40,"_init_coms"
-000020 D6 0000             A   192    	CALL	__b_frameset00
-                           A   193    ;   39	
-                           A   194    ;   40	void init_coms(void){
-                           A   195    ;   41		U1BRH = 0x00;
-                           A   196    .line 41
-000023 E9000F4E            A   197    	LDX	3918,#-0
-                           A   198    ;   42		U1BRL = 0x78;
-                           A   199    .line 42
-000027 E9780F4F            A   200    	LDX	3919,#120
-                           A   201    ;   43	
-                           A   202    ;   44	  //CHANGE PA4&5 are BT RX< TX
-                           A   203    ;   45		PADD &= ~0x20;
-                           A   204    .line 45
-00002B E9010FD0            A   205    	LDX	4048,#1
-00002F 59DF0FD1            A   206    	ANDX	4049,#-33
-                           A   207    ;   46		PADD |= 0x10;
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 15-Oct-16     11:53:48     page:   5
-
-
-PC     Object              I  Line    Source main.src
-                           A   208    .line 46
-000033 E9010FD0            A   209    	LDX	4048,#1
-000037 49100FD1            A   210    	ORX	4049,#16
-                           A   211    ;   47		PAAF |= 0x30;
-                           A   212    .line 47
-00003B E9020FD0            A   213    	LDX	4048,#2
-00003F 49300FD1            A   214    	ORX	4049,#48
-                           A   215    ;   48		PAADDR = 0x00;
-                           A   216    .line 48
-000043 E9000FD0            A   217    	LDX	4048,#-0
-                           A   218    ;   49	
-                           A   219    ;   50		DI();
-                           A   220    .line 50
-000047 8F                  A   221    	DI
-                           A   222    ;   51	
-                           A   223    ;   52		SET_VECTOR(UART1_RX, isr_U1_RX);
-                           A   224    ;   53		SET_VECTOR(UART1_TX, isr_U1_TX);
-                           A   225    ;   54	
-                           A   226    ;   55		IRQ2 = IRQ2 & 0xDF;
-                           A   227    .line 55
-000048 59DF0FC6            A   228    	ANDX	4038,#223
-                           A   229    ;   56		IRQ2ENH &= ~0x60;
-                           A   230    .line 56
-00004C 599F0FC7            A   231    	ANDX	4039,#-97
-                           A   232    ;   57		IRQ2ENL |= 0x60;
-                           A   233    .line 57
-000050 49600FC8            A   234    	ORX	4040,#96
-                           A   235    ;   58	
-                           A   236    ;   59	
-                           A   237    ;   60		U1CTL0 = 0xC0;
-                           A   238    .line 60
-000054 E9C00F4A            A   239    	LDX	3914,#192
-                           A   240    ;   61		U1CTL1 = 0x00;
-                           A   241    .line 61
-000058 E9000F4B            A   242    	LDX	3915,#-0
-                           A   243    ;   62	
-                           A   244    ;   63		EI();
-                           A   245    .line 63
-00005C 9F                  A   246    	EI
-                           A   247    ;   64	
-                           A   248    ;   65		sendString("Hello Latrobe ");
-                           A   249    .line 65
-00005D 8C 00               A   250    	LD	R8,#high(L__5)
-00005F 9C 00               A   251    	LD	R9,#low(L__5)
-000061 D6 0068             A   252    	CALL	_sendString
-                           A   253    ;   66	}
-                           A   254    .line 66
-000064 D6 0000             A   255    	CALL	__b_framereset
-000067 AF                  A   256    	RET	
-                           A   257    .endfunc "init_coms",66,"_init_coms"
-                           A   258    	SEGMENT ROM_DATA
-                           A   259    
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 15-Oct-16     11:53:48     page:   6
-
-
-PC     Object              I  Line    Source main.src
-                           A   260    
-                           A   261    ;**************************** _sendString *****
-                           A   262    ;Name                         Addr/Register   S
-                           A   263    ;_txFinished                         STATIC    
-                           A   264    ;_strlen                             IMPORT  --
-                           A   265    ;size                                    R0    
-                           A   266    ;current                                 R2    
-                           A   267    ;stringSend                           R15-2    
-                           A   268    
-                           A   269    
-                           A   270    ; Aggregate Stack Size: -3 (words)
-                           A   271    
-                           A   272    
-                           A   273    	.FRAME _n_sendString,?_n_sendString,RDATA
-                           A   274    	.FCALL _n_strlen
-                           A   275    	.FRAME _f_sendString,?_f_sendString,EDATA
-                           A   276    	.FCALL _f_strlen
-                           A   277    	SEGMENT main_TEXT
-000068                     A   278    _sendString:
-                           A   279    .define "_sendString"
-                           A   280    .value _sendString
-                           A   281    .class 2
-                           A   282    .type 65
-                           A   283    .type 0
-                           A   284    .endef
-                           A   285    .begfunc "sendString",68,"_sendString"
-                           A   286    .define "stringSend"
-                           A   287    .class 9
-                           A   288    .value -2
-                           A   289    .type 162
-                           A   290    .type 0
-                           A   291    .endef
-000068 5C03                A   292    	LD	R5,#3
-00006A D6 0000             A   293    	CALL	__b_frameset0
-00006D 89E8FE              A   294    	LDX	-2(RR14),R8
-000070 89E9FF              A   295    	LDX	-1(RR14),R9
-                           A   296    ;   67	
-                           A   297    ;   68	void sendString(char stringSend[25]){
-                           A   298    .define "U‹ìjÿh0/J"
-                           A   299    .class 4
-                           A   300    .reg 3
-                           A   301    .type 2
-                           A   302    .type 0
-                           A   303    .endef
-                           A   304    .define "U‹ìjÿh0/J"
-                           A   305    .class 4
-                           A   306    .reg 1
-                           A   307    .type 2
-                           A   308    .type 0
-                           A   309    .endef
-                           A   310    ;   69		char current = 0;
-                           A   311    .line 69
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 15-Oct-16     11:53:48     page:   7
-
-
-PC     Object              I  Line    Source main.src
-000073 B0E2                A   312    	CLR	R2
-                           A   313    ;   70		char size = 0;
-                           A   314    .line 70
-                           A   315    ;   71		size = strlen(stringSend);
-                           A   316    .line 71
-000075 888EFE              A   317    	LDX	R8,-2(RR14)
-000078 889EFF              A   318    	LDX	R9,-1(RR14)
-00007B 89E2FD              A   319    	LDX	-3(RR14),R2
-00007E D6 0000             A   320    	CALL	_strlen
-000081 882EFD              A   321    	LDX	R2,-3(RR14)
-000084 E4E1E0              A   322    	LD	R0,R1
-                           A   323    ;   72		while(1){
-000087                     A   324    _4_L_10:
-                           A   325    .line 72
-                           A   326    ;   73			if(txFinished==1)
-                           A   327    .line 73
-000087 A9010001            A   328    	CPX	_txFinished,#1
-00008B EB FA               A   329    	JR	NE,_4_L_10
-                           A   330    ;   74				{
-                           A   331    ;   75				if(current < size){
-                           A   332    .line 75
-00008D A220                A   333    	CP	R2,R0
-00008F 9B 1E               A   334    	JR	GE,_4_L_8
-                           A   335    ;   76					U1TXD = stringSend[curr
-                           A   336    .line 76
-000091 E4E2E1              A   337    	LD	R1,R2
-000094 90E1                A   338    	RL	R1
-000096 3211                A   339    	SBC	R1,R1
-000098 884EFE              A   340    	LDX	R4,-2(RR14)
-00009B 885EFF              A   341    	LDX	R5,-1(RR14)
-00009E 0252                A   342    	ADD	R5,R2
-0000A0 1241                A   343    	ADC	R4,R1
-0000A2 86E4E1              A   344    	LDX	R1,@RR4
-0000A5 941F48              A   345    	LDX	3912,R1
-                           A   346    ;   77					current++;
-                           A   347    .line 77
-0000A8 2E                  A   348    	INC	R2
-                           A   349    ;   78					txFinished = 0;
-                           A   350    .line 78
-0000A9 E9000001            A   351    	LDX	_txFinished,#-0
-                           A   352    ;   79				} else {
-                           A   353    .line 79
-0000AD 8B D8               A   354    	JR	_4_L_10
-0000AF                     A   355    _4_L_8:
-                           A   356    ;   80					current = 0;
-                           A   357    .line 80
-                           A   358    ;   81					txFinished = 0;
-                           A   359    .line 81
-0000AF E9000001            A   360    	LDX	_txFinished,#-0
-                           A   361    ;   82					break;
-                           A   362    ;   83				}
-                           A   363    ;   84			}
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 15-Oct-16     11:53:48     page:   8
-
-
-PC     Object              I  Line    Source main.src
-                           A   364    ;   85		}
-                           A   365    ;   86	
-                           A   366    ;   87	}
-                           A   367    .line 87
-0000B3 D6 0000             A   368    	CALL	__b_framereset
-0000B6 AF                  A   369    	RET	
-                           A   370    .endfunc "sendString",87,"_sendString"
-                           A   371    	SEGMENT ROM_DATA
-                           A   372    
-                           A   373    
-                           A   374    ;**************************** _isr_U1_RX ******
-                           A   375    ;Name                         Addr/Register   S
-                           A   376    ;_EI                                 IMPORT  --
-                           A   377    ;_command                            STATIC    
-                           A   378    ;_DI                                 IMPORT  --
-                           A   379    
-                           A   380    
-                           A   381    ; Aggregate Stack Size: 0 (words)
-                           A   382    
-                           A   383    
-                           A   384    	.FRAME _n_isr_U1_RX,?_n_isr_U1_RX,RDATA
-                           A   385    	.FRAME _f_isr_U1_RX,?_f_isr_U1_RX,EDATA
-                           A   386    	SEGMENT main_TEXT
-0000B7                     A   387    _isr_U1_RX:
-                           A   388    .define "_isr_U1_RX"
-                           A   389    .value _isr_U1_RX
-                           A   390    .class 2
-                           A   391    .type 65
-                           A   392    .type 0
-                           A   393    .endef
-                           A   394    .begfunc "isr_U1_RX",90,"_isr_U1_RX"
-0000B7 C8FFD0              A   395    	PUSHX	4093
-0000BA D6 0000             A   396    	CALL	__b_iframeset00
-                           A   397    ;   88	
-                           A   398    ;   89	#pragma interrupt
-                           A   399    ;   90	void isr_U1_RX(void){
-                           A   400    ;   91		DI();
-                           A   401    .line 91
-0000BD 8F                  A   402    	DI
-                           A   403    ;   92		command = U1RXD;
-                           A   404    .line 92
-0000BE E8F48002            A   405    	LDX	_command,3912
-                           A   406    ;   93		IRQ2 &= ~0x40;
-                           A   407    .line 93
-0000C2 59BF0FC6            A   408    	ANDX	4038,#-65
-                           A   409    ;   94		EI();
-                           A   410    .line 94
-0000C6 9F                  A   411    	EI
-                           A   412    ;   95	}
-                           A   413    .line 95
-0000C7 D6 0000             A   414    	CALL	__b_iframereset
-0000CA BF                  A   415    	IRET	
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 15-Oct-16     11:53:48     page:   9
-
-
-PC     Object              I  Line    Source main.src
-                           A   416    .endfunc "isr_U1_RX",95,"_isr_U1_RX"
-                           A   417    	SEGMENT ROM_DATA
-                           A   418    
-                           A   419    
-                           A   420    ;**************************** _isr_U1_TX ******
-                           A   421    ;Name                         Addr/Register   S
-                           A   422    ;_txFinished                         STATIC    
-                           A   423    
-                           A   424    
-                           A   425    ; Aggregate Stack Size: 0 (words)
-                           A   426    
-                           A   427    
-                           A   428    	.FRAME _n_isr_U1_TX,?_n_isr_U1_TX,RDATA
-                           A   429    	.FRAME _f_isr_U1_TX,?_f_isr_U1_TX,EDATA
-                           A   430    	SEGMENT main_TEXT
-0000CB                     A   431    _isr_U1_TX:
-                           A   432    .define "_isr_U1_TX"
-                           A   433    .value _isr_U1_TX
-                           A   434    .class 2
-                           A   435    .type 65
-                           A   436    .type 0
-                           A   437    .endef
-                           A   438    .begfunc "isr_U1_TX",98,"_isr_U1_TX"
-0000CB C8FFD0              A   439    	PUSHX	4093
-0000CE D6 0000             A   440    	CALL	__b_iframeset00
-                           A   441    ;   96	
-                           A   442    ;   97	#pragma interrupt
-                           A   443    ;   98	void isr_U1_TX(void){
-                           A   444    ;   99		txFinished = 1;
-                           A   445    .line 99
-0000D1 E9010001            A   446    	LDX	_txFinished,#1
-                           A   447    ;  100	}
-                           A   448    .line 100
-0000D5 D6 0000             A   449    	CALL	__b_iframereset
-0000D8 BF                  A   450    	IRET	
-                           A   451    .endfunc "isr_U1_TX",100,"_isr_U1_TX"
-00002C 00CB                A   452    	VECTOR	UART1_TX=_isr_U1_TX
-00002A 00B7                A   453    	VECTOR	UART1_RX=_isr_U1_RX
-                           A   454    	XREF _strlen:ROM
-                           A   455    	XREF __b_framereset:ROM
-                           A   456    	XREF __b_iframereset:ROM
-                           A   457    	XREF __b_frameset0:ROM
-                           A   458    	XREF __b_frameset00:ROM
-                           A   459    	XREF __b_iframeset00:ROM
-                           A   460    	XDEF _isr_U1_TX
-                           A   461    	XDEF _isr_U1_RX
-                           A   462    	XDEF _sendString
-                           A   463    	XDEF _init_coms
-                           A   464    	XDEF _init_IO
-                           A   465    	XDEF _main
-                           A   466    	XDEF _command
-                           A   467    	XDEF _txFinished
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 15-Oct-16     11:53:48     page:  10
-
-
-PC     Object              I  Line    Source main.src
-                           A   468    	XDEF _string
-                           A   469    	XDEF _inChar
-                           A   470    	END
+                           A   157    ;   43	}
+                           A   158    .line 43
+000015 D6 0000             A   159    	CALL	__b_framereset
+000018 AF                  A   160    	RET	
+                           A   161    .endfunc "init_IO",43,"_init_IO"
+                           A   162    	XREF _signon:ROM
+                           A   163    	XREF _init_LCD:ROM
+                           A   164    	XREF __b_framereset:ROM
+                           A   165    	XREF __b_frameset00:ROM
+                           A   166    	XDEF _init_IO
+                           A   167    	XDEF _main
+                           A   168    	XDEF _command
+                           A   169    	XDEF _txFinished
+                           A   170    	XDEF _string
+                           A   171    	XDEF _inChar
+                           A   172    	END
 
 
 Errors: 0
 Warnings: 0
-Lines Assembled: 471
+Lines Assembled: 173

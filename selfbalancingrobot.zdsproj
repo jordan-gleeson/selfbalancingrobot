@@ -6,6 +6,8 @@
 <file filter-key="">.\delay.H</file>
 <file filter-key="">.\delay.C</file>
 <file filter-key="">.\main.C</file>
+<file filter-key="">.\LCD.H</file>
+<file filter-key="">.\LCD.C</file>
 </files>
 
 <!-- configuration information -->
@@ -141,7 +143,7 @@
 <tools>
 <tool name="Assembler">
 <options>
-<option name="define" type="string" change-action="assemble">_Z8F6423=1,_Z8ENCORE_XP_64XX_SERIES=1,_Z8ENCORE_F642X=1,_SIMULATE=1</option>
+<option name="define" type="string" change-action="assemble">_Z8F6423=1,_Z8ENCORE_XP_64XX_SERIES=1,_SIMULATE=1,_Z8ENCORE_F642X=1</option>
 <option name="include" type="string" change-action="assemble"></option>
 <option name="list" type="boolean" change-action="none">true</option>
 <option name="listmac" type="boolean" change-action="none">false</option>
@@ -159,7 +161,7 @@
 <option name="fastcall" type="boolean" change-action="compile">true</option>
 <option name="codegen" type="string" change-action="none">UserDefined</option>
 <option name="const" type="string" change-action="compile">RAM</option>
-<option name="define" type="string" change-action="compile">_Z8F6423,_Z8ENCORE_XP_64XX_SERIES,_Z8ENCORE_F642X,_SIMULATE</option>
+<option name="define" type="string" change-action="compile">_Z8F6423,_Z8ENCORE_XP_64XX_SERIES,_SIMULATE,_Z8ENCORE_F642X</option>
 <option name="genprintf" type="boolean" change-action="compile">true</option>
 <option name="keepasm" type="boolean" change-action="none">false</option>
 <option name="keeplst" type="boolean" change-action="none">false</option>

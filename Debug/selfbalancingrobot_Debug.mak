@@ -71,6 +71,8 @@ clean:
             $(RM) $(WORKDIR)\delay.obj
 	@if exist $(WORKDIR)\main.obj  \
             $(RM) $(WORKDIR)\main.obj
+	@if exist $(WORKDIR)\LCD.obj  \
+            $(RM) $(WORKDIR)\LCD.obj
 
 # pre-4.11.0 compatibility
 rebuildall: buildall 
@@ -79,7 +81,8 @@ LIBS =
 
 OBJS =  \
             $(WORKDIR)\delay.obj  \
-            $(WORKDIR)\main.obj
+            $(WORKDIR)\main.obj  \
+            $(WORKDIR)\LCD.obj
 
 selfbalancingrobot: $(OBJS)
 	 $(LD) $(LDFLAGS)
@@ -96,7 +99,24 @@ $(WORKDIR)\main.obj :  \
             $(INCLUDE)\zilog\gpio.h  \
             $(INCLUDE)\zilog\uart.h  \
             $(INCLUDE)\zilog\uartdefs.h  \
+            $(INCLUDE)\std\STRING.H  \
+            $(INCLUDE)\zilog\Zconst.h  \
             $(INCLUDE)\zilog\ez8.h  \
+            C:\Users\Jordan\Documents\GitHub\thirdyearproject\LCD.H  \
             C:\Users\Jordan\Documents\GitHub\thirdyearproject\delay.H
 	 $(CC) $(CFLAGS) C:\Users\Jordan\DOCUME~1\GitHub\THIRDY~1\main.C
+
+$(WORKDIR)\LCD.obj :  \
+            C:\Users\Jordan\DOCUME~1\GitHub\THIRDY~1\LCD.C  \
+            $(INCLUDE)\zilog\defines.h  \
+            $(INCLUDE)\zilog\dmadefs.h  \
+            $(INCLUDE)\zilog\gpio.h  \
+            $(INCLUDE)\zilog\uart.h  \
+            $(INCLUDE)\zilog\uartdefs.h  \
+            $(INCLUDE)\std\STRING.H  \
+            $(INCLUDE)\zilog\Zconst.h  \
+            $(INCLUDE)\zilog\ez8.h  \
+            C:\Users\Jordan\Documents\GitHub\thirdyearproject\LCD.H  \
+            C:\Users\Jordan\Documents\GitHub\thirdyearproject\delay.H
+	 $(CC) $(CFLAGS) C:\Users\Jordan\DOCUME~1\GitHub\THIRDY~1\LCD.C
 
