@@ -69,9 +69,12 @@ define __user_frequency = 18432000
 
 "C:\Users\Jordan\Documents\GitHub\thirdyearproject\Debug\selfbalancingrobot"= \
  C:\PROGRA~2\ZiLOG\ZDSII_~1.0\lib\zilog\startupl.obj, \
- .\delay.obj, \
+ .\DELAY.obj, \
  .\main.obj, \
  .\LCD.obj, \
+ .\uart.obj, \
+ .\motor.obj, \
+ .\i2c.obj, \
  C:\PROGRA~2\ZiLOG\ZDSII_~1.0\lib\std\chelpd.lib, \
  C:\PROGRA~2\ZiLOG\ZDSII_~1.0\lib\std\crtldfd.lib, \
  C:\PROGRA~2\ZiLOG\ZDSII_~1.0\lib\std\fpldfd.lib, \

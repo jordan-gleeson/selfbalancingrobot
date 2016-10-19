@@ -1,4 +1,4 @@
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 15-Oct-16     11:53:48     page:   1
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     02:22:34     page:   1
 
 
 PC     Object              I  Line    Source 
@@ -54,7 +54,7 @@ PC     Object              I  Line    Source
                            A    50    .class 4
                            A    51    .reg 18
                            A    52    .type 13
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 15-Oct-16     11:53:48     page:   2
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     02:22:34     page:   2
 
 
 PC     Object              I  Line    Source delay.src
@@ -110,7 +110,7 @@ PC     Object              I  Line    Source delay.src
 000035 1FA6E200            A   102    	CPC	R2,#-0
 000039 7B 08               A   103    	JR	C,_1_L_8
 00003B 8B 0A               A   104    	JR	_1_L_11
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 15-Oct-16     11:53:48     page:   3
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     02:22:34     page:   3
 
 
 PC     Object              I  Line    Source delay.src
@@ -166,7 +166,7 @@ PC     Object              I  Line    Source delay.src
                            A   154    .begfunc "sdly",16,"_sdly"
                            A   155    .define "dly_time"
                            A   156    .class 17
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 15-Oct-16     11:53:48     page:   4
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     02:22:34     page:   4
 
 
 PC     Object              I  Line    Source delay.src

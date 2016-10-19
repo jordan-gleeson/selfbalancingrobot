@@ -4,10 +4,16 @@
 <!-- file information -->
 <files>
 <file filter-key="">.\delay.H</file>
-<file filter-key="">.\delay.C</file>
+<file filter-key="">.\DELAY.C</file>
 <file filter-key="">.\main.C</file>
 <file filter-key="">.\LCD.H</file>
 <file filter-key="">.\LCD.C</file>
+<file filter-key="">.\uart.h</file>
+<file filter-key="">.\uart.C</file>
+<file filter-key="">.\motor.h</file>
+<file filter-key="">.\motor.C</file>
+<file filter-key="">.\i2c.h</file>
+<file filter-key="">.\i2c.c</file>
 </files>
 
 <!-- configuration information -->
@@ -270,6 +276,8 @@
 
 <!-- watch information -->
 <watch-elements>
+<watch-element expression="rxFlag" />
+<watch-element expression="command" />
 </watch-elements>
 
 <!-- breakpoint information -->
