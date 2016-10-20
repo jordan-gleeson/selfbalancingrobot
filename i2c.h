@@ -6,7 +6,9 @@
 //Initalises I2C
 void i2cInit(void);
 
-void gyro_read(void);
+void mems_read(void);
+
+void t1_mem_isr(void);
 
 //Write a single byte must not use while performing read
 unsigned char i2cWrite(unsigned char dev_adrs, unsigned char reg_adrs, unsigned char w_data);
@@ -49,6 +51,7 @@ Note: rest default
 #define X_HIGH_ADDRESS		(0x29)
 #define Y_LOW_ADDRESS		(0x2A)
 #define Y_HIGH_ADDRESS		(0x2B)
+#define Z_LOW_ADDRESS		(0x2C)
 
 
 /**********************************
@@ -78,15 +81,17 @@ Note: rest default
 
 #endif //I2C__H
 
+char gyroRead[2];
+char accRead[6];
 
-unsigned char * acc_data_xl;
-unsigned char * acc_data_xh;
-
-unsigned char * acc_data_yl;
-unsigned char * acc_data_yh;
-
-unsigned char * gyro_data_l;
-unsigned char * gyro_data_h;
+// unsigned char &acc_data_xl;
+// unsigned char &acc_data_xh;
+//
+// unsigned char &acc_data_yl;
+// unsigned char &acc_data_yh;
+//
+// unsigned char &gyro_data_l;
+// unsigned char &gyro_data_h;
 
 char acc_xh;
 char acc_xl;
@@ -97,3 +102,10 @@ char acc_x;
 char gyro_h;
 char gyro_l;
 int gyro_val;
+
+int accXValue;
+int accYValue;
+int accZValue;
+int gyroXValue;
+// int gyroYValue;
+// int gyroZValue;

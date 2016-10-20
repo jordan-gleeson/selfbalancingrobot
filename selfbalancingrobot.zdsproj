@@ -278,10 +278,40 @@
 <watch-elements>
 <watch-element expression="rxFlag" />
 <watch-element expression="command" />
+<watch-element expression="accRead" />
+<watch-element expression="accXValue" />
 </watch-elements>
 
 <!-- breakpoint information -->
 <breakpoints>
+<breakpoint temporary="false" enabled="true" >
+<line-number>245</line-number>
+<pathname>C:\Users\Jordan\Documents\GitHub\thirdyearproject\i2c.c</pathname>
+<address>2978</address>
+<command></command>
+<preserve-type>0</preserve-type>
+</breakpoint>
+<breakpoint temporary="false" enabled="true" >
+<line-number>204</line-number>
+<pathname>C:\Users\Jordan\Documents\GitHub\thirdyearproject\i2c.c</pathname>
+<address>2791</address>
+<command></command>
+<preserve-type>0</preserve-type>
+</breakpoint>
+<breakpoint temporary="false" enabled="true" >
+<line-number>28</line-number>
+<pathname>C:\Users\Jordan\Documents\GitHub\thirdyearproject\uart.C</pathname>
+<address>1763</address>
+<command></command>
+<preserve-type>0</preserve-type>
+</breakpoint>
+<breakpoint temporary="false" enabled="true" >
+<line-number>28</line-number>
+<pathname>C:\Users\Jordan\Documents\GitHub\thirdyearproject\main.C</pathname>
+<address>0</address>
+<command></command>
+<preserve-type>0</preserve-type>
+</breakpoint>
 </breakpoints>
 
 </project>

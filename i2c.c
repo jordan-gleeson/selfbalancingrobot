@@ -5,6 +5,7 @@
 #include <uart.h>
 #include "i2c.h"
 #include <LCD.h>
+#include <STRING.H>
 
 #define FAIL (0)
 #define PASS (1)
@@ -81,7 +82,6 @@ void i2cInit(void)
 	I2CCTL &= ~TXI_MASK;
 	//disable I2C control register
 	I2CCTL &= ~I2CEN_MASK;
-	DI();
 	//set isr for I2C
 	SET_VECTOR(I2C,Si2c_Isr);
 	//set I2C isr to highest priority
@@ -92,7 +92,23 @@ void i2cInit(void)
 	IRQ1ENH |= 0x03;
 	IRQ1ENL |= 0x03;
 	IRQPS |= 0x03;
-	EI();
+
+	PCAF &= 0x02;
+	//set Timers to PWM mode, no prescaler
+	T1CTL1 = 0x21; //CONTINUOUS_MODE | PRESCALAR_16
+	//set reset count value to 0
+	T1H = 0;
+	T1L = 0;
+	//set reload value
+	T1RH = 0xC3; //50000
+	T1RL = 0x50;
+
+	//T1CTL1 |= 0x80;
+
+	IRQ0ENH |= 0x40;
+	IRQ0ENL |= 0x40;
+
+	SET_VECTOR(TIMER1, t1_mem_isr);
 	//init internal state so it doesn't init to busy or failed
 	state.reading = DONE;
 }
@@ -185,35 +201,51 @@ void i2cStartRead(unsigned char deviceAddress, unsigned char registerAddress, un
 	I2CCTL |= TXI_MASK;
 }
 
-void gyro_read(void){
+void mems_read(void){
 	char display[25];
-	i2cStartRead(ACCEL, X_LOW_ADDRESS, 1, acc_data_xl);
-	i2cStartRead(ACCEL, X_HIGH_ADDRESS, 1, acc_data_xh);
+	i2cWrite(ACCEL, REG1_A_ADDRESS, REG1_A_DATA);
+	i2cWrite(ACCEL, REG4_A_ADDRESS, REG4_A_DATA);
+	i2cWrite(GYRO, REG1_G_ADDRESS, REG1_G_DATA);
+	i2cWrite(GYRO, REG4_G_ADDRESS, REG4_G_DATA);
+	i2cWrite(GYRO, REG5_G_ADDRESS, REG5_G_DATA);
 
-	i2cStartRead(ACCEL, Y_LOW_ADDRESS, 1, acc_data_yl);
-	i2cStartRead(ACCEL, Y_HIGH_ADDRESS, 1, acc_data_yh);
+	i2cStartRead(ACCEL, X_LOW_ADDRESS, 6, accRead);
+	i2cStartRead(GYRO, RATE_LOW_ADDRESS, 2, gyroRead);
+	// i2cStartRead(ACCEL, X_HIGH_ADDRESS, 1, acc_data_xh);
 
-	i2cStartRead(GYRO, RATE_LOW_ADDRESS, 1, gyro_data_l);
-	i2cStartRead(GYRO, RATE_HIGH_ADDRESS, 1, gyro_data_h);
+	// i2cStartRead(ACCEL, Y_LOW_ADDRESS, 1, acc_data_yl);
+	// i2cStartRead(ACCEL, Y_HIGH_ADDRESS, 1, acc_data_yh);
+	//
+	// i2cStartRead(GYRO, RATE_LOW_ADDRESS, 1, gyro_data_l);
+	// i2cStartRead(GYRO, RATE_HIGH_ADDRESS, 1, gyro_data_h);
 
-	acc_xh = *acc_data_xh;
-	acc_xl = *acc_data_xl;
-	acc_x = (acc_xl & ((acc_xh<<8) & 0xFF00));
+	// acc_xh = *acc_data_xh;
+	// acc_xl = *acc_data_xl;
+	// acc_x = (acc_xl & ((acc_xh<<8) & 0xFF00));
+	//
+	// acc_yh = *acc_data_yh;
+	// acc_yl = *acc_data_yl;
+	// acc_y = (acc_yl & ((acc_yh<<8) & 0xFF00));
 
-	acc_yh = *acc_data_yh;
-	acc_yl = *acc_data_yl;
-	acc_y = (acc_yl & ((acc_yh<<8) & 0xFF00));
 
+	// gyro_h = *gyro_data_h;
+	// gyro_l = *gyro_data_l;
+	// gyro_val = (((gyro_h << 8) & 0xFF00) & gyro_l);
+	while(i2cIsDataReady()==0){}
+	accXValue = accRead[1] & ((accRead[0]<<8) & 0xFF00);
+	accYValue = accRead[3] & ((accRead[2]<<8) & 0xFF00);
+	accZValue = accRead[5] & ((accRead[4]<<8) & 0xFF00);
+	gyroXValue = gyroRead[0] & ((gyroRead[1]<<8) & 0xFF00);
+// 	gyroYValue = gyroRead[2] & ((gyroRead[3]<<8) & 0xFF00);
+// 	gyroZValue = gyroRead[4] & ((gyroRead[5]<<8) & 0xFF00);
 
-	gyro_h = *gyro_data_h;
-	gyro_l = *gyro_data_l;
-	gyro_val = (((gyro_h << 8) & 0xFF00) & gyro_l);
-
-	sprintf(display, "%d", acc_xl);
-	sendString(display);
-// 	printMessage(display, 1);
 	//LCD Display
+// 	if(accXValue != 0){
 
+		sprintf(display, "%d", accXValue);
+		sendString(display);
+		sendString("\r\n");
+// 	}
 }
 
 
@@ -342,4 +374,18 @@ Returns:
 char i2cIsDataReady(void)
 {
 	return (char) state.reading;
+}
+
+#pragma interrupt
+void t1_mem_isr(void){
+	char display[25];
+
+	mems_read();
+	if(accXValue != 0){
+
+		sprintf(display, "%d", accXValue);
+		sendString(display);
+		sendString("\r\n");
+	}
+// 	printMessage(display, 1);
 }

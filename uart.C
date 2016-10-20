@@ -11,8 +11,6 @@ void init_coms(void){
 	PADD |= 0x10;
 	PAADDR = 0x00;
 
-	DI();
-
 	SET_VECTOR(UART0_RX, isr_U1_RX);
 	SET_VECTOR(UART0_TX, isr_U1_TX);
 
@@ -24,9 +22,7 @@ void init_coms(void){
 	U0CTL0 = 0xC0;
 	U0CTL1 = 0x00;
 
-	EI();
-
-	sendString("AT+NAMErJordan");
+	
 }
 
 void sendString(char stringSend[25]){

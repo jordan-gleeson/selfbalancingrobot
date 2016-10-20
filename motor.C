@@ -106,29 +106,34 @@ void motor2Speed(int s){
 	T2PWML = (s & 0x00FF);
 }
 
-// void motorsSet(signed int t, int r, int offsetL, int offsetR){
-// 	int m1;
-// 	int m2;
-// 	m1 = t + r;
-// 	m2 = t - r;
-// 	if(m2 > 0)
-// 	{
-// 		motor2Direction(backward);
-// 	}
-// 	else
-// 	{
-// 		m2 = - m2;
-// 		motor2Direction(forward);
-// 	}
-// 	if(m1 > 0)
-// 	{
-// 		motor1Direction(backward);
-// 	}
-// 	else
-// 	{
-// 		m1 = - m1;
-// 		motor1Direction(forward);
-// 	}
-// 	motor2Speed(m2+offsetL);
-// 	motor1Speed(m1+offsetR);
-// }
+void motorsSet(signed int t, int r, int offsetL, int offsetR){
+	int m1;
+	int m2;
+	m1 = t + r;
+	m2 = t - r;
+	if(t==0){
+		motor1Direction(MOTOR_STOP);
+		motor2Direction(MOTOR_STOP);
+	} else {
+	if(m2 > 0)
+	{
+		motor2Direction(MOTOR_BACKWARD);
+	}
+	else
+	{
+		m2 = - m2;
+		motor2Direction(MOTOR_FORWARD);
+	}
+	if(m1 > 0)
+	{
+		motor1Direction(MOTOR_BACKWARD);
+	}
+	else
+	{
+		m1 = - m1;
+		motor1Direction(MOTOR_FORWARD);
+	}
+	motor2Speed(m2+offsetL);
+	motor1Speed(m1+offsetR);
+	}
+}
