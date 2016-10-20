@@ -33,6 +33,8 @@ void main(void){
 	command = 0;
 	
 	sendString("got here");
+	
+	printMessage("This is a test", 1);
 
 	while(1){
 

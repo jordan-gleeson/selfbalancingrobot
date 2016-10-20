@@ -37,7 +37,7 @@
 <tool name="Compiler">
 <options>
 <option name="bfpack" type="string" change-action="compile">tight</option>
-<option name="fastcall" type="boolean" change-action="compile">true</option>
+<option name="fastcall" type="boolean" change-action="compile">false</option>
 <option name="codegen" type="string" change-action="none">UserDefined</option>
 <option name="const" type="string" change-action="compile">RAM</option>
 <option name="define" type="string" change-action="compile">_Z8F6423,_Z8ENCORE_XP_64XX_SERIES,_Z8ENCORE_F642X</option>
@@ -285,30 +285,9 @@
 <!-- breakpoint information -->
 <breakpoints>
 <breakpoint temporary="false" enabled="true" >
-<line-number>245</line-number>
-<pathname>C:\Users\Jordan\Documents\GitHub\thirdyearproject\i2c.c</pathname>
-<address>2978</address>
-<command></command>
-<preserve-type>0</preserve-type>
-</breakpoint>
-<breakpoint temporary="false" enabled="true" >
-<line-number>204</line-number>
-<pathname>C:\Users\Jordan\Documents\GitHub\thirdyearproject\i2c.c</pathname>
-<address>2791</address>
-<command></command>
-<preserve-type>0</preserve-type>
-</breakpoint>
-<breakpoint temporary="false" enabled="true" >
-<line-number>28</line-number>
-<pathname>C:\Users\Jordan\Documents\GitHub\thirdyearproject\uart.C</pathname>
-<address>1763</address>
-<command></command>
-<preserve-type>0</preserve-type>
-</breakpoint>
-<breakpoint temporary="false" enabled="true" >
-<line-number>28</line-number>
-<pathname>C:\Users\Jordan\Documents\GitHub\thirdyearproject\main.C</pathname>
-<address>0</address>
+<line-number>193</line-number>
+<pathname>C:\Users\Jordan\Documents\GitHub\thirdyearproject\LCD.C</pathname>
+<address>1302</address>
 <command></command>
 <preserve-type>0</preserve-type>
 </breakpoint>

@@ -5,7 +5,7 @@
 /*  IDE component: d:5.0:11011302 */
 
 /* compiler options */
-/* -bfpack:tight -fastcall -const:RAM -define:_Z8F6423 */
+/* -bfpack:tight -NOfastcall -const:RAM -define:_Z8F6423 */
 /* -define:_Z8ENCORE_XP_64XX_SERIES -define:_Z8ENCORE_F642X */
 /* -genprintf -NOkeepasm -keeplst -NOlist -NOlistinc -model:L */
 /* -NOoptlink -promote -regvar:8 -reduceopt */
@@ -76,8 +76,8 @@ define __user_frequency = 18432000
  .\motor.obj, \
  .\i2c.obj, \
  C:\PROGRA~2\ZiLOG\ZDSII_~1.0\lib\std\chelpd.lib, \
- C:\PROGRA~2\ZiLOG\ZDSII_~1.0\lib\std\crtldfd.lib, \
- C:\PROGRA~2\ZiLOG\ZDSII_~1.0\lib\std\fpldfd.lib, \
- C:\PROGRA~2\ZiLOG\ZDSII_~1.0\lib\zilog\csioldfd.lib, \
+ C:\PROGRA~2\ZiLOG\ZDSII_~1.0\lib\std\crtldd.lib, \
+ C:\PROGRA~2\ZiLOG\ZDSII_~1.0\lib\std\fpldd.lib, \
+ C:\PROGRA~2\ZiLOG\ZDSII_~1.0\lib\zilog\csioldd.lib, \
  C:\PROGRA~2\ZiLOG\ZDSII_~1.0\lib\zilog\zsldevinitdummy.lib
 

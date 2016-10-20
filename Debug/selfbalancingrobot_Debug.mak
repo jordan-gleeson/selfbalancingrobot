@@ -23,7 +23,7 @@ LD = @$(BIN)\eZ8link
 AR = @$(BIN)\eZ8lib
 
 CFLAGS =  \
--bfpack:tight -fastcall -const:RAM -define:_Z8F6423  \
+-bfpack:tight -NOfastcall -const:RAM -define:_Z8F6423  \
 -define:_Z8ENCORE_XP_64XX_SERIES -define:_Z8ENCORE_F642X  \
 -genprintf -NOkeepasm -keeplst -NOlist -NOlistinc -model:L  \
 -NOoptlink -promote -regvar:8 -reduceopt  \

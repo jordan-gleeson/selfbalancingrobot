@@ -1,9 +1,9 @@
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     16:45:17     page:   1
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:42:45     page:   1
 
 
 PC     Object              I  Line    Source 
                            A     1    ; Zilog Z8 Encore! ANSI C Compiler Release 3.62
-                           A     2    ; -nolocalcse -optsize -fastcall -const=RAM -mo
+                           A     2    ; -nolocalcse -optsize -nofastcall -const=RAM -
                            A     3    ; -nooptlink -regvar -reduceopt -debug -norevaa
                            A     4    ; -alias 
                            A     5    	DEFINE motor_TEXT,SPACE=ROM
@@ -54,7 +54,7 @@ PC     Object              I  Line    Source
                            A    50    .line 6
 00000B E9010FD8            A    51    	LDX	4056,#1
 00000F 597F0FD9            A    52    	ANDX	4057,#127
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     16:45:17     page:   2
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:42:45     page:   2
 
 
 PC     Object              I  Line    Source motor.src
@@ -110,7 +110,7 @@ PC     Object              I  Line    Source motor.src
                            A   102    .line 25
 00005B 841000              A   103    	LDX	R1,_RELOAD
 00005E 840001              A   104    	LDX	R0,_RELOAD+1
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     16:45:17     page:   3
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:42:45     page:   3
 
 
 PC     Object              I  Line    Source motor.src
@@ -166,7 +166,7 @@ PC     Object              I  Line    Source motor.src
 00000C 00CB                A   154    	DW	_2_L_3
 00000E 0004                A   155    	DW	4
 000010 00D9                A   156    	DW	_2_L_4
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     16:45:17     page:   4
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:42:45     page:   4
 
 
 PC     Object              I  Line    Source motor.src
@@ -175,7 +175,7 @@ PC     Object              I  Line    Source motor.src
                            A   159    
                            A   160    ;**************************** _motor1Direction 
                            A   161    ;Name                         Addr/Register   S
-                           A   162    ;direction                               R8    
+                           A   162    ;direction                            R15+4    
                            A   163    
                            A   164    
                            A   165    ; Aggregate Stack Size: 0 (words)
@@ -193,8 +193,8 @@ PC     Object              I  Line    Source motor.src
                            A   177    .endef
                            A   178    .begfunc "motor1Direction",38,"_motor1Direction
                            A   179    .define "direction"
-                           A   180    .class 17
-                           A   181    .reg 9
+                           A   180    .class 9
+                           A   181    .value 4
                            A   182    .type 2
                            A   183    .type 0
                            A   184    .endef
@@ -205,10 +205,10 @@ PC     Object              I  Line    Source motor.src
                            A   189    ;   38	{
                            A   190    ;   39		switch (direction)
                            A   191    .line 39
-00009C E4E8E0              A   192    	LD	R0,R8
-00009F 90E0                A   193    	RL	R0
-0000A1 3200                A   194    	SBC	R0,R0
-0000A3 E4E8E1              A   195    	LD	R1,R8
+00009C 881E04              A   192    	LDX	R1,4(RR14)
+00009F E4E1E0              A   193    	LD	R0,R1
+0000A2 90E0                A   194    	RL	R0
+0000A4 3200                A   195    	SBC	R0,R0
 0000A6 2C 00               A   196    	LD	R2,#high(L__4)
 0000A8 3C 00               A   197    	LD	R3,#low(L__4)
 0000AA D6 0000             A   198    	CALL	__b_ucase
@@ -222,7 +222,7 @@ PC     Object              I  Line    Source motor.src
 0000AF 59FD0FEB            A   206    	ANDX	4075,#-3
                            A   207    ;   43				PGOUT |= 0x01;    //IN2A se
                            A   208    .line 43
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     16:45:17     page:   5
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:42:45     page:   5
 
 
 PC     Object              I  Line    Source motor.src
@@ -278,7 +278,7 @@ PC     Object              I  Line    Source motor.src
 0000DD                     A   258    _2_L_5:
                            A   259    .line 63
 0000DD D6 0000             A   260    	CALL	__b_framereset
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     16:45:17     page:   6
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:42:45     page:   6
 
 
 PC     Object              I  Line    Source motor.src
@@ -301,7 +301,7 @@ PC     Object              I  Line    Source motor.src
                            A   277    
                            A   278    ;**************************** _motor2Direction 
                            A   279    ;Name                         Addr/Register   S
-                           A   280    ;direction                               R8    
+                           A   280    ;direction                            R15+4    
                            A   281    
                            A   282    
                            A   283    ; Aggregate Stack Size: 0 (words)
@@ -319,8 +319,8 @@ PC     Object              I  Line    Source motor.src
                            A   295    .endef
                            A   296    .begfunc "motor2Direction",65,"_motor2Direction
                            A   297    .define "direction"
-                           A   298    .class 17
-                           A   299    .reg 9
+                           A   298    .class 9
+                           A   299    .value 4
                            A   300    .type 2
                            A   301    .type 0
                            A   302    .endef
@@ -329,12 +329,12 @@ PC     Object              I  Line    Source motor.src
                            A   305    ;   65	void motor2Direction(char direction){
                            A   306    ;   66		switch (direction){
                            A   307    .line 66
-0000E4 E4E8E0              A   308    	LD	R0,R8
-0000E7 90E0                A   309    	RL	R0
-0000E9 3200                A   310    	SBC	R0,R0
-0000EB E4E8E1              A   311    	LD	R1,R8
+0000E4 881E04              A   308    	LDX	R1,4(RR14)
+0000E7 E4E1E0              A   309    	LD	R0,R1
+0000EA 90E0                A   310    	RL	R0
+0000EC 3200                A   311    	SBC	R0,R0
 0000EE 2C 00               A   312    	LD	R2,#high(L__7)
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     16:45:17     page:   7
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:42:45     page:   7
 
 
 PC     Object              I  Line    Source motor.src
@@ -390,7 +390,7 @@ PC     Object              I  Line    Source motor.src
 00011F 8B 04               A   362    	JR	_3_L_10
                            A   363    ;   84	
                            A   364    ;   85			case MOTOR_DRIFT: //passive bra
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     16:45:17     page:   8
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:42:45     page:   8
 
 
 PC     Object              I  Line    Source motor.src
@@ -413,7 +413,7 @@ PC     Object              I  Line    Source motor.src
                            A   381    ;**************************** _motor1Speed ****
                            A   382    ;Name                         Addr/Register   S
                            A   383    ;_RELOAD                             STATIC    
-                           A   384    ;s                                       R8    
+                           A   384    ;s                                      RR0    
                            A   385    
                            A   386    
                            A   387    ; Aggregate Stack Size: 0 (words)
@@ -432,395 +432,407 @@ PC     Object              I  Line    Source motor.src
                            A   400    .begfunc "motor1Speed",91,"_motor1Speed"
                            A   401    .define "s"
                            A   402    .class 17
-                           A   403    .reg 9
+                           A   403    .reg 17
                            A   404    .type 3
                            A   405    .type 0
                            A   406    .endef
 000129 D6 0000             A   407    	CALL	__b_frameset00
-                           A   408    ;   90	
-                           A   409    ;   91	void motor1Speed(int s){
-                           A   410    ;   92		if (s>=RELOAD){
-                           A   411    .line 92
-00012C A8 001EE9           A   412    	CPX	R9,_RELOAD+1
-000130 1FA8 000EE8         A   413    	CPCX	R8,_RELOAD
-000135 1B 08               A   414    	JR	LT,_4_L_12
-                           A   415    ;   93			s = RELOAD-1;
-                           A   416    .line 93
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     16:45:17     page:   9
+00012C 880E04              A   408    	LDX	R0,4(RR14)
+00012F 881E05              A   409    	LDX	R1,5(RR14)
+                           A   410    ;   90	
+                           A   411    ;   91	void motor1Speed(int s){
+                           A   412    ;   92		if (s>=RELOAD){
+                           A   413    .line 92
+000132 A8 001EE1           A   414    	CPX	R1,_RELOAD+1
+000136 1FA8 000EE0         A   415    	CPCX	R0,_RELOAD
+00013B 1B 08               A   416    	JR	LT,_4_L_12
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:42:45     page:   9
 
 
 PC     Object              I  Line    Source motor.src
-000137 848000              A   417    	LDX	R8,_RELOAD
-00013A 849001              A   418    	LDX	R9,_RELOAD+1
-00013D 80E8                A   419    	DECW	RR8
-                           A   420    ;   94		}
-00013F                     A   421    _4_L_12:
-                           A   422    .line 94
-                           A   423    ;   95		s = RELOAD - s;
-                           A   424    .line 95
-00013F 841000              A   425    	LDX	R1,_RELOAD
-000142 840001              A   426    	LDX	R0,_RELOAD+1
-000145 2209                A   427    	SUB	R0,R9
-000147 3218                A   428    	SBC	R1,R8
-000149 E4E1E8              A   429    	LD	R8,R1
-00014C E4E0E9              A   430    	LD	R9,R0
-                           A   431    ;   96		T0PWMH = (s >> 8);
-                           A   432    .line 96
-00014F 2C08                A   433    	LD	R2,#8
-000151                     A   434    L__11:
-000151 D0E1                A   435    	SRA	R1
-000153 C0E0                A   436    	RRC	R0
-000155 2A FA               A   437    	DJNZ	R2,L__11
-000157 940F04              A   438    	LDX	3844,R0
-                           A   439    ;   97		T0PWML = (s & 0x00FF);
-                           A   440    .line 97
-00015A 949F05              A   441    	LDX	3845,R9
-                           A   442    ;   98	}
-                           A   443    .line 98
-00015D D6 0000             A   444    	CALL	__b_framereset
-000160 AF                  A   445    	RET	
-                           A   446    .endfunc "motor1Speed",98,"_motor1Speed"
-                           A   447    	SEGMENT ROM_DATA
-                           A   448    
-                           A   449    
-                           A   450    ;**************************** _motor2Speed ****
-                           A   451    ;Name                         Addr/Register   S
-                           A   452    ;_RELOAD                             STATIC    
-                           A   453    ;s                                       R8    
-                           A   454    
-                           A   455    
-                           A   456    ; Aggregate Stack Size: 0 (words)
+                           A   417    ;   93			s = RELOAD-1;
+                           A   418    .line 93
+00013D 840000              A   419    	LDX	R0,_RELOAD
+000140 841001              A   420    	LDX	R1,_RELOAD+1
+000143 80E0                A   421    	DECW	RR0
+                           A   422    ;   94		}
+000145                     A   423    _4_L_12:
+                           A   424    .line 94
+                           A   425    ;   95		s = RELOAD - s;
+                           A   426    .line 95
+000145 843000              A   427    	LDX	R3,_RELOAD
+000148 842001              A   428    	LDX	R2,_RELOAD+1
+00014B 2221                A   429    	SUB	R2,R1
+00014D 3230                A   430    	SBC	R3,R0
+00014F E4E3E0              A   431    	LD	R0,R3
+000152 E4E2E1              A   432    	LD	R1,R2
+                           A   433    ;   96		T0PWMH = (s >> 8);
+                           A   434    .line 96
+000155 0C08                A   435    	LD	R0,#8
+000157                     A   436    L__11:
+000157 D0E3                A   437    	SRA	R3
+000159 C0E2                A   438    	RRC	R2
+00015B 0A FA               A   439    	DJNZ	R0,L__11
+00015D 942F04              A   440    	LDX	3844,R2
+                           A   441    ;   97		T0PWML = (s & 0x00FF);
+                           A   442    .line 97
+000160 941F05              A   443    	LDX	3845,R1
+                           A   444    ;   98	}
+                           A   445    .line 98
+000163 D6 0000             A   446    	CALL	__b_framereset
+000166 AF                  A   447    	RET	
+                           A   448    .endfunc "motor1Speed",98,"_motor1Speed"
+                           A   449    	SEGMENT ROM_DATA
+                           A   450    
+                           A   451    
+                           A   452    ;**************************** _motor2Speed ****
+                           A   453    ;Name                         Addr/Register   S
+                           A   454    ;_RELOAD                             STATIC    
+                           A   455    ;s                                      RR0    
+                           A   456    
                            A   457    
-                           A   458    
-                           A   459    	.FRAME _n_motor2Speed,?_n_motor2Speed,RDATA
-                           A   460    	.FRAME _f_motor2Speed,?_f_motor2Speed,EDATA
-                           A   461    	SEGMENT motor_TEXT
-000161                     A   462    _motor2Speed:
-                           A   463    .define "_motor2Speed"
-                           A   464    .value _motor2Speed
-                           A   465    .class 2
-                           A   466    .type 65
-                           A   467    .type 0
-                           A   468    .endef
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     16:45:17     page:  10
+                           A   458    ; Aggregate Stack Size: 0 (words)
+                           A   459    
+                           A   460    
+                           A   461    	.FRAME _n_motor2Speed,?_n_motor2Speed,RDATA
+                           A   462    	.FRAME _f_motor2Speed,?_f_motor2Speed,EDATA
+                           A   463    	SEGMENT motor_TEXT
+000167                     A   464    _motor2Speed:
+                           A   465    .define "_motor2Speed"
+                           A   466    .value _motor2Speed
+                           A   467    .class 2
+                           A   468    .type 65
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:42:45     page:  10
 
 
 PC     Object              I  Line    Source motor.src
-                           A   469    .begfunc "motor2Speed",100,"_motor2Speed"
-                           A   470    .define "s"
-                           A   471    .class 17
-                           A   472    .reg 9
-                           A   473    .type 3
-                           A   474    .type 0
-                           A   475    .endef
-000161 D6 0000             A   476    	CALL	__b_frameset00
-                           A   477    ;   99	
-                           A   478    ;  100	void motor2Speed(int s){
-                           A   479    ;  101		if (s>=RELOAD){
-                           A   480    .line 101
-000164 A8 001EE9           A   481    	CPX	R9,_RELOAD+1
-000168 1FA8 000EE8         A   482    	CPCX	R8,_RELOAD
-00016D 1B 08               A   483    	JR	LT,_5_L_15
-                           A   484    ;  102			s = RELOAD-1;
-                           A   485    .line 102
-00016F 848000              A   486    	LDX	R8,_RELOAD
-000172 849001              A   487    	LDX	R9,_RELOAD+1
-000175 80E8                A   488    	DECW	RR8
-                           A   489    ;  103		}
-000177                     A   490    _5_L_15:
-                           A   491    .line 103
-                           A   492    ;  104		s = RELOAD - s;
-                           A   493    .line 104
-000177 841000              A   494    	LDX	R1,_RELOAD
-00017A 840001              A   495    	LDX	R0,_RELOAD+1
-00017D 2209                A   496    	SUB	R0,R9
-00017F 3218                A   497    	SBC	R1,R8
-000181 E4E1E8              A   498    	LD	R8,R1
-000184 E4E0E9              A   499    	LD	R9,R0
-                           A   500    ;  105		T2PWMH = (s >> 8);
-                           A   501    .line 105
-000187 2C08                A   502    	LD	R2,#8
-000189                     A   503    L__15:
-000189 D0E1                A   504    	SRA	R1
-00018B C0E0                A   505    	RRC	R0
-00018D 2A FA               A   506    	DJNZ	R2,L__15
-00018F 940F14              A   507    	LDX	3860,R0
-                           A   508    ;  106		T2PWML = (s & 0x00FF);
-                           A   509    .line 106
-000192 949F15              A   510    	LDX	3861,R9
-                           A   511    ;  107	}
-                           A   512    .line 107
-000195 D6 0000             A   513    	CALL	__b_framereset
-000198 AF                  A   514    	RET	
-                           A   515    .endfunc "motor2Speed",107,"_motor2Speed"
-                           A   516    	SEGMENT ROM_DATA
-                           A   517    
-                           A   518    
-                           A   519    ;**************************** _motorsSet ******
-                           A   520    ;Name                         Addr/Register   S
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     16:45:17     page:  11
+                           A   469    .type 0
+                           A   470    .endef
+                           A   471    .begfunc "motor2Speed",100,"_motor2Speed"
+                           A   472    .define "s"
+                           A   473    .class 17
+                           A   474    .reg 17
+                           A   475    .type 3
+                           A   476    .type 0
+                           A   477    .endef
+000167 D6 0000             A   478    	CALL	__b_frameset00
+00016A 880E04              A   479    	LDX	R0,4(RR14)
+00016D 881E05              A   480    	LDX	R1,5(RR14)
+                           A   481    ;   99	
+                           A   482    ;  100	void motor2Speed(int s){
+                           A   483    ;  101		if (s>=RELOAD){
+                           A   484    .line 101
+000170 A8 001EE1           A   485    	CPX	R1,_RELOAD+1
+000174 1FA8 000EE0         A   486    	CPCX	R0,_RELOAD
+000179 1B 08               A   487    	JR	LT,_5_L_15
+                           A   488    ;  102			s = RELOAD-1;
+                           A   489    .line 102
+00017B 840000              A   490    	LDX	R0,_RELOAD
+00017E 841001              A   491    	LDX	R1,_RELOAD+1
+000181 80E0                A   492    	DECW	RR0
+                           A   493    ;  103		}
+000183                     A   494    _5_L_15:
+                           A   495    .line 103
+                           A   496    ;  104		s = RELOAD - s;
+                           A   497    .line 104
+000183 843000              A   498    	LDX	R3,_RELOAD
+000186 842001              A   499    	LDX	R2,_RELOAD+1
+000189 2221                A   500    	SUB	R2,R1
+00018B 3230                A   501    	SBC	R3,R0
+00018D E4E3E0              A   502    	LD	R0,R3
+000190 E4E2E1              A   503    	LD	R1,R2
+                           A   504    ;  105		T2PWMH = (s >> 8);
+                           A   505    .line 105
+000193 0C08                A   506    	LD	R0,#8
+000195                     A   507    L__15:
+000195 D0E3                A   508    	SRA	R3
+000197 C0E2                A   509    	RRC	R2
+000199 0A FA               A   510    	DJNZ	R0,L__15
+00019B 942F14              A   511    	LDX	3860,R2
+                           A   512    ;  106		T2PWML = (s & 0x00FF);
+                           A   513    .line 106
+00019E 941F15              A   514    	LDX	3861,R1
+                           A   515    ;  107	}
+                           A   516    .line 107
+0001A1 D6 0000             A   517    	CALL	__b_framereset
+0001A4 AF                  A   518    	RET	
+                           A   519    .endfunc "motor2Speed",107,"_motor2Speed"
+                           A   520    	SEGMENT ROM_DATA
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:42:45     page:  11
 
 
 PC     Object              I  Line    Source motor.src
-                           A   521    ;_motor1Speed                        IMPORT  --
-                           A   522    ;_motor2Speed                        IMPORT  --
-                           A   523    ;_motor2Direction                    IMPORT  --
-                           A   524    ;_motor1Direction                    IMPORT  --
-                           A   525    ;m2                                     RR0    
-                           A   526    ;m1                                     RR2    
-                           A   527    ;offsetR                              R15+4    
-                           A   528    ;offsetL                              R15-6    
-                           A   529    ;r                                    R15-4    
-                           A   530    ;t                                    R15-2    
-                           A   531    
-                           A   532    
-                           A   533    ; Aggregate Stack Size: -10 (words)
-                           A   534    
+                           A   521    
+                           A   522    
+                           A   523    ;**************************** _motorsSet ******
+                           A   524    ;Name                         Addr/Register   S
+                           A   525    ;_motor1Speed                        IMPORT  --
+                           A   526    ;_motor2Speed                        IMPORT  --
+                           A   527    ;_motor2Direction                    IMPORT  --
+                           A   528    ;_motor1Direction                    IMPORT  --
+                           A   529    ;m2                                     RR0    
+                           A   530    ;m1                                     RR2    
+                           A   531    ;offsetR                             R15+10    
+                           A   532    ;offsetL                              R15+8    
+                           A   533    ;r                                    R15+6    
+                           A   534    ;t                                    R15+4    
                            A   535    
-                           A   536    	.FRAME _n_motorsSet,?_n_motorsSet,RDATA
-                           A   537    	.FCALL _n_motor1Direction
-                           A   538    	.FCALL _n_motor2Direction
-                           A   539    	.FCALL _n_motor2Speed
-                           A   540    	.FCALL _n_motor1Speed
-                           A   541    	.FRAME _f_motorsSet,?_f_motorsSet,EDATA
-                           A   542    	.FCALL _f_motor1Direction
-                           A   543    	.FCALL _f_motor2Direction
-                           A   544    	.FCALL _f_motor2Speed
-                           A   545    	.FCALL _f_motor1Speed
-                           A   546    	SEGMENT motor_TEXT
-000199                     A   547    _motorsSet:
-                           A   548    .define "_motorsSet"
-                           A   549    .value _motorsSet
-                           A   550    .class 2
-                           A   551    .type 65
-                           A   552    .type 0
-                           A   553    .endef
-                           A   554    .begfunc "motorsSet",109,"_motorsSet"
-                           A   555    .define "t"
-                           A   556    .class 9
-                           A   557    .value -2
-                           A   558    .type 3
-                           A   559    .type 0
-                           A   560    .endef
-                           A   561    .define "r"
-                           A   562    .class 9
-                           A   563    .value -4
-                           A   564    .type 3
-                           A   565    .type 0
-                           A   566    .endef
-                           A   567    .define "offsetL"
-                           A   568    .class 9
-                           A   569    .value -6
-                           A   570    .type 3
-                           A   571    .type 0
-                           A   572    .endef
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     16:45:17     page:  12
+                           A   536    
+                           A   537    ; Aggregate Stack Size: -4 (words)
+                           A   538    
+                           A   539    
+                           A   540    	.FRAME _n_motorsSet,?_n_motorsSet,RDATA
+                           A   541    	.FCALL _n_motor1Direction
+                           A   542    	.FCALL _n_motor2Direction
+                           A   543    	.FCALL _n_motor2Speed
+                           A   544    	.FCALL _n_motor1Speed
+                           A   545    	.FRAME _f_motorsSet,?_f_motorsSet,EDATA
+                           A   546    	.FCALL _f_motor1Direction
+                           A   547    	.FCALL _f_motor2Direction
+                           A   548    	.FCALL _f_motor2Speed
+                           A   549    	.FCALL _f_motor1Speed
+                           A   550    	SEGMENT motor_TEXT
+0001A5                     A   551    _motorsSet:
+                           A   552    .define "_motorsSet"
+                           A   553    .value _motorsSet
+                           A   554    .class 2
+                           A   555    .type 65
+                           A   556    .type 0
+                           A   557    .endef
+                           A   558    .begfunc "motorsSet",109,"_motorsSet"
+                           A   559    .define "t"
+                           A   560    .class 17
+                           A   561    .reg -1
+                           A   562    .type 3
+                           A   563    .type 0
+                           A   564    .endef
+                           A   565    .define "r"
+                           A   566    .class 9
+                           A   567    .value 6
+                           A   568    .type 3
+                           A   569    .type 0
+                           A   570    .endef
+                           A   571    .define "offsetL"
+                           A   572    .class 9
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:42:45     page:  12
 
 
 PC     Object              I  Line    Source motor.src
-                           A   573    .define "offsetR"
-                           A   574    .class 9
-                           A   575    .value 4
-                           A   576    .type 3
-                           A   577    .type 0
-                           A   578    .endef
-000199 5C0A                A   579    	LD	R5,#10
-00019B D6 0000             A   580    	CALL	__b_frameset0
-00019E 89E8FE              A   581    	LDX	-2(RR14),R8
-0001A1 89E9FF              A   582    	LDX	-1(RR14),R9
-0001A4 89EAFC              A   583    	LDX	-4(RR14),R10
-0001A7 89EBFD              A   584    	LDX	-3(RR14),R11
-0001AA 89ECFA              A   585    	LDX	-6(RR14),R12
-0001AD 89EDFB              A   586    	LDX	-5(RR14),R13
-                           A   587    ;  108	
-                           A   588    ;  109	void motorsSet(signed int t, int r, int
-                           A   589    .define "U‹ìjÿh0/J"
-                           A   590    .class 4
-                           A   591    .reg 18
-                           A   592    .type 3
-                           A   593    .type 0
-                           A   594    .endef
-                           A   595    .define "U‹ìjÿh0/J"
-                           A   596    .class 4
-                           A   597    .reg 17
-                           A   598    .type 3
-                           A   599    .type 0
-                           A   600    .endef
-                           A   601    ;  110		int m1;
-                           A   602    ;  111		int m2;
-                           A   603    ;  112		m1 = t + r;
-                           A   604    .line 112
-0001B0 880EFC              A   605    	LDX	R0,-4(RR14)
-0001B3 881EFD              A   606    	LDX	R1,-3(RR14)
-0001B6 882EFE              A   607    	LDX	R2,-2(RR14)
-0001B9 883EFF              A   608    	LDX	R3,-1(RR14)
-0001BC 0231                A   609    	ADD	R3,R1
-0001BE 1220                A   610    	ADC	R2,R0
-                           A   611    ;  113		m2 = t - r;
-                           A   612    .line 113
-0001C0 884EFC              A   613    	LDX	R4,-4(RR14)
-0001C3 885EFD              A   614    	LDX	R5,-3(RR14)
-0001C6 880EFE              A   615    	LDX	R0,-2(RR14)
-0001C9 881EFF              A   616    	LDX	R1,-1(RR14)
-0001CC 2215                A   617    	SUB	R1,R5
-0001CE 3204                A   618    	SBC	R0,R4
-                           A   619    ;  114		if(t==0){
-                           A   620    .line 114
-0001D0 884EFE              A   621    	LDX	R4,-2(RR14)
-0001D3 885EFF              A   622    	LDX	R5,-1(RR14)
-0001D6 4245                A   623    	OR	R4,R5
-0001D8 EB 25               A   624    	JR	NE,_6_L_24
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     16:45:17     page:  13
+                           A   573    .value 8
+                           A   574    .type 3
+                           A   575    .type 0
+                           A   576    .endef
+                           A   577    .define "offsetR"
+                           A   578    .class 9
+                           A   579    .value 10
+                           A   580    .type 3
+                           A   581    .type 0
+                           A   582    .endef
+                           A   583    ;  108	
+                           A   584    ;  109	void motorsSet(signed int t, int r, int
+                           A   585    .define "U‹ìjÿh0/J"
+                           A   586    .class 4
+                           A   587    .reg 18
+                           A   588    .type 3
+                           A   589    .type 0
+                           A   590    .endef
+                           A   591    .define "U‹ìjÿh0/J"
+                           A   592    .class 4
+                           A   593    .reg 17
+                           A   594    .type 3
+                           A   595    .type 0
+                           A   596    .endef
+0001A5 5C04                A   597    	LD	R5,#4
+0001A7 D6 0000             A   598    	CALL	__b_frameset0
+                           A   599    ;  110		int m1;
+                           A   600    ;  111		int m2;
+                           A   601    ;  112		m1 = t + r;
+                           A   602    .line 112
+0001AA 880E06              A   603    	LDX	R0,6(RR14)
+0001AD 881E07              A   604    	LDX	R1,7(RR14)
+0001B0 882E04              A   605    	LDX	R2,4(RR14)
+0001B3 883E05              A   606    	LDX	R3,5(RR14)
+0001B6 0231                A   607    	ADD	R3,R1
+0001B8 1220                A   608    	ADC	R2,R0
+                           A   609    ;  113		m2 = t - r;
+                           A   610    .line 113
+0001BA 884E06              A   611    	LDX	R4,6(RR14)
+0001BD 885E07              A   612    	LDX	R5,7(RR14)
+0001C0 880E04              A   613    	LDX	R0,4(RR14)
+0001C3 881E05              A   614    	LDX	R1,5(RR14)
+0001C6 2215                A   615    	SUB	R1,R5
+0001C8 3204                A   616    	SBC	R0,R4
+                           A   617    ;  114		if(t==0){
+                           A   618    .line 114
+0001CA 884E04              A   619    	LDX	R4,4(RR14)
+0001CD 885E05              A   620    	LDX	R5,5(RR14)
+0001D0 4245                A   621    	OR	R4,R5
+0001D2 EB 2B               A   622    	JR	NE,_6_L_24
+                           A   623    ;  115			motor1Direction(MOTOR_STOP);
+                           A   624    .line 115
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:42:45     page:  13
 
 
 PC     Object              I  Line    Source motor.src
-                           A   625    ;  115			motor1Direction(MOTOR_STOP);
-                           A   626    .line 115
-0001DA 8C03                A   627    	LD	R8,#3
-0001DC 89E0F9              A   628    	LDX	-7(RR14),R0
-0001DF 89E1F8              A   629    	LDX	-8(RR14),R1
-0001E2 89E2F7              A   630    	LDX	-9(RR14),R2
-0001E5 89E3F6              A   631    	LDX	-10(RR14),R3
-0001E8 D6 0099             A   632    	CALL	_motor1Direction
-                           A   633    ;  116			motor2Direction(MOTOR_STOP);
-                           A   634    .line 116
-0001EB 8C03                A   635    	LD	R8,#3
-0001ED D6 00E1             A   636    	CALL	_motor2Direction
-0001F0 883EF6              A   637    	LDX	R3,-10(RR14)
-0001F3 882EF7              A   638    	LDX	R2,-9(RR14)
-0001F6 881EF8              A   639    	LDX	R1,-8(RR14)
-0001F9 880EF9              A   640    	LDX	R0,-7(RR14)
+0001D4 1F7003              A   625    	PUSH	#3
+0001D7 89E0FF              A   626    	LDX	-1(RR14),R0
+0001DA 89E1FE              A   627    	LDX	-2(RR14),R1
+0001DD 89E2FD              A   628    	LDX	-3(RR14),R2
+0001E0 89E3FC              A   629    	LDX	-4(RR14),R3
+0001E3 D6 0099             A   630    	CALL	_motor1Direction
+0001E6 50E4                A   631    	POP	R4
+                           A   632    ;  116			motor2Direction(MOTOR_STOP);
+                           A   633    .line 116
+0001E8 1F7003              A   634    	PUSH	#3
+0001EB D6 00E1             A   635    	CALL	_motor2Direction
+0001EE 883EFC              A   636    	LDX	R3,-4(RR14)
+0001F1 882EFD              A   637    	LDX	R2,-3(RR14)
+0001F4 881EFE              A   638    	LDX	R1,-2(RR14)
+0001F7 880EFF              A   639    	LDX	R0,-1(RR14)
+0001FA 50E4                A   640    	POP	R4
                            A   641    ;  117		} else {
                            A   642    .line 117
-0001FC 8D 02 AB            A   643    	JR	_6_L_25
+0001FC 8D 02 C7            A   643    	JR	_6_L_25
 0001FF                     A   644    _6_L_24:
                            A   645    ;  118		if(m2 > 0)
                            A   646    .line 118
 0001FF A6E100              A   647    	CP	R1,#0
 000202 1FA6E000            A   648    	CPC	R0,#-0
-000206 2B 1F               A   649    	JR	LE,_6_L_18
+000206 2B 22               A   649    	JR	LE,_6_L_18
                            A   650    ;  119		{
                            A   651    ;  120			motor2Direction(MOTOR_BACKWARD)
                            A   652    .line 120
-000208 8C02                A   653    	LD	R8,#2
-00020A 89E0F9              A   654    	LDX	-7(RR14),R0
-00020D 89E1F8              A   655    	LDX	-8(RR14),R1
-000210 89E2F7              A   656    	LDX	-9(RR14),R2
-000213 89E3F6              A   657    	LDX	-10(RR14),R3
-000216 D6 00E1             A   658    	CALL	_motor2Direction
-000219 883EF6              A   659    	LDX	R3,-10(RR14)
-00021C 882EF7              A   660    	LDX	R2,-9(RR14)
-00021F 881EF8              A   661    	LDX	R1,-8(RR14)
-000222 880EF9              A   662    	LDX	R0,-7(RR14)
-                           A   663    ;  121		}
-                           A   664    ;  122		else
-                           A   665    .line 122
-000225 8B 27               A   666    	JR	_6_L_21
-000227                     A   667    _6_L_18:
-                           A   668    ;  123		{
-                           A   669    ;  124			m2 = - m2;
-                           A   670    .line 124
-000227 60E0                A   671    	COM	R0
-000229 60E1                A   672    	COM	R1
-00022B 1FE8EE0E E4         A   673    	LDWX	RR4,RR0
-000230 A0E4                A   674    	INCW	RR4
-000232 1FE8EE4E E0         A   675    	LDWX	RR0,RR4
-                           A   676    ;  125			motor2Direction(MOTOR_FORWARD);
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     16:45:17     page:  14
+000208 1F7002              A   653    	PUSH	#2
+00020B 89E0FF              A   654    	LDX	-1(RR14),R0
+00020E 89E1FE              A   655    	LDX	-2(RR14),R1
+000211 89E2FD              A   656    	LDX	-3(RR14),R2
+000214 89E3FC              A   657    	LDX	-4(RR14),R3
+000217 D6 00E1             A   658    	CALL	_motor2Direction
+00021A 883EFC              A   659    	LDX	R3,-4(RR14)
+00021D 882EFD              A   660    	LDX	R2,-3(RR14)
+000220 881EFE              A   661    	LDX	R1,-2(RR14)
+000223 880EFF              A   662    	LDX	R0,-1(RR14)
+000226 50E4                A   663    	POP	R4
+                           A   664    ;  121		}
+                           A   665    ;  122		else
+                           A   666    .line 122
+000228 8B 2A               A   667    	JR	_6_L_21
+00022A                     A   668    _6_L_18:
+                           A   669    ;  123		{
+                           A   670    ;  124			m2 = - m2;
+                           A   671    .line 124
+00022A 60E0                A   672    	COM	R0
+00022C 60E1                A   673    	COM	R1
+00022E 1FE8EE0E E4         A   674    	LDWX	RR4,RR0
+000233 A0E4                A   675    	INCW	RR4
+000235 1FE8EE4E E0         A   676    	LDWX	RR0,RR4
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:42:45     page:  14
 
 
 PC     Object              I  Line    Source motor.src
-                           A   677    .line 125
-000237 8C01                A   678    	LD	R8,#1
-000239 89E0F9              A   679    	LDX	-7(RR14),R0
-00023C 89E1F8              A   680    	LDX	-8(RR14),R1
-00023F 89E2F7              A   681    	LDX	-9(RR14),R2
-000242 89E3F6              A   682    	LDX	-10(RR14),R3
-000245 D6 00E1             A   683    	CALL	_motor2Direction
-000248 883EF6              A   684    	LDX	R3,-10(RR14)
-00024B 882EF7              A   685    	LDX	R2,-9(RR14)
-                           A   686    ;  126		}
-00024E                     A   687    _6_L_21:
-                           A   688    .line 126
-                           A   689    ;  127		if(m1 > 0)
-                           A   690    .line 127
-00024E A6E300              A   691    	CP	R3,#0
-000251 1FA6E200            A   692    	CPC	R2,#-0
-000255 2B 13               A   693    	JR	LE,_6_L_20
-                           A   694    ;  128		{
-                           A   695    ;  129			motor1Direction(MOTOR_BACKWARD)
-                           A   696    .line 129
-000257 8C02                A   697    	LD	R8,#2
-000259 D6 0099             A   698    	CALL	_motor1Direction
-00025C 883EF6              A   699    	LDX	R3,-10(RR14)
-00025F 882EF7              A   700    	LDX	R2,-9(RR14)
-000262 881EF8              A   701    	LDX	R1,-8(RR14)
-000265 880EF9              A   702    	LDX	R0,-7(RR14)
-                           A   703    ;  130		}
-                           A   704    ;  131		else
-                           A   705    .line 131
-000268 8B 21               A   706    	JR	_6_L_22
-00026A                     A   707    _6_L_20:
-                           A   708    ;  132		{
-                           A   709    ;  133			m1 = - m1;
-                           A   710    .line 133
-00026A 60E2                A   711    	COM	R2
-00026C 60E3                A   712    	COM	R3
-00026E 1FE8EE2E E4         A   713    	LDWX	RR4,RR2
-000273 A0E4                A   714    	INCW	RR4
-000275 1FE8EE4E E2         A   715    	LDWX	RR2,RR4
-                           A   716    ;  134			motor1Direction(MOTOR_FORWARD);
-                           A   717    .line 134
-00027A 8C01                A   718    	LD	R8,#1
-00027C 89E2F7              A   719    	LDX	-9(RR14),R2
-00027F 89E3F6              A   720    	LDX	-10(RR14),R3
-000282 D6 0099             A   721    	CALL	_motor1Direction
-000285 881EF8              A   722    	LDX	R1,-8(RR14)
-000288 880EF9              A   723    	LDX	R0,-7(RR14)
-                           A   724    ;  135		}
-00028B                     A   725    _6_L_22:
-                           A   726    .line 135
-                           A   727    ;  136		motor2Speed(m2+offsetL);
-                           A   728    .line 136
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     16:45:17     page:  15
+                           A   677    ;  125			motor2Direction(MOTOR_FORWARD);
+                           A   678    .line 125
+00023A 1F7001              A   679    	PUSH	#1
+00023D 89E0FF              A   680    	LDX	-1(RR14),R0
+000240 89E1FE              A   681    	LDX	-2(RR14),R1
+000243 89E2FD              A   682    	LDX	-3(RR14),R2
+000246 89E3FC              A   683    	LDX	-4(RR14),R3
+000249 D6 00E1             A   684    	CALL	_motor2Direction
+00024C 883EFC              A   685    	LDX	R3,-4(RR14)
+00024F 882EFD              A   686    	LDX	R2,-3(RR14)
+000252 50E4                A   687    	POP	R4
+                           A   688    ;  126		}
+000254                     A   689    _6_L_21:
+                           A   690    .line 126
+                           A   691    ;  127		if(m1 > 0)
+                           A   692    .line 127
+000254 A6E300              A   693    	CP	R3,#0
+000257 1FA6E200            A   694    	CPC	R2,#-0
+00025B 2B 16               A   695    	JR	LE,_6_L_20
+                           A   696    ;  128		{
+                           A   697    ;  129			motor1Direction(MOTOR_BACKWARD)
+                           A   698    .line 129
+00025D 1F7002              A   699    	PUSH	#2
+000260 D6 0099             A   700    	CALL	_motor1Direction
+000263 883EFC              A   701    	LDX	R3,-4(RR14)
+000266 882EFD              A   702    	LDX	R2,-3(RR14)
+000269 881EFE              A   703    	LDX	R1,-2(RR14)
+00026C 880EFF              A   704    	LDX	R0,-1(RR14)
+00026F 50E4                A   705    	POP	R4
+                           A   706    ;  130		}
+                           A   707    ;  131		else
+                           A   708    .line 131
+000271 8B 24               A   709    	JR	_6_L_22
+000273                     A   710    _6_L_20:
+                           A   711    ;  132		{
+                           A   712    ;  133			m1 = - m1;
+                           A   713    .line 133
+000273 60E2                A   714    	COM	R2
+000275 60E3                A   715    	COM	R3
+000277 1FE8EE2E E4         A   716    	LDWX	RR4,RR2
+00027C A0E4                A   717    	INCW	RR4
+00027E 1FE8EE4E E2         A   718    	LDWX	RR2,RR4
+                           A   719    ;  134			motor1Direction(MOTOR_FORWARD);
+                           A   720    .line 134
+000283 1F7001              A   721    	PUSH	#1
+000286 89E2FD              A   722    	LDX	-3(RR14),R2
+000289 89E3FC              A   723    	LDX	-4(RR14),R3
+00028C D6 0099             A   724    	CALL	_motor1Direction
+00028F 881EFE              A   725    	LDX	R1,-2(RR14)
+000292 880EFF              A   726    	LDX	R0,-1(RR14)
+000295 50E4                A   727    	POP	R4
+                           A   728    ;  135		}
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:42:45     page:  15
 
 
 PC     Object              I  Line    Source motor.src
-00028B 888EFA              A   729    	LDX	R8,-6(RR14)
-00028E 889EFB              A   730    	LDX	R9,-5(RR14)
-000291 0291                A   731    	ADD	R9,R1
-000293 1280                A   732    	ADC	R8,R0
-000295 D6 0161             A   733    	CALL	_motor2Speed
-000298 883EF6              A   734    	LDX	R3,-10(RR14)
-00029B 882EF7              A   735    	LDX	R2,-9(RR14)
-                           A   736    ;  137		motor1Speed(m1+offsetR);
-                           A   737    .line 137
-00029E 888E04              A   738    	LDX	R8,4(RR14)
-0002A1 889E05              A   739    	LDX	R9,5(RR14)
-0002A4 0293                A   740    	ADD	R9,R3
-0002A6 1282                A   741    	ADC	R8,R2
-0002A8 D6 0129             A   742    	CALL	_motor1Speed
-                           A   743    ;  138		}
-                           A   744    ;  139	}
-0002AB                     A   745    _6_L_25:
-                           A   746    .line 139
-0002AB D6 0000             A   747    	CALL	__b_framereset
-0002AE AF                  A   748    	RET	
-                           A   749    .endfunc "motorsSet",139,"_motorsSet"
-                           A   750    	XREF __b_ucase:ROM
-                           A   751    	XREF __b_framereset:ROM
-                           A   752    	XREF __b_frameset0:ROM
-                           A   753    	XREF __b_frameset00:ROM
-                           A   754    	XDEF _motorsSet
-                           A   755    	XDEF _motor2Speed
-                           A   756    	XDEF _motor1Speed
-                           A   757    	XDEF _motor2Direction
-                           A   758    	XDEF _motor1Direction
-                           A   759    	XDEF _motorInit
-                           A   760    	XDEF _RELOAD
-                           A   761    	END
+000297                     A   729    _6_L_22:
+                           A   730    .line 135
+                           A   731    ;  136		motor2Speed(m2+offsetL);
+                           A   732    .line 136
+000297 885E08              A   733    	LDX	R5,8(RR14)
+00029A 884E09              A   734    	LDX	R4,9(RR14)
+00029D 0241                A   735    	ADD	R4,R1
+00029F 1250                A   736    	ADC	R5,R0
+0002A1 70E4                A   737    	PUSH	R4
+0002A3 70E5                A   738    	PUSH	R5
+0002A5 D6 0167             A   739    	CALL	_motor2Speed
+0002A8 883EFC              A   740    	LDX	R3,-4(RR14)
+0002AB 882EFD              A   741    	LDX	R2,-3(RR14)
+0002AE 50E0                A   742    	POP	R0
+0002B0 50E0                A   743    	POP	R0
+                           A   744    ;  137		motor1Speed(m1+offsetR);
+                           A   745    .line 137
+0002B2 881E0A              A   746    	LDX	R1,10(RR14)
+0002B5 880E0B              A   747    	LDX	R0,11(RR14)
+0002B8 0203                A   748    	ADD	R0,R3
+0002BA 1212                A   749    	ADC	R1,R2
+0002BC 70E0                A   750    	PUSH	R0
+0002BE 70E1                A   751    	PUSH	R1
+0002C0 D6 0129             A   752    	CALL	_motor1Speed
+0002C3 50E0                A   753    	POP	R0
+0002C5 50E0                A   754    	POP	R0
+                           A   755    ;  138		}
+                           A   756    ;  139	}
+0002C7                     A   757    _6_L_25:
+                           A   758    .line 139
+0002C7 D6 0000             A   759    	CALL	__b_framereset
+0002CA AF                  A   760    	RET	
+                           A   761    .endfunc "motorsSet",139,"_motorsSet"
+                           A   762    	XREF __b_ucase:ROM
+                           A   763    	XREF __b_framereset:ROM
+                           A   764    	XREF __b_frameset0:ROM
+                           A   765    	XREF __b_frameset00:ROM
+                           A   766    	XDEF _motorsSet
+                           A   767    	XDEF _motor2Speed
+                           A   768    	XDEF _motor1Speed
+                           A   769    	XDEF _motor2Direction
+                           A   770    	XDEF _motor1Direction
+                           A   771    	XDEF _motorInit
+                           A   772    	XDEF _RELOAD
+                           A   773    	END
 
 
 Errors: 0
 Warnings: 0
-Lines Assembled: 762
+Lines Assembled: 774

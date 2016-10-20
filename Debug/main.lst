@@ -1,9 +1,9 @@
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     22:43:46     page:   1
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:59:32     page:   1
 
 
 PC     Object              I  Line    Source 
                            A     1    ; Zilog Z8 Encore! ANSI C Compiler Release 3.62
-                           A     2    ; -nolocalcse -optsize -fastcall -const=RAM -mo
+                           A     2    ; -nolocalcse -optsize -nofastcall -const=RAM -
                            A     3    ; -nooptlink -regvar -reduceopt -debug -norevaa
                            A     4    ; -alias 
                            A     5    	DEFINE main_TEXT,SPACE=ROM
@@ -54,7 +54,7 @@ PC     Object              I  Line    Source
                            A    50    .define "field_width"
                            A    51    .value 5
                            A    52    .class 8
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     22:43:46     page:   2
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:59:32     page:   2
 
 
 PC     Object              I  Line    Source main.src
@@ -110,7 +110,7 @@ PC     Object              I  Line    Source main.src
                            A   102    .class 8
                            A   103    .type 12
                            A   104    .type 0
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     22:43:46     page:   3
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:59:32     page:   3
 
 
 PC     Object              I  Line    Source main.src
@@ -166,7 +166,7 @@ PC     Object              I  Line    Source main.src
                            A   154    .alias "_command"
                            A   155    .class 69
                            A   156    .value _command
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     22:43:46     page:   4
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:59:32     page:   4
 
 
 PC     Object              I  Line    Source main.src
@@ -222,7 +222,7 @@ PC     Object              I  Line    Source main.src
                            A   206    .type 0
                            A   207    .endef
 000023                     A   208    _acc_yh:
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     22:43:46     page:   5
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:59:32     page:   5
 
 
 PC     Object              I  Line    Source main.src
@@ -278,7 +278,7 @@ PC     Object              I  Line    Source main.src
                            A   258    .value _gyro_l
                            A   259    .type 2
                            A   260    .type 0
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     22:43:46     page:   6
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:59:32     page:   6
 
 
 PC     Object              I  Line    Source main.src
@@ -334,266 +334,294 @@ PC     Object              I  Line    Source main.src
                            A   310    ;**************************** _main ***********
                            A   311    ;Name                         Addr/Register   S
                            A   312    ;_dly                                IMPORT  --
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     22:43:46     page:   7
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:59:32     page:   7
 
 
 PC     Object              I  Line    Source main.src
                            A   313    ;_mems_read                          IMPORT  --
-                           A   314    ;_command                            STATIC    
-                           A   315    ;_rxFlag                             STATIC    
-                           A   316    ;_sendString                         IMPORT  --
-                           A   317    ;_EI                                 IMPORT  --
-                           A   318    ;_motorInit                          IMPORT  --
-                           A   319    ;_init_coms                          IMPORT  --
-                           A   320    ;_signon                             IMPORT  --
-                           A   321    ;_init_LCD                           IMPORT  --
-                           A   322    ;_i2cInit                            IMPORT  --
-                           A   323    ;_init_IO                            IMPORT  --
-                           A   324    ;_DI                                 IMPORT  --
-                           A   325    ;speed                          <optimized>    
-                           A   326    
+                           A   314    ;_printMessage                       IMPORT  --
+                           A   315    ;_command                            STATIC    
+                           A   316    ;_rxFlag                             STATIC    
+                           A   317    ;_sendString                         IMPORT  --
+                           A   318    ;_EI                                 IMPORT  --
+                           A   319    ;_motorInit                          IMPORT  --
+                           A   320    ;_init_coms                          IMPORT  --
+                           A   321    ;_signon                             IMPORT  --
+                           A   322    ;_init_LCD                           IMPORT  --
+                           A   323    ;_i2cInit                            IMPORT  --
+                           A   324    ;_init_IO                            IMPORT  --
+                           A   325    ;_DI                                 IMPORT  --
+                           A   326    ;speed                          <optimized>    
                            A   327    
-                           A   328    ; Aggregate Stack Size: 0 (words)
-                           A   329    
+                           A   328    
+                           A   329    ; Aggregate Stack Size: 0 (words)
                            A   330    
-                           A   331    	.FRAME _n_main,?_n_main,RDATA
-                           A   332    	.FCALL _n_init_IO
-                           A   333    	.FCALL _n_i2cInit
-                           A   334    	.FCALL _n_init_LCD
-                           A   335    	.FCALL _n_signon
-                           A   336    	.FCALL _n_init_coms
-                           A   337    	.FCALL _n_motorInit
-                           A   338    	.FCALL _n_sendString
-                           A   339    	.FCALL _n_mems_read
-                           A   340    	.FCALL _n_dly
-                           A   341    	.FRAME _f_main,?_f_main,EDATA
-                           A   342    	.FCALL _f_init_IO
-                           A   343    	.FCALL _f_i2cInit
-                           A   344    	.FCALL _f_init_LCD
-                           A   345    	.FCALL _f_signon
-                           A   346    	.FCALL _f_init_coms
-                           A   347    	.FCALL _f_motorInit
-                           A   348    	.FCALL _f_sendString
-                           A   349    	.FCALL _f_mems_read
-                           A   350    	.FCALL _f_dly
-                           A   351    	SEGMENT TEXT
-000000                     A   352    L__0:
-000000 41542B4E 414D4572   A   353    	DB	"AT+NAMErJordan"
+                           A   331    
+                           A   332    	.FRAME _n_main,?_n_main,RDATA
+                           A   333    	.FCALL _n_init_IO
+                           A   334    	.FCALL _n_i2cInit
+                           A   335    	.FCALL _n_init_LCD
+                           A   336    	.FCALL _n_signon
+                           A   337    	.FCALL _n_init_coms
+                           A   338    	.FCALL _n_motorInit
+                           A   339    	.FCALL _n_sendString
+                           A   340    	.FCALL _n_printMessage
+                           A   341    	.FCALL _n_mems_read
+                           A   342    	.FCALL _n_dly
+                           A   343    	.FRAME _f_main,?_f_main,EDATA
+                           A   344    	.FCALL _f_init_IO
+                           A   345    	.FCALL _f_i2cInit
+                           A   346    	.FCALL _f_init_LCD
+                           A   347    	.FCALL _f_signon
+                           A   348    	.FCALL _f_init_coms
+                           A   349    	.FCALL _f_motorInit
+                           A   350    	.FCALL _f_sendString
+                           A   351    	.FCALL _f_printMessage
+                           A   352    	.FCALL _f_mems_read
+                           A   353    	.FCALL _f_dly
+                           A   354    	SEGMENT TEXT
+000000                     A   355    L__0:
+000000 41542B4E 414D4572   A   356    	DB	"AT+NAMErJordan"
 000008 4A6F7264 616E 
-00000E 00                  A   354    	DB	0
-00000F                     A   355    L__1:
-00000F 676F7420 68657265   A   356    	DB	"got here"
-000017 00                  A   357    	DB	0
-                           A   358    	SEGMENT main_TEXT
-000000                     A   359    _main:
-                           A   360    .define "_main"
-                           A   361    .value _main
-                           A   362    .class 2
-                           A   363    .type 65
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     22:43:46     page:   8
+00000E 00                  A   357    	DB	0
+00000F                     A   358    L__1:
+00000F 676F7420 68657265   A   359    	DB	"got here"
+000017 00                  A   360    	DB	0
+000018                     A   361    L__2:
+000018 54686973 20697320   A   362    	DB	"This is a test"
+000020 61207465 7374 
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:59:32     page:   8
 
 
 PC     Object              I  Line    Source main.src
-                           A   364    .type 0
-                           A   365    .endef
-                           A   366    .begfunc "main",15,"_main"
-                           A   367    ;    1	#include <ez8.h>
-                           A   368    ;    2	#include <delay.h>
-                           A   369    ;    3	#include <STRING.H>
-                           A   370    ;    4	#include <LCD.H>
-                           A   371    ;    5	#include <STDIO.H>
-                           A   372    ;    6	#include <motor.h>
-                           A   373    ;    7	#include <uart.h>
-                           A   374    ;    8	#include <i2c.h>
-                           A   375    ;    9	
-                           A   376    ;   10	#define loffset 405
-                           A   377    ;   11	#define roffset 407
-                           A   378    ;   12	
-                           A   379    ;   13	void init_IO(void);
-                           A   380    ;   14	
-                           A   381    ;   15	void main(void){
-                           A   382    .define "U‹ìjÿh0/J"
-                           A   383    .class 4
-                           A   384    .reg -1
-                           A   385    .type 3
-                           A   386    .type 0
-                           A   387    .endef
-000000 D6 0000             A   388    	CALL	__b_frameset00
-                           A   389    ;   16		char reser[];
-                           A   390    ;   17		char test[5];
-                           A   391    ;   18		char inChar[25];
-                           A   392    ;   19		int speed = 0;
-                           A   393    .line 19
-                           A   394    ;   20		DI();
-                           A   395    .line 20
-000003 8F                  A   396    	DI
-                           A   397    ;   21		init_IO();
-                           A   398    .line 21
-000004 D6 003D             A   399    	CALL	_init_IO
-                           A   400    ;   22		i2cInit();
-                           A   401    .line 22
-000007 D6 0000             A   402    	CALL	_i2cInit
-                           A   403    ;   23		init_LCD();
-                           A   404    .line 23
-00000A D6 0000             A   405    	CALL	_init_LCD
-                           A   406    ;   24		signon();
-                           A   407    .line 24
-00000D D6 0000             A   408    	CALL	_signon
-                           A   409    ;   25		// printMessage("This is a test", 1
-                           A   410    ;   26		init_coms();
-                           A   411    .line 26
-000010 D6 0000             A   412    	CALL	_init_coms
-                           A   413    ;   27	
-                           A   414    ;   28		motorInit();
-                           A   415    .line 28
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     22:43:46     page:   9
+000026 00                  A   363    	DB	0
+                           A   364    	SEGMENT main_TEXT
+000000                     A   365    _main:
+                           A   366    .define "_main"
+                           A   367    .value _main
+                           A   368    .class 2
+                           A   369    .type 65
+                           A   370    .type 0
+                           A   371    .endef
+                           A   372    .begfunc "main",15,"_main"
+                           A   373    ;    1	#include <ez8.h>
+                           A   374    ;    2	#include <delay.h>
+                           A   375    ;    3	#include <STRING.H>
+                           A   376    ;    4	#include <LCD.H>
+                           A   377    ;    5	#include <STDIO.H>
+                           A   378    ;    6	#include <motor.h>
+                           A   379    ;    7	#include <uart.h>
+                           A   380    ;    8	#include <i2c.h>
+                           A   381    ;    9	
+                           A   382    ;   10	#define loffset 405
+                           A   383    ;   11	#define roffset 407
+                           A   384    ;   12	
+                           A   385    ;   13	void init_IO(void);
+                           A   386    ;   14	
+                           A   387    ;   15	void main(void){
+                           A   388    .define "U‹ìjÿh0/J"
+                           A   389    .class 4
+                           A   390    .reg -1
+                           A   391    .type 3
+                           A   392    .type 0
+                           A   393    .endef
+000000 D6 0000             A   394    	CALL	__b_frameset00
+                           A   395    ;   16		char reser[];
+                           A   396    ;   17		char test[5];
+                           A   397    ;   18		char inChar[25];
+                           A   398    ;   19		int speed = 0;
+                           A   399    .line 19
+                           A   400    ;   20		DI();
+                           A   401    .line 20
+000003 8F                  A   402    	DI
+                           A   403    ;   21		init_IO();
+                           A   404    .line 21
+000004 D6 0061             A   405    	CALL	_init_IO
+                           A   406    ;   22		i2cInit();
+                           A   407    .line 22
+000007 D6 0000             A   408    	CALL	_i2cInit
+                           A   409    ;   23		init_LCD();
+                           A   410    .line 23
+00000A D6 0000             A   411    	CALL	_init_LCD
+                           A   412    ;   24		signon();
+                           A   413    .line 24
+00000D D6 0000             A   414    	CALL	_signon
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:59:32     page:   9
 
 
 PC     Object              I  Line    Source main.src
-000013 D6 0000             A   416    	CALL	_motorInit
-                           A   417    ;   29		EI();
-                           A   418    .line 29
-000016 9F                  A   419    	EI
-                           A   420    ;   30		sendString("AT+NAMErJordan");
-                           A   421    .line 30
-000017 8C 00               A   422    	LD	R8,#high(L__0)
-000019 9C 00               A   423    	LD	R9,#low(L__0)
-00001B D6 0000             A   424    	CALL	_sendString
-                           A   425    ;   31	
-                           A   426    ;   32		rxFlag = 0;
-                           A   427    .line 32
-00001E E9000005            A   428    	LDX	_rxFlag,#-0
-                           A   429    ;   33		command = 0;
-                           A   430    .line 33
-000022 E9000004            A   431    	LDX	_command,#-0
-                           A   432    ;   34		
-                           A   433    ;   35		sendString("got here");
-                           A   434    .line 35
-000026 8C 00               A   435    	LD	R8,#high(L__1)
-000028 9C 0F               A   436    	LD	R9,#low(L__1)
-00002A D6 0000             A   437    	CALL	_sendString
-                           A   438    ;   36	
-                           A   439    ;   37		while(1){
-00002D                     A   440    _1_L_0:
-                           A   441    .line 37
-                           A   442    ;   38	
-                           A   443    ;   39			mems_read();
-                           A   444    .line 39
-00002D D6 0000             A   445    	CALL	_mems_read
-                           A   446    ;   40			dly(50);
-                           A   447    .line 40
-000030 B0E8                A   448    	CLR	R8
-000032 9C32                A   449    	LD	R9,#50
-000034 D6 0000             A   450    	CALL	_dly
-                           A   451    ;   41			
-                           A   452    ;   42			
-                           A   453    ;   43	// 		command = commandF();
-                           A   454    ;   44	// 		if(command == 'w'){
-                           A   455    ;   45	// 			//  sprintf(inChar, "%c", c
-                           A   456    ;   46	// 			//  sendString(inChar);
-                           A   457    ;   47	// 			//  printMessage(inChar, 1)
-                           A   458    ;   48	// 			speed = speed + 1;
-                           A   459    ;   49	// 			command = 0;
-                           A   460    ;   50	// 			sprintf(inChar, "%d", speed
-                           A   461    ;   51	// 			printMessage(inChar, 1);
-                           A   462    ;   52	// 			motorsSet(speed, 0, loffset
-                           A   463    ;   53	// 		} else if(command == 's'){
-                           A   464    ;   54	// 			speed = speed - 1;
-                           A   465    ;   55	// 			command = 0;
-                           A   466    ;   56	// 			sprintf(inChar, "%d", speed
-                           A   467    ;   57	// 			printMessage(inChar, 1);
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     22:43:46     page:  10
+                           A   415    ;   25		// printMessage("This is a test", 1
+                           A   416    ;   26		init_coms();
+                           A   417    .line 26
+000010 D6 0000             A   418    	CALL	_init_coms
+                           A   419    ;   27	
+                           A   420    ;   28		motorInit();
+                           A   421    .line 28
+000013 D6 0000             A   422    	CALL	_motorInit
+                           A   423    ;   29		EI();
+                           A   424    .line 29
+000016 9F                  A   425    	EI
+                           A   426    ;   30		sendString("AT+NAMErJordan");
+                           A   427    .line 30
+000017 1F70 00             A   428    	PUSH	#low(L__0)
+00001A 1F70 00             A   429    	PUSH	#high(L__0)
+00001D D6 0000             A   430    	CALL	_sendString
+000020 50E0                A   431    	POP	R0
+000022 50E0                A   432    	POP	R0
+                           A   433    ;   31	
+                           A   434    ;   32		rxFlag = 0;
+                           A   435    .line 32
+000024 E9000005            A   436    	LDX	_rxFlag,#-0
+                           A   437    ;   33		command = 0;
+                           A   438    .line 33
+000028 E9000004            A   439    	LDX	_command,#-0
+                           A   440    ;   34		
+                           A   441    ;   35		sendString("got here");
+                           A   442    .line 35
+00002C 1F70 0F             A   443    	PUSH	#low(L__1)
+00002F 1F70 00             A   444    	PUSH	#high(L__1)
+000032 D6 0000             A   445    	CALL	_sendString
+000035 50E0                A   446    	POP	R0
+000037 50E0                A   447    	POP	R0
+                           A   448    ;   36		
+                           A   449    ;   37		printMessage("This is a test", 1);
+                           A   450    .line 37
+000039 1F7001              A   451    	PUSH	#1
+00003C 1F70 18             A   452    	PUSH	#low(L__2)
+00003F 1F70 00             A   453    	PUSH	#high(L__2)
+000042 D6 0000             A   454    	CALL	_printMessage
+000045 50E0                A   455    	POP	R0
+000047 50E0                A   456    	POP	R0
+000049 50E0                A   457    	POP	R0
+                           A   458    ;   38	
+                           A   459    ;   39		while(1){
+00004B                     A   460    _1_L_0:
+                           A   461    .line 39
+                           A   462    ;   40	
+                           A   463    ;   41			mems_read();
+                           A   464    .line 41
+00004B D6 0000             A   465    	CALL	_mems_read
+                           A   466    ;   42			dly(50);
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:59:32     page:  10
 
 
 PC     Object              I  Line    Source main.src
-                           A   468    ;   58	// 			motorsSet(speed, 0, loffset
-                           A   469    ;   59	// 		}
-                           A   470    ;   60			
-                           A   471    ;   61		}
-                           A   472    .line 61
-000037 8B F4               A   473    	JR	_1_L_0
-                           A   474    ;   62	}
-                           A   475    .line 62
-000039 D6 0000             A   476    	CALL	__b_framereset
-00003C AF                  A   477    	RET	
-                           A   478    .endfunc "main",62,"_main"
-                           A   479    	SEGMENT ROM_DATA
-                           A   480    
-                           A   481    
-                           A   482    ;**************************** _init_IO ********
-                           A   483    ;Name                         Addr/Register   S
-                           A   484    
-                           A   485    
-                           A   486    ; Aggregate Stack Size: 0 (words)
-                           A   487    
-                           A   488    
-                           A   489    	.FRAME _n_init_IO,?_n_init_IO,RDATA
-                           A   490    	.FRAME _f_init_IO,?_f_init_IO,EDATA
-                           A   491    	SEGMENT main_TEXT
-00003D                     A   492    _init_IO:
-                           A   493    .define "_init_IO"
-                           A   494    .value _init_IO
-                           A   495    .class 2
-                           A   496    .type 65
-                           A   497    .type 0
-                           A   498    .endef
-                           A   499    .begfunc "init_IO",65,"_init_IO"
-00003D D6 0000             A   500    	CALL	__b_frameset00
-                           A   501    ;   63	
-                           A   502    ;   64	
-                           A   503    ;   65	void init_IO(void){
-                           A   504    ;   66	
-                           A   505    ;   67		//Initialise Port G to be entirely 
-                           A   506    ;   68		// PGAF = 0x00;
-                           A   507    ;   69		// PGDD = 0x00;
-                           A   508    ;   70		// PGADDR = 0x00;
-                           A   509    ;   71		// PGOUT = 0x00;
-                           A   510    ;   72	
-                           A   511    ;   73	}
-                           A   512    .line 73
-000040 D6 0000             A   513    	CALL	__b_framereset
-000043 AF                  A   514    	RET	
-                           A   515    .endfunc "init_IO",73,"_init_IO"
-                           A   516    	XREF _mems_read:ROM
-                           A   517    	XREF _i2cInit:ROM
-                           A   518    	XREF _sendString:ROM
-                           A   519    	XREF _init_coms:ROM
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     22:43:46     page:  11
+                           A   467    .line 42
+00004E 1F7032              A   468    	PUSH	#50
+000051 1F7000              A   469    	PUSH	#0
+000054 D6 0000             A   470    	CALL	_dly
+000057 50E0                A   471    	POP	R0
+000059 50E0                A   472    	POP	R0
+                           A   473    ;   43			
+                           A   474    ;   44			
+                           A   475    ;   45	// 		command = commandF();
+                           A   476    ;   46	// 		if(command == 'w'){
+                           A   477    ;   47	// 			//  sprintf(inChar, "%c", c
+                           A   478    ;   48	// 			//  sendString(inChar);
+                           A   479    ;   49	// 			//  printMessage(inChar, 1)
+                           A   480    ;   50	// 			speed = speed + 1;
+                           A   481    ;   51	// 			command = 0;
+                           A   482    ;   52	// 			sprintf(inChar, "%d", speed
+                           A   483    ;   53	// 			printMessage(inChar, 1);
+                           A   484    ;   54	// 			motorsSet(speed, 0, loffset
+                           A   485    ;   55	// 		} else if(command == 's'){
+                           A   486    ;   56	// 			speed = speed - 1;
+                           A   487    ;   57	// 			command = 0;
+                           A   488    ;   58	// 			sprintf(inChar, "%d", speed
+                           A   489    ;   59	// 			printMessage(inChar, 1);
+                           A   490    ;   60	// 			motorsSet(speed, 0, loffset
+                           A   491    ;   61	// 		}
+                           A   492    ;   62			
+                           A   493    ;   63		}
+                           A   494    .line 63
+00005B 8B EE               A   495    	JR	_1_L_0
+                           A   496    ;   64	}
+                           A   497    .line 64
+00005D D6 0000             A   498    	CALL	__b_framereset
+000060 AF                  A   499    	RET	
+                           A   500    .endfunc "main",64,"_main"
+                           A   501    	SEGMENT ROM_DATA
+                           A   502    
+                           A   503    
+                           A   504    ;**************************** _init_IO ********
+                           A   505    ;Name                         Addr/Register   S
+                           A   506    
+                           A   507    
+                           A   508    ; Aggregate Stack Size: 0 (words)
+                           A   509    
+                           A   510    
+                           A   511    	.FRAME _n_init_IO,?_n_init_IO,RDATA
+                           A   512    	.FRAME _f_init_IO,?_f_init_IO,EDATA
+                           A   513    	SEGMENT main_TEXT
+000061                     A   514    _init_IO:
+                           A   515    .define "_init_IO"
+                           A   516    .value _init_IO
+                           A   517    .class 2
+                           A   518    .type 65
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:59:32     page:  11
 
 
 PC     Object              I  Line    Source main.src
-                           A   520    	XREF _motorInit:ROM
-                           A   521    	XREF _signon:ROM
-                           A   522    	XREF _init_LCD:ROM
-                           A   523    	XREF _dly:ROM
-                           A   524    	XREF __b_framereset:ROM
-                           A   525    	XREF __b_frameset00:ROM
-                           A   526    	XDEF _init_IO
-                           A   527    	XDEF _main
-                           A   528    	XDEF _gyroXValue
-                           A   529    	XDEF _accZValue
-                           A   530    	XDEF _accYValue
-                           A   531    	XDEF _accXValue
-                           A   532    	XDEF _gyro_val
-                           A   533    	XDEF _gyro_l
-                           A   534    	XDEF _gyro_h
-                           A   535    	XDEF _acc_x
-                           A   536    	XDEF _acc_y
-                           A   537    	XDEF _acc_yl
-                           A   538    	XDEF _acc_yh
-                           A   539    	XDEF _acc_xl
-                           A   540    	XDEF _acc_xh
-                           A   541    	XDEF _accRead
-                           A   542    	XDEF _gyroRead
-                           A   543    	XDEF _rxFlag
-                           A   544    	XDEF _command
-                           A   545    	XDEF _txFinished
-                           A   546    	XDEF _string
-                           A   547    	XDEF _inChar
-                           A   548    	XDEF _RELOAD
-                           A   549    	END
+                           A   519    .type 0
+                           A   520    .endef
+                           A   521    .begfunc "init_IO",67,"_init_IO"
+000061 D6 0000             A   522    	CALL	__b_frameset00
+                           A   523    ;   65	
+                           A   524    ;   66	
+                           A   525    ;   67	void init_IO(void){
+                           A   526    ;   68	
+                           A   527    ;   69		//Initialise Port G to be entirely 
+                           A   528    ;   70		// PGAF = 0x00;
+                           A   529    ;   71		// PGDD = 0x00;
+                           A   530    ;   72		// PGADDR = 0x00;
+                           A   531    ;   73		// PGOUT = 0x00;
+                           A   532    ;   74	
+                           A   533    ;   75	}
+                           A   534    .line 75
+000064 D6 0000             A   535    	CALL	__b_framereset
+000067 AF                  A   536    	RET	
+                           A   537    .endfunc "init_IO",75,"_init_IO"
+                           A   538    	XREF _mems_read:ROM
+                           A   539    	XREF _i2cInit:ROM
+                           A   540    	XREF _sendString:ROM
+                           A   541    	XREF _init_coms:ROM
+                           A   542    	XREF _motorInit:ROM
+                           A   543    	XREF _printMessage:ROM
+                           A   544    	XREF _signon:ROM
+                           A   545    	XREF _init_LCD:ROM
+                           A   546    	XREF _dly:ROM
+                           A   547    	XREF __b_framereset:ROM
+                           A   548    	XREF __b_frameset00:ROM
+                           A   549    	XDEF _init_IO
+                           A   550    	XDEF _main
+                           A   551    	XDEF _gyroXValue
+                           A   552    	XDEF _accZValue
+                           A   553    	XDEF _accYValue
+                           A   554    	XDEF _accXValue
+                           A   555    	XDEF _gyro_val
+                           A   556    	XDEF _gyro_l
+                           A   557    	XDEF _gyro_h
+                           A   558    	XDEF _acc_x
+                           A   559    	XDEF _acc_y
+                           A   560    	XDEF _acc_yl
+                           A   561    	XDEF _acc_yh
+                           A   562    	XDEF _acc_xl
+                           A   563    	XDEF _acc_xh
+                           A   564    	XDEF _accRead
+                           A   565    	XDEF _gyroRead
+                           A   566    	XDEF _rxFlag
+                           A   567    	XDEF _command
+                           A   568    	XDEF _txFinished
+                           A   569    	XDEF _string
+                           A   570    	XDEF _inChar
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:59:32     page:  12
+
+
+PC     Object              I  Line    Source main.src
+                           A   571    	XDEF _RELOAD
+                           A   572    	END
 
 
 Errors: 0
 Warnings: 0
-Lines Assembled: 550
+Lines Assembled: 573
