@@ -10,6 +10,8 @@ void mems_read(void);
 
 void t1_mem_isr(void);
 
+float complementary(void);
+
 //Write a single byte must not use while performing read
 unsigned char i2cWrite(unsigned char dev_adrs, unsigned char reg_adrs, unsigned char w_data);
 
@@ -18,6 +20,8 @@ unsigned char i2cWrite(unsigned char dev_adrs, unsigned char reg_adrs, unsigned 
 void i2cStartRead(unsigned char deviceAddress, unsigned char registerAddress, unsigned char numToRead, unsigned char * dataLoc);
 
 char i2cIsDataReady(void);   //returns 1 when read complete, -1 fail, 0 still doing
+
+void printi2c(void);
 
 //Acclerometer Address
 #define ACCEL (0x30) //0011 0000 **** CHANGED
@@ -81,8 +85,10 @@ Note: rest default
 
 #endif //I2C__H
 
-char gyroRead[2];
+char gyroRead[6];
 char accRead[6];
+// char *accRead;
+// char *accRead2;
 
 // unsigned char &acc_data_xl;
 // unsigned char &acc_data_xh;
@@ -107,5 +113,7 @@ int accXValue;
 int accYValue;
 int accZValue;
 int gyroXValue;
-// int gyroYValue;
-// int gyroZValue;
+int gyroYValue;
+int gyroZValue;
+
+char t1Ready;

@@ -1,0 +1,425 @@
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     03:30:44     page:   1
+
+
+PC     Object              I  Line    Source 
+                           A     1    ; Zilog Z8 Encore! ANSI C Compiler Release 3.62
+                           A     2    ; -nolocalcse -optsize -nofastcall -const=RAM -
+                           A     3    ; -nooptlink -regvar -reduceopt -debug -norevaa
+                           A     4    ; -alias 
+                           A     5    	DEFINE lancing_TEXT,SPACE=ROM
+                           A     6    	FILE	"..\..\..\THIRDY~1\THIRDY~1\BALANCI
+                           A     7    .debug "C"
+                           A     8    	SEGMENT FAR_BSS
+000000                     A     9    _gyroRead:
+000000                     A    10    	DS	2
+                           A    11    .define "gyroRead"
+                           A    12    .alias "_gyroRead"
+                           A    13    .class 83
+                           A    14    .value _gyroRead
+                           A    15    .dim 2
+                           A    16    .type 98
+                           A    17    .type 0
+                           A    18    .endef
+000002                     A    19    _accRead:
+000002                     A    20    	DS	6
+                           A    21    .define "accRead"
+                           A    22    .alias "_accRead"
+                           A    23    .class 83
+                           A    24    .value _accRead
+                           A    25    .dim 6
+                           A    26    .type 98
+                           A    27    .type 0
+                           A    28    .endef
+000008                     A    29    _acc_xh:
+000008                     A    30    	DS	1
+                           A    31    .define "acc_xh"
+                           A    32    .alias "_acc_xh"
+                           A    33    .class 83
+                           A    34    .value _acc_xh
+                           A    35    .type 2
+                           A    36    .type 0
+                           A    37    .endef
+000009                     A    38    _acc_xl:
+000009                     A    39    	DS	1
+                           A    40    .define "acc_xl"
+                           A    41    .alias "_acc_xl"
+                           A    42    .class 83
+                           A    43    .value _acc_xl
+                           A    44    .type 2
+                           A    45    .type 0
+                           A    46    .endef
+00000A                     A    47    _acc_yh:
+00000A                     A    48    	DS	1
+                           A    49    .define "acc_yh"
+                           A    50    .alias "_acc_yh"
+                           A    51    .class 83
+                           A    52    .value _acc_yh
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     03:30:44     page:   2
+
+
+PC     Object              I  Line    Source balancing.src
+                           A    53    .type 2
+                           A    54    .type 0
+                           A    55    .endef
+00000B                     A    56    _acc_yl:
+00000B                     A    57    	DS	1
+                           A    58    .define "acc_yl"
+                           A    59    .alias "_acc_yl"
+                           A    60    .class 83
+                           A    61    .value _acc_yl
+                           A    62    .type 2
+                           A    63    .type 0
+                           A    64    .endef
+00000C                     A    65    _acc_y:
+00000C                     A    66    	DS	1
+                           A    67    .define "acc_y"
+                           A    68    .alias "_acc_y"
+                           A    69    .class 83
+                           A    70    .value _acc_y
+                           A    71    .type 2
+                           A    72    .type 0
+                           A    73    .endef
+00000D                     A    74    _acc_x:
+00000D                     A    75    	DS	1
+                           A    76    .define "acc_x"
+                           A    77    .alias "_acc_x"
+                           A    78    .class 83
+                           A    79    .value _acc_x
+                           A    80    .type 2
+                           A    81    .type 0
+                           A    82    .endef
+00000E                     A    83    _gyro_h:
+00000E                     A    84    	DS	1
+                           A    85    .define "gyro_h"
+                           A    86    .alias "_gyro_h"
+                           A    87    .class 83
+                           A    88    .value _gyro_h
+                           A    89    .type 2
+                           A    90    .type 0
+                           A    91    .endef
+00000F                     A    92    _gyro_l:
+00000F                     A    93    	DS	1
+                           A    94    .define "gyro_l"
+                           A    95    .alias "_gyro_l"
+                           A    96    .class 83
+                           A    97    .value _gyro_l
+                           A    98    .type 2
+                           A    99    .type 0
+                           A   100    .endef
+000010                     A   101    _gyro_val:
+000010                     A   102    	DS	2*1
+                           A   103    .define "gyro_val"
+                           A   104    .alias "_gyro_val"
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     03:30:44     page:   3
+
+
+PC     Object              I  Line    Source balancing.src
+                           A   105    .class 83
+                           A   106    .value _gyro_val
+                           A   107    .type 3
+                           A   108    .type 0
+                           A   109    .endef
+000012                     A   110    _accXValue:
+000012                     A   111    	DS	2*1
+                           A   112    .define "accXValue"
+                           A   113    .alias "_accXValue"
+                           A   114    .class 83
+                           A   115    .value _accXValue
+                           A   116    .type 3
+                           A   117    .type 0
+                           A   118    .endef
+000014                     A   119    _accYValue:
+000014                     A   120    	DS	2*1
+                           A   121    .define "accYValue"
+                           A   122    .alias "_accYValue"
+                           A   123    .class 83
+                           A   124    .value _accYValue
+                           A   125    .type 3
+                           A   126    .type 0
+                           A   127    .endef
+000016                     A   128    _accZValue:
+000016                     A   129    	DS	2*1
+                           A   130    .define "accZValue"
+                           A   131    .alias "_accZValue"
+                           A   132    .class 83
+                           A   133    .value _accZValue
+                           A   134    .type 3
+                           A   135    .type 0
+                           A   136    .endef
+000018                     A   137    _gyroXValue:
+000018                     A   138    	DS	2*1
+                           A   139    .define "gyroXValue"
+                           A   140    .alias "_gyroXValue"
+                           A   141    .class 83
+                           A   142    .value _gyroXValue
+                           A   143    .type 3
+                           A   144    .type 0
+                           A   145    .endef
+00001A                     A   146    _gyroYValue:
+00001A                     A   147    	DS	2*1
+                           A   148    .define "gyroYValue"
+                           A   149    .alias "_gyroYValue"
+                           A   150    .class 83
+                           A   151    .value _gyroYValue
+                           A   152    .type 3
+                           A   153    .type 0
+                           A   154    .endef
+00001C                     A   155    _gyroZValue:
+00001C                     A   156    	DS	2*1
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     03:30:44     page:   4
+
+
+PC     Object              I  Line    Source balancing.src
+                           A   157    .define "gyroZValue"
+                           A   158    .alias "_gyroZValue"
+                           A   159    .class 83
+                           A   160    .value _gyroZValue
+                           A   161    .type 3
+                           A   162    .type 0
+                           A   163    .endef
+                           A   164    	SEGMENT ROM_DATA
+                           A   165    
+                           A   166    
+                           A   167    ;**************************** _complementary **
+                           A   168    ;Name                         Addr/Register   S
+                           A   169    ;_accXValueF                         IMPORT  --
+                           A   170    ;_accZValueF                         IMPORT  --
+                           A   171    ;_atan2                              IMPORT  --
+                           A   172    ;_gyroXValueF                        IMPORT  --
+                           A   173    ;thetaAcc                            R15-12    
+                           A   174    ;thetaGyro                            R15-8    
+                           A   175    ;theta                                R15-4    
+                           A   176    
+                           A   177    
+                           A   178    ; Aggregate Stack Size: -12 (words)
+                           A   179    
+                           A   180    
+                           A   181    	.FRAME _n_complementary,?_n_complementary,R
+                           A   182    	.FCALL _n_gyroXValueF
+                           A   183    	.FCALL _n_atan2
+                           A   184    	.FCALL _n_accZValueF
+                           A   185    	.FCALL _n_accXValueF
+                           A   186    	.FRAME _f_complementary,?_f_complementary,E
+                           A   187    	.FCALL _f_gyroXValueF
+                           A   188    	.FCALL _f_atan2
+                           A   189    	.FCALL _f_accZValueF
+                           A   190    	.FCALL _f_accXValueF
+                           A   191    	SEGMENT lancing_TEXT
+000000                     A   192    _complementary:
+                           A   193    .define "_complementary"
+                           A   194    .value _complementary
+                           A   195    .class 2
+                           A   196    .type 70
+                           A   197    .type 0
+                           A   198    .endef
+                           A   199    .begfunc "complementary",5,"_complementary"
+                           A   200    ;    1	#include <balancing.h>
+                           A   201    ;    2	#include <i2c.h>
+                           A   202    ;    3	#include <MATH.H>
+                           A   203    ;    4	
+                           A   204    ;    5	float complementary(void){
+                           A   205    .define "theta"
+                           A   206    .class 1
+                           A   207    .value -4
+                           A   208    .type 6
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     03:30:44     page:   5
+
+
+PC     Object              I  Line    Source balancing.src
+                           A   209    .type 0
+                           A   210    .endef
+                           A   211    .define "thetaGyro"
+                           A   212    .class 1
+                           A   213    .value -8
+                           A   214    .type 6
+                           A   215    .type 0
+                           A   216    .endef
+                           A   217    .define "thetaAcc"
+                           A   218    .class 1
+                           A   219    .value -12
+                           A   220    .type 6
+                           A   221    .type 0
+                           A   222    .endef
+000000 5C0C                A   223    	LD	R5,#12
+000002 D6 0000             A   224    	CALL	__b_frameset0
+                           A   225    ;    6		float thetaGyro = 0;
+                           A   226    .line 6
+000005 B0E0                A   227    	CLR	R0
+000007 B0E1                A   228    	CLR	R1
+000009 B0E2                A   229    	CLR	R2
+00000B B0E3                A   230    	CLR	R3
+00000D 89E0F8              A   231    	LDX	-8(RR14),R0
+000010 89E1F9              A   232    	LDX	-7(RR14),R1
+000013 89E2FA              A   233    	LDX	-6(RR14),R2
+000016 89E3FB              A   234    	LDX	-5(RR14),R3
+                           A   235    ;    7		float thetaAcc = 0;
+                           A   236    .line 7
+000019 B0E0                A   237    	CLR	R0
+00001B B0E1                A   238    	CLR	R1
+00001D B0E2                A   239    	CLR	R2
+00001F B0E3                A   240    	CLR	R3
+000021 89E0F4              A   241    	LDX	-12(RR14),R0
+000024 89E1F5              A   242    	LDX	-11(RR14),R1
+000027 89E2F6              A   243    	LDX	-10(RR14),R2
+00002A 89E3F7              A   244    	LDX	-9(RR14),R3
+                           A   245    ;    8		float theta = 0;
+                           A   246    .line 8
+00002D B0E0                A   247    	CLR	R0
+00002F B0E1                A   248    	CLR	R1
+000031 B0E2                A   249    	CLR	R2
+000033 B0E3                A   250    	CLR	R3
+000035 89E0FC              A   251    	LDX	-4(RR14),R0
+000038 89E1FD              A   252    	LDX	-3(RR14),R1
+00003B 89E2FE              A   253    	LDX	-2(RR14),R2
+00003E 89E3FF              A   254    	LDX	-1(RR14),R3
+                           A   255    ;    9		
+                           A   256    ;   10		//Integrate gyro
+                           A   257    ;   11		thetaGyro += (float) gyroXValueF() 
+                           A   258    .line 11
+000041 D6 0000             A   259    	CALL	_gyroXValueF
+000044 E4E1E3              A   260    	LD	R3,R1
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     03:30:44     page:   6
+
+
+PC     Object              I  Line    Source balancing.src
+000047 E4E0E2              A   261    	LD	R2,R0
+00004A E4E2E1              A   262    	LD	R1,R2
+00004D 90E1                A   263    	RL	R1
+00004F 3211                A   264    	SBC	R1,R1
+000051 E4E1E0              A   265    	LD	R0,R1
+000054 D6 0000             A   266    	CALL	__b_fpltof
+000057 4C3D                A   267    	LD	R4,#61
+000059 5C23                A   268    	LD	R5,#35
+00005B 6CD7                A   269    	LD	R6,#215
+00005D 7C0A                A   270    	LD	R7,#10
+00005F D6 0000             A   271    	CALL	__b_fpmul
+000062 1FE8EE0E E4         A   272    	LDWX	RR4,RR0
+000067 1FE8EE2E E6         A   273    	LDWX	RR6,RR2
+00006C 990EF8              A   274    	LEA	RR0,248(RR14)
+00006F D6 0000             A   275    	CALL	__b_ldxlr0
+000072 D6 0000             A   276    	CALL	__b_fpadd
+000075 994EF8              A   277    	LEA	RR4,248(RR14)
+000078 D6 0000             A   278    	CALL	__b_stxlr0
+                           A   279    ;   12		
+                           A   280    ;   13		//Angle from accelerometer based on
+                           A   281    ;   14		thetaAcc = atan2((float) accXValueF
+                           A   282    .line 14
+00007B D6 0000             A   283    	CALL	_accZValueF
+00007E E4E1E3              A   284    	LD	R3,R1
+000081 E4E0E2              A   285    	LD	R2,R0
+000084 E4E2E1              A   286    	LD	R1,R2
+000087 90E1                A   287    	RL	R1
+000089 3211                A   288    	SBC	R1,R1
+00008B E4E1E0              A   289    	LD	R0,R1
+00008E D6 0000             A   290    	CALL	__b_fpltof
+000091 4C42                A   291    	LD	R4,#66
+000093 5C65                A   292    	LD	R5,#101
+000095 6C47                A   293    	LD	R6,#71
+000097 7CAE                A   294    	LD	R7,#174
+000099 D6 0000             A   295    	CALL	__b_fpmul
+00009C 70E3                A   296    	PUSH	R3
+00009E 70E2                A   297    	PUSH	R2
+0000A0 70E1                A   298    	PUSH	R1
+0000A2 70E0                A   299    	PUSH	R0
+0000A4 D6 0000             A   300    	CALL	_accXValueF
+0000A7 E4E1E3              A   301    	LD	R3,R1
+0000AA E4E0E2              A   302    	LD	R2,R0
+0000AD E4E2E1              A   303    	LD	R1,R2
+0000B0 90E1                A   304    	RL	R1
+0000B2 3211                A   305    	SBC	R1,R1
+0000B4 E4E1E0              A   306    	LD	R0,R1
+0000B7 D6 0000             A   307    	CALL	__b_fpltof
+0000BA 70E3                A   308    	PUSH	R3
+0000BC 70E2                A   309    	PUSH	R2
+0000BE 70E1                A   310    	PUSH	R1
+0000C0 70E0                A   311    	PUSH	R0
+0000C2 D6 0000             A   312    	CALL	_atan2
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     03:30:44     page:   7
+
+
+PC     Object              I  Line    Source balancing.src
+0000C5 2F                  A   313    	ATM	
+0000C6 09080FFF            A   314    	ADDX	4095,#8
+0000CA 19000FFE            A   315    	ADCX	4094,#-0
+0000CE 89E0F4              A   316    	LDX	-12(RR14),R0
+0000D1 89E1F5              A   317    	LDX	-11(RR14),R1
+0000D4 89E2F6              A   318    	LDX	-10(RR14),R2
+0000D7 89E3F7              A   319    	LDX	-9(RR14),R3
+                           A   320    ;   15		
+                           A   321    ;   16		theta = 0.98*(thetaGyro + theta) + 
+                           A   322    .line 16
+0000DA 994EFC              A   323    	LEA	RR4,252(RR14)
+0000DD D6 0000             A   324    	CALL	__b_ldxlr4
+0000E0 990EF8              A   325    	LEA	RR0,248(RR14)
+0000E3 D6 0000             A   326    	CALL	__b_ldxlr0
+0000E6 D6 0000             A   327    	CALL	__b_fpadd
+0000E9 4C3F                A   328    	LD	R4,#63
+0000EB 5C7A                A   329    	LD	R5,#122
+0000ED 6CE1                A   330    	LD	R6,#225
+0000EF 7C48                A   331    	LD	R7,#72
+0000F1 D6 0000             A   332    	CALL	__b_fpmul
+0000F4 1FE8EE0E E8         A   333    	LDWX	RR8,RR0
+0000F9 1FE8EE2E EA         A   334    	LDWX	RR10,RR2
+0000FE 4C3C                A   335    	LD	R4,#60
+000100 5CA3                A   336    	LD	R5,#163
+000102 6CD7                A   337    	LD	R6,#215
+000104 7C0A                A   338    	LD	R7,#10
+000106 990EF4              A   339    	LEA	RR0,244(RR14)
+000109 D6 0000             A   340    	CALL	__b_ldxlr0
+00010C D6 0000             A   341    	CALL	__b_fpmul
+00010F 1FE8EE0E E4         A   342    	LDWX	RR4,RR0
+000114 1FE8EE2E E6         A   343    	LDWX	RR6,RR2
+000119 1FE8EE8E E0         A   344    	LDWX	RR0,RR8
+00011E 1FE8EEAE E2         A   345    	LDWX	RR2,RR10
+000123 D6 0000             A   346    	CALL	__b_fpadd
+000126 994EFC              A   347    	LEA	RR4,252(RR14)
+000129 D6 0000             A   348    	CALL	__b_stxlr0
+                           A   349    ;   17		
+                           A   350    ;   18		return theta;
+                           A   351    .line 18
+00012C 990EFC              A   352    	LEA	RR0,252(RR14)
+00012F D6 0000             A   353    	CALL	__b_ldxlr0
+                           A   354    .line 19
+000132 D6 0000             A   355    	CALL	__b_framereset
+000135 AF                  A   356    	RET	
+                           A   357    .endfunc "complementary",19,"_complementary"
+                           A   358    	XREF _accZValueF:ROM
+                           A   359    	XREF _accXValueF:ROM
+                           A   360    	XREF _gyroXValueF:ROM
+                           A   361    	XREF _atan2:ROM
+                           A   362    	XREF __b_fpadd:ROM
+                           A   363    	XREF __b_fpltof:ROM
+                           A   364    	XREF __b_fpmul:ROM
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     03:30:44     page:   8
+
+
+PC     Object              I  Line    Source balancing.src
+                           A   365    	XREF __b_framereset:ROM
+                           A   366    	XREF __b_frameset0:ROM
+                           A   367    	XREF __b_stxlr0:ROM
+                           A   368    	XREF __b_ldxlr0:ROM
+                           A   369    	XREF __b_ldxlr4:ROM
+                           A   370    	XDEF _complementary
+                           A   371    	XDEF _gyroZValue
+                           A   372    	XDEF _gyroYValue
+                           A   373    	XDEF _gyroXValue
+                           A   374    	XDEF _accZValue
+                           A   375    	XDEF _accYValue
+                           A   376    	XDEF _accXValue
+                           A   377    	XDEF _gyro_val
+                           A   378    	XDEF _gyro_l
+                           A   379    	XDEF _gyro_h
+                           A   380    	XDEF _acc_x
+                           A   381    	XDEF _acc_y
+                           A   382    	XDEF _acc_yl
+                           A   383    	XDEF _acc_yh
+                           A   384    	XDEF _acc_xl
+                           A   385    	XDEF _acc_xh
+                           A   386    	XDEF _accRead
+                           A   387    	XDEF _gyroRead
+                           A   388    	END
+
+
+Errors: 0
+Warnings: 0
+Lines Assembled: 389

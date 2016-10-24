@@ -10,7 +10,7 @@ void init_coms(void){
 	PADD &= ~0x20;
 	PADD |= 0x10;
 	PAADDR = 0x00;
-
+		
 	SET_VECTOR(UART0_RX, isr_U1_RX);
 	SET_VECTOR(UART0_TX, isr_U1_TX);
 
@@ -18,7 +18,7 @@ void init_coms(void){
 	IRQ0ENH &= ~0x18;
 	IRQ0ENL |= 0x18;
 
-
+	
 	U0CTL0 = 0xC0;
 	U0CTL1 = 0x00;
 

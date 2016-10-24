@@ -4,7 +4,7 @@
 <!-- file information -->
 <files>
 <file filter-key="">.\delay.H</file>
-<file filter-key="">.\DELAY.C</file>
+<file filter-key="">.\delay.C</file>
 <file filter-key="">.\main.C</file>
 <file filter-key="">.\LCD.H</file>
 <file filter-key="">.\LCD.C</file>
@@ -14,6 +14,7 @@
 <file filter-key="">.\motor.C</file>
 <file filter-key="">.\i2c.h</file>
 <file filter-key="">.\i2c.c</file>
+<file filter-key="">.\main.h</file>
 </files>
 
 <!-- configuration information -->
@@ -280,14 +281,16 @@
 <watch-element expression="command" />
 <watch-element expression="accRead" />
 <watch-element expression="accXValue" />
+<watch-element expression="gyroXValue" />
+<watch-element expression="accZValue" />
 </watch-elements>
 
 <!-- breakpoint information -->
 <breakpoints>
 <breakpoint temporary="false" enabled="true" >
-<line-number>193</line-number>
+<line-number>255</line-number>
 <pathname>C:\Users\Jordan\Documents\GitHub\thirdyearproject\LCD.C</pathname>
-<address>1302</address>
+<address>0</address>
 <command></command>
 <preserve-type>0</preserve-type>
 </breakpoint>

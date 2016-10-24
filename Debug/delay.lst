@@ -1,13 +1,13 @@
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     02:22:34     page:   1
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     00:18:18     page:   1
 
 
 PC     Object              I  Line    Source 
                            A     1    ; Zilog Z8 Encore! ANSI C Compiler Release 3.62
-                           A     2    ; -nolocalcse -optsize -fastcall -const=RAM -mo
+                           A     2    ; -nolocalcse -optsize -nofastcall -const=RAM -
                            A     3    ; -nooptlink -regvar -reduceopt -debug -norevaa
                            A     4    ; -alias 
                            A     5    	DEFINE delay_TEXT,SPACE=ROM
-                           A     6    	FILE	"..\..\..\..\DOCUME~1\GITHUB\THIRDY
+                           A     6    	FILE	"..\..\..\THIRDY~1\THIRDY~1\DELAY.C
                            A     7    .debug "C"
                            A     8    	SEGMENT ROM_DATA
                            A     9    
@@ -17,7 +17,7 @@ PC     Object              I  Line    Source
                            A    13    ;i                                      RR4    
                            A    14    ;k                                      RR2    
                            A    15    ;j                                      RR0    
-                           A    16    ;dly_time                                R8    
+                           A    16    ;dly_time                             R15+4    
                            A    17    
                            A    18    
                            A    19    ; Aggregate Stack Size: 0 (words)
@@ -35,8 +35,8 @@ PC     Object              I  Line    Source
                            A    31    .endef
                            A    32    .begfunc "dly",4,"_dly"
                            A    33    .define "dly_time"
-                           A    34    .class 17
-                           A    35    .reg 9
+                           A    34    .class 9
+                           A    35    .value 4
                            A    36    .type 13
                            A    37    .type 0
                            A    38    .endef
@@ -44,23 +44,23 @@ PC     Object              I  Line    Source
                            A    40    ;    2	
                            A    41    ;    3	//Delay function (appoximate millisecon
                            A    42    ;    4	void dly(unsigned int dly_time){
-                           A    43    .define "U‹ìjÿh0/J"
+                           A    43    .define "j"
                            A    44    .class 4
                            A    45    .reg 17
                            A    46    .type 13
                            A    47    .type 0
                            A    48    .endef
-                           A    49    .define "U‹ìjÿh0/J"
+                           A    49    .define "k"
                            A    50    .class 4
                            A    51    .reg 18
                            A    52    .type 13
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     02:22:34     page:   2
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     00:18:18     page:   2
 
 
 PC     Object              I  Line    Source delay.src
                            A    53    .type 0
                            A    54    .endef
-                           A    55    .define "U‹ìjÿh0/J"
+                           A    55    .define "i"
                            A    56    .class 4
                            A    57    .reg 19
                            A    58    .type 13
@@ -71,147 +71,151 @@ PC     Object              I  Line    Source delay.src
                            A    63    .line 5
 000003 B0E2                A    64    	CLR	R2
 000005 B0E3                A    65    	CLR	R3
-000007 8B 09               A    66    	JR	_1_L_13
+000007 8B 0F               A    66    	JR	_1_L_13
                            A    67    ;    6		for(i=0;i<=dly_time;i++){
 000009                     A    68    _1_L_14:
                            A    69    .line 6
-000009 A259                A    70    	CP	R5,R9
-00000B 1FA248              A    71    	CPC	R4,R8
-00000E 3B 13               A    72    	JR	ULE,_1_L_9
-000010 8B 3D               A    73    	JR	_1_L_17
-000012                     A    74    _1_L_13:
-000012 B0E4                A    75    	CLR	R4
-000014 B0E5                A    76    	CLR	R5
-000016 8B F1               A    77    	JR	_1_L_14
-                           A    78    ;    7			for(j=0;j<32;j++){
-000018                     A    79    _1_L_10:
-                           A    80    .line 7
-000018 A6E120              A    81    	CP	R1,#32
-00001B 1FA6E000            A    82    	CPC	R0,#-0
-00001F 7B 08               A    83    	JR	C,_1_L_12
-000021 8B 28               A    84    	JR	_1_L_15
-000023                     A    85    _1_L_9:
-000023 B0E0                A    86    	CLR	R0
-000025 B0E1                A    87    	CLR	R1
-000027 8B EF               A    88    	JR	_1_L_10
-000029                     A    89    _1_L_12:
-                           A    90    ;    8				j=j++;
-                           A    91    .line 8
-000029 A0E0                A    92    	INCW	RR0
-                           A    93    ;    9				j=j--;
-                           A    94    .line 9
-00002B E4E0E6              A    95    	LD	R6,R0
-00002E 80E0                A    96    	DECW	RR0
-000030 8B 0B               A    97    	JR	_1_L_5
-                           A    98    ;   10				for(k=0;k<15;k++){}
-000032                     A    99    _1_L_6:
-                           A   100    .line 10
-000032 A6E30F              A   101    	CP	R3,#15
-000035 1FA6E200            A   102    	CPC	R2,#-0
-000039 7B 08               A   103    	JR	C,_1_L_8
-00003B 8B 0A               A   104    	JR	_1_L_11
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     02:22:34     page:   3
+000009 886E04              A    70    	LDX	R6,4(RR14)
+00000C 887E05              A    71    	LDX	R7,5(RR14)
+00000F A257                A    72    	CP	R5,R7
+000011 1FA246              A    73    	CPC	R4,R6
+000014 3B 13               A    74    	JR	ULE,_1_L_9
+000016 8B 3D               A    75    	JR	_1_L_17
+000018                     A    76    _1_L_13:
+000018 B0E4                A    77    	CLR	R4
+00001A B0E5                A    78    	CLR	R5
+00001C 8B EB               A    79    	JR	_1_L_14
+                           A    80    ;    7			for(j=0;j<32;j++){
+00001E                     A    81    _1_L_10:
+                           A    82    .line 7
+00001E A6E120              A    83    	CP	R1,#32
+000021 1FA6E000            A    84    	CPC	R0,#-0
+000025 7B 08               A    85    	JR	C,_1_L_12
+000027 8B 28               A    86    	JR	_1_L_15
+000029                     A    87    _1_L_9:
+000029 B0E0                A    88    	CLR	R0
+00002B B0E1                A    89    	CLR	R1
+00002D 8B EF               A    90    	JR	_1_L_10
+00002F                     A    91    _1_L_12:
+                           A    92    ;    8				j=j++;
+                           A    93    .line 8
+00002F A0E0                A    94    	INCW	RR0
+                           A    95    ;    9				j=j--;
+                           A    96    .line 9
+000031 E4E0E6              A    97    	LD	R6,R0
+000034 80E0                A    98    	DECW	RR0
+000036 8B 0B               A    99    	JR	_1_L_5
+                           A   100    ;   10				for(k=0;k<15;k++){}
+000038                     A   101    _1_L_6:
+                           A   102    .line 10
+000038 A6E30F              A   103    	CP	R3,#15
+00003B 1FA6E200            A   104    	CPC	R2,#-0
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     00:18:18     page:   3
 
 
 PC     Object              I  Line    Source delay.src
-00003D                     A   105    _1_L_5:
-00003D B0E2                A   106    	CLR	R2
-00003F B0E3                A   107    	CLR	R3
-000041 8B EF               A   108    	JR	_1_L_6
-000043                     A   109    _1_L_8:
-000043 A0E2                A   110    	INCW	RR2
-000045 8B EB               A   111    	JR	_1_L_6
-                           A   112    ;   11			}
-000047                     A   113    _1_L_11:
-                           A   114    .line 11
-                           A   115    .line 7
-000047 A0E0                A   116    	INCW	RR0
-                           A   117    .line 11
-000049 8B CD               A   118    	JR	_1_L_10
-                           A   119    ;   12		}
-00004B                     A   120    _1_L_15:
-                           A   121    .line 12
-                           A   122    .line 6
-00004B A0E4                A   123    	INCW	RR4
-                           A   124    .line 12
-00004D 8B BA               A   125    	JR	_1_L_14
-                           A   126    ;   13	}
-00004F                     A   127    _1_L_17:
-                           A   128    .line 13
-00004F D6 0000             A   129    	CALL	__b_framereset
-000052 AF                  A   130    	RET	
-                           A   131    .endfunc "dly",13,"_dly"
-                           A   132    	SEGMENT ROM_DATA
-                           A   133    
-                           A   134    
-                           A   135    ;**************************** _sdly ***********
-                           A   136    ;Name                         Addr/Register   S
-                           A   137    ;i                                      RR0    
-                           A   138    ;dly_time                                R8    
-                           A   139    
-                           A   140    
-                           A   141    ; Aggregate Stack Size: 0 (words)
+00003F 7B 08               A   105    	JR	C,_1_L_8
+000041 8B 0A               A   106    	JR	_1_L_11
+000043                     A   107    _1_L_5:
+000043 B0E2                A   108    	CLR	R2
+000045 B0E3                A   109    	CLR	R3
+000047 8B EF               A   110    	JR	_1_L_6
+000049                     A   111    _1_L_8:
+000049 A0E2                A   112    	INCW	RR2
+00004B 8B EB               A   113    	JR	_1_L_6
+                           A   114    ;   11			}
+00004D                     A   115    _1_L_11:
+                           A   116    .line 11
+                           A   117    .line 7
+00004D A0E0                A   118    	INCW	RR0
+                           A   119    .line 11
+00004F 8B CD               A   120    	JR	_1_L_10
+                           A   121    ;   12		}
+000051                     A   122    _1_L_15:
+                           A   123    .line 12
+                           A   124    .line 6
+000051 A0E4                A   125    	INCW	RR4
+                           A   126    .line 12
+000053 8B B4               A   127    	JR	_1_L_14
+                           A   128    ;   13	}
+000055                     A   129    _1_L_17:
+                           A   130    .line 13
+000055 D6 0000             A   131    	CALL	__b_framereset
+000058 AF                  A   132    	RET	
+                           A   133    .endfunc "dly",13,"_dly"
+                           A   134    	SEGMENT ROM_DATA
+                           A   135    
+                           A   136    
+                           A   137    ;**************************** _sdly ***********
+                           A   138    ;Name                         Addr/Register   S
+                           A   139    ;i                                      RR0    
+                           A   140    ;dly_time                             R15+4    
+                           A   141    
                            A   142    
-                           A   143    
-                           A   144    	.FRAME _n_sdly,?_n_sdly,RDATA
-                           A   145    	.FRAME _f_sdly,?_f_sdly,EDATA
-                           A   146    	SEGMENT delay_TEXT
-000053                     A   147    _sdly:
-                           A   148    .define "_sdly"
-                           A   149    .value _sdly
-                           A   150    .class 2
-                           A   151    .type 65
-                           A   152    .type 0
-                           A   153    .endef
-                           A   154    .begfunc "sdly",16,"_sdly"
-                           A   155    .define "dly_time"
-                           A   156    .class 17
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     02:22:34     page:   4
+                           A   143    ; Aggregate Stack Size: 0 (words)
+                           A   144    
+                           A   145    
+                           A   146    	.FRAME _n_sdly,?_n_sdly,RDATA
+                           A   147    	.FRAME _f_sdly,?_f_sdly,EDATA
+                           A   148    	SEGMENT delay_TEXT
+000059                     A   149    _sdly:
+                           A   150    .define "_sdly"
+                           A   151    .value _sdly
+                           A   152    .class 2
+                           A   153    .type 65
+                           A   154    .type 0
+                           A   155    .endef
+                           A   156    .begfunc "sdly",16,"_sdly"
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     00:18:18     page:   4
 
 
 PC     Object              I  Line    Source delay.src
-                           A   157    .reg 9
-                           A   158    .type 13
-                           A   159    .type 0
-                           A   160    .endef
-                           A   161    ;   14	
-                           A   162    ;   15	//Small delay function
-                           A   163    ;   16	void sdly(unsigned int dly_time){
-                           A   164    .define "U‹ìjÿh0/J"
-                           A   165    .class 4
-                           A   166    .reg 17
-                           A   167    .type 13
-                           A   168    .type 0
-                           A   169    .endef
-000053 D6 0000             A   170    	CALL	__b_frameset00
-000056 8B 09               A   171    	JR	_2_L_19
-                           A   172    ;   17		unsigned int i;
-                           A   173    ;   18		for(i=0;i<=dly_time;i++){}
-000058                     A   174    _2_L_20:
-                           A   175    .line 18
-000058 A219                A   176    	CP	R1,R9
-00005A 1FA208              A   177    	CPC	R0,R8
-00005D 3B 08               A   178    	JR	ULE,_2_L_22
-00005F 8B 0A               A   179    	JR	_2_L_23
-000061                     A   180    _2_L_19:
-000061 B0E0                A   181    	CLR	R0
-000063 B0E1                A   182    	CLR	R1
-000065 8B F1               A   183    	JR	_2_L_20
-000067                     A   184    _2_L_22:
-000067 A0E0                A   185    	INCW	RR0
-000069 8B ED               A   186    	JR	_2_L_20
-00006B                     A   187    _2_L_23:
-                           A   188    .line 19
-00006B D6 0000             A   189    	CALL	__b_framereset
-00006E AF                  A   190    	RET	
-                           A   191    .endfunc "sdly",19,"_sdly"
-                           A   192    	XREF __b_framereset:ROM
-                           A   193    	XREF __b_frameset00:ROM
-                           A   194    	XDEF _sdly
-                           A   195    	XDEF _dly
-                           A   196    	END
+                           A   157    .define "dly_time"
+                           A   158    .class 9
+                           A   159    .value 4
+                           A   160    .type 13
+                           A   161    .type 0
+                           A   162    .endef
+                           A   163    ;   14	
+                           A   164    ;   15	//Small delay function
+                           A   165    ;   16	void sdly(unsigned int dly_time){
+                           A   166    .define "i"
+                           A   167    .class 4
+                           A   168    .reg 17
+                           A   169    .type 13
+                           A   170    .type 0
+                           A   171    .endef
+000059 D6 0000             A   172    	CALL	__b_frameset00
+00005C 8B 0F               A   173    	JR	_2_L_19
+                           A   174    ;   17		unsigned int i;
+                           A   175    ;   18		for(i=0;i<=dly_time;i++){}
+00005E                     A   176    _2_L_20:
+                           A   177    .line 18
+00005E 882E04              A   178    	LDX	R2,4(RR14)
+000061 883E05              A   179    	LDX	R3,5(RR14)
+000064 A213                A   180    	CP	R1,R3
+000066 1FA202              A   181    	CPC	R0,R2
+000069 3B 08               A   182    	JR	ULE,_2_L_22
+00006B 8B 0A               A   183    	JR	_2_L_23
+00006D                     A   184    _2_L_19:
+00006D B0E0                A   185    	CLR	R0
+00006F B0E1                A   186    	CLR	R1
+000071 8B EB               A   187    	JR	_2_L_20
+000073                     A   188    _2_L_22:
+000073 A0E0                A   189    	INCW	RR0
+000075 8B E7               A   190    	JR	_2_L_20
+000077                     A   191    _2_L_23:
+                           A   192    .line 19
+000077 D6 0000             A   193    	CALL	__b_framereset
+00007A AF                  A   194    	RET	
+                           A   195    .endfunc "sdly",19,"_sdly"
+                           A   196    	XREF __b_framereset:ROM
+                           A   197    	XREF __b_frameset00:ROM
+                           A   198    	XDEF _sdly
+                           A   199    	XDEF _dly
+                           A   200    	END
 
 
 Errors: 0
 Warnings: 0
-Lines Assembled: 197
+Lines Assembled: 201

@@ -1,4 +1,4 @@
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:42:46     page:   1
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     12:44:33     page:   1
 
 
 PC     Object              I  Line    Source 
@@ -7,7 +7,7 @@ PC     Object              I  Line    Source
                            A     3    ; -nooptlink -regvar -reduceopt -debug -norevaa
                            A     4    ; -alias 
                            A     5    	DEFINE i2c_TEXT,SPACE=ROM
-                           A     6    	FILE	"..\..\..\..\DOCUME~1\GITHUB\THIRDY
+                           A     6    	FILE	"..\..\..\THIRDY~1\THIRDY~1\I2C.C"
                            A     7    .debug "C"
                            A     8    	SEGMENT FAR_DATA
 000000                     A     9    _inChar:
@@ -54,7 +54,7 @@ PC     Object              I  Line    Source
                            A    50    .define "field_width"
                            A    51    .value 5
                            A    52    .class 8
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:42:46     page:   2
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     12:44:33     page:   2
 
 
 PC     Object              I  Line    Source i2c.src
@@ -110,7 +110,7 @@ PC     Object              I  Line    Source i2c.src
                            A   102    .class 8
                            A   103    .type 12
                            A   104    .type 0
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:42:46     page:   3
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     12:44:33     page:   3
 
 
 PC     Object              I  Line    Source i2c.src
@@ -166,7 +166,7 @@ PC     Object              I  Line    Source i2c.src
                            A   154    .class 69
                            A   155    .value _rxFlag
                            A   156    .type 2
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:42:46     page:   4
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     12:44:33     page:   4
 
 
 PC     Object              I  Line    Source i2c.src
@@ -174,17 +174,17 @@ PC     Object              I  Line    Source i2c.src
                            A   158    .endef
                            A   159    	SEGMENT FAR_BSS
 000019                     A   160    _gyroRead:
-000019                     A   161    	DS	2
+000019                     A   161    	DS	6
                            A   162    .define "gyroRead"
                            A   163    .alias "_gyroRead"
                            A   164    .class 83
                            A   165    .value _gyroRead
-                           A   166    .dim 2
+                           A   166    .dim 6
                            A   167    .type 98
                            A   168    .type 0
                            A   169    .endef
-00001B                     A   170    _accRead:
-00001B                     A   171    	DS	6
+00001F                     A   170    _accRead:
+00001F                     A   171    	DS	6
                            A   172    .define "accRead"
                            A   173    .alias "_accRead"
                            A   174    .class 83
@@ -193,8 +193,8 @@ PC     Object              I  Line    Source i2c.src
                            A   177    .type 98
                            A   178    .type 0
                            A   179    .endef
-000021                     A   180    _acc_xh:
-000021                     A   181    	DS	1
+000025                     A   180    _acc_xh:
+000025                     A   181    	DS	1
                            A   182    .define "acc_xh"
                            A   183    .alias "_acc_xh"
                            A   184    .class 83
@@ -202,8 +202,8 @@ PC     Object              I  Line    Source i2c.src
                            A   186    .type 2
                            A   187    .type 0
                            A   188    .endef
-000022                     A   189    _acc_xl:
-000022                     A   190    	DS	1
+000026                     A   189    _acc_xl:
+000026                     A   190    	DS	1
                            A   191    .define "acc_xl"
                            A   192    .alias "_acc_xl"
                            A   193    .class 83
@@ -211,8 +211,8 @@ PC     Object              I  Line    Source i2c.src
                            A   195    .type 2
                            A   196    .type 0
                            A   197    .endef
-000023                     A   198    _acc_yh:
-000023                     A   199    	DS	1
+000027                     A   198    _acc_yh:
+000027                     A   199    	DS	1
                            A   200    .define "acc_yh"
                            A   201    .alias "_acc_yh"
                            A   202    .class 83
@@ -220,9 +220,9 @@ PC     Object              I  Line    Source i2c.src
                            A   204    .type 2
                            A   205    .type 0
                            A   206    .endef
-000024                     A   207    _acc_yl:
-000024                     A   208    	DS	1
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:42:46     page:   5
+000028                     A   207    _acc_yl:
+000028                     A   208    	DS	1
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     12:44:33     page:   5
 
 
 PC     Object              I  Line    Source i2c.src
@@ -233,8 +233,8 @@ PC     Object              I  Line    Source i2c.src
                            A   213    .type 2
                            A   214    .type 0
                            A   215    .endef
-000025                     A   216    _acc_y:
-000025                     A   217    	DS	1
+000029                     A   216    _acc_y:
+000029                     A   217    	DS	1
                            A   218    .define "acc_y"
                            A   219    .alias "_acc_y"
                            A   220    .class 83
@@ -242,8 +242,8 @@ PC     Object              I  Line    Source i2c.src
                            A   222    .type 2
                            A   223    .type 0
                            A   224    .endef
-000026                     A   225    _acc_x:
-000026                     A   226    	DS	1
+00002A                     A   225    _acc_x:
+00002A                     A   226    	DS	1
                            A   227    .define "acc_x"
                            A   228    .alias "_acc_x"
                            A   229    .class 83
@@ -251,8 +251,8 @@ PC     Object              I  Line    Source i2c.src
                            A   231    .type 2
                            A   232    .type 0
                            A   233    .endef
-000027                     A   234    _gyro_h:
-000027                     A   235    	DS	1
+00002B                     A   234    _gyro_h:
+00002B                     A   235    	DS	1
                            A   236    .define "gyro_h"
                            A   237    .alias "_gyro_h"
                            A   238    .class 83
@@ -260,8 +260,8 @@ PC     Object              I  Line    Source i2c.src
                            A   240    .type 2
                            A   241    .type 0
                            A   242    .endef
-000028                     A   243    _gyro_l:
-000028                     A   244    	DS	1
+00002C                     A   243    _gyro_l:
+00002C                     A   244    	DS	1
                            A   245    .define "gyro_l"
                            A   246    .alias "_gyro_l"
                            A   247    .class 83
@@ -269,8 +269,8 @@ PC     Object              I  Line    Source i2c.src
                            A   249    .type 2
                            A   250    .type 0
                            A   251    .endef
-000029                     A   252    _gyro_val:
-000029                     A   253    	DS	2*1
+00002D                     A   252    _gyro_val:
+00002D                     A   253    	DS	2*1
                            A   254    .define "gyro_val"
                            A   255    .alias "_gyro_val"
                            A   256    .class 83
@@ -278,12 +278,12 @@ PC     Object              I  Line    Source i2c.src
                            A   258    .type 3
                            A   259    .type 0
                            A   260    .endef
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:42:46     page:   6
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     12:44:33     page:   6
 
 
 PC     Object              I  Line    Source i2c.src
-00002B                     A   261    _accXValue:
-00002B                     A   262    	DS	2*1
+00002F                     A   261    _accXValue:
+00002F                     A   262    	DS	2*1
                            A   263    .define "accXValue"
                            A   264    .alias "_accXValue"
                            A   265    .class 83
@@ -291,8 +291,8 @@ PC     Object              I  Line    Source i2c.src
                            A   267    .type 3
                            A   268    .type 0
                            A   269    .endef
-00002D                     A   270    _accYValue:
-00002D                     A   271    	DS	2*1
+000031                     A   270    _accYValue:
+000031                     A   271    	DS	2*1
                            A   272    .define "accYValue"
                            A   273    .alias "_accYValue"
                            A   274    .class 83
@@ -300,8 +300,8 @@ PC     Object              I  Line    Source i2c.src
                            A   276    .type 3
                            A   277    .type 0
                            A   278    .endef
-00002F                     A   279    _accZValue:
-00002F                     A   280    	DS	2*1
+000033                     A   279    _accZValue:
+000033                     A   280    	DS	2*1
                            A   281    .define "accZValue"
                            A   282    .alias "_accZValue"
                            A   283    .class 83
@@ -309,8 +309,8 @@ PC     Object              I  Line    Source i2c.src
                            A   285    .type 3
                            A   286    .type 0
                            A   287    .endef
-000031                     A   288    _gyroXValue:
-000031                     A   289    	DS	2*1
+000035                     A   288    _gyroXValue:
+000035                     A   289    	DS	2*1
                            A   290    .define "gyroXValue"
                            A   291    .alias "_gyroXValue"
                            A   292    .class 83
@@ -318,1328 +318,1517 @@ PC     Object              I  Line    Source i2c.src
                            A   294    .type 3
                            A   295    .type 0
                            A   296    .endef
-000033                     A   297    _state:
-000033                     A   298    	DS	7
-                           A   299    .define "state"
-                           A   300    .alias "_state"
+000037                     A   297    _gyroYValue:
+000037                     A   298    	DS	2*1
+                           A   299    .define "gyroYValue"
+                           A   300    .alias "_gyroYValue"
                            A   301    .class 83
-                           A   302    .value _state
-                           A   303    .tag "NONAME0"
-                           A   304    .type 8
-                           A   305    .type 0
-                           A   306    .endef
-                           A   307    	SEGMENT i2c_TEXT
-                           A   308    .begrec "NONAME0",7
-                           A   309    .define "reading"
-                           A   310    .value 0
-                           A   311    .class 8
-                           A   312    .type 2
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:42:46     page:   7
+                           A   302    .value _gyroYValue
+                           A   303    .type 3
+                           A   304    .type 0
+                           A   305    .endef
+000039                     A   306    _gyroZValue:
+000039                     A   307    	DS	2*1
+                           A   308    .define "gyroZValue"
+                           A   309    .alias "_gyroZValue"
+                           A   310    .class 83
+                           A   311    .value _gyroZValue
+                           A   312    .type 3
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     12:44:33     page:   7
 
 
 PC     Object              I  Line    Source i2c.src
                            A   313    .type 0
                            A   314    .endef
-                           A   315    .define "cycle"
-                           A   316    .value 1
-                           A   317    .class 8
-                           A   318    .type 2
-                           A   319    .type 0
-                           A   320    .endef
-                           A   321    .define "deviceAddress"
-                           A   322    .value 2
-                           A   323    .class 8
-                           A   324    .type 12
-                           A   325    .type 0
-                           A   326    .endef
-                           A   327    .define "registerAddress"
-                           A   328    .value 3
-                           A   329    .class 8
-                           A   330    .type 12
-                           A   331    .type 0
-                           A   332    .endef
-                           A   333    .define "bytesToRead"
-                           A   334    .value 4
-                           A   335    .class 8
-                           A   336    .type 12
-                           A   337    .type 0
-                           A   338    .endef
-                           A   339    .define "storePtr"
-                           A   340    .value 5
-                           A   341    .class 8
-                           A   342    .type 172
-                           A   343    .type 0
-                           A   344    .endef
-                           A   345    .endrec "NONAME0"
-                           A   346    	SEGMENT ROM_DATA
-                           A   347    
-                           A   348    
-                           A   349    ;**************************** _i2cInit ********
-                           A   350    ;Name                         Addr/Register   S
-                           A   351    ;_state                              STATIC    
-                           A   352    ;_t1_mem_isr                         IMPORT  --
-                           A   353    ;_Si2c_Isr                           IMPORT  --
-                           A   354    ;_SET_VECTOR                         IMPORT  --
-                           A   355    
-                           A   356    
-                           A   357    ; Aggregate Stack Size: 0 (words)
-                           A   358    
-                           A   359    
-                           A   360    	.FRAME _n_i2cInit,?_n_i2cInit,RDATA
-                           A   361    	.FRAME _f_i2cInit,?_f_i2cInit,EDATA
-                           A   362    	SEGMENT i2c_TEXT
-000000                     A   363    _i2cInit:
-                           A   364    .define "_i2cInit"
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:42:46     page:   8
+00003B                     A   315    _t1Ready:
+00003B                     A   316    	DS	1
+                           A   317    .define "t1Ready"
+                           A   318    .alias "_t1Ready"
+                           A   319    .class 83
+                           A   320    .value _t1Ready
+                           A   321    .type 2
+                           A   322    .type 0
+                           A   323    .endef
+                           A   324    	SEGMENT FAR_DATA
+000004                     A   325    _speed:
+000004 0000                A   326    	DW	0
+                           A   327    .define "speed"
+                           A   328    .alias "_speed"
+                           A   329    .class 69
+                           A   330    .value _speed
+                           A   331    .type 3
+                           A   332    .type 0
+                           A   333    .endef
+000006                     A   334    _printI2Cq:
+000006 00                  A   335    	DB	0
+                           A   336    .define "printI2Cq"
+                           A   337    .alias "_printI2Cq"
+                           A   338    .class 69
+                           A   339    .value _printI2Cq
+                           A   340    .type 2
+                           A   341    .type 0
+                           A   342    .endef
+                           A   343    .begrec "NONAME0",7
+                           A   344    .define "reading"
+                           A   345    .value 0
+                           A   346    .class 8
+                           A   347    .type 2
+                           A   348    .type 0
+                           A   349    .endef
+                           A   350    .define "cycle"
+                           A   351    .value 1
+                           A   352    .class 8
+                           A   353    .type 2
+                           A   354    .type 0
+                           A   355    .endef
+                           A   356    .define "deviceAddress"
+                           A   357    .value 2
+                           A   358    .class 8
+                           A   359    .type 12
+                           A   360    .type 0
+                           A   361    .endef
+                           A   362    .define "registerAddress"
+                           A   363    .value 3
+                           A   364    .class 8
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     12:44:33     page:   8
 
 
 PC     Object              I  Line    Source i2c.src
-                           A   365    .value _i2cInit
-                           A   366    .class 2
-                           A   367    .type 65
-                           A   368    .type 0
-                           A   369    .endef
-                           A   370    .begfunc "i2cInit",72,"_i2cInit"
-000000 D6 0000             A   371    	CALL	__b_frameset00
-                           A   372    ;    1	// Code by Brian Bienvenu; Jim Cocks; B
-                           A   373    ;    2	
-                           A   374    ;    3	#include <eZ8.h>
-                           A   375    ;    4	#include <STDIO.H>
-                           A   376    ;    5	#include <uart.h>
-                           A   377    ;    6	#include "i2c.h"
-                           A   378    ;    7	#include <LCD.h>
-                           A   379    ;    8	#include <STRING.H>
-                           A   380    ;    9	
-                           A   381    ;   10	#define FAIL (0)
-                           A   382    ;   11	#define PASS (1)
-                           A   383    ;   12	#define AUTO_INC (0x80)
-                           A   384    ;   13	#define READ_BIT (0x01)
-                           A   385    ;   14	
-                           A   386    ;   15	//IC2 Interrupt Enable
-                           A   387    ;   16	#define IC2_EI (0x04) //0000 0100
-                           A   388    ;   17	
-                           A   389    ;   18	//Z8 definitions I2CCTL
-                           A   390    ;   19	#define I2CEN_MASK	(0x80)
-                           A   391    ;   20	#define START_MASK 	(0x40)
-                           A   392    ;   21	#define STOP_MASK  	(0x20)
-                           A   393    ;   22	#define TXI_MASK	(0x08)
-                           A   394    ;   23	#define NAK_MASK	(0x04)
-                           A   395    ;   24	#define FLUSH_MASK 	(0x02)
-                           A   396    ;   25	//I2CSTAT
-                           A   397    ;   26	#define TDRE_MASK  	(0x80)
-                           A   398    ;   27	#define RDRF_MASK	(0x40)
-                           A   399    ;   28	#define NCKI_MASK	(0x01)
-                           A   400    ;   29	
-                           A   401    ;   30	
-                           A   402    ;   31	typedef char enum
-                           A   403    ;   32	{
-                           A   404    ;   33		FAILED = -1,
-                           A   405    ;   34		BUSY = 0,
-                           A   406    ;   35		DONE = 1
-                           A   407    ;   36	} readState_t;
-                           A   408    ;   37	
-                           A   409    ;   38	typedef char enum
-                           A   410    ;   39	{
-                           A   411    ;   40		DEV_ADDESS_WRITE,
-                           A   412    ;   41		DEV_SUB_ADDRESS,
-                           A   413    ;   42		START_READ,
-                           A   414    ;   43		DEV_ADDESS_READ,
-                           A   415    ;   44		READ_BYTE,
-                           A   416    ;   45		READ_LAST,
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:42:46     page:   9
+                           A   365    .type 12
+                           A   366    .type 0
+                           A   367    .endef
+                           A   368    .define "bytesToRead"
+                           A   369    .value 4
+                           A   370    .class 8
+                           A   371    .type 12
+                           A   372    .type 0
+                           A   373    .endef
+                           A   374    .define "storePtr"
+                           A   375    .value 5
+                           A   376    .class 8
+                           A   377    .type 172
+                           A   378    .type 0
+                           A   379    .endef
+                           A   380    .endrec "NONAME0"
+                           A   381    	SEGMENT FAR_BSS
+00003C                     A   382    _state:
+00003C                     A   383    	DS	7
+                           A   384    .define "state"
+                           A   385    .alias "_state"
+                           A   386    .class 83
+                           A   387    .value _state
+                           A   388    .tag "NONAME0"
+                           A   389    .type 8
+                           A   390    .type 0
+                           A   391    .endef
+                           A   392    	SEGMENT ROM_DATA
+                           A   393    
+                           A   394    
+                           A   395    ;**************************** _i2cInit ********
+                           A   396    ;Name                         Addr/Register   S
+                           A   397    ;_state                              STATIC    
+                           A   398    ;_Si2c_Isr                           IMPORT  --
+                           A   399    ;_SET_VECTOR                         IMPORT  --
+                           A   400    
+                           A   401    
+                           A   402    ; Aggregate Stack Size: 0 (words)
+                           A   403    
+                           A   404    
+                           A   405    	.FRAME _n_i2cInit,?_n_i2cInit,RDATA
+                           A   406    	.FRAME _f_i2cInit,?_f_i2cInit,EDATA
+                           A   407    	SEGMENT i2c_TEXT
+000000                     A   408    _i2cInit:
+                           A   409    .define "_i2cInit"
+                           A   410    .value _i2cInit
+                           A   411    .class 2
+                           A   412    .type 65
+                           A   413    .type 0
+                           A   414    .endef
+                           A   415    .begfunc "i2cInit",74,"_i2cInit"
+000000 D6 0000             A   416    	CALL	__b_frameset00
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     12:44:33     page:   9
 
 
 PC     Object              I  Line    Source i2c.src
-                           A   417    ;   46		END_CYCLE
-                           A   418    ;   47	} cycle_t;
-                           A   419    ;   48	
-                           A   420    ;   49	typedef struct
-                           A   421    ;   50	{
-                           A   422    ;   51		readState_t reading;
-                           A   423    ;   52		cycle_t cycle;
-                           A   424    ;   53		unsigned char deviceAddress;
-                           A   425    ;   54		unsigned char registerAddress;
-                           A   426    ;   55		unsigned char bytesToRead;
-                           A   427    ;   56		unsigned char* storePtr;
-                           A   428    ;   57	} i2cState_t;
-                           A   429    ;   58	
-                           A   430    ;   59	static i2cState_t state;
-                           A   431    ;   60	//prototypes
-                           A   432    ;   61	void Si2c_Isr(void);
-                           A   433    ;   62	
-                           A   434    ;   63	/**************************************
-                           A   435    ;   64	Description:
-                           A   436    ;   65		Initalises the i2c: ports, interrup
-                           A   437    ;   66	Notes:
-                           A   438    ;   67		doesn't perform and transactions
-                           A   439    ;   68	Returns:
-                           A   440    ;   69		0 <- fail, 1 pass
-                           A   441    ;   70	***************************************
-                           A   442    ;   71	void i2cInit(void)
-                           A   443    ;   72	{
-                           A   444    ;   73		//PA6 and PA7
-                           A   445    ;   74		//Set Pins to I2C function
-                           A   446    ;   75		PAAF |= 0xC0; 	//1100 0000
-                           A   447    .line 75
-000003 E9020FD0            A   448    	LDX	4048,#2
-000007 49C00FD1            A   449    	ORX	4049,#192
-                           A   450    ;   76	
-                           A   451    ;   77		//set baud rate
-                           A   452    ;   78		I2CBRH = (I2C_BAUD_DIV >> 8);
-                           A   453    .line 78
-00000B E9000F53            A   454    	LDX	3923,#-0
-                           A   455    ;   79		I2CBRL = (I2C_BAUD_DIV & 0xFF);
-                           A   456    .line 79
-00000F E90C0F54            A   457    	LDX	3924,#12
-                           A   458    ;   80	
-                           A   459    ;   81		//clear txi
-                           A   460    ;   82		I2CCTL &= ~TXI_MASK;
-                           A   461    .line 82
-000013 59F70F52            A   462    	ANDX	3922,#-9
-                           A   463    ;   83		//disable I2C control register
-                           A   464    ;   84		I2CCTL &= ~I2CEN_MASK;
-                           A   465    .line 84
-000017 597F0F52            A   466    	ANDX	3922,#127
-                           A   467    ;   85		//set isr for I2C
-                           A   468    ;   86		SET_VECTOR(I2C,Si2c_Isr);
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:42:46     page:  10
+                           A   417    ;    1	// Code by Brian Bienvenu; Jim Cocks; B
+                           A   418    ;    2	
+                           A   419    ;    3	#include <eZ8.h>
+                           A   420    ;    4	#include <STDIO.H>
+                           A   421    ;    5	#include <uart.h>
+                           A   422    ;    6	#include "i2c.h"
+                           A   423    ;    7	#include <LCD.h>
+                           A   424    ;    8	#include <STRING.H>
+                           A   425    ;    9	#include <MATH.H>
+                           A   426    ;   10	#include <MAIN.H>
+                           A   427    ;   11	
+                           A   428    ;   12	#define FAIL (0)
+                           A   429    ;   13	#define PASS (1)
+                           A   430    ;   14	#define AUTO_INC (0x80)
+                           A   431    ;   15	#define READ_BIT (0x01)
+                           A   432    ;   16	
+                           A   433    ;   17	//IC2 Interrupt Enable
+                           A   434    ;   18	#define IC2_EI (0x04) //0000 0100
+                           A   435    ;   19	
+                           A   436    ;   20	//Z8 definitions I2CCTL
+                           A   437    ;   21	#define I2CEN_MASK	(0x80)
+                           A   438    ;   22	#define START_MASK 	(0x40)
+                           A   439    ;   23	#define STOP_MASK  	(0x20)
+                           A   440    ;   24	#define TXI_MASK	(0x08)
+                           A   441    ;   25	#define NAK_MASK	(0x04)
+                           A   442    ;   26	#define FLUSH_MASK 	(0x02)
+                           A   443    ;   27	//I2CSTAT
+                           A   444    ;   28	#define TDRE_MASK  	(0x80)
+                           A   445    ;   29	#define RDRF_MASK	(0x40)
+                           A   446    ;   30	#define NCKI_MASK	(0x01)
+                           A   447    ;   31	
+                           A   448    ;   32	
+                           A   449    ;   33	typedef char enum
+                           A   450    ;   34	{
+                           A   451    ;   35		FAILED = -1,
+                           A   452    ;   36		BUSY = 0,
+                           A   453    ;   37		DONE = 1
+                           A   454    ;   38	} readState_t;
+                           A   455    ;   39	
+                           A   456    ;   40	typedef char enum
+                           A   457    ;   41	{
+                           A   458    ;   42		DEV_ADDESS_WRITE,
+                           A   459    ;   43		DEV_SUB_ADDRESS,
+                           A   460    ;   44		START_READ,
+                           A   461    ;   45		DEV_ADDESS_READ,
+                           A   462    ;   46		READ_BYTE,
+                           A   463    ;   47		READ_LAST,
+                           A   464    ;   48		END_CYCLE
+                           A   465    ;   49	} cycle_t;
+                           A   466    ;   50	
+                           A   467    ;   51	typedef struct
+                           A   468    ;   52	{
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     12:44:33     page:  10
 
 
 PC     Object              I  Line    Source i2c.src
-                           A   469    ;   87		//set I2C isr to highest priority
-                           A   470    ;   88		IRQ0ENH |= IC2_EI;
-                           A   471    .line 88
-00001B 49040FC1            A   472    	ORX	4033,#4
-                           A   473    ;   89		IRQ0ENL |= IC2_EI;
-                           A   474    .line 89
-00001F 49040FC2            A   475    	ORX	4034,#4
-                           A   476    ;   90	
-                           A   477    ;   91		//Port D int1_g and int1_A interrup
-                           A   478    ;   92		IRQ1ENH |= 0x03;
-                           A   479    .line 92
-000023 49030FC4            A   480    	ORX	4036,#3
-                           A   481    ;   93		IRQ1ENL |= 0x03;
-                           A   482    .line 93
-000027 49030FC5            A   483    	ORX	4037,#3
-                           A   484    ;   94		IRQPS |= 0x03;
-                           A   485    .line 94
-00002B 49030FCE            A   486    	ORX	4046,#3
-                           A   487    ;   95	
-                           A   488    ;   96		PCAF &= 0x02;
-                           A   489    .line 96
-00002F E9020FD8            A   490    	LDX	4056,#2
-000033 59020FD9            A   491    	ANDX	4057,#2
-                           A   492    ;   97		//set Timers to PWM mode, no presca
-                           A   493    ;   98		T1CTL1 = 0x21; //CONTINUOUS_MODE | 
-                           A   494    .line 98
-000037 E9210F0F            A   495    	LDX	3855,#33
-                           A   496    ;   99		//set reset count value to 0
-                           A   497    ;  100		T1H = 0;
-                           A   498    .line 100
-00003B E9000F08            A   499    	LDX	3848,#-0
-                           A   500    ;  101		T1L = 0;
-                           A   501    .line 101
-00003F E9000F09            A   502    	LDX	3849,#-0
-                           A   503    ;  102		//set reload value
-                           A   504    ;  103		T1RH = 0xC3; //50000
-                           A   505    .line 103
-000043 E9C30F0A            A   506    	LDX	3850,#195
-                           A   507    ;  104		T1RL = 0x50;
-                           A   508    .line 104
-000047 E9500F0B            A   509    	LDX	3851,#80
-                           A   510    ;  105	
-                           A   511    ;  106		//T1CTL1 |= 0x80;
-                           A   512    ;  107	
-                           A   513    ;  108		IRQ0ENH |= 0x40;
-                           A   514    .line 108
-00004B 49400FC1            A   515    	ORX	4033,#64
-                           A   516    ;  109		IRQ0ENL |= 0x40;
-                           A   517    .line 109
-00004F 49400FC2            A   518    	ORX	4034,#64
-                           A   519    ;  110	
-                           A   520    ;  111		SET_VECTOR(TIMER1, t1_mem_isr);
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:42:46     page:  11
+                           A   469    ;   53		readState_t reading;
+                           A   470    ;   54		cycle_t cycle;
+                           A   471    ;   55		unsigned char deviceAddress;
+                           A   472    ;   56		unsigned char registerAddress;
+                           A   473    ;   57		unsigned char bytesToRead;
+                           A   474    ;   58		unsigned char* storePtr;
+                           A   475    ;   59	} i2cState_t;
+                           A   476    ;   60	
+                           A   477    ;   61	static i2cState_t state;
+                           A   478    ;   62	//prototypes
+                           A   479    ;   63	void Si2c_Isr(void);
+                           A   480    ;   64	
+                           A   481    ;   65	/**************************************
+                           A   482    ;   66	Description:
+                           A   483    ;   67		Initalises the i2c: ports, interrup
+                           A   484    ;   68	Notes:
+                           A   485    ;   69		doesn't perform and transactions
+                           A   486    ;   70	Returns:
+                           A   487    ;   71		0 <- fail, 1 pass
+                           A   488    ;   72	***************************************
+                           A   489    ;   73	void i2cInit(void)
+                           A   490    ;   74	{
+                           A   491    ;   75		//PA6 and PA7
+                           A   492    ;   76		//Set Pins to I2C function
+                           A   493    ;   77		PAAF |= 0xC0; 	//1100 0000
+                           A   494    .line 77
+000003 E9020FD0            A   495    	LDX	4048,#2
+000007 49C00FD1            A   496    	ORX	4049,#192
+                           A   497    ;   78	
+                           A   498    ;   79		//set baud rate
+                           A   499    ;   80		I2CBRH = (I2C_BAUD_DIV >> 8);
+                           A   500    .line 80
+00000B E9000F53            A   501    	LDX	3923,#-0
+                           A   502    ;   81		I2CBRL = (I2C_BAUD_DIV & 0xFF);
+                           A   503    .line 81
+00000F E90C0F54            A   504    	LDX	3924,#12
+                           A   505    ;   82	
+                           A   506    ;   83		//clear txi
+                           A   507    ;   84		I2CCTL &= ~TXI_MASK;
+                           A   508    .line 84
+000013 59F70F52            A   509    	ANDX	3922,#-9
+                           A   510    ;   85		//disable I2C control register
+                           A   511    ;   86		I2CCTL &= ~I2CEN_MASK;
+                           A   512    .line 86
+000017 597F0F52            A   513    	ANDX	3922,#127
+                           A   514    ;   87	
+                           A   515    ;   88		//set isr for I2C
+                           A   516    ;   89		SET_VECTOR(I2C,Si2c_Isr);
+                           A   517    ;   90		//set I2C isr to highest priority
+                           A   518    ;   91		IRQ0ENH |= IC2_EI;
+                           A   519    .line 91
+00001B 49040FC1            A   520    	ORX	4033,#4
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     12:44:33     page:  11
 
 
 PC     Object              I  Line    Source i2c.src
-                           A   521    ;  112		//init internal state so it doesn't
-                           A   522    ;  113		state.reading = DONE;
-                           A   523    .line 113
-000053 E9010033            A   524    	LDX	_state,#1
-                           A   525    ;  114	}
-                           A   526    .line 114
-000057 D6 0000             A   527    	CALL	__b_framereset
-00005A AF                  A   528    	RET	
-                           A   529    .endfunc "i2cInit",114,"_i2cInit"
-                           A   530    	SEGMENT ROM_DATA
-                           A   531    
-                           A   532    
-                           A   533    ;**************************** _i2cWrite *******
-                           A   534    ;Name                         Addr/Register   S
-                           A   535    ;_EI                                 IMPORT  --
-                           A   536    ;_DI                                 IMPORT  --
-                           A   537    ;ret                                     R0    
-                           A   538    ;dataByte                             R15+6    
-                           A   539    ;registerAddress                      R15+5    
-                           A   540    ;deviceAddress                        R15+4    
-                           A   541    
-                           A   542    
-                           A   543    ; Aggregate Stack Size: 0 (words)
-                           A   544    
-                           A   545    
-                           A   546    	.FRAME _n_i2cWrite,?_n_i2cWrite,RDATA
-                           A   547    	.FRAME _f_i2cWrite,?_f_i2cWrite,EDATA
-                           A   548    	SEGMENT i2c_TEXT
-00005B                     A   549    _i2cWrite:
-                           A   550    .define "_i2cWrite"
-                           A   551    .value _i2cWrite
-                           A   552    .class 2
-                           A   553    .type 76
-                           A   554    .type 0
-                           A   555    .endef
-                           A   556    .begfunc "i2cWrite",127,"_i2cWrite"
-                           A   557    .define "deviceAddress"
-                           A   558    .class 9
-                           A   559    .value 4
-                           A   560    .type 12
-                           A   561    .type 0
-                           A   562    .endef
-                           A   563    .define "registerAddress"
-                           A   564    .class 9
-                           A   565    .value 5
-                           A   566    .type 12
-                           A   567    .type 0
-                           A   568    .endef
-                           A   569    .define "dataByte"
-                           A   570    .class 9
-                           A   571    .value 6
-                           A   572    .type 12
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:42:46     page:  12
+                           A   521    ;   92		IRQ0ENL |= IC2_EI;
+                           A   522    .line 92
+00001F 49040FC2            A   523    	ORX	4034,#4
+                           A   524    ;   93	
+                           A   525    ;   94		//Port D int1_g and int1_A interrup
+                           A   526    ;   95	// 	IRQ1ENH |= 0x03;
+                           A   527    ;   96	// 	IRQ1ENL |= 0x03;
+                           A   528    ;   97	// 	IRQPS |= 0x03;
+                           A   529    ;   98	// 	DI();
+                           A   530    ;   99	// 	PCAF &= ~0x02;
+                           A   531    ;  100		//set Timers to PWM mode, no presca
+                           A   532    ;  101	// 	T1CTL1 = 0x21; //CONTINUOUS_MODE | 
+                           A   533    ;  102		//set reset count value to 0
+                           A   534    ;  103	// 	T1H = 0;
+                           A   535    ;  104	// 	T1L = 0;
+                           A   536    ;  105		//set reload value
+                           A   537    ;  106	// 	T1RH = 0xC3; //50000
+                           A   538    ;  107	// 	T1RL = 0x50;
+                           A   539    ;  108	
+                           A   540    ;  109	// 	T1CTL1 |= 0x80;
+                           A   541    ;  110	
+                           A   542    ;  111	// 	IRQ0ENH |= 0x40;
+                           A   543    ;  112	// 	IRQ0ENL |= 0x40;
+                           A   544    ;  113	
+                           A   545    ;  114	// 	SET_VECTOR(TIMER1, t1_mem_isr);
+                           A   546    ;  115	// 	EI();
+                           A   547    ;  116		
+                           A   548    ;  117		//init internal state so it doesn't
+                           A   549    ;  118		state.reading = DONE;
+                           A   550    .line 118
+000023 E901003C            A   551    	LDX	_state,#1
+                           A   552    ;  119	}
+                           A   553    .line 119
+000027 D6 0000             A   554    	CALL	__b_framereset
+00002A AF                  A   555    	RET	
+                           A   556    .endfunc "i2cInit",119,"_i2cInit"
+                           A   557    	SEGMENT ROM_DATA
+                           A   558    
+                           A   559    
+                           A   560    ;**************************** _i2cWrite *******
+                           A   561    ;Name                         Addr/Register   S
+                           A   562    ;_EI                                 IMPORT  --
+                           A   563    ;_DI                                 IMPORT  --
+                           A   564    ;ret                                     R0    
+                           A   565    ;dataByte                             R15+6    
+                           A   566    ;registerAddress                      R15+5    
+                           A   567    ;deviceAddress                        R15+4    
+                           A   568    
+                           A   569    
+                           A   570    ; Aggregate Stack Size: 0 (words)
+                           A   571    
+                           A   572    
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     12:44:33     page:  12
 
 
 PC     Object              I  Line    Source i2c.src
-                           A   573    .type 0
-                           A   574    .endef
-                           A   575    ;  115	
-                           A   576    ;  116	/**************************************
-                           A   577    ;  117	Description:
-                           A   578    ;  118		Performs single byte i2c write
-                           A   579    ;  119	Notes:
-                           A   580    ;  120		Is blocking
-                           A   581    ;  121		Doesn't use interrupts
-                           A   582    ;  122		Don't use while performing a read
-                           A   583    ;  123	Returns:
-                           A   584    ;  124		1 <= successful, 0 <= failed
-                           A   585    ;  125	***************************************
-                           A   586    ;  126	unsigned char i2cWrite(unsigned char de
-                           A   587    ;  127	{
-                           A   588    .define "U‹ìjÿh0/J"
-                           A   589    .class 4
-                           A   590    .reg 1
-                           A   591    .type 12
-                           A   592    .type 0
-                           A   593    .endef
-00005B D6 0000             A   594    	CALL	__b_frameset00
-                           A   595    ;  128		unsigned char ret;
-                           A   596    ;  129		ret = FAIL;
-                           A   597    .line 129
-00005E B0E0                A   598    	CLR	R0
-                           A   599    ;  130		//disable interrupts
-                           A   600    ;  131		DI();
-                           A   601    .line 131
-000060 8F                  A   602    	DI
-                           A   603    ;  132		//enable I2C control register
-                           A   604    ;  133		I2CCTL |= I2CEN_MASK;
-                           A   605    .line 133
-000061 49800F52            A   606    	ORX	3922,#128
-                           A   607    ;  134	
-                           A   608    ;  135		//wait till TDRE = 1
-                           A   609    ;  136		while((I2CSTAT & TDRE_MASK) == 0x00
-000065                     A   610    _2_L_1:
-                           A   611    .line 136
-000065 79800F51            A   612    	TMX	3921,#128
-000069 6B FA               A   613    	JR	Z,_2_L_1
-                           A   614    ;  137	
-                           A   615    ;  138		//write device address to I2C data 
-                           A   616    ;  139		I2CDATA = deviceAddress;
-                           A   617    .line 139
-00006B 881E04              A   618    	LDX	R1,4(RR14)
-00006E 941F50              A   619    	LDX	3920,R1
-                           A   620    ;  140	
-                           A   621    ;  141		//assert start
-                           A   622    ;  142		I2CCTL |= START_MASK;
-                           A   623    .line 142
-000071 49400F52            A   624    	ORX	3922,#64
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:42:46     page:  13
+                           A   573    	.FRAME _n_i2cWrite,?_n_i2cWrite,RDATA
+                           A   574    	.FRAME _f_i2cWrite,?_f_i2cWrite,EDATA
+                           A   575    	SEGMENT i2c_TEXT
+00002B                     A   576    _i2cWrite:
+                           A   577    .define "_i2cWrite"
+                           A   578    .value _i2cWrite
+                           A   579    .class 2
+                           A   580    .type 76
+                           A   581    .type 0
+                           A   582    .endef
+                           A   583    .begfunc "i2cWrite",132,"_i2cWrite"
+                           A   584    .define "deviceAddress"
+                           A   585    .class 9
+                           A   586    .value 4
+                           A   587    .type 12
+                           A   588    .type 0
+                           A   589    .endef
+                           A   590    .define "registerAddress"
+                           A   591    .class 9
+                           A   592    .value 5
+                           A   593    .type 12
+                           A   594    .type 0
+                           A   595    .endef
+                           A   596    .define "dataByte"
+                           A   597    .class 9
+                           A   598    .value 6
+                           A   599    .type 12
+                           A   600    .type 0
+                           A   601    .endef
+                           A   602    ;  120	
+                           A   603    ;  121	/**************************************
+                           A   604    ;  122	Description:
+                           A   605    ;  123		Performs single byte i2c write
+                           A   606    ;  124	Notes:
+                           A   607    ;  125		Is blocking
+                           A   608    ;  126		Doesn't use interrupts
+                           A   609    ;  127		Don't use while performing a read
+                           A   610    ;  128	Returns:
+                           A   611    ;  129		1 <= successful, 0 <= failed
+                           A   612    ;  130	***************************************
+                           A   613    ;  131	unsigned char i2cWrite(unsigned char de
+                           A   614    ;  132	{
+                           A   615    .define "ret"
+                           A   616    .class 4
+                           A   617    .reg 1
+                           A   618    .type 12
+                           A   619    .type 0
+                           A   620    .endef
+00002B D6 0000             A   621    	CALL	__b_frameset00
+                           A   622    ;  133		unsigned char ret;
+                           A   623    ;  134		ret = FAIL;
+                           A   624    .line 134
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     12:44:33     page:  13
 
 
 PC     Object              I  Line    Source i2c.src
-                           A   625    ;  143	
-                           A   626    ;  144		//wait till TDRE = 1
-                           A   627    ;  145		while((I2CSTAT & TDRE_MASK) == 0x00
-000075                     A   628    _2_L_4:
-                           A   629    .line 145
-000075 79800F51            A   630    	TMX	3921,#128
-000079 6B FA               A   631    	JR	Z,_2_L_4
-                           A   632    ;  146	
-                           A   633    ;  147		//write device reg address to I2C d
-                           A   634    ;  148		I2CDATA = registerAddress;
-                           A   635    .line 148
-00007B 881E05              A   636    	LDX	R1,5(RR14)
-00007E 941F50              A   637    	LDX	3920,R1
-                           A   638    ;  149	
-                           A   639    ;  150		//wait till TDRE = 1 or error if NC
-                           A   640    ;  151		while((I2CSTAT & (NCKI_MASK | TDRE_
-000081                     A   641    _2_L_7:
-                           A   642    .line 151
-000081 79810F51            A   643    	TMX	3921,#129
-000085 6B FA               A   644    	JR	Z,_2_L_7
-                           A   645    ;  152		if((I2CSTAT & NCKI_MASK) == 0x00)
-                           A   646    .line 152
-000087 79010F51            A   647    	TMX	3921,#1
-00008B EB 18               A   648    	JR	NE,_2_L_16
-                           A   649    ;  153		{
-                           A   650    ;  154			//write dataByte to I2C data re
-                           A   651    ;  155			I2CDATA = dataByte;
-                           A   652    .line 155
-00008D 881E06              A   653    	LDX	R1,6(RR14)
-000090 941F50              A   654    	LDX	3920,R1
-                           A   655    ;  156	
-                           A   656    ;  157			//wait till TDRE = 1 or error i
-                           A   657    ;  158			while((I2CSTAT & (NCKI_MASK | T
-000093                     A   658    _2_L_9:
-                           A   659    .line 158
-000093 79810F51            A   660    	TMX	3921,#129
-000097 6B FA               A   661    	JR	Z,_2_L_9
-                           A   662    ;  159			if((I2CSTAT & NCKI_MASK) == 0x0
-                           A   663    .line 159
-000099 79010F51            A   664    	TMX	3921,#1
-00009D EB 06               A   665    	JR	NE,_2_L_16
-                           A   666    ;  160			{
-                           A   667    ;  161				//set stop bit (if got to h
-                           A   668    ;  162				I2CCTL |= STOP_MASK;
-                           A   669    .line 162
-00009F 49200F52            A   670    	ORX	3922,#32
-                           A   671    ;  163				ret = PASS;
-                           A   672    .line 163
-0000A3 0C01                A   673    	LD	R0,#1
-                           A   674    ;  164			}
-                           A   675    ;  165		}
-0000A5                     A   676    _2_L_16:
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:42:46     page:  14
+00002E B0E0                A   625    	CLR	R0
+                           A   626    ;  135		//disable interrupts
+                           A   627    ;  136		DI();
+                           A   628    .line 136
+000030 8F                  A   629    	DI
+                           A   630    ;  137		//enable I2C control register
+                           A   631    ;  138		I2CCTL |= I2CEN_MASK;
+                           A   632    .line 138
+000031 49800F52            A   633    	ORX	3922,#128
+                           A   634    ;  139	
+                           A   635    ;  140		//wait till TDRE = 1
+                           A   636    ;  141		while((I2CSTAT & TDRE_MASK) == 0x00
+000035                     A   637    _2_L_1:
+                           A   638    .line 141
+000035 79800F51            A   639    	TMX	3921,#128
+000039 6B FA               A   640    	JR	Z,_2_L_1
+                           A   641    ;  142	
+                           A   642    ;  143		//write device address to I2C data 
+                           A   643    ;  144		I2CDATA = deviceAddress;
+                           A   644    .line 144
+00003B 881E04              A   645    	LDX	R1,4(RR14)
+00003E 941F50              A   646    	LDX	3920,R1
+                           A   647    ;  145	
+                           A   648    ;  146		//assert start
+                           A   649    ;  147		I2CCTL |= START_MASK;
+                           A   650    .line 147
+000041 49400F52            A   651    	ORX	3922,#64
+                           A   652    ;  148	
+                           A   653    ;  149		//wait till TDRE = 1
+                           A   654    ;  150		while((I2CSTAT & TDRE_MASK) == 0x00
+000045                     A   655    _2_L_4:
+                           A   656    .line 150
+000045 79800F51            A   657    	TMX	3921,#128
+000049 6B FA               A   658    	JR	Z,_2_L_4
+                           A   659    ;  151	
+                           A   660    ;  152		//write device reg address to I2C d
+                           A   661    ;  153		I2CDATA = registerAddress;
+                           A   662    .line 153
+00004B 881E05              A   663    	LDX	R1,5(RR14)
+00004E 941F50              A   664    	LDX	3920,R1
+                           A   665    ;  154	
+                           A   666    ;  155		//wait till TDRE = 1 or error if NC
+                           A   667    ;  156		while((I2CSTAT & (NCKI_MASK | TDRE_
+000051                     A   668    _2_L_7:
+                           A   669    .line 156
+000051 79810F51            A   670    	TMX	3921,#129
+000055 6B FA               A   671    	JR	Z,_2_L_7
+                           A   672    ;  157		if((I2CSTAT & NCKI_MASK) == 0x00)
+                           A   673    .line 157
+000057 79010F51            A   674    	TMX	3921,#1
+00005B EB 18               A   675    	JR	NE,_2_L_16
+                           A   676    ;  158		{
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     12:44:33     page:  14
 
 
 PC     Object              I  Line    Source i2c.src
-                           A   677    .line 165
-                           A   678    ;  166	
-                           A   679    ;  167		if(ret == FAIL)
-                           A   680    .line 167
-0000A5 4200                A   681    	OR	R0,R0
-0000A7 EB 04               A   682    	JR	NE,_2_L_17
-                           A   683    ;  168		{
-                           A   684    ;  169			//set stop and flush bits
-                           A   685    ;  170			I2CCTL |= (STOP_MASK | FLUSH_MA
-                           A   686    .line 170
-0000A9 49220F52            A   687    	ORX	3922,#34
-                           A   688    ;  171		}
-0000AD                     A   689    _2_L_17:
-                           A   690    .line 171
-                           A   691    ;  172		//disable I2C control register
-                           A   692    ;  173		//I2CCTL &= ~I2CEN_MASK;
-                           A   693    ;  174		//enable interrupts
-                           A   694    ;  175		EI();
-                           A   695    .line 175
-0000AD 9F                  A   696    	EI
-                           A   697    ;  176	}
-                           A   698    .line 176
-0000AE D6 0000             A   699    	CALL	__b_framereset
-0000B1 AF                  A   700    	RET	
-                           A   701    .endfunc "i2cWrite",176,"_i2cWrite"
-                           A   702    	SEGMENT ROM_DATA
-                           A   703    
-                           A   704    
-                           A   705    ;**************************** _i2cStartRead ***
-                           A   706    ;Name                         Addr/Register   S
-                           A   707    ;_state                              STATIC    
-                           A   708    ;dataLoc                              R15+7    
-                           A   709    ;numToRead                            R15+6    
-                           A   710    ;registerAddress                      R15+5    
-                           A   711    ;deviceAddress                        R15+4    
-                           A   712    
-                           A   713    
-                           A   714    ; Aggregate Stack Size: 0 (words)
-                           A   715    
-                           A   716    
-                           A   717    	.FRAME _n_i2cStartRead,?_n_i2cStartRead,RDA
-                           A   718    	.FRAME _f_i2cStartRead,?_f_i2cStartRead,EDA
-                           A   719    	SEGMENT i2c_TEXT
-0000B2                     A   720    _i2cStartRead:
-                           A   721    .define "_i2cStartRead"
-                           A   722    .value _i2cStartRead
-                           A   723    .class 2
-                           A   724    .type 65
-                           A   725    .type 0
-                           A   726    .endef
-                           A   727    .begfunc "i2cStartRead",188,"_i2cStartRead"
-                           A   728    .define "deviceAddress"
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:42:46     page:  15
+                           A   677    ;  159			//write dataByte to I2C data re
+                           A   678    ;  160			I2CDATA = dataByte;
+                           A   679    .line 160
+00005D 881E06              A   680    	LDX	R1,6(RR14)
+000060 941F50              A   681    	LDX	3920,R1
+                           A   682    ;  161	
+                           A   683    ;  162			//wait till TDRE = 1 or error i
+                           A   684    ;  163			while((I2CSTAT & (NCKI_MASK | T
+000063                     A   685    _2_L_9:
+                           A   686    .line 163
+000063 79810F51            A   687    	TMX	3921,#129
+000067 6B FA               A   688    	JR	Z,_2_L_9
+                           A   689    ;  164			if((I2CSTAT & NCKI_MASK) == 0x0
+                           A   690    .line 164
+000069 79010F51            A   691    	TMX	3921,#1
+00006D EB 06               A   692    	JR	NE,_2_L_16
+                           A   693    ;  165			{
+                           A   694    ;  166				//set stop bit (if got to h
+                           A   695    ;  167				I2CCTL |= STOP_MASK;
+                           A   696    .line 167
+00006F 49200F52            A   697    	ORX	3922,#32
+                           A   698    ;  168				ret = PASS;
+                           A   699    .line 168
+000073 0C01                A   700    	LD	R0,#1
+                           A   701    ;  169			}
+                           A   702    ;  170		}
+000075                     A   703    _2_L_16:
+                           A   704    .line 170
+                           A   705    ;  171	
+                           A   706    ;  172		if(ret == FAIL)
+                           A   707    .line 172
+000075 4200                A   708    	OR	R0,R0
+000077 EB 04               A   709    	JR	NE,_2_L_17
+                           A   710    ;  173		{
+                           A   711    ;  174			//set stop and flush bits
+                           A   712    ;  175			I2CCTL |= (STOP_MASK | FLUSH_MA
+                           A   713    .line 175
+000079 49220F52            A   714    	ORX	3922,#34
+                           A   715    ;  176		}
+00007D                     A   716    _2_L_17:
+                           A   717    .line 176
+                           A   718    ;  177		//disable I2C control register
+                           A   719    ;  178		//I2CCTL &= ~I2CEN_MASK;
+                           A   720    ;  179		//enable interrupts
+                           A   721    ;  180		EI();
+                           A   722    .line 180
+00007D 9F                  A   723    	EI
+                           A   724    ;  181	}
+                           A   725    .line 181
+00007E D6 0000             A   726    	CALL	__b_framereset
+000081 AF                  A   727    	RET	
+                           A   728    .endfunc "i2cWrite",181,"_i2cWrite"
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     12:44:33     page:  15
 
 
 PC     Object              I  Line    Source i2c.src
-                           A   729    .class 9
-                           A   730    .value 4
-                           A   731    .type 12
-                           A   732    .type 0
-                           A   733    .endef
-                           A   734    .define "registerAddress"
-                           A   735    .class 9
-                           A   736    .value 5
-                           A   737    .type 12
-                           A   738    .type 0
-                           A   739    .endef
-                           A   740    .define "numToRead"
-                           A   741    .class 9
-                           A   742    .value 6
-                           A   743    .type 12
-                           A   744    .type 0
-                           A   745    .endef
-                           A   746    .define "dataLoc"
-                           A   747    .class 9
-                           A   748    .value 7
-                           A   749    .type 172
-                           A   750    .type 0
-                           A   751    .endef
-0000B2 D6 0000             A   752    	CALL	__b_frameset00
-                           A   753    ;  177	
-                           A   754    ;  178	/**************************************
-                           A   755    ;  179	Description:
-                           A   756    ;  180		Initiates numToRead i2c reads
-                           A   757    ;  181	Notes:
-                           A   758    ;  182		uses interrupts
-                           A   759    ;  183		use i2cIsDataReady() to check when 
-                           A   760    ;  184	Returns:
-                           A   761    ;  185		none
-                           A   762    ;  186	***************************************
-                           A   763    ;  187	void i2cStartRead(unsigned char deviceA
-                           A   764    ;  188	{
-                           A   765    ;  189		//set reading flag
-                           A   766    ;  190		state.reading = BUSY;
-                           A   767    .line 190
-0000B5 E9000033            A   768    	LDX	_state,#-0
-                           A   769    ;  191		//set internals
-                           A   770    ;  192		state.deviceAddress = deviceAddress
-                           A   771    .line 192
-0000B9 880E04              A   772    	LDX	R0,4(RR14)
-0000BC 940035              A   773    	LDX	_state+2,R0
-                           A   774    ;  193		state.registerAddress = registerAdd
-                           A   775    .line 193
-0000BF 880E05              A   776    	LDX	R0,5(RR14)
-0000C2 940036              A   777    	LDX	_state+3,R0
-                           A   778    ;  194		state.bytesToRead = numToRead;
-                           A   779    .line 194
-0000C5 880E06              A   780    	LDX	R0,6(RR14)
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:42:46     page:  16
+                           A   729    	SEGMENT ROM_DATA
+                           A   730    
+                           A   731    
+                           A   732    ;**************************** _i2cStartRead ***
+                           A   733    ;Name                         Addr/Register   S
+                           A   734    ;_state                              STATIC    
+                           A   735    ;dataLoc                              R15+7    
+                           A   736    ;numToRead                            R15+6    
+                           A   737    ;registerAddress                      R15+5    
+                           A   738    ;deviceAddress                        R15+4    
+                           A   739    
+                           A   740    
+                           A   741    ; Aggregate Stack Size: 0 (words)
+                           A   742    
+                           A   743    
+                           A   744    	.FRAME _n_i2cStartRead,?_n_i2cStartRead,RDA
+                           A   745    	.FRAME _f_i2cStartRead,?_f_i2cStartRead,EDA
+                           A   746    	SEGMENT i2c_TEXT
+000082                     A   747    _i2cStartRead:
+                           A   748    .define "_i2cStartRead"
+                           A   749    .value _i2cStartRead
+                           A   750    .class 2
+                           A   751    .type 65
+                           A   752    .type 0
+                           A   753    .endef
+                           A   754    .begfunc "i2cStartRead",193,"_i2cStartRead"
+                           A   755    .define "deviceAddress"
+                           A   756    .class 9
+                           A   757    .value 4
+                           A   758    .type 12
+                           A   759    .type 0
+                           A   760    .endef
+                           A   761    .define "registerAddress"
+                           A   762    .class 9
+                           A   763    .value 5
+                           A   764    .type 12
+                           A   765    .type 0
+                           A   766    .endef
+                           A   767    .define "numToRead"
+                           A   768    .class 9
+                           A   769    .value 6
+                           A   770    .type 12
+                           A   771    .type 0
+                           A   772    .endef
+                           A   773    .define "dataLoc"
+                           A   774    .class 9
+                           A   775    .value 7
+                           A   776    .type 172
+                           A   777    .type 0
+                           A   778    .endef
+000082 D6 0000             A   779    	CALL	__b_frameset00
+                           A   780    ;  182	
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     12:44:33     page:  16
 
 
 PC     Object              I  Line    Source i2c.src
-0000C8 940037              A   781    	LDX	_state+4,R0
-                           A   782    ;  195		state.storePtr = dataLoc;
-                           A   783    .line 195
-0000CB 880E07              A   784    	LDX	R0,7(RR14)
-0000CE 881E08              A   785    	LDX	R1,8(RR14)
-0000D1 940038              A   786    	LDX	_state+5,R0
-0000D4 941039              A   787    	LDX	_state+6,R1
-                           A   788    ;  196		//set state
-                           A   789    ;  197		state.cycle = DEV_ADDESS_WRITE;
-                           A   790    .line 197
-0000D7 E9000034            A   791    	LDX	_state+1,#-0
-                           A   792    ;  198		//assert IEN
-                           A   793    ;  199		I2CCTL |= I2CEN_MASK;
-                           A   794    .line 199
-0000DB 49800F52            A   795    	ORX	3922,#128
-                           A   796    ;  200		//assert TXI bit
-                           A   797    ;  201		I2CCTL |= TXI_MASK;
-                           A   798    .line 201
-0000DF 49080F52            A   799    	ORX	3922,#8
-                           A   800    ;  202	}
-                           A   801    .line 202
-0000E3 D6 0000             A   802    	CALL	__b_framereset
-0000E6 AF                  A   803    	RET	
-                           A   804    .endfunc "i2cStartRead",202,"_i2cStartRead"
-                           A   805    	SEGMENT ROM_DATA
-                           A   806    
-                           A   807    
-                           A   808    ;**************************** _mems_read ******
-                           A   809    ;Name                         Addr/Register   S
-                           A   810    ;_sendString                         IMPORT  --
-                           A   811    ;___print_sputch                     IMPORT  --
-                           A   812    ;__u_stoa                            IMPORT  --
-                           A   813    ;___print_out                        IMPORT    
-                           A   814    ;_gyroXValue                         STATIC    
-                           A   815    ;_accZValue                          STATIC    
-                           A   816    ;_accYValue                          STATIC    
-                           A   817    ;_accXValue                          STATIC    
-                           A   818    ;_i2cIsDataReady                     IMPORT  --
-                           A   819    ;_gyroRead                           STATIC    
-                           A   820    ;_accRead                            STATIC    
-                           A   821    ;_i2cStartRead                       IMPORT  --
-                           A   822    ;_i2cWrite                           IMPORT  --
-                           A   823    ;display                             R15-25    
-                           A   824    
-                           A   825    
-                           A   826    ; Aggregate Stack Size: -25 (words)
-                           A   827    
-                           A   828    
-                           A   829    	.FRAME _n_mems_read,?_n_mems_read,RDATA
-                           A   830    	.FCALL _n_i2cWrite
-                           A   831    	.FCALL _n_i2cStartRead
-                           A   832    	.FCALL _n_i2cIsDataReady
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:42:46     page:  17
+                           A   781    ;  183	/**************************************
+                           A   782    ;  184	Description:
+                           A   783    ;  185		Initiates numToRead i2c reads
+                           A   784    ;  186	Notes:
+                           A   785    ;  187		uses interrupts
+                           A   786    ;  188		use i2cIsDataReady() to check when 
+                           A   787    ;  189	Returns:
+                           A   788    ;  190		none
+                           A   789    ;  191	***************************************
+                           A   790    ;  192	void i2cStartRead(unsigned char deviceA
+                           A   791    ;  193	{
+                           A   792    ;  194		//set reading flag
+                           A   793    ;  195		state.reading = BUSY;
+                           A   794    .line 195
+000085 E900003C            A   795    	LDX	_state,#-0
+                           A   796    ;  196		//set internals
+                           A   797    ;  197		state.deviceAddress = deviceAddress
+                           A   798    .line 197
+000089 880E04              A   799    	LDX	R0,4(RR14)
+00008C 94003E              A   800    	LDX	_state+2,R0
+                           A   801    ;  198		state.registerAddress = registerAdd
+                           A   802    .line 198
+00008F 880E05              A   803    	LDX	R0,5(RR14)
+000092 94003F              A   804    	LDX	_state+3,R0
+                           A   805    ;  199		state.bytesToRead = numToRead;
+                           A   806    .line 199
+000095 880E06              A   807    	LDX	R0,6(RR14)
+000098 940040              A   808    	LDX	_state+4,R0
+                           A   809    ;  200		state.storePtr = dataLoc;
+                           A   810    .line 200
+00009B 880E07              A   811    	LDX	R0,7(RR14)
+00009E 881E08              A   812    	LDX	R1,8(RR14)
+0000A1 940041              A   813    	LDX	_state+5,R0
+0000A4 941042              A   814    	LDX	_state+6,R1
+                           A   815    ;  201		//set state
+                           A   816    ;  202		state.cycle = DEV_ADDESS_WRITE;
+                           A   817    .line 202
+0000A7 E900003D            A   818    	LDX	_state+1,#-0
+                           A   819    ;  203		//assert IEN
+                           A   820    ;  204		I2CCTL |= I2CEN_MASK;
+                           A   821    .line 204
+0000AB 49800F52            A   822    	ORX	3922,#128
+                           A   823    ;  205		//assert TXI bit
+                           A   824    ;  206		I2CCTL |= TXI_MASK;
+                           A   825    .line 206
+0000AF 49080F52            A   826    	ORX	3922,#8
+                           A   827    ;  207	}
+                           A   828    .line 207
+0000B3 D6 0000             A   829    	CALL	__b_framereset
+0000B6 AF                  A   830    	RET	
+                           A   831    .endfunc "i2cStartRead",207,"_i2cStartRead"
+                           A   832    	SEGMENT ROM_DATA
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     12:44:33     page:  17
 
 
 PC     Object              I  Line    Source i2c.src
-                           A   833    	.FCALL _n__u_stoa
-                           A   834    	.FCALL _n___print_sputch
-                           A   835    	.FCALL _n_sendString
-                           A   836    	.FRAME _f_mems_read,?_f_mems_read,EDATA
-                           A   837    	.FCALL _f_i2cWrite
-                           A   838    	.FCALL _f_i2cStartRead
-                           A   839    	.FCALL _f_i2cIsDataReady
-                           A   840    	.FCALL _f__u_stoa
-                           A   841    	.FCALL _f___print_sputch
-                           A   842    	.FCALL _f_sendString
-                           A   843    	SEGMENT TEXT
-000000                     A   844    L__14:
-000000 0D0A00              A   845    	DB	13,10,0
-                           A   846    	SEGMENT i2c_TEXT
-0000E7                     A   847    _mems_read:
-                           A   848    .define "_mems_read"
-                           A   849    .value _mems_read
-                           A   850    .class 2
-                           A   851    .type 65
-                           A   852    .type 0
-                           A   853    .endef
-                           A   854    .begfunc "mems_read",204,"_mems_read"
-                           A   855    ;  203	
-                           A   856    ;  204	void mems_read(void){
-                           A   857    .define "display"
-                           A   858    .class 1
-                           A   859    .value -25
-                           A   860    .dim 25
-                           A   861    .type 98
-                           A   862    .type 0
-                           A   863    .endef
-0000E7 5C19                A   864    	LD	R5,#25
-0000E9 D6 0000             A   865    	CALL	__b_frameset0
-                           A   866    ;  205		char display[25];
-                           A   867    ;  206		i2cWrite(ACCEL, REG1_A_ADDRESS, REG
-                           A   868    .line 206
-0000EC 1F7097              A   869    	PUSH	#151
-0000EF 1F7020              A   870    	PUSH	#32
-0000F2 1F7030              A   871    	PUSH	#48
-0000F5 D6 005B             A   872    	CALL	_i2cWrite
-0000F8 50E0                A   873    	POP	R0
-0000FA 50E0                A   874    	POP	R0
-0000FC 50E0                A   875    	POP	R0
-                           A   876    ;  207		i2cWrite(ACCEL, REG4_A_ADDRESS, REG
-                           A   877    .line 207
-0000FE 1F7048              A   878    	PUSH	#72
-000101 1F7023              A   879    	PUSH	#35
-000104 1F7030              A   880    	PUSH	#48
-000107 D6 005B             A   881    	CALL	_i2cWrite
-00010A 50E0                A   882    	POP	R0
-00010C 50E0                A   883    	POP	R0
-00010E 50E0                A   884    	POP	R0
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:42:46     page:  18
+                           A   833    
+                           A   834    
+                           A   835    ;**************************** _mems_read ******
+                           A   836    ;Name                         Addr/Register   S
+                           A   837    ;_gyroXValue                         STATIC    
+                           A   838    ;_printMessage                       IMPORT  --
+                           A   839    ;___print_sputch                     IMPORT  --
+                           A   840    ;__u_stoa                            IMPORT  --
+                           A   841    ;___print_putromstring               IMPORT  --
+                           A   842    ;___print_out                        IMPORT    
+                           A   843    ;_printI2CqF                         IMPORT  --
+                           A   844    ;_accXValue                          STATIC    
+                           A   845    ;_i2cIsDataReady                     IMPORT  --
+                           A   846    ;_accRead                            STATIC    
+                           A   847    ;_i2cStartRead                       IMPORT  --
+                           A   848    ;_i2cWrite                           IMPORT  --
+                           A   849    ;oldGyro                        <optimized>    
+                           A   850    ;display                             R15-25    
+                           A   851    
+                           A   852    
+                           A   853    ; Aggregate Stack Size: -25 (words)
+                           A   854    
+                           A   855    
+                           A   856    	.FRAME _n_mems_read,?_n_mems_read,RDATA
+                           A   857    	.FCALL _n_i2cWrite
+                           A   858    	.FCALL _n_i2cStartRead
+                           A   859    	.FCALL _n_i2cIsDataReady
+                           A   860    	.FCALL _n_printI2CqF
+                           A   861    	.FCALL _n___print_putromstring
+                           A   862    	.FCALL _n__u_stoa
+                           A   863    	.FCALL _n___print_sputch
+                           A   864    	.FCALL _n_printMessage
+                           A   865    	.FRAME _f_mems_read,?_f_mems_read,EDATA
+                           A   866    	.FCALL _f_i2cWrite
+                           A   867    	.FCALL _f_i2cStartRead
+                           A   868    	.FCALL _f_i2cIsDataReady
+                           A   869    	.FCALL _f_printI2CqF
+                           A   870    	.FCALL _f___print_putromstring
+                           A   871    	.FCALL _f__u_stoa
+                           A   872    	.FCALL _f___print_sputch
+                           A   873    	.FCALL _f_printMessage
+                           A   874    	SEGMENT ROM_TEXT
+000000                     A   875    L__16:
+000000 41636320            A   876    	DB	"Acc "
+000004 00                  A   877    	DB	0
+                           A   878    	SEGMENT i2c_TEXT
+0000B7                     A   879    _mems_read:
+                           A   880    .define "_mems_read"
+                           A   881    .value _mems_read
+                           A   882    .class 2
+                           A   883    .type 65
+                           A   884    .type 0
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     12:44:33     page:  18
 
 
 PC     Object              I  Line    Source i2c.src
-                           A   885    ;  208		i2cWrite(GYRO, REG1_G_ADDRESS, REG1
-                           A   886    .line 208
-000110 1F70FF              A   887    	PUSH	#255
-000113 1F7020              A   888    	PUSH	#32
-000116 1F70D4              A   889    	PUSH	#212
-000119 D6 005B             A   890    	CALL	_i2cWrite
-00011C 50E0                A   891    	POP	R0
-00011E 50E0                A   892    	POP	R0
-000120 50E0                A   893    	POP	R0
-                           A   894    ;  209		i2cWrite(GYRO, REG4_G_ADDRESS, REG4
-                           A   895    .line 209
-000122 1F7040              A   896    	PUSH	#64
-000125 1F7023              A   897    	PUSH	#35
-000128 1F70D4              A   898    	PUSH	#212
-00012B D6 005B             A   899    	CALL	_i2cWrite
-00012E 50E0                A   900    	POP	R0
-000130 50E0                A   901    	POP	R0
-000132 50E0                A   902    	POP	R0
-                           A   903    ;  210		i2cWrite(GYRO, REG5_G_ADDRESS, REG5
-                           A   904    .line 210
-000134 1F7010              A   905    	PUSH	#16
-000137 1F7024              A   906    	PUSH	#36
-00013A 1F70D4              A   907    	PUSH	#212
-00013D D6 005B             A   908    	CALL	_i2cWrite
-000140 50E0                A   909    	POP	R0
-000142 50E0                A   910    	POP	R0
-000144 50E0                A   911    	POP	R0
-                           A   912    ;  211	
-                           A   913    ;  212		i2cStartRead(ACCEL, X_LOW_ADDRESS, 
-                           A   914    .line 212
-000146 1F70 1B             A   915    	PUSH	#low(_accRead)
-000149 1F70 00             A   916    	PUSH	#high(_accRead)
-00014C 1F7006              A   917    	PUSH	#6
-00014F 1F7028              A   918    	PUSH	#40
-000152 1F7030              A   919    	PUSH	#48
-000155 D6 00B2             A   920    	CALL	_i2cStartRead
-000158 50E0                A   921    	POP	R0
-00015A 50E0                A   922    	POP	R0
-00015C 50E0                A   923    	POP	R0
-00015E 50E0                A   924    	POP	R0
-000160 50E0                A   925    	POP	R0
-                           A   926    ;  213		i2cStartRead(GYRO, RATE_LOW_ADDRESS
-                           A   927    .line 213
-000162 1F70 19             A   928    	PUSH	#low(_gyroRead)
-000165 1F70 00             A   929    	PUSH	#high(_gyroRead)
-000168 1F7002              A   930    	PUSH	#2
-00016B 1F7028              A   931    	PUSH	#40
-00016E 1F70D4              A   932    	PUSH	#212
-000171 D6 00B2             A   933    	CALL	_i2cStartRead
-000174 50E0                A   934    	POP	R0
-000176 50E0                A   935    	POP	R0
-000178 50E0                A   936    	POP	R0
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:42:46     page:  19
+                           A   885    .endef
+                           A   886    .begfunc "mems_read",209,"_mems_read"
+                           A   887    ;  208	
+                           A   888    ;  209	void mems_read(void){
+                           A   889    .define "display"
+                           A   890    .class 1
+                           A   891    .value -25
+                           A   892    .dim 25
+                           A   893    .type 98
+                           A   894    .type 0
+                           A   895    .endef
+                           A   896    .define "oldGyro"
+                           A   897    .class 4
+                           A   898    .reg -1
+                           A   899    .type 2
+                           A   900    .type 0
+                           A   901    .endef
+0000B7 5C19                A   902    	LD	R5,#25
+0000B9 D6 0000             A   903    	CALL	__b_frameset0
+                           A   904    ;  210		char display[25];
+                           A   905    ;  211		char oldGyro;
+                           A   906    ;  212		char oldAcc;
+                           A   907    ;  213		
+                           A   908    ;  214			
+                           A   909    ;  215		i2cWrite(ACCEL, REG1_A_ADDRESS, REG
+                           A   910    .line 215
+0000BC 1F7097              A   911    	PUSH	#151
+0000BF 1F7020              A   912    	PUSH	#32
+0000C2 1F7030              A   913    	PUSH	#48
+0000C5 D6 002B             A   914    	CALL	_i2cWrite
+0000C8 50E0                A   915    	POP	R0
+0000CA 50E0                A   916    	POP	R0
+0000CC 50E0                A   917    	POP	R0
+                           A   918    ;  216		i2cWrite(ACCEL, REG4_A_ADDRESS, REG
+                           A   919    .line 216
+0000CE 1F7048              A   920    	PUSH	#72
+0000D1 1F7023              A   921    	PUSH	#35
+0000D4 1F7030              A   922    	PUSH	#48
+0000D7 D6 002B             A   923    	CALL	_i2cWrite
+0000DA 50E0                A   924    	POP	R0
+0000DC 50E0                A   925    	POP	R0
+0000DE 50E0                A   926    	POP	R0
+                           A   927    ;  217		i2cWrite(GYRO, REG1_G_ADDRESS, REG1
+                           A   928    .line 217
+0000E0 1F70FF              A   929    	PUSH	#255
+0000E3 1F7020              A   930    	PUSH	#32
+0000E6 1F70D4              A   931    	PUSH	#212
+0000E9 D6 002B             A   932    	CALL	_i2cWrite
+0000EC 50E0                A   933    	POP	R0
+0000EE 50E0                A   934    	POP	R0
+0000F0 50E0                A   935    	POP	R0
+                           A   936    ;  218		i2cWrite(GYRO, REG4_G_ADDRESS, REG4
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     12:44:33     page:  19
 
 
 PC     Object              I  Line    Source i2c.src
-00017A 50E0                A   937    	POP	R0
-00017C 50E0                A   938    	POP	R0
-                           A   939    ;  214		// i2cStartRead(ACCEL, X_HIGH_ADDRE
-                           A   940    ;  215	
-                           A   941    ;  216		// i2cStartRead(ACCEL, Y_LOW_ADDRES
-                           A   942    ;  217		// i2cStartRead(ACCEL, Y_HIGH_ADDRE
-                           A   943    ;  218		//
-                           A   944    ;  219		// i2cStartRead(GYRO, RATE_LOW_ADDR
-                           A   945    ;  220		// i2cStartRead(GYRO, RATE_HIGH_ADD
-                           A   946    ;  221	
-                           A   947    ;  222		// acc_xh = *acc_data_xh;
-                           A   948    ;  223		// acc_xl = *acc_data_xl;
-                           A   949    ;  224		// acc_x = (acc_xl & ((acc_xh<<8) &
-                           A   950    ;  225		//
-                           A   951    ;  226		// acc_yh = *acc_data_yh;
-                           A   952    ;  227		// acc_yl = *acc_data_yl;
-                           A   953    ;  228		// acc_y = (acc_yl & ((acc_yh<<8) &
-                           A   954    ;  229	
-                           A   955    ;  230	
-                           A   956    ;  231		// gyro_h = *gyro_data_h;
-                           A   957    ;  232		// gyro_l = *gyro_data_l;
-                           A   958    ;  233		// gyro_val = (((gyro_h << 8) & 0xF
-                           A   959    ;  234		while(i2cIsDataReady()==0){}
-00017E                     A   960    _4_L_20:
-                           A   961    .line 234
-00017E D6 0312             A   962    	CALL	_i2cIsDataReady
-000181 4200                A   963    	OR	R0,R0
-000183 6B F9               A   964    	JR	Z,_4_L_20
-                           A   965    ;  235		accXValue = accRead[1] & ((accRead[
-                           A   966    .line 235
-000185 84101C              A   967    	LDX	R1,_accRead+1
-000188 E4E1E0              A   968    	LD	R0,R1
-00018B 90E0                A   969    	RL	R0
-00018D 3200                A   970    	SBC	R0,R0
-00018F E8 01B02B           A   971    	LDX	_accXValue,_accRead
-000193 E900002C            A   972    	LDX	_accXValue+1,#-0
-000197 58EE102C            A   973    	ANDX	_accXValue+1,R1
-00019B 58EE002B            A   974    	ANDX	_accXValue,R0
-                           A   975    ;  236		accYValue = accRead[3] & ((accRead[
-                           A   976    .line 236
-00019F 84101E              A   977    	LDX	R1,_accRead+3
-0001A2 E4E1E0              A   978    	LD	R0,R1
-0001A5 90E0                A   979    	RL	R0
-0001A7 3200                A   980    	SBC	R0,R0
-0001A9 E8 01D02D           A   981    	LDX	_accYValue,_accRead+2
-0001AD E900002E            A   982    	LDX	_accYValue+1,#-0
-0001B1 58EE102E            A   983    	ANDX	_accYValue+1,R1
-0001B5 58EE002D            A   984    	ANDX	_accYValue,R0
-                           A   985    ;  237		accZValue = accRead[5] & ((accRead[
-                           A   986    .line 237
-0001B9 841020              A   987    	LDX	R1,_accRead+5
-0001BC E4E1E0              A   988    	LD	R0,R1
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:42:46     page:  20
+                           A   937    .line 218
+0000F2 1F7040              A   938    	PUSH	#64
+0000F5 1F7023              A   939    	PUSH	#35
+0000F8 1F70D4              A   940    	PUSH	#212
+0000FB D6 002B             A   941    	CALL	_i2cWrite
+0000FE 50E0                A   942    	POP	R0
+000100 50E0                A   943    	POP	R0
+000102 50E0                A   944    	POP	R0
+                           A   945    ;  219		i2cWrite(GYRO, REG5_G_ADDRESS, REG5
+                           A   946    .line 219
+000104 1F7010              A   947    	PUSH	#16
+000107 1F7024              A   948    	PUSH	#36
+00010A 1F70D4              A   949    	PUSH	#212
+00010D D6 002B             A   950    	CALL	_i2cWrite
+000110 50E0                A   951    	POP	R0
+000112 50E0                A   952    	POP	R0
+000114 50E0                A   953    	POP	R0
+                           A   954    ;  220		
+                           A   955    ;  221	
+                           A   956    ;  222		i2cStartRead(ACCEL, X_LOW_ADDRESS, 
+                           A   957    .line 222
+000116 1F70 1F             A   958    	PUSH	#low(_accRead)
+000119 1F70 00             A   959    	PUSH	#high(_accRead)
+00011C 1F7002              A   960    	PUSH	#2
+00011F 1F7028              A   961    	PUSH	#40
+000122 1F7030              A   962    	PUSH	#48
+000125 D6 0082             A   963    	CALL	_i2cStartRead
+000128 50E0                A   964    	POP	R0
+00012A 50E0                A   965    	POP	R0
+00012C 50E0                A   966    	POP	R0
+00012E 50E0                A   967    	POP	R0
+000130 50E0                A   968    	POP	R0
+                           A   969    ;  223	// 	i2cStartRead(ACCEL, X_HIGH_ADDRESS,
+                           A   970    ;  224	// 	i2cStartRead(GYRO, RATE_LOW_ADDRESS
+                           A   971    ;  225	
+                           A   972    ;  226		while(i2cIsDataReady()==0){}
+000132                     A   973    _4_L_20:
+                           A   974    .line 226
+000132 D6 03C1             A   975    	CALL	_i2cIsDataReady
+000135 4200                A   976    	OR	R0,R0
+000137 6B F9               A   977    	JR	Z,_4_L_20
+                           A   978    ;  227		accXValue = accRead[1] & ((accRead[
+                           A   979    .line 227
+000139 841020              A   980    	LDX	R1,_accRead+1
+00013C E4E1E0              A   981    	LD	R0,R1
+00013F 90E0                A   982    	RL	R0
+000141 3200                A   983    	SBC	R0,R0
+000143 E8 01F02F           A   984    	LDX	_accXValue,_accRead
+000147 E9000030            A   985    	LDX	_accXValue+1,#-0
+00014B 58EE1030            A   986    	ANDX	_accXValue+1,R1
+00014F 58EE002F            A   987    	ANDX	_accXValue,R0
+                           A   988    ;  228	// 	accYValue = accRead[3] & ((accRead[
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     12:44:33     page:  20
 
 
 PC     Object              I  Line    Source i2c.src
-0001BF 90E0                A   989    	RL	R0
-0001C1 3200                A   990    	SBC	R0,R0
-0001C3 E8 01F02F           A   991    	LDX	_accZValue,_accRead+4
-0001C7 E9000030            A   992    	LDX	_accZValue+1,#-0
-0001CB 58EE1030            A   993    	ANDX	_accZValue+1,R1
-0001CF 58EE002F            A   994    	ANDX	_accZValue,R0
-                           A   995    ;  238		gyroXValue = gyroRead[0] & ((gyroRe
-                           A   996    .line 238
-0001D3 841019              A   997    	LDX	R1,_gyroRead
-0001D6 E4E1E0              A   998    	LD	R0,R1
-0001D9 90E0                A   999    	RL	R0
-0001DB 3200                A  1000    	SBC	R0,R0
-0001DD E8 01A031           A  1001    	LDX	_gyroXValue,_gyroRead+1
-0001E1 E9000032            A  1002    	LDX	_gyroXValue+1,#-0
-0001E5 58EE1032            A  1003    	ANDX	_gyroXValue+1,R1
-0001E9 58EE0031            A  1004    	ANDX	_gyroXValue,R0
-                           A  1005    ;  239	// 	gyroYValue = gyroRead[2] & ((gyroRe
-                           A  1006    ;  240	// 	gyroZValue = gyroRead[4] & ((gyroRe
-                           A  1007    ;  241	
-                           A  1008    ;  242		//LCD Display
-                           A  1009    ;  243	// 	if(accXValue != 0){
-                           A  1010    ;  244	
-                           A  1011    ;  245			sprintf(display, "%d", accXValu
-                           A  1012    .line 245
-0001ED 1CFF                A  1013    	LD	R1,#255
-0001EF 0CE7                A  1014    	LD	R0,#231
-0001F1 020F                A  1015    	ADD	R0,R15
-0001F3 121E                A  1016    	ADC	R1,R14
-0001F5 941000              A  1017    	LDX	___print_out,R1
-0001F8 940001              A  1018    	LDX	___print_out+1,R0
-0001FB C8 02C0             A  1019    	PUSHX	_accXValue+1
-0001FE C8 02B0             A  1020    	PUSHX	_accXValue
-000201 D6 0000             A  1021    	CALL	__u_stoa
-000204 50E0                A  1022    	POP	R0
-000206 50E0                A  1023    	POP	R0
-000208 1F7000              A  1024    	PUSH	#0
-00020B D6 0000             A  1025    	CALL	___print_sputch
-00020E 50E0                A  1026    	POP	R0
-                           A  1027    ;  246			sendString(display);
-                           A  1028    .line 246
-000210 1CFF                A  1029    	LD	R1,#255
-000212 0CE7                A  1030    	LD	R0,#231
-000214 020F                A  1031    	ADD	R0,R15
-000216 121E                A  1032    	ADC	R1,R14
-000218 70E0                A  1033    	PUSH	R0
-00021A 70E1                A  1034    	PUSH	R1
-00021C D6 0000             A  1035    	CALL	_sendString
-00021F 50E0                A  1036    	POP	R0
-000221 50E0                A  1037    	POP	R0
-                           A  1038    ;  247			sendString("\r\n");
-                           A  1039    .line 247
-000223 1F70 00             A  1040    	PUSH	#low(L__14)
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:42:46     page:  21
+                           A   989    ;  229	// 	accZValue = accRead[5] & ((accRead[
+                           A   990    ;  230	// 	gyroXValue = gyroRead[0] & ((gyroRe
+                           A   991    ;  231	// 	gyroYValue = gyroRead[2] & ((gyroRe
+                           A   992    ;  232	// 	gyroZValue = gyroRead[4] & ((gyroRe
+                           A   993    ;  233		
+                           A   994    ;  234	// 	if(printI2CqF() && oldGyro != gyroX
+                           A   995    ;  235		if(printI2CqF() && accXValue != 0){
+                           A   996    .line 235
+000153 D6 0000             A   997    	CALL	_printI2CqF
+000156 4200                A   998    	OR	R0,R0
+000158 6B 51               A   999    	JR	Z,_4_L_25
+00015A 84002F              A  1000    	LDX	R0,_accXValue
+00015D 48 030EE0           A  1001    	ORX	R0,_accXValue+1
+000161 6B 48               A  1002    	JR	Z,_4_L_25
+                           A  1003    ;  236			sprintf(display, "Acc %d", accX
+                           A  1004    .line 236
+000163 1CFF                A  1005    	LD	R1,#255
+000165 0CE7                A  1006    	LD	R0,#231
+000167 020F                A  1007    	ADD	R0,R15
+000169 121E                A  1008    	ADC	R1,R14
+00016B 941000              A  1009    	LDX	___print_out,R1
+00016E 940001              A  1010    	LDX	___print_out+1,R0
+000171 1F70 00             A  1011    	PUSH	#low(L__16)
+000174 1F70 00             A  1012    	PUSH	#high(L__16)
+000177 D6 0000             A  1013    	CALL	___print_putromstring
+00017A 50E0                A  1014    	POP	R0
+00017C 50E0                A  1015    	POP	R0
+00017E C8 0300             A  1016    	PUSHX	_accXValue+1
+000181 C8 02F0             A  1017    	PUSHX	_accXValue
+000184 D6 0000             A  1018    	CALL	__u_stoa
+000187 50E0                A  1019    	POP	R0
+000189 50E0                A  1020    	POP	R0
+00018B 1F7000              A  1021    	PUSH	#0
+00018E D6 0000             A  1022    	CALL	___print_sputch
+000191 50E0                A  1023    	POP	R0
+                           A  1024    ;  237			printMessage(display, 1);
+                           A  1025    .line 237
+000193 1F7001              A  1026    	PUSH	#1
+000196 1CFF                A  1027    	LD	R1,#255
+000198 0CE7                A  1028    	LD	R0,#231
+00019A 020F                A  1029    	ADD	R0,R15
+00019C 121E                A  1030    	ADC	R1,R14
+00019E 70E0                A  1031    	PUSH	R0
+0001A0 70E1                A  1032    	PUSH	R1
+0001A2 D6 0000             A  1033    	CALL	_printMessage
+0001A5 50E0                A  1034    	POP	R0
+0001A7 50E0                A  1035    	POP	R0
+0001A9 50E0                A  1036    	POP	R0
+                           A  1037    ;  238			oldGyro = gyroXValue;
+                           A  1038    .line 238
+                           A  1039    ;  239		}
+                           A  1040    ;  240			
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     12:44:33     page:  21
 
 
 PC     Object              I  Line    Source i2c.src
-000226 1F70 00             A  1041    	PUSH	#high(L__14)
-000229 D6 0000             A  1042    	CALL	_sendString
-00022C 50E0                A  1043    	POP	R0
-00022E 50E0                A  1044    	POP	R0
-                           A  1045    ;  248	// 	}
-                           A  1046    ;  249	}
-                           A  1047    .line 249
-000230 D6 0000             A  1048    	CALL	__b_framereset
-000233 AF                  A  1049    	RET	
-                           A  1050    .endfunc "mems_read",249,"_mems_read"
-                           A  1051    	SEGMENT ROM_DATA
-                           A  1052    ;	Jump Table for Switch Statement at line 297
-000000                     A  1053    L__20:
-000000 0004                A  1054    	DW	4
-000002 0000                A  1055    	DW	0
-000004 0296                A  1056    	DW	_5_L_26
-000006 0001                A  1057    	DW	1
-000008 02A8                A  1058    	DW	_5_L_27
-00000A 0002                A  1059    	DW	2
-00000C 02C2                A  1060    	DW	_5_L_31
-00000E 0004                A  1061    	DW	4
-000010 02E8                A  1062    	DW	_5_L_35
-000012 030E                A  1063    	DW	_5_L_44
-                           A  1064    
+                           A  1041    ;  241	// 	if(accXValue != 0 && t1Ready == 1){
+                           A  1042    ;  242	// 		sprintf(display, "%f", compleme
+                           A  1043    ;  243	// 		printMessage(display, 1);
+                           A  1044    ;  244	// 		sendString("\r\n");
+                           A  1045    ;  245	// 		t1Ready = 0;
+                           A  1046    ;  246	// 	}
+                           A  1047    ;  247		//LCD Display
+                           A  1048    ;  248	// 	if(accXValue != 0){
+                           A  1049    ;  249	
+                           A  1050    ;  250	// 		sprintf(display, "%d", accXValu
+                           A  1051    ;  251	// 		sendString(display);
+                           A  1052    ;  252	// 		sendString("\r\n");
+                           A  1053    ;  253	// 	}
+                           A  1054    ;  254	}
+0001AB                     A  1055    _4_L_25:
+                           A  1056    .line 254
+0001AB D6 0000             A  1057    	CALL	__b_framereset
+0001AE AF                  A  1058    	RET	
+                           A  1059    .endfunc "mems_read",254,"_mems_read"
+                           A  1060    	SEGMENT ROM_DATA
+                           A  1061    
+                           A  1062    
+                           A  1063    ;**************************** _printi2c *******
+                           A  1064    ;Name                         Addr/Register   S
                            A  1065    
-                           A  1066    ;**************************** _Si2c_Isr *******
-                           A  1067    ;Name                         Addr/Register   S
-                           A  1068    ;_state                              STATIC    
+                           A  1066    
+                           A  1067    ; Aggregate Stack Size: 0 (words)
+                           A  1068    
                            A  1069    
-                           A  1070    
-                           A  1071    ; Aggregate Stack Size: 0 (words)
-                           A  1072    
-                           A  1073    
-                           A  1074    	.FRAME _n_Si2c_Isr,?_n_Si2c_Isr,RDATA
-                           A  1075    	.FRAME _f_Si2c_Isr,?_f_Si2c_Isr,EDATA
-                           A  1076    	SEGMENT i2c_TEXT
-000234                     A  1077    _Si2c_Isr:
-                           A  1078    .define "_Si2c_Isr"
-                           A  1079    .value _Si2c_Isr
-                           A  1080    .class 2
-                           A  1081    .type 65
-                           A  1082    .type 0
-                           A  1083    .endef
-                           A  1084    .begfunc "Si2c_Isr",262,"_Si2c_Isr"
-000234 C8FFD0              A  1085    	PUSHX	4093
-000237 D6 0000             A  1086    	CALL	__b_iframeset00
-                           A  1087    ;  250	
-                           A  1088    ;  251	
-                           A  1089    ;  252	
-                           A  1090    ;  253	/**************************************
-                           A  1091    ;  254	Description: State machine handles
-                           A  1092    ;  255			Nack interrupt
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:42:46     page:  22
+                           A  1070    	.FRAME _n_printi2c,?_n_printi2c,RDATA
+                           A  1071    	.FRAME _f_printi2c,?_f_printi2c,EDATA
+                           A  1072    	SEGMENT i2c_TEXT
+0001AF                     A  1073    _printi2c:
+                           A  1074    .define "_printi2c"
+                           A  1075    .value _printi2c
+                           A  1076    .class 2
+                           A  1077    .type 65
+                           A  1078    .type 0
+                           A  1079    .endef
+                           A  1080    .begfunc "printi2c",256,"_printi2c"
+0001AF D6 0000             A  1081    	CALL	__b_frameset00
+                           A  1082    ;  255	
+                           A  1083    ;  256	void printi2c(void){
+                           A  1084    ;  257		char display[25];
+                           A  1085    ;  258		
+                           A  1086    ;  259	}
+                           A  1087    .line 259
+0001B2 D6 0000             A  1088    	CALL	__b_framereset
+0001B5 AF                  A  1089    	RET	
+                           A  1090    .endfunc "printi2c",259,"_printi2c"
+                           A  1091    	SEGMENT ROM_DATA
+                           A  1092    
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     12:44:33     page:  22
 
 
 PC     Object              I  Line    Source i2c.src
-                           A  1093    ;  256			Empty Interrupt
-                           A  1094    ;  257			Recieve interrupt
-                           A  1095    ;  258	
-                           A  1096    ;  259	***************************************
-                           A  1097    ;  260	#pragma interrupt
-                           A  1098    ;  261	void Si2c_Isr(void)
-                           A  1099    ;  262	{
-                           A  1100    ;  263		//Disable Interrupts
-                           A  1101    ;  264		if(I2CSTAT & NCKI_MASK) //not ack i
-                           A  1102    .line 264
-00023A 79010F51            A  1103    	TMX	3921,#1
-00023E 6B 3C               A  1104    	JR	Z,_5_L_43
-                           A  1105    ;  265		{
-                           A  1106    ;  266			//in read last byte statwe
-                           A  1107    ;  267			if(state.cycle == READ_LAST)
-                           A  1108    .line 267
-000240 A9050034            A  1109    	CPX	_state+1,#5
-000244 EB 1F               A  1110    	JR	NE,_5_L_25
-                           A  1111    ;  268			{
-                           A  1112    ;  269				//read i2c data
-                           A  1113    ;  270				*(state.storePtr) = I2CDATA
-                           A  1114    .line 270
-000246 840038              A  1115    	LDX	R0,_state+5
-000249 841039              A  1116    	LDX	R1,_state+6
-00024C 842F50              A  1117    	LDX	R2,3920
-00024F 96E2E0              A  1118    	LDX	@RR0,R2
-                           A  1119    ;  271				//assert stop
-                           A  1120    ;  272				I2CCTL |= STOP_MASK;
-                           A  1121    .line 272
-000252 49200F52            A  1122    	ORX	3922,#32
-                           A  1123    ;  273				//read cycle completed
-                           A  1124    ;  274				state.cycle = END_CYCLE;
-                           A  1125    .line 274
-000256 E9060034            A  1126    	LDX	_state+1,#6
-                           A  1127    ;  275				//clear reading ass samples
-                           A  1128    ;  276				state.reading  = DONE;
-                           A  1129    .line 276
-00025A E9010033            A  1130    	LDX	_state,#1
-                           A  1131    ;  277				//disable i2c
-                           A  1132    ;  278				I2CCTL &= ~I2CEN_MASK;
-                           A  1133    .line 278
-00025E 597F0F52            A  1134    	ANDX	3922,#127
-                           A  1135    ;  279			}
-                           A  1136    ;  280			else
-                           A  1137    .line 280
-000262 8D 03 0E            A  1138    	JR	_5_L_44
-000265                     A  1139    _5_L_25:
-                           A  1140    ;  281			{
-                           A  1141    ;  282				//error
-                           A  1142    ;  283				//set stop and flush bits
-                           A  1143    ;  284				I2CCTL |= (STOP_MASK | FLUS
-                           A  1144    .line 284
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:42:46     page:  23
+                           A  1093    
+                           A  1094    ;**************************** _complementary **
+                           A  1095    ;Name                         Addr/Register   S
+                           A  1096    ;_accXValue                          STATIC    
+                           A  1097    ;_accZValue                          STATIC    
+                           A  1098    ;_atan2                              IMPORT  --
+                           A  1099    ;_gyroXValue                         STATIC    
+                           A  1100    ;thetaAcc                            R15-12    
+                           A  1101    ;thetaGyro                            R15-8    
+                           A  1102    ;theta                                R15-4    
+                           A  1103    
+                           A  1104    
+                           A  1105    ; Aggregate Stack Size: -12 (words)
+                           A  1106    
+                           A  1107    
+                           A  1108    	.FRAME _n_complementary,?_n_complementary,R
+                           A  1109    	.FCALL _n_atan2
+                           A  1110    	.FRAME _f_complementary,?_f_complementary,E
+                           A  1111    	.FCALL _f_atan2
+                           A  1112    	SEGMENT i2c_TEXT
+0001B6                     A  1113    _complementary:
+                           A  1114    .define "_complementary"
+                           A  1115    .value _complementary
+                           A  1116    .class 2
+                           A  1117    .type 70
+                           A  1118    .type 0
+                           A  1119    .endef
+                           A  1120    .begfunc "complementary",261,"_complementary"
+                           A  1121    ;  260	
+                           A  1122    ;  261	float complementary(void){
+                           A  1123    .define "theta"
+                           A  1124    .class 1
+                           A  1125    .value -4
+                           A  1126    .type 6
+                           A  1127    .type 0
+                           A  1128    .endef
+                           A  1129    .define "thetaGyro"
+                           A  1130    .class 1
+                           A  1131    .value -8
+                           A  1132    .type 6
+                           A  1133    .type 0
+                           A  1134    .endef
+                           A  1135    .define "thetaAcc"
+                           A  1136    .class 1
+                           A  1137    .value -12
+                           A  1138    .type 6
+                           A  1139    .type 0
+                           A  1140    .endef
+0001B6 5C0C                A  1141    	LD	R5,#12
+0001B8 D6 0000             A  1142    	CALL	__b_frameset0
+                           A  1143    ;  262		float thetaGyro = 0;
+                           A  1144    .line 262
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     12:44:33     page:  23
 
 
 PC     Object              I  Line    Source i2c.src
-000265 49220F52            A  1145    	ORX	3922,#34
-                           A  1146    ;  285				//clear txi
-                           A  1147    ;  286				I2CCTL &= ~TXI_MASK;
-                           A  1148    .line 286
-000269 59F70F52            A  1149    	ANDX	3922,#-9
-                           A  1150    ;  287				//reset state
-                           A  1151    ;  288				state.cycle = END_CYCLE;
-                           A  1152    .line 288
-00026D E9060034            A  1153    	LDX	_state+1,#6
-                           A  1154    ;  289				//report failure
-                           A  1155    ;  290				state.reading  = FAILED;
-                           A  1156    .line 290
-000271 E9FF0033            A  1157    	LDX	_state,#-1
-                           A  1158    ;  291				//disable i2c
-                           A  1159    ;  292				I2CCTL &= ~I2CEN_MASK;
-                           A  1160    .line 292
-000275 597F0F52            A  1161    	ANDX	3922,#127
-                           A  1162    ;  293			}
-                           A  1163    ;  294		}
-                           A  1164    ;  295		else if(I2CSTAT & (TDRE_MASK| RDRF_
-                           A  1165    .line 295
-000279 8D 03 0E            A  1166    	JR	_5_L_44
-00027C                     A  1167    _5_L_43:
-00027C 79C00F51            A  1168    	TMX	3921,#192
-000280 6D 03 0E            A  1169    	JR	Z,_5_L_44
-                           A  1170    ;  296		{
-                           A  1171    ;  297			switch (state.cycle)
-                           A  1172    .line 297
-000283 841034              A  1173    	LDX	R1,_state+1
-000286 E4E1E0              A  1174    	LD	R0,R1
-000289 90E0                A  1175    	RL	R0
-00028B 3200                A  1176    	SBC	R0,R0
-00028D 2C 00               A  1177    	LD	R2,#high(L__20)
-00028F 3C 00               A  1178    	LD	R3,#low(L__20)
-000291 D6 0000             A  1179    	CALL	__b_ucase
-000294 C4E0                A  1180    	JP	@RR0
-                           A  1181    ;  298			{
-                           A  1182    ;  299				case DEV_ADDESS_WRITE:
-000296                     A  1183    _5_L_26:
-                           A  1184    .line 299
-                           A  1185    ;  300					//write device address 
-                           A  1186    ;  301					I2CDATA = state.deviceA
-                           A  1187    .line 301
-000296 840035              A  1188    	LDX	R0,_state+2
-000299 E200                A  1189    	BCLR	0,R0
-00029B 940F50              A  1190    	LDX	3920,R0
-                           A  1191    ;  302					//assert start
-                           A  1192    ;  303					I2CCTL |= START_MASK;
-                           A  1193    .line 303
-00029E 49400F52            A  1194    	ORX	3922,#64
-                           A  1195    ;  304					//set to next state
-                           A  1196    ;  305					state.cycle = DEV_SUB_A
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:42:46     page:  24
+0001BB B0E0                A  1145    	CLR	R0
+0001BD B0E1                A  1146    	CLR	R1
+0001BF B0E2                A  1147    	CLR	R2
+0001C1 B0E3                A  1148    	CLR	R3
+0001C3 89E0F8              A  1149    	LDX	-8(RR14),R0
+0001C6 89E1F9              A  1150    	LDX	-7(RR14),R1
+0001C9 89E2FA              A  1151    	LDX	-6(RR14),R2
+0001CC 89E3FB              A  1152    	LDX	-5(RR14),R3
+                           A  1153    ;  263		float thetaAcc = 0;
+                           A  1154    .line 263
+0001CF B0E0                A  1155    	CLR	R0
+0001D1 B0E1                A  1156    	CLR	R1
+0001D3 B0E2                A  1157    	CLR	R2
+0001D5 B0E3                A  1158    	CLR	R3
+0001D7 89E0F4              A  1159    	LDX	-12(RR14),R0
+0001DA 89E1F5              A  1160    	LDX	-11(RR14),R1
+0001DD 89E2F6              A  1161    	LDX	-10(RR14),R2
+0001E0 89E3F7              A  1162    	LDX	-9(RR14),R3
+                           A  1163    ;  264		float theta = 0;
+                           A  1164    .line 264
+0001E3 B0E0                A  1165    	CLR	R0
+0001E5 B0E1                A  1166    	CLR	R1
+0001E7 B0E2                A  1167    	CLR	R2
+0001E9 B0E3                A  1168    	CLR	R3
+0001EB 89E0FC              A  1169    	LDX	-4(RR14),R0
+0001EE 89E1FD              A  1170    	LDX	-3(RR14),R1
+0001F1 89E2FE              A  1171    	LDX	-2(RR14),R2
+0001F4 89E3FF              A  1172    	LDX	-1(RR14),R3
+                           A  1173    ;  265		
+                           A  1174    ;  266		//Integrate gyro
+                           A  1175    ;  267		thetaGyro += (float) gyroXValue * 0
+                           A  1176    .line 267
+0001F7 843036              A  1177    	LDX	R3,_gyroXValue+1
+0001FA 842035              A  1178    	LDX	R2,_gyroXValue
+0001FD E4E2E1              A  1179    	LD	R1,R2
+000200 90E1                A  1180    	RL	R1
+000202 3211                A  1181    	SBC	R1,R1
+000204 E4E1E0              A  1182    	LD	R0,R1
+000207 D6 0000             A  1183    	CALL	__b_fpltof
+00020A 4C3D                A  1184    	LD	R4,#61
+00020C 5C23                A  1185    	LD	R5,#35
+00020E 6CD7                A  1186    	LD	R6,#215
+000210 7C0A                A  1187    	LD	R7,#10
+000212 D6 0000             A  1188    	CALL	__b_fpmul
+000215 1FE8EE0E E4         A  1189    	LDWX	RR4,RR0
+00021A 1FE8EE2E E6         A  1190    	LDWX	RR6,RR2
+00021F 990EF8              A  1191    	LEA	RR0,248(RR14)
+000222 D6 0000             A  1192    	CALL	__b_ldxlr0
+000225 D6 0000             A  1193    	CALL	__b_fpadd
+000228 994EF8              A  1194    	LEA	RR4,248(RR14)
+00022B D6 0000             A  1195    	CALL	__b_stxlr0
+                           A  1196    ;  268		
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     12:44:33     page:  24
 
 
 PC     Object              I  Line    Source i2c.src
-                           A  1197    .line 305
-0002A2 E9010034            A  1198    	LDX	_state+1,#1
-                           A  1199    ;  306					break;
-                           A  1200    .line 306
-0002A6 8B 66               A  1201    	JR	_5_L_44
-                           A  1202    ;  307				case DEV_SUB_ADDRESS:
-0002A8                     A  1203    _5_L_27:
-                           A  1204    .line 307
-                           A  1205    ;  308					if(state.bytesToRead > 
-                           A  1206    .line 308
-0002A8 A9010037            A  1207    	CPX	_state+4,#1
-0002AC 3B 0A               A  1208    	JR	ULE,_5_L_29
-                           A  1209    ;  309					{
-                           A  1210    ;  310						//set first bit to 
-                           A  1211    ;  311						I2CDATA = AUTO_INC 
-                           A  1212    .line 311
-0002AE 840036              A  1213    	LDX	R0,_state+3
-0002B1 E2F0                A  1214    	BSET	7,R0
-0002B3 940F50              A  1215    	LDX	3920,R0
-                           A  1216    ;  312					}
-                           A  1217    ;  313					else
-                           A  1218    .line 313
-0002B6 8B 04               A  1219    	JR	_5_L_30
-0002B8                     A  1220    _5_L_29:
-                           A  1221    ;  314					{
-                           A  1222    ;  315						//write device sub 
-                           A  1223    ;  316						I2CDATA = state.reg
-                           A  1224    .line 316
-0002B8 E8 036F50           A  1225    	LDX	3920,_state+3
-                           A  1226    ;  317					}
-0002BC                     A  1227    _5_L_30:
-                           A  1228    .line 317
-                           A  1229    ;  318					//need to wait till i2c
-                           A  1230    ;  319					//set to next state
-                           A  1231    ;  320					state.cycle = START_REA
-                           A  1232    .line 320
-0002BC E9020034            A  1233    	LDX	_state+1,#2
-                           A  1234    ;  321					break;
-                           A  1235    .line 321
-0002C0 8B 4C               A  1236    	JR	_5_L_44
-                           A  1237    ;  322				case START_READ:
-0002C2                     A  1238    _5_L_31:
-                           A  1239    .line 322
-                           A  1240    ;  323					//commence read cycle
-                           A  1241    ;  324					//write device address 
-                           A  1242    ;  325					I2CDATA = state.deviceA
-                           A  1243    .line 325
-0002C2 840035              A  1244    	LDX	R0,_state+2
-0002C5 E280                A  1245    	BSET	0,R0
-0002C7 940F50              A  1246    	LDX	3920,R0
-                           A  1247    ;  326					//assert start
-                           A  1248    ;  327					I2CCTL |= START_MASK;
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:42:46     page:  25
+                           A  1197    ;  269		//Angle from accelerometer based on
+                           A  1198    ;  270		thetaAcc = atan2((float) accXValue,
+                           A  1199    .line 270
+00022E 843034              A  1200    	LDX	R3,_accZValue+1
+000231 842033              A  1201    	LDX	R2,_accZValue
+000234 E4E2E1              A  1202    	LD	R1,R2
+000237 90E1                A  1203    	RL	R1
+000239 3211                A  1204    	SBC	R1,R1
+00023B E4E1E0              A  1205    	LD	R0,R1
+00023E D6 0000             A  1206    	CALL	__b_fpltof
+000241 4C42                A  1207    	LD	R4,#66
+000243 5C65                A  1208    	LD	R5,#101
+000245 6C47                A  1209    	LD	R6,#71
+000247 7CAE                A  1210    	LD	R7,#174
+000249 D6 0000             A  1211    	CALL	__b_fpmul
+00024C 70E3                A  1212    	PUSH	R3
+00024E 70E2                A  1213    	PUSH	R2
+000250 70E1                A  1214    	PUSH	R1
+000252 70E0                A  1215    	PUSH	R0
+000254 843030              A  1216    	LDX	R3,_accXValue+1
+000257 84202F              A  1217    	LDX	R2,_accXValue
+00025A E4E2E1              A  1218    	LD	R1,R2
+00025D 90E1                A  1219    	RL	R1
+00025F 3211                A  1220    	SBC	R1,R1
+000261 E4E1E0              A  1221    	LD	R0,R1
+000264 D6 0000             A  1222    	CALL	__b_fpltof
+000267 70E3                A  1223    	PUSH	R3
+000269 70E2                A  1224    	PUSH	R2
+00026B 70E1                A  1225    	PUSH	R1
+00026D 70E0                A  1226    	PUSH	R0
+00026F D6 0000             A  1227    	CALL	_atan2
+000272 2F                  A  1228    	ATM	
+000273 09080FFF            A  1229    	ADDX	4095,#8
+000277 19000FFE            A  1230    	ADCX	4094,#-0
+00027B 89E0F4              A  1231    	LDX	-12(RR14),R0
+00027E 89E1F5              A  1232    	LDX	-11(RR14),R1
+000281 89E2F6              A  1233    	LDX	-10(RR14),R2
+000284 89E3F7              A  1234    	LDX	-9(RR14),R3
+                           A  1235    ;  271		
+                           A  1236    ;  272		theta = 0.98*(thetaGyro + theta) + 
+                           A  1237    .line 272
+000287 994EFC              A  1238    	LEA	RR4,252(RR14)
+00028A D6 0000             A  1239    	CALL	__b_ldxlr4
+00028D 990EF8              A  1240    	LEA	RR0,248(RR14)
+000290 D6 0000             A  1241    	CALL	__b_ldxlr0
+000293 D6 0000             A  1242    	CALL	__b_fpadd
+000296 4C3F                A  1243    	LD	R4,#63
+000298 5C7A                A  1244    	LD	R5,#122
+00029A 6CE1                A  1245    	LD	R6,#225
+00029C 7C48                A  1246    	LD	R7,#72
+00029E D6 0000             A  1247    	CALL	__b_fpmul
+0002A1 1FE8EE0E E8         A  1248    	LDWX	RR8,RR0
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     12:44:33     page:  25
 
 
 PC     Object              I  Line    Source i2c.src
-                           A  1249    .line 327
-0002CA 49400F52            A  1250    	ORX	3922,#64
-                           A  1251    ;  328					//clear TXI (stops tran
-                           A  1252    ;  329					I2CCTL &= ~TXI_MASK;
-                           A  1253    .line 329
-0002CE 59F70F52            A  1254    	ANDX	3922,#-9
-                           A  1255    ;  330					if(state.bytesToRead ==
-                           A  1256    .line 330
-0002D2 A9010037            A  1257    	CPX	_state+4,#1
-0002D6 EB 0A               A  1258    	JR	NE,_5_L_33
-                           A  1259    ;  331					{
-                           A  1260    ;  332						//set state to read
-                           A  1261    ;  333						state.cycle = READ_
-                           A  1262    .line 333
-0002D8 E9050034            A  1263    	LDX	_state+1,#5
-                           A  1264    ;  334						//set NACK bit will
-                           A  1265    ;  335						I2CCTL |= NAK_MASK;
-                           A  1266    .line 335
-0002DC 49040F52            A  1267    	ORX	3922,#4
-                           A  1268    ;  336					}
-                           A  1269    ;  337					else
-                           A  1270    .line 337
-0002E0 8B 2C               A  1271    	JR	_5_L_44
-0002E2                     A  1272    _5_L_33:
-                           A  1273    ;  338					{
-                           A  1274    ;  339						//set state to read
-                           A  1275    ;  340						state.cycle = READ_
-                           A  1276    .line 340
-0002E2 E9040034            A  1277    	LDX	_state+1,#4
-                           A  1278    ;  341					}
-                           A  1279    .line 341
-                           A  1280    ;  342	
-                           A  1281    ;  343					break;
-                           A  1282    .line 343
-0002E6 8B 26               A  1283    	JR	_5_L_44
-                           A  1284    ;  344				case READ_BYTE:
-0002E8                     A  1285    _5_L_35:
-                           A  1286    .line 344
-                           A  1287    ;  345					//read i2c data
-                           A  1288    ;  346					*(state.storePtr) = I2C
-                           A  1289    .line 346
-0002E8 840038              A  1290    	LDX	R0,_state+5
-0002EB 841039              A  1291    	LDX	R1,_state+6
-0002EE 842F50              A  1292    	LDX	R2,3920
-0002F1 96E2E0              A  1293    	LDX	@RR0,R2
-                           A  1294    ;  347					//move next location
-                           A  1295    ;  348					state.storePtr++;
-                           A  1296    .line 348
-0002F4 09010039            A  1297    	ADDX	_state+6,#1
-0002F8 19000038            A  1298    	ADCX	_state+5,#-0
-                           A  1299    ;  349					state.bytesToRead--;
-                           A  1300    .line 349
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:42:46     page:  26
+0002A6 1FE8EE2E EA         A  1249    	LDWX	RR10,RR2
+0002AB 4C3C                A  1250    	LD	R4,#60
+0002AD 5CA3                A  1251    	LD	R5,#163
+0002AF 6CD7                A  1252    	LD	R6,#215
+0002B1 7C0A                A  1253    	LD	R7,#10
+0002B3 990EF4              A  1254    	LEA	RR0,244(RR14)
+0002B6 D6 0000             A  1255    	CALL	__b_ldxlr0
+0002B9 D6 0000             A  1256    	CALL	__b_fpmul
+0002BC 1FE8EE0E E4         A  1257    	LDWX	RR4,RR0
+0002C1 1FE8EE2E E6         A  1258    	LDWX	RR6,RR2
+0002C6 1FE8EE8E E0         A  1259    	LDWX	RR0,RR8
+0002CB 1FE8EEAE E2         A  1260    	LDWX	RR2,RR10
+0002D0 D6 0000             A  1261    	CALL	__b_fpadd
+0002D3 994EFC              A  1262    	LEA	RR4,252(RR14)
+0002D6 D6 0000             A  1263    	CALL	__b_stxlr0
+                           A  1264    ;  273		
+                           A  1265    ;  274		return theta;
+                           A  1266    .line 274
+0002D9 990EFC              A  1267    	LEA	RR0,252(RR14)
+0002DC D6 0000             A  1268    	CALL	__b_ldxlr0
+                           A  1269    ;  275	}
+                           A  1270    .line 275
+0002DF D6 0000             A  1271    	CALL	__b_framereset
+0002E2 AF                  A  1272    	RET	
+                           A  1273    .endfunc "complementary",275,"_complementary"
+                           A  1274    	SEGMENT ROM_DATA
+                           A  1275    ;	Jump Table for Switch Statement at line 321
+000000                     A  1276    L__26:
+000000 0004                A  1277    	DW	4
+000002 0000                A  1278    	DW	0
+000004 0345                A  1279    	DW	_7_L_30
+000006 0001                A  1280    	DW	1
+000008 0357                A  1281    	DW	_7_L_31
+00000A 0002                A  1282    	DW	2
+00000C 0371                A  1283    	DW	_7_L_35
+00000E 0004                A  1284    	DW	4
+000010 0397                A  1285    	DW	_7_L_39
+000012 03BD                A  1286    	DW	_7_L_48
+                           A  1287    
+                           A  1288    
+                           A  1289    ;**************************** _Si2c_Isr *******
+                           A  1290    ;Name                         Addr/Register   S
+                           A  1291    ;_state                              STATIC    
+                           A  1292    
+                           A  1293    
+                           A  1294    ; Aggregate Stack Size: 0 (words)
+                           A  1295    
+                           A  1296    
+                           A  1297    	.FRAME _n_Si2c_Isr,?_n_Si2c_Isr,RDATA
+                           A  1298    	.FRAME _f_Si2c_Isr,?_f_Si2c_Isr,EDATA
+                           A  1299    	SEGMENT i2c_TEXT
+0002E3                     A  1300    _Si2c_Isr:
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     12:44:33     page:  26
 
 
 PC     Object              I  Line    Source i2c.src
-0002FC 29010037            A  1301    	SUBX	_state+4,#1
-                           A  1302    ;  350					if(state.bytesToRead ==
-                           A  1303    .line 350
-000300 A9010037            A  1304    	CPX	_state+4,#1
-000304 EB 08               A  1305    	JR	NE,_5_L_39
-                           A  1306    ;  351					{
-                           A  1307    ;  352						//set NACK bit will
-                           A  1308    ;  353						I2CCTL |= NAK_MASK;
-                           A  1309    .line 353
-000306 49040F52            A  1310    	ORX	3922,#4
-                           A  1311    ;  354						//set state to last
-                           A  1312    ;  355						state.cycle = READ_
-                           A  1313    .line 355
-00030A E9050034            A  1314    	LDX	_state+1,#5
-                           A  1315    ;  356					}
-00030E                     A  1316    _5_L_39:
-                           A  1317    .line 356
-                           A  1318    ;  357					break;
-                           A  1319    ;  358				default:
-                           A  1320    ;  359					//should not happen
-                           A  1321    ;  360					break;
-                           A  1322    ;  361			}
-                           A  1323    ;  362		}
-                           A  1324    ;  363	}
-00030E                     A  1325    _5_L_44:
-                           A  1326    .line 363
-00030E D6 0000             A  1327    	CALL	__b_iframereset
-000311 BF                  A  1328    	IRET	
-                           A  1329    .endfunc "Si2c_Isr",363,"_Si2c_Isr"
-                           A  1330    	SEGMENT ROM_DATA
-                           A  1331    
-                           A  1332    
-                           A  1333    ;**************************** _i2cIsDataReady *
-                           A  1334    ;Name                         Addr/Register   S
-                           A  1335    ;_state                              STATIC    
-                           A  1336    
-                           A  1337    
-                           A  1338    ; Aggregate Stack Size: 0 (words)
-                           A  1339    
-                           A  1340    
-                           A  1341    	.FRAME _n_i2cIsDataReady,?_n_i2cIsDataReady
-                           A  1342    	.FRAME _f_i2cIsDataReady,?_f_i2cIsDataReady
-                           A  1343    	SEGMENT i2c_TEXT
-000312                     A  1344    _i2cIsDataReady:
-                           A  1345    .define "_i2cIsDataReady"
-                           A  1346    .value _i2cIsDataReady
-                           A  1347    .class 2
-                           A  1348    .type 66
-                           A  1349    .type 0
-                           A  1350    .endef
-                           A  1351    .begfunc "i2cIsDataReady",375,"_i2cIsDataReady"
-000312 D6 0000             A  1352    	CALL	__b_frameset00
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:42:46     page:  27
+                           A  1301    .define "_Si2c_Isr"
+                           A  1302    .value _Si2c_Isr
+                           A  1303    .class 2
+                           A  1304    .type 65
+                           A  1305    .type 0
+                           A  1306    .endef
+                           A  1307    .begfunc "Si2c_Isr",286,"_Si2c_Isr"
+0002E3 C8FFD0              A  1308    	PUSHX	4093
+0002E6 D6 0000             A  1309    	CALL	__b_iframeset00
+                           A  1310    ;  276	
+                           A  1311    ;  277	/**************************************
+                           A  1312    ;  278	Description: State machine handles
+                           A  1313    ;  279			Nack interrupt
+                           A  1314    ;  280			Empty Interrupt
+                           A  1315    ;  281			Recieve interrupt
+                           A  1316    ;  282	
+                           A  1317    ;  283	***************************************
+                           A  1318    ;  284	#pragma interrupt
+                           A  1319    ;  285	void Si2c_Isr(void)
+                           A  1320    ;  286	{
+                           A  1321    ;  287		//Disable Interrupts
+                           A  1322    ;  288		if(I2CSTAT & NCKI_MASK) //not ack i
+                           A  1323    .line 288
+0002E9 79010F51            A  1324    	TMX	3921,#1
+0002ED 6B 3C               A  1325    	JR	Z,_7_L_47
+                           A  1326    ;  289		{
+                           A  1327    ;  290			//in read last byte statwe
+                           A  1328    ;  291			if(state.cycle == READ_LAST)
+                           A  1329    .line 291
+0002EF A905003D            A  1330    	CPX	_state+1,#5
+0002F3 EB 1F               A  1331    	JR	NE,_7_L_29
+                           A  1332    ;  292			{
+                           A  1333    ;  293				//read i2c data
+                           A  1334    ;  294				*(state.storePtr) = I2CDATA
+                           A  1335    .line 294
+0002F5 840041              A  1336    	LDX	R0,_state+5
+0002F8 841042              A  1337    	LDX	R1,_state+6
+0002FB 842F50              A  1338    	LDX	R2,3920
+0002FE 96E2E0              A  1339    	LDX	@RR0,R2
+                           A  1340    ;  295				//assert stop
+                           A  1341    ;  296				I2CCTL |= STOP_MASK;
+                           A  1342    .line 296
+000301 49200F52            A  1343    	ORX	3922,#32
+                           A  1344    ;  297				//read cycle completed
+                           A  1345    ;  298				state.cycle = END_CYCLE;
+                           A  1346    .line 298
+000305 E906003D            A  1347    	LDX	_state+1,#6
+                           A  1348    ;  299				//clear reading ass samples
+                           A  1349    ;  300				state.reading  = DONE;
+                           A  1350    .line 300
+000309 E901003C            A  1351    	LDX	_state,#1
+                           A  1352    ;  301				//disable i2c
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     12:44:33     page:  27
 
 
 PC     Object              I  Line    Source i2c.src
-                           A  1353    ;  364	
-                           A  1354    ;  365	/**************************************
-                           A  1355    ;  366	Description:
-                           A  1356    ;  367		gives the state of a i2c read
-                           A  1357    ;  368	Notes:
-                           A  1358    ;  369		is not valid until a i2cStartRead h
-                           A  1359    ;  370	Returns:
-                           A  1360    ;  371		read;
-                           A  1361    ;  372		1 <= done, 0 <= busy , -1 <= failed
-                           A  1362    ;  373	***************************************
-                           A  1363    ;  374	char i2cIsDataReady(void)
-                           A  1364    ;  375	{
-                           A  1365    ;  376		return (char) state.reading;
-                           A  1366    .line 376
-000315 840033              A  1367    	LDX	R0,_state
-                           A  1368    ;  377	}
-                           A  1369    .line 377
-000318 D6 0000             A  1370    	CALL	__b_framereset
-00031B AF                  A  1371    	RET	
-                           A  1372    .endfunc "i2cIsDataReady",377,"_i2cIsDataReady"
-                           A  1373    	SEGMENT ROM_DATA
-                           A  1374    
-                           A  1375    
-                           A  1376    ;**************************** _t1_mem_isr *****
-                           A  1377    ;Name                         Addr/Register   S
-                           A  1378    ;_sendString                         IMPORT  --
-                           A  1379    ;___print_sputch                     IMPORT  --
-                           A  1380    ;__u_stoa                            IMPORT  --
-                           A  1381    ;___print_out                        IMPORT    
-                           A  1382    ;_accXValue                          STATIC    
-                           A  1383    ;_mems_read                          IMPORT  --
-                           A  1384    ;display                             R15-25    
-                           A  1385    
-                           A  1386    
-                           A  1387    ; Aggregate Stack Size: -25 (words)
-                           A  1388    
-                           A  1389    
-                           A  1390    	.FRAME _n_t1_mem_isr,?_n_t1_mem_isr,RDATA
-                           A  1391    	.FCALL _n_mems_read
-                           A  1392    	.FCALL _n__u_stoa
-                           A  1393    	.FCALL _n___print_sputch
-                           A  1394    	.FCALL _n_sendString
-                           A  1395    	.FRAME _f_t1_mem_isr,?_f_t1_mem_isr,EDATA
-                           A  1396    	.FCALL _f_mems_read
-                           A  1397    	.FCALL _f__u_stoa
-                           A  1398    	.FCALL _f___print_sputch
-                           A  1399    	.FCALL _f_sendString
-                           A  1400    	SEGMENT TEXT
-000003                     A  1401    L__29:
-000003 0D0A00              A  1402    	DB	13,10,0
-                           A  1403    	SEGMENT i2c_TEXT
-00031C                     A  1404    _t1_mem_isr:
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:42:46     page:  28
+                           A  1353    ;  302				I2CCTL &= ~I2CEN_MASK;
+                           A  1354    .line 302
+00030D 597F0F52            A  1355    	ANDX	3922,#127
+                           A  1356    ;  303			}
+                           A  1357    ;  304			else
+                           A  1358    .line 304
+000311 8D 03 BD            A  1359    	JR	_7_L_48
+000314                     A  1360    _7_L_29:
+                           A  1361    ;  305			{
+                           A  1362    ;  306				//error
+                           A  1363    ;  307				//set stop and flush bits
+                           A  1364    ;  308				I2CCTL |= (STOP_MASK | FLUS
+                           A  1365    .line 308
+000314 49220F52            A  1366    	ORX	3922,#34
+                           A  1367    ;  309				//clear txi
+                           A  1368    ;  310				I2CCTL &= ~TXI_MASK;
+                           A  1369    .line 310
+000318 59F70F52            A  1370    	ANDX	3922,#-9
+                           A  1371    ;  311				//reset state
+                           A  1372    ;  312				state.cycle = END_CYCLE;
+                           A  1373    .line 312
+00031C E906003D            A  1374    	LDX	_state+1,#6
+                           A  1375    ;  313				//report failure
+                           A  1376    ;  314				state.reading  = FAILED;
+                           A  1377    .line 314
+000320 E9FF003C            A  1378    	LDX	_state,#-1
+                           A  1379    ;  315				//disable i2c
+                           A  1380    ;  316				I2CCTL &= ~I2CEN_MASK;
+                           A  1381    .line 316
+000324 597F0F52            A  1382    	ANDX	3922,#127
+                           A  1383    ;  317			}
+                           A  1384    ;  318		}
+                           A  1385    ;  319		else if(I2CSTAT & (TDRE_MASK| RDRF_
+                           A  1386    .line 319
+000328 8D 03 BD            A  1387    	JR	_7_L_48
+00032B                     A  1388    _7_L_47:
+00032B 79C00F51            A  1389    	TMX	3921,#192
+00032F 6D 03 BD            A  1390    	JR	Z,_7_L_48
+                           A  1391    ;  320		{
+                           A  1392    ;  321			switch (state.cycle)
+                           A  1393    .line 321
+000332 84103D              A  1394    	LDX	R1,_state+1
+000335 E4E1E0              A  1395    	LD	R0,R1
+000338 90E0                A  1396    	RL	R0
+00033A 3200                A  1397    	SBC	R0,R0
+00033C 2C 00               A  1398    	LD	R2,#high(L__26)
+00033E 3C 00               A  1399    	LD	R3,#low(L__26)
+000340 D6 0000             A  1400    	CALL	__b_ucase
+000343 C4E0                A  1401    	JP	@RR0
+                           A  1402    ;  322			{
+                           A  1403    ;  323				case DEV_ADDESS_WRITE:
+000345                     A  1404    _7_L_30:
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     12:44:33     page:  28
 
 
 PC     Object              I  Line    Source i2c.src
-                           A  1405    .define "_t1_mem_isr"
-                           A  1406    .value _t1_mem_isr
-                           A  1407    .class 2
-                           A  1408    .type 65
-                           A  1409    .type 0
-                           A  1410    .endef
-                           A  1411    .begfunc "t1_mem_isr",380,"_t1_mem_isr"
-                           A  1412    ;  378	
-                           A  1413    ;  379	#pragma interrupt
-                           A  1414    ;  380	void t1_mem_isr(void){
-                           A  1415    .define "display"
-                           A  1416    .class 1
-                           A  1417    .value -25
-                           A  1418    .dim 25
-                           A  1419    .type 98
-                           A  1420    .type 0
-                           A  1421    .endef
-00031C C8FFD0              A  1422    	PUSHX	4093
-00031F E8 000FFD           A  1423    	LDX	4093,__intrp
-000323 09100000            A  1424    	ADDX	__intrp,#16
-000327 5C19                A  1425    	LD	R5,#25
-000329 D6 0000             A  1426    	CALL	__b_frameset0
-                           A  1427    ;  381		char display[25];
-                           A  1428    ;  382	
-                           A  1429    ;  383		mems_read();
-                           A  1430    .line 383
-00032C D6 00E7             A  1431    	CALL	_mems_read
-                           A  1432    ;  384		if(accXValue != 0){
-                           A  1433    .line 384
-00032F 84002B              A  1434    	LDX	R0,_accXValue
-000332 48 02CEE0           A  1435    	ORX	R0,_accXValue+1
-000336 6B 43               A  1436    	JR	Z,_7_L_47
-                           A  1437    ;  385	
-                           A  1438    ;  386			sprintf(display, "%d", accXValu
-                           A  1439    .line 386
-000338 1CFF                A  1440    	LD	R1,#255
-00033A 0CE7                A  1441    	LD	R0,#231
-00033C 020F                A  1442    	ADD	R0,R15
-00033E 121E                A  1443    	ADC	R1,R14
-000340 941000              A  1444    	LDX	___print_out,R1
-000343 940001              A  1445    	LDX	___print_out+1,R0
-000346 C8 02C0             A  1446    	PUSHX	_accXValue+1
-000349 C8 02B0             A  1447    	PUSHX	_accXValue
-00034C D6 0000             A  1448    	CALL	__u_stoa
-00034F 50E0                A  1449    	POP	R0
-000351 50E0                A  1450    	POP	R0
-000353 1F7000              A  1451    	PUSH	#0
-000356 D6 0000             A  1452    	CALL	___print_sputch
-000359 50E0                A  1453    	POP	R0
-                           A  1454    ;  387			sendString(display);
-                           A  1455    .line 387
-00035B 1CFF                A  1456    	LD	R1,#255
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:42:46     page:  29
+                           A  1405    .line 323
+                           A  1406    ;  324					//write device address 
+                           A  1407    ;  325					I2CDATA = state.deviceA
+                           A  1408    .line 325
+000345 84003E              A  1409    	LDX	R0,_state+2
+000348 E200                A  1410    	BCLR	0,R0
+00034A 940F50              A  1411    	LDX	3920,R0
+                           A  1412    ;  326					//assert start
+                           A  1413    ;  327					I2CCTL |= START_MASK;
+                           A  1414    .line 327
+00034D 49400F52            A  1415    	ORX	3922,#64
+                           A  1416    ;  328					//set to next state
+                           A  1417    ;  329					state.cycle = DEV_SUB_A
+                           A  1418    .line 329
+000351 E901003D            A  1419    	LDX	_state+1,#1
+                           A  1420    ;  330					break;
+                           A  1421    .line 330
+000355 8B 66               A  1422    	JR	_7_L_48
+                           A  1423    ;  331				case DEV_SUB_ADDRESS:
+000357                     A  1424    _7_L_31:
+                           A  1425    .line 331
+                           A  1426    ;  332					if(state.bytesToRead > 
+                           A  1427    .line 332
+000357 A9010040            A  1428    	CPX	_state+4,#1
+00035B 3B 0A               A  1429    	JR	ULE,_7_L_33
+                           A  1430    ;  333					{
+                           A  1431    ;  334						//set first bit to 
+                           A  1432    ;  335						I2CDATA = AUTO_INC 
+                           A  1433    .line 335
+00035D 84003F              A  1434    	LDX	R0,_state+3
+000360 E2F0                A  1435    	BSET	7,R0
+000362 940F50              A  1436    	LDX	3920,R0
+                           A  1437    ;  336					}
+                           A  1438    ;  337					else
+                           A  1439    .line 337
+000365 8B 04               A  1440    	JR	_7_L_34
+000367                     A  1441    _7_L_33:
+                           A  1442    ;  338					{
+                           A  1443    ;  339						//write device sub 
+                           A  1444    ;  340						I2CDATA = state.reg
+                           A  1445    .line 340
+000367 E8 03FF50           A  1446    	LDX	3920,_state+3
+                           A  1447    ;  341					}
+00036B                     A  1448    _7_L_34:
+                           A  1449    .line 341
+                           A  1450    ;  342					//need to wait till i2c
+                           A  1451    ;  343					//set to next state
+                           A  1452    ;  344					state.cycle = START_REA
+                           A  1453    .line 344
+00036B E902003D            A  1454    	LDX	_state+1,#2
+                           A  1455    ;  345					break;
+                           A  1456    .line 345
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     12:44:33     page:  29
 
 
 PC     Object              I  Line    Source i2c.src
-00035D 0CE7                A  1457    	LD	R0,#231
-00035F 020F                A  1458    	ADD	R0,R15
-000361 121E                A  1459    	ADC	R1,R14
-000363 70E0                A  1460    	PUSH	R0
-000365 70E1                A  1461    	PUSH	R1
-000367 D6 0000             A  1462    	CALL	_sendString
-00036A 50E0                A  1463    	POP	R0
-00036C 50E0                A  1464    	POP	R0
-                           A  1465    ;  388			sendString("\r\n");
-                           A  1466    .line 388
-00036E 1F70 03             A  1467    	PUSH	#low(L__29)
-000371 1F70 00             A  1468    	PUSH	#high(L__29)
-000374 D6 0000             A  1469    	CALL	_sendString
-000377 50E0                A  1470    	POP	R0
-000379 50E0                A  1471    	POP	R0
-                           A  1472    ;  389		}
-                           A  1473    ;  390	// 	printMessage(display, 1);
-                           A  1474    ;  391	}
-00037B                     A  1475    _7_L_47:
-                           A  1476    .line 391
-00037B D6 0000             A  1477    	CALL	__b_iframereset
-00037E BF                  A  1478    	IRET	
-                           A  1479    .endfunc "t1_mem_isr",391,"_t1_mem_isr"
-00000A 031C                A  1480    	VECTOR	TIMER1=_t1_mem_isr
-000012 0234                A  1481    	VECTOR	I2C=_Si2c_Isr
-                           A  1482    	XREF _sendString:ROM
-                           A  1483    	XREF __u_stoa:ROM
-                           A  1484    	XREF ___print_sputch:ROM
-                           A  1485    	XREF ___print_out:EDATA
-                           A  1486    	XREF __b_ucase:ROM
-                           A  1487    	XREF __b_framereset:ROM
-                           A  1488    	XREF __b_iframereset:ROM
-                           A  1489    	XREF __b_frameset0:ROM
-                           A  1490    	XREF __b_frameset00:ROM
-                           A  1491    	XREF __b_iframeset00:ROM
-                           A  1492    	XREF __intrp:EDATA
-                           A  1493    	XDEF _t1_mem_isr
-                           A  1494    	XDEF _i2cIsDataReady
-                           A  1495    	XDEF _Si2c_Isr
-                           A  1496    	XDEF _mems_read
-                           A  1497    	XDEF _i2cStartRead
-                           A  1498    	XDEF _i2cWrite
-                           A  1499    	XDEF _i2cInit
-                           A  1500    	XDEF _gyroXValue
-                           A  1501    	XDEF _accZValue
-                           A  1502    	XDEF _accYValue
-                           A  1503    	XDEF _accXValue
-                           A  1504    	XDEF _gyro_val
-                           A  1505    	XDEF _gyro_l
-                           A  1506    	XDEF _gyro_h
-                           A  1507    	XDEF _acc_x
-                           A  1508    	XDEF _acc_y
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 20-Oct-16     23:42:46     page:  30
+00036F 8B 4C               A  1457    	JR	_7_L_48
+                           A  1458    ;  346				case START_READ:
+000371                     A  1459    _7_L_35:
+                           A  1460    .line 346
+                           A  1461    ;  347					//commence read cycle
+                           A  1462    ;  348					//write device address 
+                           A  1463    ;  349					I2CDATA = state.deviceA
+                           A  1464    .line 349
+000371 84003E              A  1465    	LDX	R0,_state+2
+000374 E280                A  1466    	BSET	0,R0
+000376 940F50              A  1467    	LDX	3920,R0
+                           A  1468    ;  350					//assert start
+                           A  1469    ;  351					I2CCTL |= START_MASK;
+                           A  1470    .line 351
+000379 49400F52            A  1471    	ORX	3922,#64
+                           A  1472    ;  352					//clear TXI (stops tran
+                           A  1473    ;  353					I2CCTL &= ~TXI_MASK;
+                           A  1474    .line 353
+00037D 59F70F52            A  1475    	ANDX	3922,#-9
+                           A  1476    ;  354					if(state.bytesToRead ==
+                           A  1477    .line 354
+000381 A9010040            A  1478    	CPX	_state+4,#1
+000385 EB 0A               A  1479    	JR	NE,_7_L_37
+                           A  1480    ;  355					{
+                           A  1481    ;  356						//set state to read
+                           A  1482    ;  357						state.cycle = READ_
+                           A  1483    .line 357
+000387 E905003D            A  1484    	LDX	_state+1,#5
+                           A  1485    ;  358						//set NACK bit will
+                           A  1486    ;  359						I2CCTL |= NAK_MASK;
+                           A  1487    .line 359
+00038B 49040F52            A  1488    	ORX	3922,#4
+                           A  1489    ;  360					}
+                           A  1490    ;  361					else
+                           A  1491    .line 361
+00038F 8B 2C               A  1492    	JR	_7_L_48
+000391                     A  1493    _7_L_37:
+                           A  1494    ;  362					{
+                           A  1495    ;  363						//set state to read
+                           A  1496    ;  364						state.cycle = READ_
+                           A  1497    .line 364
+000391 E904003D            A  1498    	LDX	_state+1,#4
+                           A  1499    ;  365					}
+                           A  1500    .line 365
+                           A  1501    ;  366	
+                           A  1502    ;  367					break;
+                           A  1503    .line 367
+000395 8B 26               A  1504    	JR	_7_L_48
+                           A  1505    ;  368				case READ_BYTE:
+000397                     A  1506    _7_L_39:
+                           A  1507    .line 368
+                           A  1508    ;  369					//read i2c data
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     12:44:33     page:  30
 
 
 PC     Object              I  Line    Source i2c.src
-                           A  1509    	XDEF _acc_yl
-                           A  1510    	XDEF _acc_yh
-                           A  1511    	XDEF _acc_xl
-                           A  1512    	XDEF _acc_xh
-                           A  1513    	XDEF _accRead
-                           A  1514    	XDEF _gyroRead
-                           A  1515    	XDEF _rxFlag
-                           A  1516    	XDEF _command
-                           A  1517    	XDEF _txFinished
-                           A  1518    	XDEF _string
-                           A  1519    	XDEF _inChar
-                           A  1520    	END
+                           A  1509    ;  370					*(state.storePtr) = I2C
+                           A  1510    .line 370
+000397 840041              A  1511    	LDX	R0,_state+5
+00039A 841042              A  1512    	LDX	R1,_state+6
+00039D 842F50              A  1513    	LDX	R2,3920
+0003A0 96E2E0              A  1514    	LDX	@RR0,R2
+                           A  1515    ;  371					//move next location
+                           A  1516    ;  372					state.storePtr++;
+                           A  1517    .line 372
+0003A3 09010042            A  1518    	ADDX	_state+6,#1
+0003A7 19000041            A  1519    	ADCX	_state+5,#-0
+                           A  1520    ;  373					state.bytesToRead--;
+                           A  1521    .line 373
+0003AB 29010040            A  1522    	SUBX	_state+4,#1
+                           A  1523    ;  374					if(state.bytesToRead ==
+                           A  1524    .line 374
+0003AF A9010040            A  1525    	CPX	_state+4,#1
+0003B3 EB 08               A  1526    	JR	NE,_7_L_43
+                           A  1527    ;  375					{
+                           A  1528    ;  376						//set NACK bit will
+                           A  1529    ;  377						I2CCTL |= NAK_MASK;
+                           A  1530    .line 377
+0003B5 49040F52            A  1531    	ORX	3922,#4
+                           A  1532    ;  378						//set state to last
+                           A  1533    ;  379						state.cycle = READ_
+                           A  1534    .line 379
+0003B9 E905003D            A  1535    	LDX	_state+1,#5
+                           A  1536    ;  380					}
+0003BD                     A  1537    _7_L_43:
+                           A  1538    .line 380
+                           A  1539    ;  381					break;
+                           A  1540    ;  382				default:
+                           A  1541    ;  383					//should not happen
+                           A  1542    ;  384					break;
+                           A  1543    ;  385			}
+                           A  1544    ;  386		}
+                           A  1545    ;  387	}
+0003BD                     A  1546    _7_L_48:
+                           A  1547    .line 387
+0003BD D6 0000             A  1548    	CALL	__b_iframereset
+0003C0 BF                  A  1549    	IRET	
+                           A  1550    .endfunc "Si2c_Isr",387,"_Si2c_Isr"
+                           A  1551    	SEGMENT ROM_DATA
+                           A  1552    
+                           A  1553    
+                           A  1554    ;**************************** _i2cIsDataReady *
+                           A  1555    ;Name                         Addr/Register   S
+                           A  1556    ;_state                              STATIC    
+                           A  1557    
+                           A  1558    
+                           A  1559    ; Aggregate Stack Size: 0 (words)
+                           A  1560    
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     12:44:33     page:  31
+
+
+PC     Object              I  Line    Source i2c.src
+                           A  1561    
+                           A  1562    	.FRAME _n_i2cIsDataReady,?_n_i2cIsDataReady
+                           A  1563    	.FRAME _f_i2cIsDataReady,?_f_i2cIsDataReady
+                           A  1564    	SEGMENT i2c_TEXT
+0003C1                     A  1565    _i2cIsDataReady:
+                           A  1566    .define "_i2cIsDataReady"
+                           A  1567    .value _i2cIsDataReady
+                           A  1568    .class 2
+                           A  1569    .type 66
+                           A  1570    .type 0
+                           A  1571    .endef
+                           A  1572    .begfunc "i2cIsDataReady",399,"_i2cIsDataReady"
+0003C1 D6 0000             A  1573    	CALL	__b_frameset00
+                           A  1574    ;  388	
+                           A  1575    ;  389	/**************************************
+                           A  1576    ;  390	Description:
+                           A  1577    ;  391		gives the state of a i2c read
+                           A  1578    ;  392	Notes:
+                           A  1579    ;  393		is not valid until a i2cStartRead h
+                           A  1580    ;  394	Returns:
+                           A  1581    ;  395		read;
+                           A  1582    ;  396		1 <= done, 0 <= busy , -1 <= failed
+                           A  1583    ;  397	***************************************
+                           A  1584    ;  398	char i2cIsDataReady(void)
+                           A  1585    ;  399	{
+                           A  1586    ;  400		return (char) state.reading;
+                           A  1587    .line 400
+0003C4 84003C              A  1588    	LDX	R0,_state
+                           A  1589    ;  401	}
+                           A  1590    .line 401
+0003C7 D6 0000             A  1591    	CALL	__b_framereset
+0003CA AF                  A  1592    	RET	
+                           A  1593    .endfunc "i2cIsDataReady",401,"_i2cIsDataReady"
+                           A  1594    	SEGMENT ROM_DATA
+                           A  1595    
+                           A  1596    
+                           A  1597    ;**************************** _t1_mem_isr *****
+                           A  1598    ;Name                         Addr/Register   S
+                           A  1599    ;_EI                                 IMPORT  --
+                           A  1600    ;_mems_read                          IMPORT  --
+                           A  1601    ;_DI                                 IMPORT  --
+                           A  1602    
+                           A  1603    
+                           A  1604    ; Aggregate Stack Size: 0 (words)
+                           A  1605    
+                           A  1606    
+                           A  1607    	.FRAME _n_t1_mem_isr,?_n_t1_mem_isr,RDATA
+                           A  1608    	.FCALL _n_mems_read
+                           A  1609    	.FRAME _f_t1_mem_isr,?_f_t1_mem_isr,EDATA
+                           A  1610    	.FCALL _f_mems_read
+                           A  1611    	SEGMENT i2c_TEXT
+0003CB                     A  1612    _t1_mem_isr:
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     12:44:33     page:  32
+
+
+PC     Object              I  Line    Source i2c.src
+                           A  1613    .define "_t1_mem_isr"
+                           A  1614    .value _t1_mem_isr
+                           A  1615    .class 2
+                           A  1616    .type 65
+                           A  1617    .type 0
+                           A  1618    .endef
+                           A  1619    .begfunc "t1_mem_isr",404,"_t1_mem_isr"
+0003CB C8FFD0              A  1620    	PUSHX	4093
+0003CE D6 0000             A  1621    	CALL	__b_iframeset00
+                           A  1622    ;  402	
+                           A  1623    ;  403	#pragma interrupt
+                           A  1624    ;  404	void t1_mem_isr(void){
+                           A  1625    ;  405		
+                           A  1626    ;  406		DI();
+                           A  1627    .line 406
+0003D1 8F                  A  1628    	DI
+                           A  1629    ;  407	
+                           A  1630    ;  408		mems_read();
+                           A  1631    .line 408
+0003D2 D6 00B7             A  1632    	CALL	_mems_read
+                           A  1633    ;  409		
+                           A  1634    ;  410		EI();
+                           A  1635    .line 410
+0003D5 9F                  A  1636    	EI
+                           A  1637    ;  411	// 	printMessage(display, 1);
+                           A  1638    ;  412	}
+                           A  1639    .line 412
+0003D6 D6 0000             A  1640    	CALL	__b_iframereset
+0003D9 BF                  A  1641    	IRET	
+                           A  1642    .endfunc "t1_mem_isr",412,"_t1_mem_isr"
+000012 02E3                A  1643    	VECTOR	I2C=_Si2c_Isr
+                           A  1644    	XREF _printI2CqF:ROM
+                           A  1645    	XREF _atan2:ROM
+                           A  1646    	XREF _printMessage:ROM
+                           A  1647    	XREF __u_stoa:ROM
+                           A  1648    	XREF ___print_putromstring:ROM
+                           A  1649    	XREF ___print_sputch:ROM
+                           A  1650    	XREF ___print_out:EDATA
+                           A  1651    	XREF __b_fpadd:ROM
+                           A  1652    	XREF __b_fpltof:ROM
+                           A  1653    	XREF __b_fpmul:ROM
+                           A  1654    	XREF __b_ucase:ROM
+                           A  1655    	XREF __b_framereset:ROM
+                           A  1656    	XREF __b_iframereset:ROM
+                           A  1657    	XREF __b_frameset0:ROM
+                           A  1658    	XREF __b_frameset00:ROM
+                           A  1659    	XREF __b_iframeset00:ROM
+                           A  1660    	XREF __b_stxlr0:ROM
+                           A  1661    	XREF __b_ldxlr0:ROM
+                           A  1662    	XREF __b_ldxlr4:ROM
+                           A  1663    	XDEF _t1_mem_isr
+                           A  1664    	XDEF _i2cIsDataReady
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     12:44:33     page:  33
+
+
+PC     Object              I  Line    Source i2c.src
+                           A  1665    	XDEF _Si2c_Isr
+                           A  1666    	XDEF _complementary
+                           A  1667    	XDEF _printi2c
+                           A  1668    	XDEF _mems_read
+                           A  1669    	XDEF _i2cStartRead
+                           A  1670    	XDEF _i2cWrite
+                           A  1671    	XDEF _i2cInit
+                           A  1672    	XDEF _printI2Cq
+                           A  1673    	XDEF _speed
+                           A  1674    	XDEF _t1Ready
+                           A  1675    	XDEF _gyroZValue
+                           A  1676    	XDEF _gyroYValue
+                           A  1677    	XDEF _gyroXValue
+                           A  1678    	XDEF _accZValue
+                           A  1679    	XDEF _accYValue
+                           A  1680    	XDEF _accXValue
+                           A  1681    	XDEF _gyro_val
+                           A  1682    	XDEF _gyro_l
+                           A  1683    	XDEF _gyro_h
+                           A  1684    	XDEF _acc_x
+                           A  1685    	XDEF _acc_y
+                           A  1686    	XDEF _acc_yl
+                           A  1687    	XDEF _acc_yh
+                           A  1688    	XDEF _acc_xl
+                           A  1689    	XDEF _acc_xh
+                           A  1690    	XDEF _accRead
+                           A  1691    	XDEF _gyroRead
+                           A  1692    	XDEF _rxFlag
+                           A  1693    	XDEF _command
+                           A  1694    	XDEF _txFinished
+                           A  1695    	XDEF _string
+                           A  1696    	XDEF _inChar
+                           A  1697    	END
 
 
 Errors: 0
 Warnings: 0
-Lines Assembled: 1521
+Lines Assembled: 1698
