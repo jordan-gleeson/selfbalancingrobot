@@ -9,46 +9,42 @@
 #include <main.h>
 
 
+//The main function that ran on the robot
 void main(void){
-	char reser[];
-	char test[5];
 	char inChar[25];
 	char tmp;
 	int i;
-// 	init_IO();
+
+	//Initialise all of the different components
 	i2cInit();
 	init_LCD();
+	//Confirm on the LCD that LCD initialisation was successful
 	signon();
-// 	printMessage("This is a test", 1);
 	init_coms();
-// printMessage("This is a test02", 1);
 	motorInit();
-// 	printMessage("This is a test03", 1);
+	//Global Enable interrupts
 	EI();
+	//Set the name of the bluetooth module
 	sendString("AT+NAMErJordan");
-// 	printMessage("This is a test04", 1);
+
+	//Set values for global variables
 	rxFlag = 0;
 	command = 0;
-	
-// 	sendString("got here");
-	
-// 	printMessage("This is a test05", 1);
+
+
+
+
 
 	while(1){
 		i++;
-// 		mems_read();
-// 		dly(50);
-// 		
-		
+
+		//This switching code recieves a command from serial and will change what the output on the LCD is accordingly and either drive or not drive the motors
 		command = commandF();
 		if(command != 0){
 			sprintf(inChar, "Command: %c \r\n", command);
 			sendString(inChar);
 		}
 		if(command == 'w'){
-			//  sprintf(inChar, "%c", command);
-			//  sendString(inChar);
-			//  printMessage(inChar, 1);
 			speed = speed + 1;
 			command = 0;
 			motorsSet(speed, 0, loffset, roffset);
@@ -59,22 +55,21 @@ void main(void){
 		} else if(command == 'm'){
 			tmp = mode(1);
 		}
-		
+
+		//Only poll the sensors every so often
 		if(i>15000){
 			tmp = mode(0);
 			i=0;
 		}
-// 		dly(100);
-		
 	}
 }
 
-
+//Tells the other files and functions what needs to be displayed and read
 char mode(char change){
 	static char m = 1;
 	char inChar[25];
 	static char tmpSpeed = 0;
-	
+
 	if(m){
 		if(tmpSpeed != speed){
 			sprintf(inChar, "%d", speed);
@@ -86,7 +81,7 @@ char mode(char change){
 		printI2Cq = 1;
 		mems_read();
 	}
-	
+
 	if(change){
 		m ^= 0x01;
 		return m;

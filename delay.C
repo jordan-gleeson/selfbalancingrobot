@@ -1,5 +1,7 @@
 #include <delay.H>
 
+//Writen by myself from EMB
+
 //Delay function (appoximate milliseconds)
 void dly(unsigned int dly_time){
 	unsigned int i, j,k=0,l;

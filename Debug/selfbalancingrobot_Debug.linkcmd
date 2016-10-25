@@ -67,7 +67,7 @@ define _WRITE_NVDS_GET_STATUS=$10B3
 /* Set frequency to 18432000 Hz */
 define __user_frequency = 18432000
 
-"Z:\thirdyearproject-master\thirdyearproject-master\Debug\selfbalancingrobot"= \
+"C:\Users\Jordan\Documents\GitHub\thirdyearproject\Debug\selfbalancingrobot"= \
  C:\PROGRA~2\ZiLOG\ZDSII_~1.0\lib\zilog\startupl.obj, \
  .\delay.obj, \
  .\main.obj, \

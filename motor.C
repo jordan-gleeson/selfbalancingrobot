@@ -1,4 +1,6 @@
 #include <motor.h>
+//Mostly code given to us from ELE3PRO lecture notes
+
 
 void motorInit(void){
 	//Setup PWM output ports

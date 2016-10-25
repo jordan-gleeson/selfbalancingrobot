@@ -3,6 +3,8 @@
 #include <delay.h>
 #include <STRING.H>
 
+//Code by myself from EMB
+//Altered for new pins
 void init_LCD(void){
 	dly(40);
 
@@ -36,13 +38,13 @@ void init_LCD(void){
 	PBDD &= ~0x01;
 	PBADDR &= ~0x01;
 	PBOUT &= ~0x01;
+	PCAF &= ~0x02;
+	PCDD &= ~0x02;
+	PCADDR &= ~0x02;
 	PHAF &= ~0x03;
 	PHDD &= ~0x03;
 	PHADDR &= ~0x03;
 	PHOUT &= ~0x03;
-	PCAF &= ~0x02;
-	PCDD &= ~0x02;
-	PCADDR &= ~0x02;
 
 	//LCD Initialisation sequence
 	LCD_command(0x3C);
@@ -60,6 +62,7 @@ void init_LCD(void){
 
 }
 
+//Code by myself from EMB
 void set_LCD_control_bus(char data){
 	char temp;
 	switch(data){
@@ -82,50 +85,23 @@ void set_LCD_control_bus(char data){
 			PBOUT &= ~0x01;
 		break; //set E clk bit to 0
 		case LCD_INACTIVE:
-		//FROM DATA PINS
-			//Set backlight to 0
-			//PCOUT &= ~(0x02);
+
 			//Set RS and RW to 1
 			PHOUT |= 0x03;
 
-			//John's code		PHOUT |= b0;
+			//This code is from John Hodder
 			PHOUT |= 0x01;
 			PHOUT &= ~0x02;
 		break;
-		// inactice sets RS = 1 & R/W*=1, EN=0
 		default:
 
 		break;
 	}
 }
 
+//Push variable data to the pins of the LCD
 void LCD_data_push(char data){
-	// if((data & 0x01) != 0x00){
-	// 	PBOUT |= 0x02;
-	// }
-	// if((data & 0x02) != 0x00){
-	// 	PBOUT |= 0x10;
-	// }
-	// if((data & 0x04) != 0x00){
-	// 	PBOUT |= 0x20;
-	// }
-	// if((data & 0x08) != 0x00){
-	// 	PBOUT |= 0x40;
-	// }
-	// if((data & 0x10) != 0x00){
-	// 	PBOUT |= 0x80;
-	// }
-	// if((data & 0x20) != 0x00){
-	// 	PBOUT |= 0x08;
-	// }
-	// if((data & 0x40) != 0x00){
-	// 	PBOUT |= 0x04;
-	// }
-	// if((data & 0x80) != 0x00){
-	// 	PHOUT |= 0x04;
-	// }
-		//Shuffles data around so that it goes to the right LCD pin
-
+		//This code is from John Hodder
 			PBOUT =
 		 ((data & LCD_D0) << 1) |
 		 ((data & LCD_D1) << 3) |
@@ -139,6 +115,8 @@ void LCD_data_push(char data){
 		PHOUT = ((data & LCD_D7) >> 5) | (PHOUT & ~0x04); //Shifting data bit 7 down to bit 2 for PHOUT to send PH2 correctly. Masking bit the lower bits so they are unchanged.
 }
 
+//Used for sending commands to the LCD_D
+//Code by myself from EMB
 void LCD_command(char data) {
 // Set_LCD_Control (LCD_INACTIVE); // set everything to initial state
 	set_LCD_control_bus(LCD_INACTIVE);
@@ -161,6 +139,8 @@ void LCD_command(char data) {
 //  required instruction before the next is sent (can also check busy flag)
 }
 
+//Display data variable on the LCD
+//Code by myself from EMB
 void LCD_data_disp(char data) {
 // Set_LCD_Control (LCD_INACTIVE); // set everything to initial state
 	set_LCD_control_bus(LCD_INACTIVE);
@@ -183,6 +163,8 @@ void LCD_data_disp(char data) {
 //  required instruction before the next is sent (can also check busy flag)
 }
 
+//print that the LCD has initialised correctly
+//Code by myself from EMB
 void signon(void){
 	char i;
 
@@ -200,47 +182,14 @@ void signon(void){
 }
 
 //Clears the LCD
+//Code by myself from EMB
 void LCD_clear(void){
 	LCD_command(0x01);
 	dly(2);
 }
 
-void errorMessage(void){
-	char i;
-	//Define the string to be printed
-	char errorMessage[] = {"There was an error"};
-
-	//Clear what was there already
-	LCD_clear();
-
-	//Loop through each element in the given string and write it to the LCD
-	for(i=0;i<strlen(errorMessage);i++){
-		LCD_data_disp(errorMessage[i]);
-	}
-
-	//Delay for a bit
-	dly(2);
-
-}
-
-void successMessage(void){
-	char i;
-	//Define the string to be printed
-	char successMessage[] = {"It worked!"};
-
-	//Clear what was there already
-	LCD_clear();
-
-	//Loop through each element in the given string and write it to the LCD
-	for(i=0;i<strlen(successMessage);i++){
-		LCD_data_disp(successMessage[i]);
-	}
-
-	//Delay for a bit
-	dly(2);
-
-}
-
+//Print the passed string to the LCD
+//Code by myself from EMB
 void printMessage(char message[], char clear){
 	char i;
 

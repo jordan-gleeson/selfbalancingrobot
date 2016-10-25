@@ -1,6 +1,8 @@
 #include <uart.h>
-// char rxFlag = 0;
 
+//Code written by myself for EMB, slightly altered for this project
+
+//Intialise the commuications
 void init_coms(void){
 	U0BRH = 0x00;
 	U0BRL = 0x82;
@@ -10,7 +12,7 @@ void init_coms(void){
 	PADD &= ~0x20;
 	PADD |= 0x10;
 	PAADDR = 0x00;
-		
+
 	SET_VECTOR(UART0_RX, isr_U1_RX);
 	SET_VECTOR(UART0_TX, isr_U1_TX);
 
@@ -18,13 +20,14 @@ void init_coms(void){
 	IRQ0ENH &= ~0x18;
 	IRQ0ENL |= 0x18;
 
-	
+
 	U0CTL0 = 0xC0;
 	U0CTL1 = 0x00;
 
-	
+
 }
 
+//Send a given string to the bluetooth module
 void sendString(char stringSend[25]){
 	char current = 0;
 	char size = 0;
@@ -47,12 +50,14 @@ void sendString(char stringSend[25]){
 
 }
 
+//Store and pass the recieved char
 char commandF(void){
 	char temp = command;
 	command = 0;
 	return temp;
 }
 
+//Recieve
 #pragma interrupt
 void isr_U1_RX(void){
 	DI();
@@ -61,6 +66,7 @@ void isr_U1_RX(void){
 	EI();
 }
 
+//When send finished
 #pragma interrupt
 void isr_U1_TX(void){
 	txFinished = 1;

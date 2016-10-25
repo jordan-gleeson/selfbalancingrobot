@@ -1,4 +1,4 @@
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     02:03:03     page:   1
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:32:11     page:   1
 
 
 PC     Object              I  Line    Source 
@@ -7,7 +7,7 @@ PC     Object              I  Line    Source
                            A     3    ; -nooptlink -regvar -reduceopt -debug -norevaa
                            A     4    ; -alias 
                            A     5    	DEFINE uart_TEXT,SPACE=ROM
-                           A     6    	FILE	"..\..\..\THIRDY~1\THIRDY~1\UART.C"
+                           A     6    	FILE	"..\..\..\..\DOCUME~1\GITHUB\THIRDY
                            A     7    .debug "C"
                            A     8    	SEGMENT FAR_DATA
 000000                     A     9    _inChar:
@@ -54,7 +54,7 @@ PC     Object              I  Line    Source
                            A    50    .define "rxFlag"
                            A    51    .alias "_rxFlag"
                            A    52    .class 69
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     02:03:03     page:   2
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:32:11     page:   2
 
 
 PC     Object              I  Line    Source uart.src
@@ -85,353 +85,359 @@ PC     Object              I  Line    Source uart.src
                            A    77    .type 65
                            A    78    .type 0
                            A    79    .endef
-                           A    80    .begfunc "init_coms",4,"_init_coms"
+                           A    80    .begfunc "init_coms",6,"_init_coms"
 000000 D6 0000             A    81    	CALL	__b_frameset00
                            A    82    ;    1	#include <uart.h>
-                           A    83    ;    2	// char rxFlag = 0;
-                           A    84    ;    3	
-                           A    85    ;    4	void init_coms(void){
-                           A    86    ;    5		U0BRH = 0x00;
-                           A    87    .line 5
-000003 E9000F46            A    88    	LDX	3910,#-0
-                           A    89    ;    6		U0BRL = 0x82;
-                           A    90    .line 6
-000007 E9820F47            A    91    	LDX	3911,#130
-                           A    92    ;    7	
-                           A    93    ;    8	  //CHANGE PA4&5 are BT RX< TX
-                           A    94    ;    9		PAAF |= 0x30;
-                           A    95    .line 9
-00000B E9020FD0            A    96    	LDX	4048,#2
-00000F 49300FD1            A    97    	ORX	4049,#48
-                           A    98    ;   10		PADD &= ~0x20;
-                           A    99    .line 10
-000013 E9010FD0            A   100    	LDX	4048,#1
-000017 59DF0FD1            A   101    	ANDX	4049,#-33
-                           A   102    ;   11		PADD |= 0x10;
-                           A   103    .line 11
-00001B E9010FD0            A   104    	LDX	4048,#1
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     02:03:03     page:   3
+                           A    83    ;    2	
+                           A    84    ;    3	//Code written by myself for EMB, sligh
+                           A    85    ;    4	
+                           A    86    ;    5	//Intialise the commuications
+                           A    87    ;    6	void init_coms(void){
+                           A    88    ;    7		U0BRH = 0x00;
+                           A    89    .line 7
+000003 E9000F46            A    90    	LDX	3910,#-0
+                           A    91    ;    8		U0BRL = 0x82;
+                           A    92    .line 8
+000007 E9820F47            A    93    	LDX	3911,#130
+                           A    94    ;    9	
+                           A    95    ;   10	  //CHANGE PA4&5 are BT RX< TX
+                           A    96    ;   11		PAAF |= 0x30;
+                           A    97    .line 11
+00000B E9020FD0            A    98    	LDX	4048,#2
+00000F 49300FD1            A    99    	ORX	4049,#48
+                           A   100    ;   12		PADD &= ~0x20;
+                           A   101    .line 12
+000013 E9010FD0            A   102    	LDX	4048,#1
+000017 59DF0FD1            A   103    	ANDX	4049,#-33
+                           A   104    ;   13		PADD |= 0x10;
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:32:11     page:   3
 
 
 PC     Object              I  Line    Source uart.src
-00001F 49100FD1            A   105    	ORX	4049,#16
-                           A   106    ;   12		PAADDR = 0x00;
-                           A   107    .line 12
-000023 E9000FD0            A   108    	LDX	4048,#-0
-                           A   109    ;   13			
-                           A   110    ;   14		SET_VECTOR(UART0_RX, isr_U1_RX);
-                           A   111    ;   15		SET_VECTOR(UART0_TX, isr_U1_TX);
-                           A   112    ;   16	
-                           A   113    ;   17		IRQ0 |= 0x04;
-                           A   114    .line 17
-000027 49040FC0            A   115    	ORX	4032,#4
-                           A   116    ;   18		IRQ0ENH &= ~0x18;
-                           A   117    .line 18
-00002B 59E70FC1            A   118    	ANDX	4033,#-25
-                           A   119    ;   19		IRQ0ENL |= 0x18;
-                           A   120    .line 19
-00002F 49180FC2            A   121    	ORX	4034,#24
-                           A   122    ;   20	
-                           A   123    ;   21		
-                           A   124    ;   22		U0CTL0 = 0xC0;
-                           A   125    .line 22
-000033 E9C00F42            A   126    	LDX	3906,#192
-                           A   127    ;   23		U0CTL1 = 0x00;
-                           A   128    .line 23
-000037 E9000F43            A   129    	LDX	3907,#-0
-                           A   130    ;   24	
-                           A   131    ;   25		
-                           A   132    ;   26	}
-                           A   133    .line 26
-00003B D6 0000             A   134    	CALL	__b_framereset
-00003E AF                  A   135    	RET	
-                           A   136    .endfunc "init_coms",26,"_init_coms"
-                           A   137    	SEGMENT ROM_DATA
-                           A   138    
-                           A   139    
-                           A   140    ;**************************** _sendString *****
-                           A   141    ;Name                         Addr/Register   S
-                           A   142    ;_strlen                             IMPORT  --
-                           A   143    ;_txFinished                         STATIC    
-                           A   144    ;size                                    R0    
-                           A   145    ;current                                 R2    
-                           A   146    ;stringSend                           R15+4    
-                           A   147    
-                           A   148    
-                           A   149    ; Aggregate Stack Size: -1 (words)
+                           A   105    .line 13
+00001B E9010FD0            A   106    	LDX	4048,#1
+00001F 49100FD1            A   107    	ORX	4049,#16
+                           A   108    ;   14		PAADDR = 0x00;
+                           A   109    .line 14
+000023 E9000FD0            A   110    	LDX	4048,#-0
+                           A   111    ;   15	
+                           A   112    ;   16		SET_VECTOR(UART0_RX, isr_U1_RX);
+                           A   113    ;   17		SET_VECTOR(UART0_TX, isr_U1_TX);
+                           A   114    ;   18	
+                           A   115    ;   19		IRQ0 |= 0x04;
+                           A   116    .line 19
+000027 49040FC0            A   117    	ORX	4032,#4
+                           A   118    ;   20		IRQ0ENH &= ~0x18;
+                           A   119    .line 20
+00002B 59E70FC1            A   120    	ANDX	4033,#-25
+                           A   121    ;   21		IRQ0ENL |= 0x18;
+                           A   122    .line 21
+00002F 49180FC2            A   123    	ORX	4034,#24
+                           A   124    ;   22	
+                           A   125    ;   23	
+                           A   126    ;   24		U0CTL0 = 0xC0;
+                           A   127    .line 24
+000033 E9C00F42            A   128    	LDX	3906,#192
+                           A   129    ;   25		U0CTL1 = 0x00;
+                           A   130    .line 25
+000037 E9000F43            A   131    	LDX	3907,#-0
+                           A   132    ;   26	
+                           A   133    ;   27	
+                           A   134    ;   28	}
+                           A   135    .line 28
+00003B D6 0000             A   136    	CALL	__b_framereset
+00003E AF                  A   137    	RET	
+                           A   138    .endfunc "init_coms",28,"_init_coms"
+                           A   139    	SEGMENT ROM_DATA
+                           A   140    
+                           A   141    
+                           A   142    ;**************************** _sendString *****
+                           A   143    ;Name                         Addr/Register   S
+                           A   144    ;_strlen                             IMPORT  --
+                           A   145    ;_txFinished                         STATIC    
+                           A   146    ;size                                    R0    
+                           A   147    ;current                                 R2    
+                           A   148    ;stringSend                           R15+4    
+                           A   149    
                            A   150    
-                           A   151    
-                           A   152    	.FRAME _n_sendString,?_n_sendString,RDATA
-                           A   153    	.FCALL _n_strlen
-                           A   154    	.FRAME _f_sendString,?_f_sendString,EDATA
-                           A   155    	.FCALL _f_strlen
-                           A   156    	SEGMENT uart_TEXT
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     02:03:03     page:   4
+                           A   151    ; Aggregate Stack Size: -1 (words)
+                           A   152    
+                           A   153    
+                           A   154    	.FRAME _n_sendString,?_n_sendString,RDATA
+                           A   155    	.FCALL _n_strlen
+                           A   156    	.FRAME _f_sendString,?_f_sendString,EDATA
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:32:11     page:   4
 
 
 PC     Object              I  Line    Source uart.src
-00003F                     A   157    _sendString:
-                           A   158    .define "_sendString"
-                           A   159    .value _sendString
-                           A   160    .class 2
-                           A   161    .type 65
-                           A   162    .type 0
-                           A   163    .endef
-                           A   164    .begfunc "sendString",28,"_sendString"
-                           A   165    .define "stringSend"
-                           A   166    .class 9
-                           A   167    .value 4
-                           A   168    .type 162
-                           A   169    .type 0
-                           A   170    .endef
-                           A   171    ;   27	
-                           A   172    ;   28	void sendString(char stringSend[25]){
-                           A   173    .define "current"
-                           A   174    .class 4
-                           A   175    .reg 3
-                           A   176    .type 2
-                           A   177    .type 0
-                           A   178    .endef
-                           A   179    .define "size"
-                           A   180    .class 4
-                           A   181    .reg 1
-                           A   182    .type 2
-                           A   183    .type 0
-                           A   184    .endef
-00003F 5C01                A   185    	LD	R5,#1
-000041 D6 0000             A   186    	CALL	__b_frameset0
-                           A   187    ;   29		char current = 0;
-                           A   188    .line 29
-000044 B0E2                A   189    	CLR	R2
-                           A   190    ;   30		char size = 0;
-                           A   191    .line 30
-                           A   192    ;   31		txFinished = 1;
-                           A   193    .line 31
-000046 E9010001            A   194    	LDX	_txFinished,#1
-                           A   195    ;   32		size = strlen(stringSend);
-                           A   196    .line 32
-00004A 880E04              A   197    	LDX	R0,4(RR14)
-00004D 881E05              A   198    	LDX	R1,5(RR14)
-000050 70E1                A   199    	PUSH	R1
-000052 70E0                A   200    	PUSH	R0
-000054 89E2FF              A   201    	LDX	-1(RR14),R2
-000057 D6 0000             A   202    	CALL	_strlen
-00005A 882EFF              A   203    	LDX	R2,-1(RR14)
-00005D 50E0                A   204    	POP	R0
-00005F 50E0                A   205    	POP	R0
-000061 E4E1E0              A   206    	LD	R0,R1
-                           A   207    ;   33		while(1){
-000064                     A   208    _2_L_5:
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     02:03:03     page:   5
+                           A   157    	.FCALL _f_strlen
+                           A   158    	SEGMENT uart_TEXT
+00003F                     A   159    _sendString:
+                           A   160    .define "_sendString"
+                           A   161    .value _sendString
+                           A   162    .class 2
+                           A   163    .type 65
+                           A   164    .type 0
+                           A   165    .endef
+                           A   166    .begfunc "sendString",31,"_sendString"
+                           A   167    .define "stringSend"
+                           A   168    .class 9
+                           A   169    .value 4
+                           A   170    .type 162
+                           A   171    .type 0
+                           A   172    .endef
+                           A   173    ;   29	
+                           A   174    ;   30	//Send a given string to the bluetooth 
+                           A   175    ;   31	void sendString(char stringSend[25]){
+                           A   176    .define "U‹ìjÿh0/J"
+                           A   177    .class 4
+                           A   178    .reg 3
+                           A   179    .type 2
+                           A   180    .type 0
+                           A   181    .endef
+                           A   182    .define "U‹ìjÿh0/J"
+                           A   183    .class 4
+                           A   184    .reg 1
+                           A   185    .type 2
+                           A   186    .type 0
+                           A   187    .endef
+00003F 5C01                A   188    	LD	R5,#1
+000041 D6 0000             A   189    	CALL	__b_frameset0
+                           A   190    ;   32		char current = 0;
+                           A   191    .line 32
+000044 B0E2                A   192    	CLR	R2
+                           A   193    ;   33		char size = 0;
+                           A   194    .line 33
+                           A   195    ;   34		txFinished = 1;
+                           A   196    .line 34
+000046 E9010001            A   197    	LDX	_txFinished,#1
+                           A   198    ;   35		size = strlen(stringSend);
+                           A   199    .line 35
+00004A 880E04              A   200    	LDX	R0,4(RR14)
+00004D 881E05              A   201    	LDX	R1,5(RR14)
+000050 70E1                A   202    	PUSH	R1
+000052 70E0                A   203    	PUSH	R0
+000054 89E2FF              A   204    	LDX	-1(RR14),R2
+000057 D6 0000             A   205    	CALL	_strlen
+00005A 882EFF              A   206    	LDX	R2,-1(RR14)
+00005D 50E0                A   207    	POP	R0
+00005F 50E0                A   208    	POP	R0
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:32:11     page:   5
 
 
 PC     Object              I  Line    Source uart.src
-                           A   209    .line 33
-                           A   210    ;   34			if(txFinished==1)
-                           A   211    .line 34
-000064 A9010001            A   212    	CPX	_txFinished,#1
-000068 EB FA               A   213    	JR	NE,_2_L_5
-                           A   214    ;   35				{
-                           A   215    ;   36				if(current < size){
-                           A   216    .line 36
-00006A A220                A   217    	CP	R2,R0
-00006C 9B 1E               A   218    	JR	GE,_2_L_3
-                           A   219    ;   37					U0TXD = stringSend[curr
-                           A   220    .line 37
-00006E E4E2E1              A   221    	LD	R1,R2
-000071 90E1                A   222    	RL	R1
-000073 3211                A   223    	SBC	R1,R1
-000075 884E04              A   224    	LDX	R4,4(RR14)
-000078 885E05              A   225    	LDX	R5,5(RR14)
-00007B 0252                A   226    	ADD	R5,R2
-00007D 1241                A   227    	ADC	R4,R1
-00007F 86E4E1              A   228    	LDX	R1,@RR4
-000082 941F40              A   229    	LDX	3904,R1
-                           A   230    ;   38					current++;
-                           A   231    .line 38
-000085 2E                  A   232    	INC	R2
-                           A   233    ;   39					txFinished = 0;
-                           A   234    .line 39
-000086 E9000001            A   235    	LDX	_txFinished,#-0
-                           A   236    ;   40				} else {
-                           A   237    .line 40
-00008A 8B D8               A   238    	JR	_2_L_5
-00008C                     A   239    _2_L_3:
-                           A   240    ;   41					current = 0;
-                           A   241    .line 41
-                           A   242    ;   42					txFinished = 0;
-                           A   243    .line 42
-00008C E9000001            A   244    	LDX	_txFinished,#-0
-                           A   245    ;   43					break;
-                           A   246    ;   44				}
-                           A   247    ;   45			}
-                           A   248    ;   46		}
-                           A   249    ;   47	
-                           A   250    ;   48	}
-                           A   251    .line 48
-000090 D6 0000             A   252    	CALL	__b_framereset
-000093 AF                  A   253    	RET	
-                           A   254    .endfunc "sendString",48,"_sendString"
-                           A   255    	SEGMENT ROM_DATA
-                           A   256    
-                           A   257    
-                           A   258    ;**************************** _commandF *******
-                           A   259    ;Name                         Addr/Register   S
-                           A   260    ;_command                            STATIC    
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     02:03:03     page:   6
+000061 E4E1E0              A   209    	LD	R0,R1
+                           A   210    ;   36		while(1){
+000064                     A   211    _2_L_5:
+                           A   212    .line 36
+                           A   213    ;   37			if(txFinished==1)
+                           A   214    .line 37
+000064 A9010001            A   215    	CPX	_txFinished,#1
+000068 EB FA               A   216    	JR	NE,_2_L_5
+                           A   217    ;   38				{
+                           A   218    ;   39				if(current < size){
+                           A   219    .line 39
+00006A A220                A   220    	CP	R2,R0
+00006C 9B 1E               A   221    	JR	GE,_2_L_3
+                           A   222    ;   40					U0TXD = stringSend[curr
+                           A   223    .line 40
+00006E E4E2E1              A   224    	LD	R1,R2
+000071 90E1                A   225    	RL	R1
+000073 3211                A   226    	SBC	R1,R1
+000075 884E04              A   227    	LDX	R4,4(RR14)
+000078 885E05              A   228    	LDX	R5,5(RR14)
+00007B 0252                A   229    	ADD	R5,R2
+00007D 1241                A   230    	ADC	R4,R1
+00007F 86E4E1              A   231    	LDX	R1,@RR4
+000082 941F40              A   232    	LDX	3904,R1
+                           A   233    ;   41					current++;
+                           A   234    .line 41
+000085 2E                  A   235    	INC	R2
+                           A   236    ;   42					txFinished = 0;
+                           A   237    .line 42
+000086 E9000001            A   238    	LDX	_txFinished,#-0
+                           A   239    ;   43				} else {
+                           A   240    .line 43
+00008A 8B D8               A   241    	JR	_2_L_5
+00008C                     A   242    _2_L_3:
+                           A   243    ;   44					current = 0;
+                           A   244    .line 44
+                           A   245    ;   45					txFinished = 0;
+                           A   246    .line 45
+00008C E9000001            A   247    	LDX	_txFinished,#-0
+                           A   248    ;   46					break;
+                           A   249    ;   47				}
+                           A   250    ;   48			}
+                           A   251    ;   49		}
+                           A   252    ;   50	
+                           A   253    ;   51	}
+                           A   254    .line 51
+000090 D6 0000             A   255    	CALL	__b_framereset
+000093 AF                  A   256    	RET	
+                           A   257    .endfunc "sendString",51,"_sendString"
+                           A   258    	SEGMENT ROM_DATA
+                           A   259    
+                           A   260    
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:32:11     page:   6
 
 
 PC     Object              I  Line    Source uart.src
-                           A   261    ;temp                                    R1    
-                           A   262    
-                           A   263    
-                           A   264    ; Aggregate Stack Size: 0 (words)
+                           A   261    ;**************************** _commandF *******
+                           A   262    ;Name                         Addr/Register   S
+                           A   263    ;_command                            STATIC    
+                           A   264    ;temp                                    R1    
                            A   265    
                            A   266    
-                           A   267    	.FRAME _n_commandF,?_n_commandF,RDATA
-                           A   268    	.FRAME _f_commandF,?_f_commandF,EDATA
-                           A   269    	SEGMENT uart_TEXT
-000094                     A   270    _commandF:
-                           A   271    .define "_commandF"
-                           A   272    .value _commandF
-                           A   273    .class 2
-                           A   274    .type 66
-                           A   275    .type 0
-                           A   276    .endef
-                           A   277    .begfunc "commandF",50,"_commandF"
-                           A   278    ;   49	
-                           A   279    ;   50	char commandF(void){
-                           A   280    .define "temp"
-                           A   281    .class 4
-                           A   282    .reg 2
-                           A   283    .type 2
-                           A   284    .type 0
-                           A   285    .endef
-000094 D6 0000             A   286    	CALL	__b_frameset00
-                           A   287    ;   51		char temp = command;
-                           A   288    .line 51
-000097 841002              A   289    	LDX	R1,_command
-                           A   290    ;   52		command = 0;
-                           A   291    .line 52
-00009A E9000002            A   292    	LDX	_command,#-0
-                           A   293    ;   53		return temp;
-                           A   294    .line 53
-00009E E4E1E0              A   295    	LD	R0,R1
-                           A   296    ;   54	}
-                           A   297    .line 54
-0000A1 D6 0000             A   298    	CALL	__b_framereset
-0000A4 AF                  A   299    	RET	
-                           A   300    .endfunc "commandF",54,"_commandF"
-                           A   301    	SEGMENT ROM_DATA
-                           A   302    
-                           A   303    
-                           A   304    ;**************************** _isr_U1_RX ******
-                           A   305    ;Name                         Addr/Register   S
-                           A   306    ;_EI                                 IMPORT  --
-                           A   307    ;_command                            STATIC    
-                           A   308    ;_DI                                 IMPORT  --
-                           A   309    
-                           A   310    
-                           A   311    ; Aggregate Stack Size: 0 (words)
-                           A   312    
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     02:03:03     page:   7
+                           A   267    ; Aggregate Stack Size: 0 (words)
+                           A   268    
+                           A   269    
+                           A   270    	.FRAME _n_commandF,?_n_commandF,RDATA
+                           A   271    	.FRAME _f_commandF,?_f_commandF,EDATA
+                           A   272    	SEGMENT uart_TEXT
+000094                     A   273    _commandF:
+                           A   274    .define "_commandF"
+                           A   275    .value _commandF
+                           A   276    .class 2
+                           A   277    .type 66
+                           A   278    .type 0
+                           A   279    .endef
+                           A   280    .begfunc "commandF",54,"_commandF"
+                           A   281    ;   52	
+                           A   282    ;   53	//Store and pass the recieved char
+                           A   283    ;   54	char commandF(void){
+                           A   284    .define "U‹ìjÿh0/J"
+                           A   285    .class 4
+                           A   286    .reg 2
+                           A   287    .type 2
+                           A   288    .type 0
+                           A   289    .endef
+000094 D6 0000             A   290    	CALL	__b_frameset00
+                           A   291    ;   55		char temp = command;
+                           A   292    .line 55
+000097 841002              A   293    	LDX	R1,_command
+                           A   294    ;   56		command = 0;
+                           A   295    .line 56
+00009A E9000002            A   296    	LDX	_command,#-0
+                           A   297    ;   57		return temp;
+                           A   298    .line 57
+00009E E4E1E0              A   299    	LD	R0,R1
+                           A   300    ;   58	}
+                           A   301    .line 58
+0000A1 D6 0000             A   302    	CALL	__b_framereset
+0000A4 AF                  A   303    	RET	
+                           A   304    .endfunc "commandF",58,"_commandF"
+                           A   305    	SEGMENT ROM_DATA
+                           A   306    
+                           A   307    
+                           A   308    ;**************************** _isr_U1_RX ******
+                           A   309    ;Name                         Addr/Register   S
+                           A   310    ;_EI                                 IMPORT  --
+                           A   311    ;_command                            STATIC    
+                           A   312    ;_DI                                 IMPORT  --
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:32:11     page:   7
 
 
 PC     Object              I  Line    Source uart.src
                            A   313    
-                           A   314    	.FRAME _n_isr_U1_RX,?_n_isr_U1_RX,RDATA
-                           A   315    	.FRAME _f_isr_U1_RX,?_f_isr_U1_RX,EDATA
-                           A   316    	SEGMENT uart_TEXT
-0000A5                     A   317    _isr_U1_RX:
-                           A   318    .define "_isr_U1_RX"
-                           A   319    .value _isr_U1_RX
-                           A   320    .class 2
-                           A   321    .type 65
-                           A   322    .type 0
-                           A   323    .endef
-                           A   324    .begfunc "isr_U1_RX",57,"_isr_U1_RX"
-0000A5 C8FFD0              A   325    	PUSHX	4093
-0000A8 D6 0000             A   326    	CALL	__b_iframeset00
-                           A   327    ;   55	
-                           A   328    ;   56	#pragma interrupt
-                           A   329    ;   57	void isr_U1_RX(void){
-                           A   330    ;   58		DI();
-                           A   331    .line 58
-0000AB 8F                  A   332    	DI
-                           A   333    ;   59		command = U0RXD;
-                           A   334    .line 59
-0000AC E8F40002            A   335    	LDX	_command,3904
-                           A   336    ;   60		IRQ0 &= ~0x40;
-                           A   337    .line 60
-0000B0 59BF0FC0            A   338    	ANDX	4032,#-65
-                           A   339    ;   61		EI();
-                           A   340    .line 61
-0000B4 9F                  A   341    	EI
-                           A   342    ;   62	}
-                           A   343    .line 62
-0000B5 D6 0000             A   344    	CALL	__b_iframereset
-0000B8 BF                  A   345    	IRET	
-                           A   346    .endfunc "isr_U1_RX",62,"_isr_U1_RX"
-                           A   347    	SEGMENT ROM_DATA
-                           A   348    
-                           A   349    
-                           A   350    ;**************************** _isr_U1_TX ******
-                           A   351    ;Name                         Addr/Register   S
-                           A   352    ;_txFinished                         STATIC    
+                           A   314    
+                           A   315    ; Aggregate Stack Size: 0 (words)
+                           A   316    
+                           A   317    
+                           A   318    	.FRAME _n_isr_U1_RX,?_n_isr_U1_RX,RDATA
+                           A   319    	.FRAME _f_isr_U1_RX,?_f_isr_U1_RX,EDATA
+                           A   320    	SEGMENT uart_TEXT
+0000A5                     A   321    _isr_U1_RX:
+                           A   322    .define "_isr_U1_RX"
+                           A   323    .value _isr_U1_RX
+                           A   324    .class 2
+                           A   325    .type 65
+                           A   326    .type 0
+                           A   327    .endef
+                           A   328    .begfunc "isr_U1_RX",62,"_isr_U1_RX"
+0000A5 C8FFD0              A   329    	PUSHX	4093
+0000A8 D6 0000             A   330    	CALL	__b_iframeset00
+                           A   331    ;   59	
+                           A   332    ;   60	//Recieve
+                           A   333    ;   61	#pragma interrupt
+                           A   334    ;   62	void isr_U1_RX(void){
+                           A   335    ;   63		DI();
+                           A   336    .line 63
+0000AB 8F                  A   337    	DI
+                           A   338    ;   64		command = U0RXD;
+                           A   339    .line 64
+0000AC E8F40002            A   340    	LDX	_command,3904
+                           A   341    ;   65		IRQ0 &= ~0x40;
+                           A   342    .line 65
+0000B0 59BF0FC0            A   343    	ANDX	4032,#-65
+                           A   344    ;   66		EI();
+                           A   345    .line 66
+0000B4 9F                  A   346    	EI
+                           A   347    ;   67	}
+                           A   348    .line 67
+0000B5 D6 0000             A   349    	CALL	__b_iframereset
+0000B8 BF                  A   350    	IRET	
+                           A   351    .endfunc "isr_U1_RX",67,"_isr_U1_RX"
+                           A   352    	SEGMENT ROM_DATA
                            A   353    
                            A   354    
-                           A   355    ; Aggregate Stack Size: 0 (words)
-                           A   356    
-                           A   357    
-                           A   358    	.FRAME _n_isr_U1_TX,?_n_isr_U1_TX,RDATA
-                           A   359    	.FRAME _f_isr_U1_TX,?_f_isr_U1_TX,EDATA
-                           A   360    	SEGMENT uart_TEXT
-0000B9                     A   361    _isr_U1_TX:
-                           A   362    .define "_isr_U1_TX"
-                           A   363    .value _isr_U1_TX
-                           A   364    .class 2
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     02:03:03     page:   8
+                           A   355    ;**************************** _isr_U1_TX ******
+                           A   356    ;Name                         Addr/Register   S
+                           A   357    ;_txFinished                         STATIC    
+                           A   358    
+                           A   359    
+                           A   360    ; Aggregate Stack Size: 0 (words)
+                           A   361    
+                           A   362    
+                           A   363    	.FRAME _n_isr_U1_TX,?_n_isr_U1_TX,RDATA
+                           A   364    	.FRAME _f_isr_U1_TX,?_f_isr_U1_TX,EDATA
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:32:11     page:   8
 
 
 PC     Object              I  Line    Source uart.src
-                           A   365    .type 65
-                           A   366    .type 0
-                           A   367    .endef
-                           A   368    .begfunc "isr_U1_TX",65,"_isr_U1_TX"
-0000B9 C8FFD0              A   369    	PUSHX	4093
-0000BC D6 0000             A   370    	CALL	__b_iframeset00
-                           A   371    ;   63	
-                           A   372    ;   64	#pragma interrupt
-                           A   373    ;   65	void isr_U1_TX(void){
-                           A   374    ;   66		txFinished = 1;
-                           A   375    .line 66
-0000BF E9010001            A   376    	LDX	_txFinished,#1
-                           A   377    ;   67	}
-                           A   378    .line 67
-0000C3 D6 0000             A   379    	CALL	__b_iframereset
-0000C6 BF                  A   380    	IRET	
-                           A   381    .endfunc "isr_U1_TX",67,"_isr_U1_TX"
-000010 00B9                A   382    	VECTOR	UART0_TX=_isr_U1_TX
-00000E 00A5                A   383    	VECTOR	UART0_RX=_isr_U1_RX
-                           A   384    	XREF _strlen:ROM
-                           A   385    	XREF __b_framereset:ROM
-                           A   386    	XREF __b_iframereset:ROM
-                           A   387    	XREF __b_frameset0:ROM
-                           A   388    	XREF __b_frameset00:ROM
-                           A   389    	XREF __b_iframeset00:ROM
-                           A   390    	XDEF _isr_U1_TX
-                           A   391    	XDEF _isr_U1_RX
-                           A   392    	XDEF _commandF
-                           A   393    	XDEF _sendString
-                           A   394    	XDEF _init_coms
-                           A   395    	XDEF _rxFlag
-                           A   396    	XDEF _command
-                           A   397    	XDEF _txFinished
-                           A   398    	XDEF _string
-                           A   399    	XDEF _inChar
-                           A   400    	END
+                           A   365    	SEGMENT uart_TEXT
+0000B9                     A   366    _isr_U1_TX:
+                           A   367    .define "_isr_U1_TX"
+                           A   368    .value _isr_U1_TX
+                           A   369    .class 2
+                           A   370    .type 65
+                           A   371    .type 0
+                           A   372    .endef
+                           A   373    .begfunc "isr_U1_TX",71,"_isr_U1_TX"
+0000B9 C8FFD0              A   374    	PUSHX	4093
+0000BC D6 0000             A   375    	CALL	__b_iframeset00
+                           A   376    ;   68	
+                           A   377    ;   69	//When send finished
+                           A   378    ;   70	#pragma interrupt
+                           A   379    ;   71	void isr_U1_TX(void){
+                           A   380    ;   72		txFinished = 1;
+                           A   381    .line 72
+0000BF E9010001            A   382    	LDX	_txFinished,#1
+                           A   383    ;   73	}
+                           A   384    .line 73
+0000C3 D6 0000             A   385    	CALL	__b_iframereset
+0000C6 BF                  A   386    	IRET	
+                           A   387    .endfunc "isr_U1_TX",73,"_isr_U1_TX"
+000010 00B9                A   388    	VECTOR	UART0_TX=_isr_U1_TX
+00000E 00A5                A   389    	VECTOR	UART0_RX=_isr_U1_RX
+                           A   390    	XREF _strlen:ROM
+                           A   391    	XREF __b_framereset:ROM
+                           A   392    	XREF __b_iframereset:ROM
+                           A   393    	XREF __b_frameset0:ROM
+                           A   394    	XREF __b_frameset00:ROM
+                           A   395    	XREF __b_iframeset00:ROM
+                           A   396    	XDEF _isr_U1_TX
+                           A   397    	XDEF _isr_U1_RX
+                           A   398    	XDEF _commandF
+                           A   399    	XDEF _sendString
+                           A   400    	XDEF _init_coms
+                           A   401    	XDEF _rxFlag
+                           A   402    	XDEF _command
+                           A   403    	XDEF _txFinished
+                           A   404    	XDEF _string
+                           A   405    	XDEF _inChar
+                           A   406    	END
 
 
 Errors: 0
 Warnings: 0
-Lines Assembled: 401
+Lines Assembled: 407

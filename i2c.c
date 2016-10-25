@@ -1,4 +1,4 @@
-// Code by Brian Bienvenu; Jim Cocks; Ben Giacoppo
+// Code by Brian Bienvenu; Jim Cocks; Ben Giacoppo unless stated otherwise
 
 #include <eZ8.h>
 #include <STDIO.H>
@@ -91,29 +91,6 @@ void i2cInit(void)
 	IRQ0ENH |= IC2_EI;
 	IRQ0ENL |= IC2_EI;
 
-	//Port D int1_g and int1_A interrupts
-// 	IRQ1ENH |= 0x03;
-// 	IRQ1ENL |= 0x03;
-// 	IRQPS |= 0x03;
-// 	DI();
-// 	PCAF &= ~0x02;
-	//set Timers to PWM mode, no prescaler
-// 	T1CTL1 = 0x21; //CONTINUOUS_MODE | PRESCALAR_16
-	//set reset count value to 0
-// 	T1H = 0;
-// 	T1L = 0;
-	//set reload value
-// 	T1RH = 0xC3; //50000
-// 	T1RL = 0x50;
-
-// 	T1CTL1 |= 0x80;
-
-// 	IRQ0ENH |= 0x40;
-// 	IRQ0ENL |= 0x40;
-
-// 	SET_VECTOR(TIMER1, t1_mem_isr);
-// 	EI();
-	
 	//init internal state so it doesn't init to busy or failed
 	state.reading = DONE;
 }
@@ -206,71 +183,65 @@ void i2cStartRead(unsigned char deviceAddress, unsigned char registerAddress, un
 	I2CCTL |= TXI_MASK;
 }
 
+//Written with assistance from Ben Anderson, but mostly my own code
 void mems_read(void){
 	char display[25];
 	char oldGyro;
-	char oldAcc;
-	
-		
+	static char accXValueOld;
+
+	//Prepare i2c for read
 	i2cWrite(ACCEL, REG1_A_ADDRESS, REG1_A_DATA);
 	i2cWrite(ACCEL, REG4_A_ADDRESS, REG4_A_DATA);
 	i2cWrite(GYRO, REG1_G_ADDRESS, REG1_G_DATA);
 	i2cWrite(GYRO, REG4_G_ADDRESS, REG4_G_DATA);
 	i2cWrite(GYRO, REG5_G_ADDRESS, REG5_G_DATA);
-	
 
-	i2cStartRead(ACCEL, X_LOW_ADDRESS, 2, accRead);
+	//Read the disired value from the mems
+	i2cStartRead(ACCEL, X_LOW_ADDRESS, 6, accRead);
 // 	i2cStartRead(ACCEL, X_HIGH_ADDRESS, 1, accRead2);
-// 	i2cStartRead(GYRO, RATE_LOW_ADDRESS, 2, gyroRead);
-
+//Make sure the i2c communicationis finished
 	while(i2cIsDataReady()==0){}
+
+	i2cStartRead(GYRO, RATE_LOW_ADDRESS, 6, gyroRead);
+	while(i2cIsDataReady()==0){}
+
+	//Assemble the bits into a useable variable
 	accXValue = accRead[1] & ((accRead[0]<<8) & 0xFF00);
-// 	accYValue = accRead[3] & ((accRead[2]<<8) & 0xFF00);
-// 	accZValue = accRead[5] & ((accRead[4]<<8) & 0xFF00);
-// 	gyroXValue = gyroRead[0] & ((gyroRead[1]<<8) & 0xFF00);
-// 	gyroYValue = gyroRead[2] & ((gyroRead[3]<<8) & 0xFF00);
-// 	gyroZValue = gyroRead[4] & ((gyroRead[5]<<8) & 0xFF00);
-	
-// 	if(printI2CqF() && oldGyro != gyroXValue){
-	if(printI2CqF() && accXValue != 0){
-		sprintf(display, "Acc %d", accXValue);
+
+	if(accXValue == 0){
+		accXValue = accXValueOld;
+	} else {
+		accXValueOld = accXValue;
+	}
+
+	// accYValue = accRead[3] & ((accRead[2]<<8) & 0xFF00);
+	// accZValue = accRead[5] & ((accRead[4]<<8) & 0xFF00);
+	gyroXValue = gyroRead[1] & ((gyroRead[0]<<8) & 0xFF00);
+	// gyroYValue = gyroRead[2] & ((gyroRead[3]<<8) & 0xFF00);
+	// gyroZValue = gyroRead[4] & ((gyroRead[5]<<8) & 0xFF00);
+
+	//If main says to print the values, do so
+	if(printI2CqF()){
+		sprintf(display, "Acc %d, Gy %d", accXValue, gyroXValue);
 		printMessage(display, 1);
 		oldGyro = gyroXValue;
 	}
-		
-// 	if(accXValue != 0 && t1Ready == 1){
-// 		sprintf(display, "%f", complementary());
-// 		printMessage(display, 1);
-// 		sendString("\r\n");
-// 		t1Ready = 0;
-// 	}
-	//LCD Display
-// 	if(accXValue != 0){
-
-// 		sprintf(display, "%d", accXValue);
-// 		sendString(display);
-// 		sendString("\r\n");
-// 	}
 }
 
-void printi2c(void){
-	char display[25];
-	
-}
-
+//Written by myself with assitence from Ben Anderson. Not used in the presentation
 float complementary(void){
 	float thetaGyro = 0;
 	float thetaAcc = 0;
 	float theta = 0;
-	
+
 	//Integrate gyro
 	thetaGyro += (float) gyroXValue * 0.04;
-	
+
 	//Angle from accelerometer based on gravity
 	thetaAcc = atan2((float) accXValue, (float) (accZValue) * (57.32));
-	
+
 	theta = 0.98*(thetaGyro + theta) + 0.02 * thetaAcc;
-	
+
 	return theta;
 }
 
@@ -402,11 +373,11 @@ char i2cIsDataReady(void)
 
 #pragma interrupt
 void t1_mem_isr(void){
-	
+
 	DI();
 
 	mems_read();
-	
+
 	EI();
 // 	printMessage(display, 1);
 }
