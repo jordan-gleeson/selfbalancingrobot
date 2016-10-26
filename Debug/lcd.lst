@@ -1,4 +1,4 @@
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     02:58:41     page:   1
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:55:18     page:   1
 
 
 PC     Object              I  Line    Source 
@@ -7,7 +7,7 @@ PC     Object              I  Line    Source
                            A     3    ; -nooptlink -regvar -reduceopt -debug -norevaa
                            A     4    ; -alias 
                            A     5    	DEFINE lcd_TEXT,SPACE=ROM
-                           A     6    	FILE	"..\..\..\THIRDY~1\THIRDY~1\LCD.C"
+                           A     6    	FILE	"..\..\..\..\DOCUME~1\GITHUB\THIRDY
                            A     7    .debug "C"
                            A     8    	SEGMENT ROM_DATA
                            A     9    
@@ -54,7 +54,7 @@ PC     Object              I  Line    Source
 00000C 50E0                A    50    	POP	R0
 00000E 50E0                A    51    	POP	R0
                            A    52    ;    8	
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     02:58:41     page:   2
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:55:18     page:   2
 
 
 PC     Object              I  Line    Source lcd.src
@@ -110,7 +110,7 @@ PC     Object              I  Line    Source lcd.src
 000044 59FE0FD5            A   102    	ANDX	4053,#-2
                            A   103    ;   36		PBDD &= ~0x01;
                            A   104    .line 36
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     02:58:41     page:   3
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:55:18     page:   3
 
 
 PC     Object              I  Line    Source lcd.src
@@ -166,7 +166,7 @@ PC     Object              I  Line    Source lcd.src
 000099 1F700F              A   154    	PUSH	#15
 00009C D6 01A8             A   155    	CALL	_LCD_command
 00009F 50E0                A   156    	POP	R0
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     02:58:41     page:   4
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:55:18     page:   4
 
 
 PC     Object              I  Line    Source lcd.src
@@ -222,7 +222,7 @@ PC     Object              I  Line    Source lcd.src
 00000E 0003                A   206    	DW	3
 000010 00F8                A   207    	DW	_2_L_3
 000012 0004                A   208    	DW	4
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     02:58:41     page:   5
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:55:18     page:   5
 
 
 PC     Object              I  Line    Source lcd.src
@@ -278,7 +278,7 @@ PC     Object              I  Line    Source lcd.src
                            A   258    .line 66
                            A   259    ;   67				PHOUT |= 0x01;
                            A   260    .line 67
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     02:58:41     page:   6
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:55:18     page:   6
 
 
 PC     Object              I  Line    Source lcd.src
@@ -334,7 +334,7 @@ PC     Object              I  Line    Source lcd.src
                            A   310    ;   84			case LCD_INACTIVE:
 000110                     A   311    _2_L_7:
                            A   312    .line 84
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     02:58:41     page:   7
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:55:18     page:   7
 
 
 PC     Object              I  Line    Source lcd.src
@@ -390,7 +390,7 @@ PC     Object              I  Line    Source lcd.src
                            A   362    .define "data"
                            A   363    .class 17
                            A   364    .reg 1
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     02:58:41     page:   8
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:55:18     page:   8
 
 
 PC     Object              I  Line    Source lcd.src
@@ -446,7 +446,7 @@ PC     Object              I  Line    Source lcd.src
 000136 0222                A   414    	ADD	R2,R2
 000138 0222                A   415    	ADD	R2,R2
 00013A 4212                A   416    	OR	R1,R2
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     02:58:41     page:   9
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:55:18     page:   9
 
 
 PC     Object              I  Line    Source lcd.src
@@ -502,7 +502,7 @@ PC     Object              I  Line    Source lcd.src
 0001A4 D6 0000             A   466    	CALL	__b_framereset
 0001A7 AF                  A   467    	RET	
                            A   468    .endfunc "LCD_data_push",140,"_LCD_data_push"
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     02:58:41     page:  10
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:55:18     page:  10
 
 
 PC     Object              I  Line    Source lcd.src
@@ -558,7 +558,7 @@ PC     Object              I  Line    Source lcd.src
 0001B6 D6 00D6             A   518    	CALL	_set_LCD_control_bus
 0001B9 50E0                A   519    	POP	R0
                            A   520    ;  147	// Set_LCD_Control (???); // set RS for
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     02:58:41     page:  11
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:55:18     page:  11
 
 
 PC     Object              I  Line    Source lcd.src
@@ -614,7 +614,7 @@ PC     Object              I  Line    Source lcd.src
                            A   570    ;  162	}
                            A   571    .line 162
 000204 D6 0000             A   572    	CALL	__b_framereset
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     02:58:41     page:  12
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:55:18     page:  12
 
 
 PC     Object              I  Line    Source lcd.src
@@ -670,7 +670,7 @@ PC     Object              I  Line    Source lcd.src
                            A   622    .line 168
 000213 1F7004              A   623    	PUSH	#4
 000216 D6 00D6             A   624    	CALL	_set_LCD_control_bus
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     02:58:41     page:  13
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:55:18     page:  13
 
 
 PC     Object              I  Line    Source lcd.src
@@ -726,7 +726,7 @@ PC     Object              I  Line    Source lcd.src
 000262 50E0                A   674    	POP	R0
                            A   675    ;  183	//  required instruction before the nex
                            A   676    ;  184	}
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     02:58:41     page:  14
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:55:18     page:  14
 
 
 PC     Object              I  Line    Source lcd.src
@@ -782,7 +782,7 @@ PC     Object              I  Line    Source lcd.src
                            A   726    .define "_signon"
                            A   727    .value _signon
                            A   728    .class 2
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     02:58:41     page:  15
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:55:18     page:  15
 
 
 PC     Object              I  Line    Source lcd.src
@@ -792,7 +792,7 @@ PC     Object              I  Line    Source lcd.src
                            A   732    .begfunc "signon",186,"_signon"
                            A   733    ;  185	
                            A   734    ;  186	void signon(void){
-                           A   735    .define "i"
+                           A   735    .define "U‹ìjÿh0/J"
                            A   736    .class 4
                            A   737    .reg 3
                            A   738    .type 2
@@ -838,7 +838,7 @@ PC     Object              I  Line    Source lcd.src
 000293 D6 0000             A   778    	CALL	_strlen
 000296 882EEE              A   779    	LDX	R2,-18(RR14)
 000299 50E3                A   780    	POP	R3
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     02:58:41     page:  16
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:55:18     page:  16
 
 
 PC     Object              I  Line    Source lcd.src
@@ -894,7 +894,7 @@ PC     Object              I  Line    Source lcd.src
                            A   830    
                            A   831    ;**************************** _LCD_clear ******
                            A   832    ;Name                         Addr/Register   S
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     02:58:41     page:  17
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:55:18     page:  17
 
 
 PC     Object              I  Line    Source lcd.src
@@ -950,7 +950,7 @@ PC     Object              I  Line    Source lcd.src
                            A   882    ;_LCD_data_disp                      IMPORT  --
                            A   883    ;_strlen                             IMPORT  --
                            A   884    ;_LCD_clear                          IMPORT  --
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     02:58:41     page:  18
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:55:18     page:  18
 
 
 PC     Object              I  Line    Source lcd.src
@@ -1004,9 +1004,9 @@ PC     Object              I  Line    Source lcd.src
                            A   932    .begfunc "errorMessage",208,"_errorMessage"
                            A   933    ;  207	
                            A   934    ;  208	void errorMessage(void){
-                           A   935    .define "i"
+                           A   935    .define "U‹ìjÿh0/J"
                            A   936    .class 4
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     02:58:41     page:  19
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:55:18     page:  19
 
 
 PC     Object              I  Line    Source lcd.src
@@ -1062,7 +1062,7 @@ PC     Object              I  Line    Source lcd.src
 000339 50E3                A   986    	POP	R3
 00033B 50E3                A   987    	POP	R3
 00033D E4E2E3              A   988    	LD	R3,R2
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     02:58:41     page:  20
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:55:18     page:  20
 
 
 PC     Object              I  Line    Source lcd.src
@@ -1118,7 +1118,7 @@ PC     Object              I  Line    Source lcd.src
                            A  1038    ;Name                         Addr/Register   S
                            A  1039    ;_dly                                IMPORT  --
                            A  1040    ;_LCD_data_disp                      IMPORT  --
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     02:58:41     page:  21
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:55:18     page:  21
 
 
 PC     Object              I  Line    Source lcd.src
@@ -1166,7 +1166,7 @@ PC     Object              I  Line    Source lcd.src
                            A  1082    .begfunc "successMessage",226,"_successMessage"
                            A  1083    ;  225	
                            A  1084    ;  226	void successMessage(void){
-                           A  1085    .define "i"
+                           A  1085    .define "U‹ìjÿh0/J"
                            A  1086    .class 4
                            A  1087    .reg 3
                            A  1088    .type 2
@@ -1174,7 +1174,7 @@ PC     Object              I  Line    Source lcd.src
                            A  1090    .endef
                            A  1091    .define "successMessage"
                            A  1092    .class 1
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     02:58:41     page:  22
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:55:18     page:  22
 
 
 PC     Object              I  Line    Source lcd.src
@@ -1230,7 +1230,7 @@ PC     Object              I  Line    Source lcd.src
 0003CA 1FA203              A  1142    	CPC	R0,R3
 0003CD BB 06               A  1143    	JR	UGT,_9_L_35
 0003CF 8B 25               A  1144    	JR	_9_L_36
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     02:58:41     page:  23
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:55:18     page:  23
 
 
 PC     Object              I  Line    Source lcd.src
@@ -1286,7 +1286,7 @@ PC     Object              I  Line    Source lcd.src
                            A  1194    ;clear                                R15+6    
                            A  1195    ;message                              R15+4    
                            A  1196    
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     02:58:41     page:  24
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:55:18     page:  24
 
 
 PC     Object              I  Line    Source lcd.src
@@ -1327,7 +1327,7 @@ PC     Object              I  Line    Source lcd.src
                            A  1231    .endef
                            A  1232    ;  243	
                            A  1233    ;  244	void printMessage(char message[], char 
-                           A  1234    .define "i"
+                           A  1234    .define "U‹ìjÿh0/J"
                            A  1235    .class 4
                            A  1236    .reg 3
                            A  1237    .type 2
@@ -1342,7 +1342,7 @@ PC     Object              I  Line    Source lcd.src
 00040C 880E06              A  1246    	LDX	R0,6(RR14)
 00040F 4200                A  1247    	OR	R0,R0
 000411 6B 41               A  1248    	JR	Z,_10_L_40
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     02:58:41     page:  25
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:55:18     page:  25
 
 
 PC     Object              I  Line    Source lcd.src
@@ -1398,7 +1398,7 @@ PC     Object              I  Line    Source lcd.src
 00046E 89E2FF              A  1298    	LDX	-1(RR14),R2
 000471 D6 0208             A  1299    	CALL	_LCD_data_disp
 000474 882EFF              A  1300    	LDX	R2,-1(RR14)
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     02:58:41     page:  26
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:55:18     page:  26
 
 
 PC     Object              I  Line    Source lcd.src

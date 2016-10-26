@@ -10,6 +10,13 @@ void mems_read(void);
 
 void t1_mem_isr(void);
 
+int accXValueF(void);
+int accYValueF(void);
+int accZValueF(void);
+int gyroXValueF(void);
+int gyroYValueF(void);
+int gyroZValueF(void);
+
 float complementary(void);
 
 //Write a single byte must not use while performing read

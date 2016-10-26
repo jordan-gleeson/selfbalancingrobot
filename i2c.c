@@ -95,25 +95,25 @@ void i2cInit(void)
 // 	IRQ1ENH |= 0x03;
 // 	IRQ1ENL |= 0x03;
 // 	IRQPS |= 0x03;
-// 	DI();
-// 	PCAF &= ~0x02;
-	//set Timers to PWM mode, no prescaler
-// 	T1CTL1 = 0x21; //CONTINUOUS_MODE | PRESCALAR_16
-	//set reset count value to 0
-// 	T1H = 0;
-// 	T1L = 0;
-	//set reload value
-// 	T1RH = 0xC3; //50000
-// 	T1RL = 0x50;
+	DI();
+	PCAF &= ~0x02;
 
-// 	T1CTL1 |= 0x80;
+	T1CTL1 = 0x29; //CONTINUOUS_MODE | PRESCALAR_32
+	// set reset count value to 0
+	T1H = 0;
+	T1L = 0;
+	// set reload value
+	T1RH = 0xF4; //62500
+	T1RL = 0x24;
 
-// 	IRQ0ENH |= 0x40;
-// 	IRQ0ENL |= 0x40;
+	T1CTL1 |= 0x80;
 
-// 	SET_VECTOR(TIMER1, t1_mem_isr);
-// 	EI();
-	
+	IRQ0ENH |= 0x40;
+	IRQ0ENL |= 0x40;
+
+	SET_VECTOR(TIMER1, t1_mem_isr);
+	EI();
+
 	//init internal state so it doesn't init to busy or failed
 	state.reading = DONE;
 }
@@ -209,35 +209,61 @@ void i2cStartRead(unsigned char deviceAddress, unsigned char registerAddress, un
 void mems_read(void){
 	char display[25];
 	char oldGyro;
-	char oldAcc;
-	
-		
+	static int accXValueOld = 0;
+	static int accYValueOld = 0;
+	static int accZValueOld = 0;
+
+
+
 	i2cWrite(ACCEL, REG1_A_ADDRESS, REG1_A_DATA);
 	i2cWrite(ACCEL, REG4_A_ADDRESS, REG4_A_DATA);
 	i2cWrite(GYRO, REG1_G_ADDRESS, REG1_G_DATA);
 	i2cWrite(GYRO, REG4_G_ADDRESS, REG4_G_DATA);
 	i2cWrite(GYRO, REG5_G_ADDRESS, REG5_G_DATA);
-	
 
-	i2cStartRead(ACCEL, X_LOW_ADDRESS, 2, accRead);
-// 	i2cStartRead(ACCEL, X_HIGH_ADDRESS, 1, accRead2);
-// 	i2cStartRead(GYRO, RATE_LOW_ADDRESS, 2, gyroRead);
 
+	i2cStartRead(ACCEL, X_LOW_ADDRESS, 6, accRead);
 	while(i2cIsDataReady()==0){}
+
+
+	i2cStartRead(GYRO, RATE_LOW_ADDRESS, 6, gyroRead);
+	while(i2cIsDataReady()==0){}
+
+
 	accXValue = accRead[1] & ((accRead[0]<<8) & 0xFF00);
-// 	accYValue = accRead[3] & ((accRead[2]<<8) & 0xFF00);
-// 	accZValue = accRead[5] & ((accRead[4]<<8) & 0xFF00);
-// 	gyroXValue = gyroRead[0] & ((gyroRead[1]<<8) & 0xFF00);
-// 	gyroYValue = gyroRead[2] & ((gyroRead[3]<<8) & 0xFF00);
-// 	gyroZValue = gyroRead[4] & ((gyroRead[5]<<8) & 0xFF00);
-	
-// 	if(printI2CqF() && oldGyro != gyroXValue){
-	if(printI2CqF() && accXValue != 0){
-		sprintf(display, "Acc %d", accXValue);
-		printMessage(display, 1);
-		oldGyro = gyroXValue;
+	accYValue = accRead[3] & ((accRead[2]<<8) & 0xFF00);
+	accZValue = accRead[5] & ((accRead[4]<<8) & 0xFF00);
+	gyroYValue = gyroRead[0] & ((gyroRead[1]<<8) & 0xFF00);
+	gyroXValue = gyroRead[2] & ((gyroRead[3]<<8) & 0xFF00);
+	gyroZValue = gyroRead[4] & ((gyroRead[5]<<8) & 0xFF00);
+
+
+
+	if(accXValue == 0){
+		accXValue = accXValueOld;
+	} else {
+		accXValueOld = accXValue;
 	}
-		
+
+	if(accYValue == 0){
+		accYValue = accYValueOld;
+	} else {
+		accYValueOld = accYValue;
+	}
+
+	if(accZValue == 0){
+		accZValue = accZValueOld;
+	} else {
+		accZValueOld = accZValue;
+	}
+
+// 	if(printI2CqF() && oldGyro != gyroXValue){
+	if(printI2CqF()){
+		sprintf(display, "Acc %d, Gy %d", accXValue, gyroXValue);
+		printMessage(display, 1);
+		// oldGyro = gyroXValue;
+	}
+
 // 	if(accXValue != 0 && t1Ready == 1){
 // 		sprintf(display, "%f", complementary());
 // 		printMessage(display, 1);
@@ -253,25 +279,33 @@ void mems_read(void){
 // 	}
 }
 
+int accXValueF(void){return accXValue;}
+int accYValueF(void){return accYValue;}
+int accZValueF(void){return accZValue;}
+int gyroXValueF(void){return gyroXValue;}
+int gyroYValueF(void){return gyroYValue;}
+int gyroZValueF(void){return gyroZValue;}
+
+
 void printi2c(void){
 	char display[25];
-	
+
 }
 
 float complementary(void){
 	float thetaGyro = 0;
 	float thetaAcc = 0;
 	float theta = 0;
-	
+
 	//Integrate gyro
-	thetaGyro += (float) gyroXValue * 0.04;
-	
+	// thetaGyro += (float) gyroXValue * 0.1;
+
 	//Angle from accelerometer based on gravity
-	thetaAcc = atan2((float) accXValue, (float) (accZValue) * (57.32));
-	
-	theta = 0.98*(thetaGyro + theta) + 0.02 * thetaAcc;
-	
-	return theta;
+	thetaAcc = atan2((float) accXValue, (float) (accZValue) * ((float) 180/3.14159));
+
+	// theta = 0.98*(thetaGyro + theta) + 0.02 * thetaAcc;
+
+	return thetaAcc;
 }
 
 /********************************************************************************************
@@ -402,11 +436,14 @@ char i2cIsDataReady(void)
 
 #pragma interrupt
 void t1_mem_isr(void){
-	
+	char display[25];
+
 	DI();
 
 	mems_read();
-	
+	// sprintf(display, "%f", complementary());
+	// printMessage(display, 1);
+
 	EI();
 // 	printMessage(display, 1);
 }

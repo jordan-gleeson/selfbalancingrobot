@@ -1,4 +1,4 @@
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     00:18:23     page:   1
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:55:18     page:   1
 
 
 PC     Object              I  Line    Source 
@@ -7,7 +7,7 @@ PC     Object              I  Line    Source
                            A     3    ; -nooptlink -regvar -reduceopt -debug -norevaa
                            A     4    ; -alias 
                            A     5    	DEFINE motor_TEXT,SPACE=ROM
-                           A     6    	FILE	"..\..\..\THIRDY~1\THIRDY~1\MOTOR.C
+                           A     6    	FILE	"..\..\..\..\DOCUME~1\GITHUB\THIRDY
                            A     7    .debug "C"
                            A     8    	SEGMENT FAR_DATA
 000000                     A     9    _RELOAD:
@@ -54,7 +54,7 @@ PC     Object              I  Line    Source
                            A    50    .line 6
 00000B E9010FD8            A    51    	LDX	4056,#1
 00000F 597F0FD9            A    52    	ANDX	4057,#127
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     00:18:23     page:   2
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:55:18     page:   2
 
 
 PC     Object              I  Line    Source motor.src
@@ -110,7 +110,7 @@ PC     Object              I  Line    Source motor.src
                            A   102    .line 25
 00005B 841000              A   103    	LDX	R1,_RELOAD
 00005E 840001              A   104    	LDX	R0,_RELOAD+1
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     00:18:23     page:   3
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:55:18     page:   3
 
 
 PC     Object              I  Line    Source motor.src
@@ -166,7 +166,7 @@ PC     Object              I  Line    Source motor.src
 00000C 00CB                A   154    	DW	_2_L_3
 00000E 0004                A   155    	DW	4
 000010 00D9                A   156    	DW	_2_L_4
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     00:18:23     page:   4
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:55:18     page:   4
 
 
 PC     Object              I  Line    Source motor.src
@@ -222,7 +222,7 @@ PC     Object              I  Line    Source motor.src
 0000AF 59FD0FEB            A   206    	ANDX	4075,#-3
                            A   207    ;   43				PGOUT |= 0x01;    //IN2A se
                            A   208    .line 43
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     00:18:23     page:   5
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:55:18     page:   5
 
 
 PC     Object              I  Line    Source motor.src
@@ -278,7 +278,7 @@ PC     Object              I  Line    Source motor.src
 0000DD                     A   258    _2_L_5:
                            A   259    .line 63
 0000DD D6 0000             A   260    	CALL	__b_framereset
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     00:18:23     page:   6
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:55:18     page:   6
 
 
 PC     Object              I  Line    Source motor.src
@@ -334,7 +334,7 @@ PC     Object              I  Line    Source motor.src
 0000EA 90E0                A   310    	RL	R0
 0000EC 3200                A   311    	SBC	R0,R0
 0000EE 2C 00               A   312    	LD	R2,#high(L__7)
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     00:18:23     page:   7
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:55:18     page:   7
 
 
 PC     Object              I  Line    Source motor.src
@@ -390,7 +390,7 @@ PC     Object              I  Line    Source motor.src
 00011F 8B 04               A   362    	JR	_3_L_10
                            A   363    ;   84	
                            A   364    ;   85			case MOTOR_DRIFT: //passive bra
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     00:18:23     page:   8
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:55:18     page:   8
 
 
 PC     Object              I  Line    Source motor.src
@@ -446,7 +446,7 @@ PC     Object              I  Line    Source motor.src
 000132 A8 001EE1           A   414    	CPX	R1,_RELOAD+1
 000136 1FA8 000EE0         A   415    	CPCX	R0,_RELOAD
 00013B 1B 08               A   416    	JR	LT,_4_L_12
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     00:18:23     page:   9
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:55:18     page:   9
 
 
 PC     Object              I  Line    Source motor.src
@@ -502,7 +502,7 @@ PC     Object              I  Line    Source motor.src
                            A   466    .value _motor2Speed
                            A   467    .class 2
                            A   468    .type 65
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     00:18:23     page:  10
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:55:18     page:  10
 
 
 PC     Object              I  Line    Source motor.src
@@ -558,7 +558,7 @@ PC     Object              I  Line    Source motor.src
 0001A4 AF                  A   518    	RET	
                            A   519    .endfunc "motor2Speed",107,"_motor2Speed"
                            A   520    	SEGMENT ROM_DATA
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     00:18:23     page:  11
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:55:18     page:  11
 
 
 PC     Object              I  Line    Source motor.src
@@ -614,7 +614,7 @@ PC     Object              I  Line    Source motor.src
                            A   570    .endef
                            A   571    .define "offsetL"
                            A   572    .class 9
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     00:18:23     page:  12
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:55:18     page:  12
 
 
 PC     Object              I  Line    Source motor.src
@@ -630,13 +630,13 @@ PC     Object              I  Line    Source motor.src
                            A   582    .endef
                            A   583    ;  108	
                            A   584    ;  109	void motorsSet(signed int t, int r, int
-                           A   585    .define "m1"
+                           A   585    .define "U‹ìjÿh0/J"
                            A   586    .class 4
                            A   587    .reg 18
                            A   588    .type 3
                            A   589    .type 0
                            A   590    .endef
-                           A   591    .define "m2"
+                           A   591    .define "U‹ìjÿh0/J"
                            A   592    .class 4
                            A   593    .reg 17
                            A   594    .type 3
@@ -670,7 +670,7 @@ PC     Object              I  Line    Source motor.src
 0001D2 EB 2B               A   622    	JR	NE,_6_L_24
                            A   623    ;  115			motor1Direction(MOTOR_STOP);
                            A   624    .line 115
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     00:18:23     page:  13
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:55:18     page:  13
 
 
 PC     Object              I  Line    Source motor.src
@@ -726,7 +726,7 @@ PC     Object              I  Line    Source motor.src
 00022E 1FE8EE0E E4         A   674    	LDWX	RR4,RR0
 000233 A0E4                A   675    	INCW	RR4
 000235 1FE8EE4E E0         A   676    	LDWX	RR0,RR4
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     00:18:23     page:  14
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:55:18     page:  14
 
 
 PC     Object              I  Line    Source motor.src
@@ -782,7 +782,7 @@ PC     Object              I  Line    Source motor.src
 000292 880EFF              A   726    	LDX	R0,-1(RR14)
 000295 50E4                A   727    	POP	R4
                            A   728    ;  135		}
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     00:18:23     page:  15
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:55:18     page:  15
 
 
 PC     Object              I  Line    Source motor.src

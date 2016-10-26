@@ -1,5 +1,6 @@
-#define loffset 405
-#define roffset 443
+#define roffset 450
+#define loffset 430
+#define r 0
 
 char mode(char change);
 char printI2CqF(void);

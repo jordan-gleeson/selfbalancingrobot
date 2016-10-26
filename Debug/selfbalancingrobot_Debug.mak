@@ -15,7 +15,7 @@ BIN = $(ZDS)\bin
 # ZDS include base directory
 INCLUDE = C:\PROGRA~2\ZiLOG\ZDSII_~1.0\include
 # intermediate files directory
-WORKDIR = Z:\thirdyearproject-master\thirdyearproject-master\Debug
+WORKDIR = C:\Users\Jordan\Documents\GitHub\thirdyearproject\Debug
 
 CC = @$(BIN)\eZ8cc
 AS = @$(BIN)\eZ8asm
@@ -44,7 +44,7 @@ ASFLAGS =  \
 -warn -debug -NOigcase -NOrevaa -cpu:Z8F6423
 
 LDFLAGS = @.\selfbalancingrobot_Debug.linkcmd
-OUTDIR = Z:\thirdyearproject-master\thirdyearproject-master\Debug
+OUTDIR = C:\Users\Jordan\Documents\GitHub\thirdyearproject\Debug
 
 build: selfbalancingrobot
 
@@ -97,12 +97,12 @@ selfbalancingrobot: $(OBJS)
 	 $(LD) $(LDFLAGS)
 
 $(WORKDIR)\delay.obj :  \
-            Z:\THIRDY~1\THIRDY~1\delay.C  \
-            Z:\thirdyearproject-master\thirdyearproject-master\delay.H
-	 $(CC) $(CFLAGS) Z:\THIRDY~1\THIRDY~1\delay.C
+            C:\Users\Jordan\DOCUME~1\GitHub\THIRDY~1\delay.C  \
+            C:\Users\Jordan\Documents\GitHub\thirdyearproject\delay.H
+	 $(CC) $(CFLAGS) C:\Users\Jordan\DOCUME~1\GitHub\THIRDY~1\delay.C
 
 $(WORKDIR)\main.obj :  \
-            Z:\THIRDY~1\THIRDY~1\main.C  \
+            C:\Users\Jordan\DOCUME~1\GitHub\THIRDY~1\main.C  \
             $(INCLUDE)\std\STDARG.H  \
             $(INCLUDE)\zilog\defines.h  \
             $(INCLUDE)\zilog\dmadefs.h  \
@@ -115,16 +115,16 @@ $(WORKDIR)\main.obj :  \
             $(INCLUDE)\zilog\FORMAT.H  \
             $(INCLUDE)\zilog\Zconst.h  \
             $(INCLUDE)\zilog\ez8.h  \
-            Z:\thirdyearproject-master\thirdyearproject-master\LCD.H  \
-            Z:\thirdyearproject-master\thirdyearproject-master\delay.H  \
-            Z:\thirdyearproject-master\thirdyearproject-master\i2c.h  \
-            Z:\thirdyearproject-master\thirdyearproject-master\main.h  \
-            Z:\thirdyearproject-master\thirdyearproject-master\motor.h  \
-            Z:\thirdyearproject-master\thirdyearproject-master\uart.h
-	 $(CC) $(CFLAGS) Z:\THIRDY~1\THIRDY~1\main.C
+            C:\Users\Jordan\Documents\GitHub\thirdyearproject\LCD.H  \
+            C:\Users\Jordan\Documents\GitHub\thirdyearproject\delay.H  \
+            C:\Users\Jordan\Documents\GitHub\thirdyearproject\i2c.h  \
+            C:\Users\Jordan\Documents\GitHub\thirdyearproject\main.h  \
+            C:\Users\Jordan\Documents\GitHub\thirdyearproject\motor.h  \
+            C:\Users\Jordan\Documents\GitHub\thirdyearproject\uart.h
+	 $(CC) $(CFLAGS) C:\Users\Jordan\DOCUME~1\GitHub\THIRDY~1\main.C
 
 $(WORKDIR)\LCD.obj :  \
-            Z:\THIRDY~1\THIRDY~1\LCD.C  \
+            C:\Users\Jordan\DOCUME~1\GitHub\THIRDY~1\LCD.C  \
             $(INCLUDE)\zilog\defines.h  \
             $(INCLUDE)\zilog\dmadefs.h  \
             $(INCLUDE)\zilog\gpio.h  \
@@ -133,12 +133,12 @@ $(WORKDIR)\LCD.obj :  \
             $(INCLUDE)\std\STRING.H  \
             $(INCLUDE)\zilog\Zconst.h  \
             $(INCLUDE)\zilog\ez8.h  \
-            Z:\thirdyearproject-master\thirdyearproject-master\LCD.H  \
-            Z:\thirdyearproject-master\thirdyearproject-master\delay.H
-	 $(CC) $(CFLAGS) Z:\THIRDY~1\THIRDY~1\LCD.C
+            C:\Users\Jordan\Documents\GitHub\thirdyearproject\LCD.H  \
+            C:\Users\Jordan\Documents\GitHub\thirdyearproject\delay.H
+	 $(CC) $(CFLAGS) C:\Users\Jordan\DOCUME~1\GitHub\THIRDY~1\LCD.C
 
 $(WORKDIR)\uart.obj :  \
-            Z:\THIRDY~1\THIRDY~1\uart.C  \
+            C:\Users\Jordan\DOCUME~1\GitHub\THIRDY~1\uart.C  \
             $(INCLUDE)\zilog\defines.h  \
             $(INCLUDE)\zilog\dmadefs.h  \
             $(INCLUDE)\zilog\gpio.h  \
@@ -147,22 +147,22 @@ $(WORKDIR)\uart.obj :  \
             $(INCLUDE)\std\STRING.H  \
             $(INCLUDE)\zilog\Zconst.h  \
             $(INCLUDE)\zilog\ez8.h  \
-            Z:\thirdyearproject-master\thirdyearproject-master\uart.h
-	 $(CC) $(CFLAGS) Z:\THIRDY~1\THIRDY~1\uart.C
+            C:\Users\Jordan\Documents\GitHub\thirdyearproject\uart.h
+	 $(CC) $(CFLAGS) C:\Users\Jordan\DOCUME~1\GitHub\THIRDY~1\uart.C
 
 $(WORKDIR)\motor.obj :  \
-            Z:\THIRDY~1\THIRDY~1\motor.C  \
+            C:\Users\Jordan\DOCUME~1\GitHub\THIRDY~1\motor.C  \
             $(INCLUDE)\zilog\defines.h  \
             $(INCLUDE)\zilog\dmadefs.h  \
             $(INCLUDE)\zilog\gpio.h  \
             $(INCLUDE)\zilog\uart.h  \
             $(INCLUDE)\zilog\uartdefs.h  \
             $(INCLUDE)\zilog\ez8.h  \
-            Z:\thirdyearproject-master\thirdyearproject-master\motor.h
-	 $(CC) $(CFLAGS) Z:\THIRDY~1\THIRDY~1\motor.C
+            C:\Users\Jordan\Documents\GitHub\thirdyearproject\motor.h
+	 $(CC) $(CFLAGS) C:\Users\Jordan\DOCUME~1\GitHub\THIRDY~1\motor.C
 
 $(WORKDIR)\i2c.obj :  \
-            Z:\THIRDY~1\THIRDY~1\i2c.c  \
+            C:\Users\Jordan\DOCUME~1\GitHub\THIRDY~1\i2c.c  \
             $(INCLUDE)\std\STDARG.H  \
             $(INCLUDE)\zilog\defines.h  \
             $(INCLUDE)\zilog\dmadefs.h  \
@@ -176,9 +176,9 @@ $(WORKDIR)\i2c.obj :  \
             $(INCLUDE)\zilog\FORMAT.H  \
             $(INCLUDE)\zilog\Zconst.h  \
             $(INCLUDE)\zilog\ez8.h  \
-            Z:\thirdyearproject-master\thirdyearproject-master\LCD.H  \
-            Z:\thirdyearproject-master\thirdyearproject-master\i2c.h  \
-            Z:\thirdyearproject-master\thirdyearproject-master\main.h  \
-            Z:\thirdyearproject-master\thirdyearproject-master\uart.h
-	 $(CC) $(CFLAGS) Z:\THIRDY~1\THIRDY~1\i2c.c
+            C:\Users\Jordan\Documents\GitHub\thirdyearproject\LCD.H  \
+            C:\Users\Jordan\Documents\GitHub\thirdyearproject\i2c.h  \
+            C:\Users\Jordan\Documents\GitHub\thirdyearproject\main.h  \
+            C:\Users\Jordan\Documents\GitHub\thirdyearproject\uart.h
+	 $(CC) $(CFLAGS) C:\Users\Jordan\DOCUME~1\GitHub\THIRDY~1\i2c.c
 

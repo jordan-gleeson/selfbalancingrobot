@@ -4,7 +4,7 @@ Copyright (C) 1999-2008 Zilog, Inc. All Rights Reserved
 
 LINK MAP:
 
-DATE:      Fri Oct 21 12:44:33 2016
+DATE:      Thu Oct 27 00:47:47 2016
 PROCESSOR: assembler
 FILES:     C:\PROGRA~2\ZiLOG\ZDSII_~1.0\lib\zilog\startupl.obj
            .\delay.obj            .\main.obj             .\LCD.obj              
@@ -88,7 +88,7 @@ define _WRITE_NVDS_GET_STATUS=$10B3
 /* Set frequency to 18432000 Hz */
 define __user_frequency = 18432000
 
-"Z:\thirdyearproject-master\thirdyearproject-master\Debug\selfbalancingrobot"=  C:\PROGRA~2\ZiLOG\ZDSII_~1.0\lib\zilog\startupl.obj,  .\delay.obj,  .\main.obj,  .\LCD.obj,  .\uart.obj,  .\motor.obj,  .\i2c.obj,  C:\PROGRA~2\ZiLOG\ZDSII_~1.0\lib\std\chelpd.lib,  C:\PROGRA~2\ZiLOG\ZDSII_~1.0\lib\std\crtldd.lib,  C:\PROGRA~2\ZiLOG\ZDSII_~1.0\lib\std\fpldd.lib,  C:\PROGRA~2\ZiLOG\ZDSII_~1.0\lib\zilog\csioldd.lib,  C:\PROGRA~2\ZiLOG\ZDSII_~1.0\lib\zilog\zsldevinitdummy.lib
+"C:\Users\Jordan\Documents\GitHub\thirdyearproject\Debug\selfbalancingrobot"=  C:\PROGRA~2\ZiLOG\ZDSII_~1.0\lib\zilog\startupl.obj,  .\delay.obj,  .\main.obj,  .\LCD.obj,  .\uart.obj,  .\motor.obj,  .\i2c.obj,  C:\PROGRA~2\ZiLOG\ZDSII_~1.0\lib\std\chelpd.lib,  C:\PROGRA~2\ZiLOG\ZDSII_~1.0\lib\std\crtldd.lib,  C:\PROGRA~2\ZiLOG\ZDSII_~1.0\lib\std\fpldd.lib,  C:\PROGRA~2\ZiLOG\ZDSII_~1.0\lib\zilog\csioldd.lib,  C:\PROGRA~2\ZiLOG\ZDSII_~1.0\lib\zilog\zsldevinitdummy.lib
 WARNING (909) (00000000 .\uart.obj)--> Public symbol "_rxFlag" already externally defined.
 WARNING (909) (00000000 .\uart.obj)--> Public symbol "_txFinished" already externally defined.
 WARNING (909) (00000000 .\uart.obj)--> Public symbol "_command" already externally defined.
@@ -127,11 +127,11 @@ WARNING (909) (000001F7 .\uart.obj)--> Public symbol "_command" already external
 WARNING (909) (00000155 .\uart.obj)--> Public symbol "_string" already externally defined.
 WARNING (909) (000001F7 .\uart.obj)--> Public symbol "_inChar" already externally defined.
 WARNING (909) (000001F9 .\motor.obj)--> Public symbol "_RELOAD" already externally defined.
-WARNING (909) (00000200 .\i2c.obj)--> Public symbol "_rxFlag" already externally defined.
+WARNING (909) (00000206 .\i2c.obj)--> Public symbol "_rxFlag" already externally defined.
 WARNING (909) (00000198 .\i2c.obj)--> Public symbol "_acc_xh" already externally defined.
 WARNING (909) (00000198 .\i2c.obj)--> Public symbol "_acc_xl" already externally defined.
-WARNING (909) (00000200 .\i2c.obj)--> Public symbol "_txFinished" already externally defined.
-WARNING (909) (00000200 .\i2c.obj)--> Public symbol "_command" already externally defined.
+WARNING (909) (00000206 .\i2c.obj)--> Public symbol "_txFinished" already externally defined.
+WARNING (909) (00000206 .\i2c.obj)--> Public symbol "_command" already externally defined.
 WARNING (909) (00000198 .\i2c.obj)--> Public symbol "_acc_yh" already externally defined.
 WARNING (909) (00000198 .\i2c.obj)--> Public symbol "_accRead" already externally defined.
 WARNING (909) (00000198 .\i2c.obj)--> Public symbol "_acc_yl" already externally defined.
@@ -145,10 +145,10 @@ WARNING (909) (00000198 .\i2c.obj)--> Public symbol "_accXValue" already externa
 WARNING (909) (00000198 .\i2c.obj)--> Public symbol "_accYValue" already externally defined.
 WARNING (909) (00000198 .\i2c.obj)--> Public symbol "_accZValue" already externally defined.
 WARNING (909) (00000198 .\i2c.obj)--> Public symbol "_string" already externally defined.
-WARNING (909) (00000200 .\i2c.obj)--> Public symbol "_inChar" already externally defined.
-WARNING (909) (00000200 .\i2c.obj)--> Public symbol "_speed" already externally defined.
+WARNING (909) (00000206 .\i2c.obj)--> Public symbol "_inChar" already externally defined.
+WARNING (909) (00000206 .\i2c.obj)--> Public symbol "_speed" already externally defined.
 WARNING (909) (00000198 .\i2c.obj)--> Public symbol "_gyroZValue" already externally defined.
-WARNING (909) (00000200 .\i2c.obj)--> Public symbol "_printI2Cq" already externally defined.
+WARNING (909) (00000206 .\i2c.obj)--> Public symbol "_printI2Cq" already externally defined.
 WARNING (909) (00000198 .\i2c.obj)--> Public symbol "_t1Ready" already externally defined.
 WARNING (909) (00000198 .\i2c.obj)--> Public symbol "_gyroXValue" already externally defined.
 WARNING (909) (00000198 .\i2c.obj)--> Public symbol "_gyro_val" already externally defined.
@@ -158,9 +158,9 @@ SPACE ALLOCATION:
 
 Space                     Base         Top      Size      Used    Unused
 ------------------ ----------- ----------- --------- --------- ---------
-EDATA                   E:0100      E:0210      3584       273      3311
+EDATA                   E:0100      E:0216      3584       279      3305
 RDATA                     R:20        R:EF       224        17       207
-ROM                     C:0000      C:1CB0     65536      7345     58191
+ROM                     C:0000      C:1DB6     65536      7607     57929
 
 
 SEGMENTS WITHIN SPACE:
@@ -169,7 +169,7 @@ SEGMENTS WITHIN SPACE:
 EDATA              Type                Base        Top         Size
 ------------------ ------------------- ----------- ----------- ---------
 FAR_BSS            normal data              E:0100      E:01B8       b9h
-FAR_DATA           normal data              E:01B9      E:0210       58h
+FAR_DATA           normal data              E:01B9      E:0216       5eh
 
 
 RDATA              Type                Base        Top         Size
@@ -209,83 +209,84 @@ __VECTORS_030      absolute data            C:0030      C:0031        2h
 __VECTORS_032      absolute data            C:0032      C:0033        2h
 __VECTORS_034      absolute data            C:0034      C:0035        2h
 __VECTORS_036      absolute data            C:0036      C:0037        2h
-_sputch_TEXT       normal data              C:13EC      C:1406       1bh
-abs_TEXT           normal data              C:181A      C:1850       37h
-atan2_TEXT         normal data              C:18E0      C:1A27      148h
+_sputch_TEXT       normal data              C:14EC      C:1506       1bh
+abs_TEXT           normal data              C:191A      C:1950       37h
+atan2_TEXT         normal data              C:19E0      C:1B27      148h
 CODE               normal data              C:00E8      C:04D0      3e9h
-delay_TEXT         normal data              C:0546      C:05C0       7bh
-FAR_DATA           * segment copy *         C:1C59      C:1CB0       58h
-i2c_TEXT           normal data              C:0FBE      C:1397      3dah
-lcd_TEXT           normal data              C:079F      C:0C2B      48dh
-main_TEXT          normal data              C:05C1      C:079E      1deh
-motor_TEXT         normal data              C:0CF3      C:0FBD      2cbh
-mstring_TEXT       normal data              C:164B      C:1684       3ah
-NEAR_DATA          * segment copy *         C:1C58      C:1C58        1h
-nt_send_TEXT       normal data              C:1685      C:1819      195h
-reverse_TEXT       normal data              C:1851      C:18DF       8fh
+delay_TEXT         normal data              C:054C      C:05C6       7bh
+FAR_DATA           * segment copy *         C:1D59      C:1DB6       5eh
+i2c_TEXT           normal data              C:0FC8      C:1497      4d0h
+lcd_TEXT           normal data              C:07A9      C:0C35      48dh
+main_TEXT          normal data              C:05C7      C:07A8      1e2h
+motor_TEXT         normal data              C:0CFD      C:0FC7      2cbh
+mstring_TEXT       normal data              C:174B      C:1784       3ah
+NEAR_DATA          * segment copy *         C:1D58      C:1D58        1h
+nt_send_TEXT       normal data              C:1785      C:1919      195h
+reverse_TEXT       normal data              C:1951      C:19DF       8fh
 ROM_DATA           normal data              C:0038      C:00E7       b0h
-ROM_TEXT           normal data              C:04D1      C:04E3       13h
-satan_TEXT         normal data              C:1A28      C:1BB0      189h
-startup            normal data              C:04E4      C:0545       62h
-strlen_TEXT        normal data              C:13BF      C:13EB       2dh
-t_putch_TEXT       normal data              C:1C42      C:1C57       16h
-uart_TEXT          normal data              C:0C2C      C:0CF2       c7h
-ultoa_TEXT         normal data              C:1407      C:164A      244h
-ustoa_TEXT         normal data              C:1398      C:13BE       27h
-xcoef_TEXT         normal data              C:1BB1      C:1C41       91h
+ROM_TEXT           normal data              C:04D1      C:04E9       19h
+satan_TEXT         normal data              C:1B28      C:1CB0      189h
+startup            normal data              C:04EA      C:054B       62h
+strlen_TEXT        normal data              C:14BF      C:14EB       2dh
+t_putch_TEXT       normal data              C:1D42      C:1D57       16h
+uart_TEXT          normal data              C:0C36      C:0CFC       c7h
+ultoa_TEXT         normal data              C:1507      C:174A      244h
+ustoa_TEXT         normal data              C:1498      C:14BE       27h
+xcoef_TEXT         normal data              C:1CB1      C:1D41       91h
 
 SEGMENTS WITHIN MODULES:
 ========================
 
-Module: ..\..\..\THIRDY~1\THIRDY~1\DELAY.C (File: delay.obj) Version: 1:0 10/21/2016 00:18:18
+Module: ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\DELAY.C (File: delay.obj) Version: 1:0 10/25/2016 19:55:17
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: delay_TEXT                          C:0546      C:05C0       7bh
+    Segment: delay_TEXT                          C:054C      C:05C6       7bh
 
 
-Module: ..\..\..\THIRDY~1\THIRDY~1\I2C.C (File: i2c.obj) Version: 1:0 10/21/2016 12:44:33
+Module: ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C (File: i2c.obj) Version: 1:0 10/27/2016 00:47:46
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
+    Segment: __VECTORS_00A                       C:000A      C:000B        2h
     Segment: __VECTORS_012                       C:0012      C:0013        2h
     Segment: FAR_BSS                             E:0155      E:0197       43h
-    Segment: FAR_DATA                            E:01F9      E:01FF        7h
-    Segment: i2c_TEXT                            C:0FBE      C:1397      3dah
+    Segment: FAR_DATA                            E:01F9      E:0205        dh
+    Segment: i2c_TEXT                            C:0FC8      C:1497      4d0h
     Segment: ROM_DATA                            C:0080      C:0093       14h
-    Segment: ROM_TEXT                            C:04DF      C:04E3        5h
+    Segment: ROM_TEXT                            C:04DF      C:04E9        bh
 
 
-Module: ..\..\..\THIRDY~1\THIRDY~1\LCD.C (File: LCD.obj) Version: 1:0 10/21/2016 02:58:41
+Module: ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\LCD.C (File: LCD.obj) Version: 1:0 10/25/2016 19:55:18
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
     Segment: FAR_DATA                            E:01C4      E:01F2       2fh
-    Segment: lcd_TEXT                            C:079F      C:0C2B      48dh
+    Segment: lcd_TEXT                            C:07A9      C:0C35      48dh
     Segment: ROM_DATA                            C:0038      C:0057       20h
 
 
-Module: ..\..\..\THIRDY~1\THIRDY~1\MAIN.C (File: main.obj) Version: 1:0 10/21/2016 12:19:46
+Module: ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MAIN.C (File: main.obj) Version: 1:0 10/27/2016 00:47:45
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
     Segment: FAR_BSS                             E:0100      E:013B       3ch
     Segment: FAR_DATA                            E:01B9      E:01C3        bh
-    Segment: FAR_DATA (was TEXT)                 E:0202      E:0210        fh
-    Segment: main_TEXT                           C:05C1      C:079E      1deh
+    Segment: FAR_DATA (was TEXT)                 E:0208      E:0216        fh
+    Segment: main_TEXT                           C:05C7      C:07A8      1e2h
     Segment: ROM_TEXT                            C:04D1      C:04DE        eh
 
 
-Module: ..\..\..\THIRDY~1\THIRDY~1\MOTOR.C (File: motor.obj) Version: 1:0 10/21/2016 00:18:23
+Module: ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MOTOR.C (File: motor.obj) Version: 1:0 10/25/2016 19:55:18
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
     Segment: FAR_DATA                            E:01F7      E:01F8        2h
-    Segment: motor_TEXT                          C:0CF3      C:0FBD      2cbh
+    Segment: motor_TEXT                          C:0CFD      C:0FC7      2cbh
     Segment: ROM_DATA                            C:0058      C:007F       28h
 
 
-Module: ..\..\..\THIRDY~1\THIRDY~1\UART.C (File: uart.obj) Version: 1:0 10/21/2016 02:03:03
+Module: ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\UART.C (File: uart.obj) Version: 1:0 10/25/2016 19:55:18
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
@@ -293,7 +294,7 @@ Module: ..\..\..\THIRDY~1\THIRDY~1\UART.C (File: uart.obj) Version: 1:0 10/21/20
     Segment: __VECTORS_010                       C:0010      C:0011        2h
     Segment: FAR_BSS                             E:013C      E:0154       19h
     Segment: FAR_DATA                            E:01F3      E:01F6        4h
-    Segment: uart_TEXT                           C:0C2C      C:0CF2       c7h
+    Segment: uart_TEXT                           C:0C36      C:0CFC       c7h
 
 
 Module: ..\..\src\boot\common\startupl.asm (File: startupl.obj) Version: 1:0 01/07/2011 18:49:53
@@ -301,7 +302,7 @@ Module: ..\..\src\boot\common\startupl.asm (File: startupl.obj) Version: 1:0 01/
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
     Segment: __VECTORS_002                       C:0002      C:0003        2h
-    Segment: startup                             C:04E4      C:0545       62h
+    Segment: startup                             C:04EA      C:054B       62h
     Segment: workingreg                            R:E0        R:EF       10h
 
 
@@ -309,14 +310,14 @@ Module: COMMON\ABS.C (Library: crtldd.lib) Version: 1:0 01/07/2011 18:56:37
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: abs_TEXT                            C:181A      C:1850       37h
+    Segment: abs_TEXT                            C:191A      C:1950       37h
 
 
 Module: COMMON\ATAN2.C (Library: fpldd.lib) Version: 1:0 01/07/2011 19:00:08
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: atan2_TEXT                          C:18E0      C:1A27      148h
+    Segment: atan2_TEXT                          C:19E0      C:1B27      148h
 
 
 Module: COMMON\FLASH1.C (Library: chelpd.lib) Version: 1:0 01/07/2011 19:00:33
@@ -337,63 +338,63 @@ Module: common\fpadd.asm (Library: chelpd.lib) Version: 1:0 01/07/2011 19:00:33
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: CODE                                C:0288      C:032A       a3h
+    Segment: CODE                                C:00E9      C:018B       a3h
 
 
 Module: common\fpcmp.asm (Library: chelpd.lib) Version: 1:0 01/07/2011 19:00:33
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: CODE                                C:01F3      C:0225       33h
+    Segment: CODE                                C:0296      C:02C8       33h
 
 
 Module: common\fpdiv.asm (Library: chelpd.lib) Version: 1:0 01/07/2011 19:00:33
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: CODE                                C:00E9      C:015F       77h
+    Segment: CODE                                C:0219      C:028F       77h
 
 
 Module: common\fpltof.asm (Library: chelpd.lib) Version: 1:0 01/07/2011 19:00:33
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: CODE                                C:03F9      C:040C       14h
+    Segment: CODE                                C:0414      C:0427       14h
 
 
 Module: common\fpmul.asm (Library: chelpd.lib) Version: 1:0 01/07/2011 19:00:33
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: CODE                                C:032B      C:03BB       91h
+    Segment: CODE                                C:0346      C:03D6       91h
 
 
 Module: common\fppack.asm (Library: chelpd.lib) Version: 1:0 01/07/2011 19:00:33
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: CODE                                C:0194      C:01EC       59h
+    Segment: CODE                                C:01C0      C:0218       59h
 
 
 Module: common\fpsub.asm (Library: chelpd.lib) Version: 1:0 01/07/2011 19:00:34
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: CODE                                C:01ED      C:01F2        6h
+    Segment: CODE                                C:0290      C:0295        6h
 
 
 Module: common\fpupop1.asm (Library: chelpd.lib) Version: 1:0 01/07/2011 19:00:34
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: CODE                                C:017A      C:0193       1ah
+    Segment: CODE                                C:01A6      C:01BF       1ah
 
 
 Module: common\fpupop2.asm (Library: chelpd.lib) Version: 1:0 01/07/2011 19:00:34
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: CODE                                C:0160      C:0179       1ah
+    Segment: CODE                                C:018C      C:01A5       1ah
 
 
 Module: common\frame.asm (Library: chelpd.lib) Version: 1:0 01/07/2011 19:00:34
@@ -435,7 +436,7 @@ Module: common\ldxlr4.asm (Library: chelpd.lib) Version: 1:0 01/07/2011 19:00:35
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: CODE                                C:040D      C:0427       1bh
+    Segment: CODE                                C:02C9      C:02E3       1bh
 
 
 Module: COMMON\PRINT_GLOBALS.C (Library: crtldd.lib) Version: 1:0 01/07/2011 18:56:41
@@ -443,35 +444,35 @@ Module: COMMON\PRINT_GLOBALS.C (Library: crtldd.lib) Version: 1:0 01/07/2011 18:
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
     Segment: FAR_BSS                             E:0198      E:01B8       21h
-    Segment: FAR_DATA                            E:0200      E:0201        2h
+    Segment: FAR_DATA                            E:0206      E:0207        2h
 
 
 Module: COMMON\PRINT_PUTCH.C (Library: crtldd.lib) Version: 1:0 01/07/2011 18:56:41
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: t_putch_TEXT                        C:1C42      C:1C57       16h
+    Segment: t_putch_TEXT                        C:1D42      C:1D57       16h
 
 
 Module: COMMON\PRINT_PUTROMSTRING.C (Library: crtldd.lib) Version: 1:0 01/07/2011 18:56:41
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: mstring_TEXT                        C:164B      C:1684       3ah
+    Segment: mstring_TEXT                        C:174B      C:1784       3ah
 
 
 Module: COMMON\PRINT_SEND.C (Library: crtldd.lib) Version: 1:0 01/07/2011 18:56:41
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: nt_send_TEXT                        C:1685      C:1819      195h
+    Segment: nt_send_TEXT                        C:1785      C:1919      195h
 
 
 Module: COMMON\PRINT_SPUTCH.C (Library: crtldd.lib) Version: 1:0 01/07/2011 18:56:41
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: _sputch_TEXT                        C:13EC      C:1406       1bh
+    Segment: _sputch_TEXT                        C:14EC      C:1506       1bh
 
 
 Module: COMMON\SATAN.C (Library: fpldd.lib) Version: 1:0 01/07/2011 19:00:10
@@ -479,21 +480,21 @@ Module: COMMON\SATAN.C (Library: fpldd.lib) Version: 1:0 01/07/2011 19:00:10
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
     Segment: ROM_DATA                            C:00B4      C:00E7       34h
-    Segment: satan_TEXT                          C:1A28      C:1BB0      189h
+    Segment: satan_TEXT                          C:1B28      C:1CB0      189h
 
 
 Module: COMMON\STRLEN.C (Library: crtldd.lib) Version: 1:0 01/07/2011 18:56:43
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: strlen_TEXT                         C:13BF      C:13EB       2dh
+    Segment: strlen_TEXT                         C:14BF      C:14EB       2dh
 
 
 Module: common\stxlr0.asm (Library: chelpd.lib) Version: 1:0 01/07/2011 19:00:35
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: CODE                                C:027B      C:0287        dh
+    Segment: CODE                                C:02E4      C:02F0        dh
 
 
 Module: common\ucase.asm (Library: chelpd.lib) Version: 1:0 01/07/2011 19:00:34
@@ -507,14 +508,14 @@ Module: common\uldiv.asm (Library: chelpd.lib) Version: 1:0 01/07/2011 19:00:34
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: CODE                                C:0226      C:027A       55h
+    Segment: CODE                                C:02F1      C:0345       55h
 
 
 Module: common\ulmulc.asm (Library: chelpd.lib) Version: 1:0 01/07/2011 19:00:34
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: CODE                                C:03BC      C:03F8       3dh
+    Segment: CODE                                C:03D7      C:0413       3dh
 
 
 Module: COMMON\ULTOA.C (Library: crtldd.lib) Version: 1:0 01/07/2011 18:56:45
@@ -522,21 +523,21 @@ Module: COMMON\ULTOA.C (Library: crtldd.lib) Version: 1:0 01/07/2011 18:56:45
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
     Segment: ROM_DATA                            C:0094      C:00B3       20h
-    Segment: ultoa_TEXT                          C:1407      C:164A      244h
+    Segment: ultoa_TEXT                          C:1507      C:174A      244h
 
 
 Module: COMMON\UREVERSE.C (Library: crtldd.lib) Version: 1:0 01/07/2011 18:56:46
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: reverse_TEXT                        C:1851      C:18DF       8fh
+    Segment: reverse_TEXT                        C:1951      C:19DF       8fh
 
 
 Module: COMMON\USTOA.C (Library: crtldd.lib) Version: 1:0 01/07/2011 18:56:47
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: ustoa_TEXT                          C:1398      C:13BE       27h
+    Segment: ustoa_TEXT                          C:1498      C:14BE       27h
 
 
 Module: common\vect04.asm (Library: chelpd.lib) Version: 1:0 01/07/2011 19:00:34
@@ -558,13 +559,6 @@ Module: common\vect08.asm (Library: chelpd.lib) Version: 1:0 01/07/2011 19:00:34
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
     Segment: __VECTORS_008                       C:0008      C:0009        2h
-
-
-Module: common\vect0a.asm (Library: chelpd.lib) Version: 1:0 01/07/2011 19:00:34
-
-    Name                                        Base        Top      Size
-    --------------------------------------- ----------- ----------- ---------
-    Segment: __VECTORS_00A                       C:000A      C:000B        2h
 
 
 Module: common\vect0c.asm (Library: chelpd.lib) Version: 1:0 01/07/2011 19:00:34
@@ -704,7 +698,7 @@ Module: COMMON\XCOEF.C (Library: fpldd.lib) Version: 1:0 01/07/2011 19:00:12
 
     Name                                        Base        Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: xcoef_TEXT                          C:1BB1      C:1C41       91h
+    Segment: xcoef_TEXT                          C:1CB1      C:1D41       91h
 
 
 Module: zsldevinitdummy.asm (Library: zsldevinitdummy.lib) Version: 1:0 01/07/2011 19:25:20
@@ -723,20 +717,20 @@ ___print_fmt                          E:01A5 PRINT_GLOBALS   FAR_BSS
 ___print_leading_char                 E:01B6 PRINT_GLOBALS   FAR_BSS                         
 ___print_len                          E:01B5 PRINT_GLOBALS   FAR_BSS                         
 ___print_out                          E:01B7 PRINT_GLOBALS   FAR_BSS                         
-___print_putch                        C:1C42 PRINT_PUTCH     t_putch_TEXT                    
-___print_putromstring                 C:164B PRINT_PUTROMSTR mstring_TEXT                    
-___print_send                         C:1685 PRINT_SEND      nt_send_TEXT                    
-___print_sputch                       C:13EC PRINT_SPUTCH    _sputch_TEXT                    
-___print_xputch                       E:0200 PRINT_GLOBALS   FAR_DATA                        
-__b_fpadd                             C:0288 fpadd           CODE                            
-__b_fpcmp                             C:01F3 fpcmp           CODE                            
-__b_fpdiv                             C:00E9 fpdiv           CODE                            
-__b_fpltof                            C:03F9 fpltof          CODE                            
-__b_fpmul                             C:032B fpmul           CODE                            
-__b_fppack                            C:0194 fppack          CODE                            
-__b_fpsub                             C:01ED fpsub           CODE                            
-__b_fpupop1                           C:017A fpupop1         CODE                            
-__b_fpupop2                           C:0160 fpupop2         CODE                            
+___print_putch                        C:1D42 PRINT_PUTCH     t_putch_TEXT                    
+___print_putromstring                 C:174B PRINT_PUTROMSTR mstring_TEXT                    
+___print_send                         C:1785 PRINT_SEND      nt_send_TEXT                    
+___print_sputch                       C:14EC PRINT_SPUTCH    _sputch_TEXT                    
+___print_xputch                       E:0206 PRINT_GLOBALS   FAR_DATA                        
+__b_fpadd                             C:00E9 fpadd           CODE                            
+__b_fpcmp                             C:0296 fpcmp           CODE                            
+__b_fpdiv                             C:0219 fpdiv           CODE                            
+__b_fpltof                            C:0414 fpltof          CODE                            
+__b_fpmul                             C:0346 fpmul           CODE                            
+__b_fppack                            C:01C0 fppack          CODE                            
+__b_fpsub                             C:0290 fpsub           CODE                            
+__b_fpupop1                           C:01A6 fpupop1         CODE                            
+__b_fpupop2                           C:018C fpupop2         CODE                            
 __b_framereset                        C:04C2 framer          CODE                            
 __b_frameset                          C:046C frame           CODE                            
 __b_frameset0                         C:046A frame           CODE                            
@@ -744,21 +738,21 @@ __b_frameset00                        C:0468 frame           CODE
 __b_iframereset                       C:0443 iframer         CODE                            
 __b_iframeset00                       C:0460 frame           CODE                            
 __b_ldxlr0                            C:0428 ldxlr0          CODE                            
-__b_ldxlr4                            C:040D ldxlr4          CODE                            
-__b_stxlr0                            C:027B stxlr0          CODE                            
+__b_ldxlr4                            C:02C9 ldxlr4          CODE                            
+__b_stxlr0                            C:02E4 stxlr0          CODE                            
 __b_ucase                             C:0484 ucase           CODE                            
-__b_uldiv                             C:0226 uldiv           CODE                            
-__b_umul4X1                           C:03C8 ulmulc          CODE                            
+__b_uldiv                             C:02F1 uldiv           CODE                            
+__b_umul4X1                           C:03E3 ulmulc          CODE                            
 __close_periphdevice                  C:00E8 zsldevinitdummy CODE                            
-__fpadd                               C:0288 fpadd           CODE                            
-__fpcmp                               C:01F3 fpcmp           CODE                            
-__fpdiv                               C:00E9 fpdiv           CODE                            
-__fpltof                              C:03F9 fpltof          CODE                            
-__fpmul                               C:032B fpmul           CODE                            
-__fppack                              C:0194 fppack          CODE                            
-__fpsub                               C:01ED fpsub           CODE                            
-__fpupop1                             C:017A fpupop1         CODE                            
-__fpupop2                             C:0160 fpupop2         CODE                            
+__fpadd                               C:00E9 fpadd           CODE                            
+__fpcmp                               C:0296 fpcmp           CODE                            
+__fpdiv                               C:0219 fpdiv           CODE                            
+__fpltof                              C:0414 fpltof          CODE                            
+__fpmul                               C:0346 fpmul           CODE                            
+__fppack                              C:01C0 fppack          CODE                            
+__fpsub                               C:0290 fpsub           CODE                            
+__fpupop1                             C:01A6 fpupop1         CODE                            
+__fpupop2                             C:018C fpupop2         CODE                            
 __framereset                          C:04C2 framer          CODE                            
 __frameset                            C:046C frame           CODE                            
 __frameset0                           C:046A frame           CODE                            
@@ -767,17 +761,17 @@ __iframereset                         C:0443 iframer         CODE
 __iframeset00                         C:0460 frame           CODE                            
 __intrp                                 R:20 INTRP           NEAR_DATA                       
 __open_periphdevice                   C:00E8 zsldevinitdummy CODE                            
-__u_ltoa                              C:1407 ULTOA           ultoa_TEXT                      
-__u_reverse                           C:1851 UREVERSE        reverse_TEXT                    
-__u_stoa                              C:1398 USTOA           ustoa_TEXT                      
+__u_ltoa                              C:1507 ULTOA           ultoa_TEXT                      
+__u_reverse                           C:1951 UREVERSE        reverse_TEXT                    
+__u_stoa                              C:1498 USTOA           ustoa_TEXT                      
 __ucase                               C:0484 ucase           CODE                            
-__uldiv                               C:0226 uldiv           CODE                            
+__uldiv                               C:02F1 uldiv           CODE                            
 __user_frequency                    01194000 (User Defined)
 __VECTOR_002                          C:0000 startupl        __VECTORS_002                   
 __VECTOR_004                          C:0004 vect04          __VECTORS_004                   
 __VECTOR_006                          C:0006 vect06          __VECTORS_006                   
 __VECTOR_008                          C:0008 vect08          __VECTORS_008                   
-__VECTOR_00A                          C:000A vect0a          __VECTORS_00A                   
+__VECTOR_00A                          C:0000 I2C             __VECTORS_00A                   
 __VECTOR_00C                          C:000C vect0c          __VECTORS_00C                   
 __VECTOR_00E                          C:0000 UART            __VECTORS_00E                   
 __VECTOR_010                          C:0000 UART            __VECTORS_010                   
@@ -802,9 +796,10 @@ __VECTOR_034                          C:0034 vect34          __VECTORS_034
 __VECTOR_036                          C:0036 vect36          __VECTORS_036                   
 __VECTOR_i2c                          C:0000 I2C             __VECTORS_012                   
 __VECTOR_reset                        C:0000 startupl        __VECTORS_002                   
+__VECTOR_timer1                       C:0000 I2C             __VECTORS_00A                   
 __VECTOR_uart0_rx                     C:0000 UART            __VECTORS_00E                   
 __VECTOR_uart0_tx                     C:0000 UART            __VECTORS_010                   
-_abs                                  C:181A ABS             abs_TEXT                        
+_abs                                  C:191A ABS             abs_TEXT                        
 _acc_x                                E:017F I2C             FAR_BSS                         
 _acc_xh                               E:017A I2C             FAR_BSS                         
 _acc_xl                               E:017B I2C             FAR_BSS                         
@@ -813,19 +808,22 @@ _acc_yh                               E:017C I2C             FAR_BSS
 _acc_yl                               E:017D I2C             FAR_BSS                         
 _accRead                              E:0174 I2C             FAR_BSS                         
 _accXValue                            E:0184 I2C             FAR_BSS                         
+_accXValueF                           C:12A8 I2C             i2c_TEXT                        
 _accYValue                            E:0186 I2C             FAR_BSS                         
+_accYValueF                           C:12B5 I2C             i2c_TEXT                        
 _accZValue                            E:0188 I2C             FAR_BSS                         
-_atan2                                C:18E0 ATAN2           atan2_TEXT                      
-_c_startup                            C:04E4 startupl        startup                         
+_accZValueF                           C:12C2 I2C             i2c_TEXT                        
+_atan2                                C:19E0 ATAN2           atan2_TEXT                      
+_c_startup                            C:04EA startupl        startup                         
 _close_periphdevice                   C:00E8 zsldevinitdummy CODE                            
 _command                              E:01FB I2C             FAR_DATA                        
-_commandF                             C:0CC0 UART            uart_TEXT                       
-_complementary                        C:1174 I2C             i2c_TEXT                        
-_dly                                  C:0546 DELAY           delay_TEXT                      
-_errorMessage                         C:0A9E LCD             lcd_TEXT                        
-_exit                                 C:0544 startupl        startup                         
-_expand_coef                          C:1BB1 XCOEF           xcoef_TEXT                      
-_far_heapbot                        00000210 (User Defined)
+_commandF                             C:0CCA UART            uart_TEXT                       
+_complementary                        C:12FD I2C             i2c_TEXT                        
+_dly                                  C:054C DELAY           delay_TEXT                      
+_errorMessage                         C:0AA8 LCD             lcd_TEXT                        
+_exit                                 C:054A startupl        startup                         
+_expand_coef                          C:1CB1 XCOEF           xcoef_TEXT                      
+_far_heapbot                        00000216 (User Defined)
 _far_heaptop                        00000EFF (User Defined)
 _far_stack                          00000EFF (User Defined)
 _flash_option1                        C:0000 FLASH1          ___flash_option1_segment        
@@ -835,76 +833,79 @@ _gyro_l                               E:0181 I2C             FAR_BSS
 _gyro_val                             E:0182 I2C             FAR_BSS                         
 _gyroRead                             E:016E I2C             FAR_BSS                         
 _gyroXValue                           E:018A I2C             FAR_BSS                         
+_gyroXValueF                          C:12CF I2C             i2c_TEXT                        
 _gyroYValue                           E:018C I2C             FAR_BSS                         
+_gyroYValueF                          C:12DC I2C             i2c_TEXT                        
 _gyroZValue                           E:018E I2C             FAR_BSS                         
-_i2cInit                              C:0FBE I2C             i2c_TEXT                        
-_i2cIsDataReady                       C:137F I2C             i2c_TEXT                        
-_i2cStartRead                         C:1040 I2C             i2c_TEXT                        
-_i2cWrite                             C:0FE9 I2C             i2c_TEXT                        
+_gyroZValueF                          C:12E9 I2C             i2c_TEXT                        
+_i2cInit                              C:0FC8 I2C             i2c_TEXT                        
+_i2cIsDataReady                       C:147F I2C             i2c_TEXT                        
+_i2cStartRead                         C:1074 I2C             i2c_TEXT                        
+_i2cWrite                             C:101D I2C             i2c_TEXT                        
 _inChar                               E:01F9 I2C             FAR_DATA                        
-_init_coms                            C:0C2C UART            uart_TEXT                       
-_init_LCD                             C:079F LCD             lcd_TEXT                        
-_isr_U1_RX                            C:0CD1 UART            uart_TEXT                       
-_isr_U1_TX                            C:0CE5 UART            uart_TEXT                       
-_LCD_clear                            C:0A82 LCD             lcd_TEXT                        
-_LCD_command                          C:0947 LCD             lcd_TEXT                        
-_LCD_data_disp                        C:09A7 LCD             lcd_TEXT                        
-_LCD_data_push                        C:08BF LCD             lcd_TEXT                        
+_init_coms                            C:0C36 UART            uart_TEXT                       
+_init_LCD                             C:07A9 LCD             lcd_TEXT                        
+_isr_U1_RX                            C:0CDB UART            uart_TEXT                       
+_isr_U1_TX                            C:0CEF UART            uart_TEXT                       
+_LCD_clear                            C:0A8C LCD             lcd_TEXT                        
+_LCD_command                          C:0951 LCD             lcd_TEXT                        
+_LCD_data_disp                        C:09B1 LCD             lcd_TEXT                        
+_LCD_data_push                        C:08C9 LCD             lcd_TEXT                        
 _len_farbss                         000000B9 (User Defined)
-_len_fardata                        00000058 (User Defined)
+_len_fardata                        0000005E (User Defined)
 _len_nearbss                        00000000 (User Defined)
 _len_neardata                       00000001 (User Defined)
-_low_far_romdata                    00001C59 (User Defined)
+_low_far_romdata                    00001D59 (User Defined)
 _low_farbss                         00000100 (User Defined)
 _low_fardata                        000001B9 (User Defined)
-_low_near_romdata                   00001C58 (User Defined)
+_low_near_romdata                   00001D58 (User Defined)
 _low_nearbss                        00000000 (User Defined)
 _low_neardata                       00000020 (User Defined)
-_main                                 C:05C1 MAIN            main_TEXT                       
-_mems_read                            C:1075 I2C             i2c_TEXT                        
-_mode                                 C:0712 MAIN            main_TEXT                       
-_motor1Direction                      C:0D8C MOTOR           motor_TEXT                      
-_motor1Speed                          C:0E1C MOTOR           motor_TEXT                      
-_motor2Direction                      C:0DD4 MOTOR           motor_TEXT                      
-_motor2Speed                          C:0E5A MOTOR           motor_TEXT                      
-_motorInit                            C:0CF3 MOTOR           motor_TEXT                      
-_motorsSet                            C:0E98 MOTOR           motor_TEXT                      
+_main                                 C:05C7 MAIN            main_TEXT                       
+_mems_read                            C:10A9 I2C             i2c_TEXT                        
+_mode                                 C:071C MAIN            main_TEXT                       
+_motor1Direction                      C:0D96 MOTOR           motor_TEXT                      
+_motor1Speed                          C:0E26 MOTOR           motor_TEXT                      
+_motor2Direction                      C:0DDE MOTOR           motor_TEXT                      
+_motor2Speed                          C:0E64 MOTOR           motor_TEXT                      
+_motorInit                            C:0CFD MOTOR           motor_TEXT                      
+_motorsSet                            C:0EA2 MOTOR           motor_TEXT                      
 _near_heapbot                       000000EF (User Defined)
 _near_heaptop                       000000FF (User Defined)
 _near_stack                         000000FF (User Defined)
 _open_periphdevice                    C:00E8 zsldevinitdummy CODE                            
-_printi2c                             C:116D I2C             i2c_TEXT                        
+_printi2c                             C:12F6 I2C             i2c_TEXT                        
 _printI2Cq                            E:01FF I2C             FAR_DATA                        
-_printI2CqF                           C:0795 MAIN            main_TEXT                       
-_printMessage                         C:0BA6 LCD             lcd_TEXT                        
+_printI2CqF                           C:079F MAIN            main_TEXT                       
+_printMessage                         C:0BB0 LCD             lcd_TEXT                        
 _READ_NVDS                          00001000 (User Defined)
 _READ_NVDS_GET_STATUS               00001000 (User Defined)
 _RELOAD                               E:01F7 MOTOR           FAR_DATA                        
 _rxFlag                               E:01FC I2C             FAR_DATA                        
-_satan                                C:1A28 SATAN           satan_TEXT                      
-_sdly                                 C:059F DELAY           delay_TEXT                      
-_sendString                           C:0C6B UART            uart_TEXT                       
-_set_LCD_control_bus                  C:0875 LCD             lcd_TEXT                        
-_Si2c_Isr                             C:12A1 I2C             i2c_TEXT                        
-_signon                               C:0A07 LCD             lcd_TEXT                        
+_satan                                C:1B28 SATAN           satan_TEXT                      
+_sdly                                 C:05A5 DELAY           delay_TEXT                      
+_sendString                           C:0C75 UART            uart_TEXT                       
+_set_LCD_control_bus                  C:087F LCD             lcd_TEXT                        
+_Si2c_Isr                             C:13A1 I2C             i2c_TEXT                        
+_signon                               C:0A11 LCD             lcd_TEXT                        
 _speed                                E:01FD I2C             FAR_DATA                        
 _string                               E:0155 I2C             FAR_BSS                         
-_strlen                               C:13BF STRLEN          strlen_TEXT                     
-_successMessage                       C:0B22 LCD             lcd_TEXT                        
-_t1_mem_isr                           C:1389 I2C             i2c_TEXT                        
+_strlen                               C:14BF STRLEN          strlen_TEXT                     
+_successMessage                       C:0B2C LCD             lcd_TEXT                        
+_t1_mem_isr                           C:1489 I2C             i2c_TEXT                        
 _t1Ready                              E:0190 I2C             FAR_BSS                         
 _txFinished                           E:01FA I2C             FAR_DATA                        
 _WRITE_NVDS                         000010B3 (User Defined)
 _WRITE_NVDS_GET_STATUS              000010B3 (User Defined)
 
-178 external symbol(s).
+185 external symbol(s).
 
 SYMBOL CROSS REFERENCE:
 =======================
 Name                              Use         Module
 --------------------------------- ----------- -------------------------
 ___print_buff                     Defined     COMMON\PRINT_GLOBALS.C
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\MAIN.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MAIN.C
                                   Referenced  COMMON\ULTOA.C
                                   Referenced  COMMON\PRINT_SEND.C
 ___print_fmt                      Defined     COMMON\PRINT_GLOBALS.C
@@ -917,26 +918,25 @@ ___print_len                      Defined     COMMON\PRINT_GLOBALS.C
                                   Referenced  COMMON\PRINT_PUTROMSTRING.C
                                   Referenced  COMMON\PRINT_SEND.C
 ___print_out                      Defined     COMMON\PRINT_GLOBALS.C
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\MAIN.C
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\I2C.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MAIN.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
                                   Referenced  COMMON\PRINT_SPUTCH.C
 ___print_putch                    Defined     COMMON\PRINT_PUTCH.C
                                   Referenced  COMMON\PRINT_PUTROMSTRING.C
                                   Referenced  COMMON\PRINT_SEND.C
 ___print_putromstring             Defined     COMMON\PRINT_PUTROMSTRING.C
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\MAIN.C
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\I2C.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MAIN.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
 ___print_send                     Defined     COMMON\PRINT_SEND.C
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\MAIN.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MAIN.C
                                   Referenced  COMMON\ULTOA.C
 ___print_sputch                   Defined     COMMON\PRINT_SPUTCH.C
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\MAIN.C
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\I2C.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MAIN.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
                                   Referenced  COMMON\PRINT_GLOBALS.C
 ___print_xputch                   Defined     COMMON\PRINT_GLOBALS.C
                                   Referenced  COMMON\PRINT_PUTCH.C
 __b_fpadd                         Defined     common\fpadd.asm
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\I2C.C
                                   Referenced  COMMON\ATAN2.C
                                   Referenced  COMMON\SATAN.C
                                   Referenced  COMMON\XCOEF.C
@@ -949,34 +949,34 @@ __b_fpdiv                         Defined     common\fpdiv.asm
                                   Referenced  COMMON\ATAN2.C
                                   Referenced  COMMON\SATAN.C
 __b_fpltof                        Defined     common\fpltof.asm
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\I2C.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
 __b_fpmul                         Defined     common\fpmul.asm
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\I2C.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
                                   Referenced  COMMON\SATAN.C
                                   Referenced  COMMON\XCOEF.C
 __b_fppack                        Defined     common\fppack.asm
-                                  Referenced  common\fpdiv.asm
                                   Referenced  common\fpadd.asm
+                                  Referenced  common\fpdiv.asm
                                   Referenced  common\fpmul.asm
                                   Referenced  common\fpltof.asm
 __b_fpsub                         Defined     common\fpsub.asm
                                   Referenced  COMMON\ATAN2.C
                                   Referenced  COMMON\SATAN.C
 __b_fpupop1                       Defined     common\fpupop1.asm
-                                  Referenced  common\fpdiv.asm
                                   Referenced  common\fpadd.asm
+                                  Referenced  common\fpdiv.asm
                                   Referenced  common\fpmul.asm
 __b_fpupop2                       Defined     common\fpupop2.asm
-                                  Referenced  common\fpdiv.asm
                                   Referenced  common\fpadd.asm
+                                  Referenced  common\fpdiv.asm
                                   Referenced  common\fpmul.asm
 __b_framereset                    Defined     common\framer.asm
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\DELAY.C
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\MAIN.C
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\LCD.C
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\UART.C
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\MOTOR.C
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\I2C.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\DELAY.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MAIN.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\LCD.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\UART.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MOTOR.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
                                   Referenced  COMMON\USTOA.C
                                   Referenced  COMMON\STRLEN.C
                                   Referenced  COMMON\PRINT_SPUTCH.C
@@ -991,11 +991,11 @@ __b_framereset                    Defined     common\framer.asm
                                   Referenced  COMMON\PRINT_PUTCH.C
 __b_frameset                      Defined     common\frame.asm
 __b_frameset0                     Defined     common\frame.asm
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\MAIN.C
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\LCD.C
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\UART.C
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\MOTOR.C
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\I2C.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MAIN.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\LCD.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\UART.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MOTOR.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
                                   Referenced  COMMON\ULTOA.C
                                   Referenced  COMMON\PRINT_PUTROMSTRING.C
                                   Referenced  COMMON\PRINT_SEND.C
@@ -1003,12 +1003,12 @@ __b_frameset0                     Defined     common\frame.asm
                                   Referenced  COMMON\SATAN.C
                                   Referenced  COMMON\XCOEF.C
 __b_frameset00                    Defined     common\frame.asm
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\DELAY.C
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\MAIN.C
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\LCD.C
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\UART.C
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\MOTOR.C
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\I2C.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\DELAY.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MAIN.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\LCD.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\UART.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MOTOR.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
                                   Referenced  COMMON\USTOA.C
                                   Referenced  COMMON\STRLEN.C
                                   Referenced  COMMON\PRINT_SPUTCH.C
@@ -1017,31 +1017,29 @@ __b_frameset00                    Defined     common\frame.asm
                                   Referenced  COMMON\SATAN.C
                                   Referenced  COMMON\PRINT_PUTCH.C
 __b_iframereset                   Defined     common\iframer.asm
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\UART.C
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\I2C.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\UART.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
 __b_iframeset00                   Defined     common\frame.asm
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\UART.C
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\I2C.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\UART.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
 __b_ldxlr0                        Defined     common\ldxlr0.asm
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\I2C.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
                                   Referenced  COMMON\ULTOA.C
                                   Referenced  COMMON\ATAN2.C
                                   Referenced  COMMON\SATAN.C
                                   Referenced  COMMON\XCOEF.C
 __b_ldxlr4                        Defined     common\ldxlr4.asm
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\I2C.C
                                   Referenced  COMMON\ATAN2.C
                                   Referenced  COMMON\SATAN.C
                                   Referenced  COMMON\XCOEF.C
 __b_stxlr0                        Defined     common\stxlr0.asm
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\I2C.C
                                   Referenced  COMMON\ULTOA.C
                                   Referenced  COMMON\SATAN.C
                                   Referenced  COMMON\XCOEF.C
 __b_ucase                         Defined     common\ucase.asm
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\LCD.C
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\MOTOR.C
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\I2C.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\LCD.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MOTOR.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
                                   Referenced  COMMON\ULTOA.C
 __b_uldiv                         Defined     common\uldiv.asm
                                   Referenced  COMMON\ULTOA.C
@@ -1074,8 +1072,8 @@ __u_ltoa                          Defined     COMMON\ULTOA.C
 __u_reverse                       Defined     COMMON\UREVERSE.C
                                   Referenced  COMMON\ULTOA.C
 __u_stoa                          Defined     COMMON\USTOA.C
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\MAIN.C
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\I2C.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MAIN.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
 __ucase                           Defined     common\ucase.asm
 __uldiv                           Defined     common\uldiv.asm
 __user_frequency                  Defined     LINKER
@@ -1086,15 +1084,15 @@ __VECTOR_006                      Defined     common\vect06.asm
                                   Referenced  ..\..\src\boot\common\startupl.asm
 __VECTOR_008                      Defined     common\vect08.asm
                                   Referenced  ..\..\src\boot\common\startupl.asm
-__VECTOR_00A                      Defined     common\vect0a.asm
+__VECTOR_00A                      Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
                                   Referenced  ..\..\src\boot\common\startupl.asm
 __VECTOR_00C                      Defined     common\vect0c.asm
                                   Referenced  ..\..\src\boot\common\startupl.asm
-__VECTOR_00E                      Defined     ..\..\..\THIRDY~1\THIRDY~1\UART.C
+__VECTOR_00E                      Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\UART.C
                                   Referenced  ..\..\src\boot\common\startupl.asm
-__VECTOR_010                      Defined     ..\..\..\THIRDY~1\THIRDY~1\UART.C
+__VECTOR_010                      Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\UART.C
                                   Referenced  ..\..\src\boot\common\startupl.asm
-__VECTOR_012                      Defined     ..\..\..\THIRDY~1\THIRDY~1\I2C.C
+__VECTOR_012                      Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
                                   Referenced  ..\..\src\boot\common\startupl.asm
 __VECTOR_014                      Defined     common\vect14.asm
                                   Referenced  ..\..\src\boot\common\startupl.asm
@@ -1132,33 +1130,37 @@ __VECTOR_034                      Defined     common\vect34.asm
                                   Referenced  ..\..\src\boot\common\startupl.asm
 __VECTOR_036                      Defined     common\vect36.asm
                                   Referenced  ..\..\src\boot\common\startupl.asm
-__VECTOR_i2c                      Defined     ..\..\..\THIRDY~1\THIRDY~1\I2C.C
+__VECTOR_i2c                      Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
 __VECTOR_reset                    Defined     ..\..\src\boot\common\startupl.asm
-__VECTOR_uart0_rx                 Defined     ..\..\..\THIRDY~1\THIRDY~1\UART.C
-__VECTOR_uart0_tx                 Defined     ..\..\..\THIRDY~1\THIRDY~1\UART.C
+__VECTOR_timer1                   Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
+__VECTOR_uart0_rx                 Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\UART.C
+__VECTOR_uart0_tx                 Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\UART.C
 _abs                              Defined     COMMON\ABS.C
                                   Referenced  COMMON\PRINT_SEND.C
-_acc_x                            Defined     ..\..\..\THIRDY~1\THIRDY~1\I2C.C
-_acc_xh                           Defined     ..\..\..\THIRDY~1\THIRDY~1\I2C.C
-_acc_xl                           Defined     ..\..\..\THIRDY~1\THIRDY~1\I2C.C
-_acc_y                            Defined     ..\..\..\THIRDY~1\THIRDY~1\I2C.C
-_acc_yh                           Defined     ..\..\..\THIRDY~1\THIRDY~1\I2C.C
-_acc_yl                           Defined     ..\..\..\THIRDY~1\THIRDY~1\I2C.C
-_accRead                          Defined     ..\..\..\THIRDY~1\THIRDY~1\I2C.C
-_accXValue                        Defined     ..\..\..\THIRDY~1\THIRDY~1\I2C.C
-_accYValue                        Defined     ..\..\..\THIRDY~1\THIRDY~1\I2C.C
-_accZValue                        Defined     ..\..\..\THIRDY~1\THIRDY~1\I2C.C
+_acc_x                            Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
+_acc_xh                           Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
+_acc_xl                           Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
+_acc_y                            Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
+_acc_yh                           Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
+_acc_yl                           Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
+_accRead                          Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
+_accXValue                        Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
+_accXValueF                       Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
+_accYValue                        Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
+_accYValueF                       Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
+_accZValue                        Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
+_accZValueF                       Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
 _atan2                            Defined     COMMON\ATAN2.C
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\I2C.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
 _c_startup                        Defined     ..\..\src\boot\common\startupl.asm
 _close_periphdevice               Defined     zsldevinitdummy.asm
-_command                          Defined     ..\..\..\THIRDY~1\THIRDY~1\I2C.C
-_commandF                         Defined     ..\..\..\THIRDY~1\THIRDY~1\UART.C
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\MAIN.C
-_complementary                    Defined     ..\..\..\THIRDY~1\THIRDY~1\I2C.C
-_dly                              Defined     ..\..\..\THIRDY~1\THIRDY~1\DELAY.C
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\LCD.C
-_errorMessage                     Defined     ..\..\..\THIRDY~1\THIRDY~1\LCD.C
+_command                          Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
+_commandF                         Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\UART.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MAIN.C
+_complementary                    Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
+_dly                              Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\DELAY.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\LCD.C
+_errorMessage                     Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\LCD.C
 _exit                             Defined     ..\..\src\boot\common\startupl.asm
 _expand_coef                      Defined     COMMON\XCOEF.C
                                   Referenced  COMMON\SATAN.C
@@ -1170,29 +1172,32 @@ _flash_option1                    Defined     COMMON\FLASH1.C
                                   Referenced  ..\..\src\boot\common\startupl.asm
 _flash_option2                    Defined     COMMON\FLASH2.C
                                   Referenced  ..\..\src\boot\common\startupl.asm
-_gyro_h                           Defined     ..\..\..\THIRDY~1\THIRDY~1\I2C.C
-_gyro_l                           Defined     ..\..\..\THIRDY~1\THIRDY~1\I2C.C
-_gyro_val                         Defined     ..\..\..\THIRDY~1\THIRDY~1\I2C.C
-_gyroRead                         Defined     ..\..\..\THIRDY~1\THIRDY~1\I2C.C
-_gyroXValue                       Defined     ..\..\..\THIRDY~1\THIRDY~1\I2C.C
-_gyroYValue                       Defined     ..\..\..\THIRDY~1\THIRDY~1\I2C.C
-_gyroZValue                       Defined     ..\..\..\THIRDY~1\THIRDY~1\I2C.C
-_i2cInit                          Defined     ..\..\..\THIRDY~1\THIRDY~1\I2C.C
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\MAIN.C
-_i2cIsDataReady                   Defined     ..\..\..\THIRDY~1\THIRDY~1\I2C.C
-_i2cStartRead                     Defined     ..\..\..\THIRDY~1\THIRDY~1\I2C.C
-_i2cWrite                         Defined     ..\..\..\THIRDY~1\THIRDY~1\I2C.C
-_inChar                           Defined     ..\..\..\THIRDY~1\THIRDY~1\I2C.C
-_init_coms                        Defined     ..\..\..\THIRDY~1\THIRDY~1\UART.C
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\MAIN.C
-_init_LCD                         Defined     ..\..\..\THIRDY~1\THIRDY~1\LCD.C
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\MAIN.C
-_isr_U1_RX                        Defined     ..\..\..\THIRDY~1\THIRDY~1\UART.C
-_isr_U1_TX                        Defined     ..\..\..\THIRDY~1\THIRDY~1\UART.C
-_LCD_clear                        Defined     ..\..\..\THIRDY~1\THIRDY~1\LCD.C
-_LCD_command                      Defined     ..\..\..\THIRDY~1\THIRDY~1\LCD.C
-_LCD_data_disp                    Defined     ..\..\..\THIRDY~1\THIRDY~1\LCD.C
-_LCD_data_push                    Defined     ..\..\..\THIRDY~1\THIRDY~1\LCD.C
+_gyro_h                           Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
+_gyro_l                           Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
+_gyro_val                         Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
+_gyroRead                         Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
+_gyroXValue                       Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
+_gyroXValueF                      Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
+_gyroYValue                       Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
+_gyroYValueF                      Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
+_gyroZValue                       Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
+_gyroZValueF                      Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
+_i2cInit                          Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MAIN.C
+_i2cIsDataReady                   Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
+_i2cStartRead                     Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
+_i2cWrite                         Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
+_inChar                           Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
+_init_coms                        Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\UART.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MAIN.C
+_init_LCD                         Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\LCD.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MAIN.C
+_isr_U1_RX                        Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\UART.C
+_isr_U1_TX                        Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\UART.C
+_LCD_clear                        Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\LCD.C
+_LCD_command                      Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\LCD.C
+_LCD_data_disp                    Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\LCD.C
+_LCD_data_push                    Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\LCD.C
 _len_farbss                       Defined     LINKER
                                   Referenced  ..\..\src\boot\common\startupl.asm
 _len_fardata                      Defined     LINKER
@@ -1213,95 +1218,107 @@ _low_nearbss                      Defined     LINKER
                                   Referenced  ..\..\src\boot\common\startupl.asm
 _low_neardata                     Defined     LINKER
                                   Referenced  ..\..\src\boot\common\startupl.asm
-_main                             Defined     ..\..\..\THIRDY~1\THIRDY~1\MAIN.C
+_main                             Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MAIN.C
                                   Referenced  ..\..\src\boot\common\startupl.asm
-_mems_read                        Defined     ..\..\..\THIRDY~1\THIRDY~1\I2C.C
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\MAIN.C
-_mode                             Defined     ..\..\..\THIRDY~1\THIRDY~1\MAIN.C
-_motor1Direction                  Defined     ..\..\..\THIRDY~1\THIRDY~1\MOTOR.C
-_motor1Speed                      Defined     ..\..\..\THIRDY~1\THIRDY~1\MOTOR.C
-_motor2Direction                  Defined     ..\..\..\THIRDY~1\THIRDY~1\MOTOR.C
-_motor2Speed                      Defined     ..\..\..\THIRDY~1\THIRDY~1\MOTOR.C
-_motorInit                        Defined     ..\..\..\THIRDY~1\THIRDY~1\MOTOR.C
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\MAIN.C
-_motorsSet                        Defined     ..\..\..\THIRDY~1\THIRDY~1\MOTOR.C
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\MAIN.C
+_mems_read                        Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MAIN.C
+_mode                             Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MAIN.C
+_motor1Direction                  Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MOTOR.C
+_motor1Speed                      Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MOTOR.C
+_motor2Direction                  Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MOTOR.C
+_motor2Speed                      Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MOTOR.C
+_motorInit                        Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MOTOR.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MAIN.C
+_motorsSet                        Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MOTOR.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MAIN.C
 _near_heapbot                     Defined     LINKER
 _near_heaptop                     Defined     LINKER
 _near_stack                       Defined     LINKER
 _open_periphdevice                Defined     zsldevinitdummy.asm
-_printi2c                         Defined     ..\..\..\THIRDY~1\THIRDY~1\I2C.C
-_printI2Cq                        Defined     ..\..\..\THIRDY~1\THIRDY~1\I2C.C
-_printI2CqF                       Defined     ..\..\..\THIRDY~1\THIRDY~1\MAIN.C
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\I2C.C
-_printMessage                     Defined     ..\..\..\THIRDY~1\THIRDY~1\LCD.C
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\MAIN.C
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\I2C.C
+_printi2c                         Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
+_printI2Cq                        Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
+_printI2CqF                       Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MAIN.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
+_printMessage                     Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\LCD.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MAIN.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
 _READ_NVDS                        Defined     LINKER
 _READ_NVDS_GET_STATUS             Defined     LINKER
-_RELOAD                           Defined     ..\..\..\THIRDY~1\THIRDY~1\MOTOR.C
-_rxFlag                           Defined     ..\..\..\THIRDY~1\THIRDY~1\I2C.C
+_RELOAD                           Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MOTOR.C
+_rxFlag                           Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
 _satan                            Defined     COMMON\SATAN.C
                                   Referenced  COMMON\ATAN2.C
-_sdly                             Defined     ..\..\..\THIRDY~1\THIRDY~1\DELAY.C
-_sendString                       Defined     ..\..\..\THIRDY~1\THIRDY~1\UART.C
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\MAIN.C
-_set_LCD_control_bus              Defined     ..\..\..\THIRDY~1\THIRDY~1\LCD.C
-_Si2c_Isr                         Defined     ..\..\..\THIRDY~1\THIRDY~1\I2C.C
-_signon                           Defined     ..\..\..\THIRDY~1\THIRDY~1\LCD.C
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\MAIN.C
-_speed                            Defined     ..\..\..\THIRDY~1\THIRDY~1\I2C.C
-_string                           Defined     ..\..\..\THIRDY~1\THIRDY~1\I2C.C
+_sdly                             Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\DELAY.C
+_sendString                       Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\UART.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MAIN.C
+_set_LCD_control_bus              Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\LCD.C
+_Si2c_Isr                         Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
+_signon                           Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\LCD.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\MAIN.C
+_speed                            Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
+_string                           Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
 _strlen                           Defined     COMMON\STRLEN.C
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\LCD.C
-                                  Referenced  ..\..\..\THIRDY~1\THIRDY~1\UART.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\LCD.C
+                                  Referenced  ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\UART.C
                                   Referenced  COMMON\PRINT_SEND.C
                                   Referenced  COMMON\UREVERSE.C
-_successMessage                   Defined     ..\..\..\THIRDY~1\THIRDY~1\LCD.C
-_t1_mem_isr                       Defined     ..\..\..\THIRDY~1\THIRDY~1\I2C.C
-_t1Ready                          Defined     ..\..\..\THIRDY~1\THIRDY~1\I2C.C
-_txFinished                       Defined     ..\..\..\THIRDY~1\THIRDY~1\I2C.C
+_successMessage                   Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\LCD.C
+_t1_mem_isr                       Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
+_t1Ready                          Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
+_txFinished                       Defined     ..\..\..\..\DOCUME~1\GITHUB\THIRDY~1\I2C.C
 _WRITE_NVDS                       Defined     LINKER
 _WRITE_NVDS_GET_STATUS            Defined     LINKER
 
 
 START ADDRESS:
 ==============
-(C:04E4) set in module ..\..\src\boot\common\startupl.asm.
+(C:04EA) set in module ..\..\src\boot\common\startupl.asm.
 
 CALL GRAPH
 ==========
 Depth Address    CF Function                       Calls Function
 ----- ---------- -- ------------------------------ --------------------------------
-    1 R:20        0 _n_Si2c_Isr                    ->
-    2 R:20        0 _n_printi2c                    ->
-    3 R:20        0 _n_t1_mem_isr                  ->_n_mems_read
-    4 E:0100      0 _f_t1_mem_isr                  ->_f_mems_read
-    5 E:0100      0 _f_Si2c_Isr                    ->
-    6 E:0100      0 _f_printi2c                    ->
-    7 R:20        0 _n_complementary               ->_n_atan2
-    8 E:0100      0 _f_complementary               ->_f_atan2
-    9 E:0100      0 _f_isr_U1_RX                   ->
-   10 R:20        0 _n_isr_U1_RX                   ->
-   11 E:0100      0 _f_isr_U1_TX                   ->
-   12 R:20        0 _n_isr_U1_TX                   ->
-   13 E:0100      0 _f_successMessage              ->_f_LCD_clear
+    1 E:0100      0 _f_gyroXValueF                 ->
+    2 R:20        0 _n_Si2c_Isr                    ->
+    3 R:20        0 _n_printi2c                    ->
+    4 R:20        0 _n_accYValueF                  ->
+    5 E:0100      0 _f_accZValueF                  ->
+    6 E:0100      0 _f_accXValueF                  ->
+    7 R:20        0 _n_gyroYValueF                 ->
+    8 R:20        0 _n_t1_mem_isr                  ->_n_mems_read
+    9 E:0100      0 _f_gyroYValueF                 ->
+   10 R:20        0 _n_accZValueF                  ->
+   11 R:20        0 _n_accXValueF                  ->
+   12 E:0100      0 _f_t1_mem_isr                  ->_f_mems_read
+   13 E:0100      0 _f_Si2c_Isr                    ->
+   14 E:0100      0 _f_printi2c                    ->
+   15 E:0100      0 _f_accYValueF                  ->
+   16 R:20        0 _n_complementary               ->_n_atan2
+   17 E:0100      0 _f_complementary               ->_f_atan2
+   18 R:20        0 _n_gyroZValueF                 ->
+   19 R:20        0 _n_gyroXValueF                 ->
+   20 E:0100      0 _f_gyroZValueF                 ->
+   21 E:0100      0 _f_isr_U1_RX                   ->
+   22 R:20        0 _n_isr_U1_RX                   ->
+   23 E:0100      0 _f_isr_U1_TX                   ->
+   24 R:20        0 _n_isr_U1_TX                   ->
+   25 E:0100      0 _f_successMessage              ->_f_LCD_clear
                                                    ->_f_strlen
                                                    ->_f_LCD_data_disp
                                                    ->_f_dly
-   14 E:0100      0 _f_errorMessage                ->_f_LCD_clear
+   26 E:0100      0 _f_errorMessage                ->_f_LCD_clear
                                                    ->_f_strlen
                                                    ->_f_LCD_data_disp
                                                    ->_f_dly
-   15 R:20        0 _n_errorMessage                ->_n_LCD_clear
+   27 R:20        0 _n_errorMessage                ->_n_LCD_clear
                                                    ->_n_strlen
                                                    ->_n_LCD_data_disp
                                                    ->_n_dly
-   16 R:20        0 _n_successMessage              ->_n_LCD_clear
+   28 R:20        0 _n_successMessage              ->_n_LCD_clear
                                                    ->_n_strlen
                                                    ->_n_LCD_data_disp
                                                    ->_n_dly
-   17 R:20        0 _n_main                        ->_n_i2cInit
+   29 R:20        0 _n_main                        ->_n_i2cInit
                                                    ->_n_init_LCD
                                                    ->_n_signon
                                                    ->_n_init_coms
@@ -1313,7 +1330,7 @@ Depth Address    CF Function                       Calls Function
                                                    ->_n___print_sputch
                                                    ->_n_motorsSet
                                                    ->_n_mode
-   18 E:0100      0 _f_main                        ->_f_i2cInit
+   30 E:0100      0 _f_main                        ->_f_i2cInit
                                                    ->_f_init_LCD
                                                    ->_f_signon
                                                    ->_f_init_coms
@@ -1325,59 +1342,59 @@ Depth Address    CF Function                       Calls Function
                                                    ->_f___print_sputch
                                                    ->_f_motorsSet
                                                    ->_f_mode
-   19 R:20        0 _n_sdly                        ->
-   20 E:0100      0 _f_sdly                        ->
-   21 E:0100      1 _f_atan2                       ->_f_satan
-   21 R:20        1 _n_atan2                       ->_n_satan
-   21 E:0100      1 _f_i2cInit                     ->
-   21 R:20        1 _n_i2cInit                     ->
-   21 E:0100      1 _f_motorsSet                   ->_f_motor1Direction
+   31 R:20        0 _n_sdly                        ->
+   32 E:0100      0 _f_sdly                        ->
+   33 E:0100      1 _f_atan2                       ->_f_satan
+   33 R:20        1 _n_atan2                       ->_n_satan
+   33 E:0100      1 _f_i2cInit                     ->
+   33 R:20        1 _n_i2cInit                     ->
+   33 E:0100      1 _f_motorsSet                   ->_f_motor1Direction
                                                    ->_f_motor2Direction
                                                    ->_f_motor2Speed
                                                    ->_f_motor1Speed
-   21 R:20        1 _n_motorInit                   ->
-   21 E:0100      1 _f_motorInit                   ->
-   21 R:20        1 _n_motorsSet                   ->_n_motor1Direction
+   33 R:20        1 _n_motorInit                   ->
+   33 E:0100      1 _f_motorInit                   ->
+   33 R:20        1 _n_motorsSet                   ->_n_motor1Direction
                                                    ->_n_motor2Direction
                                                    ->_n_motor2Speed
                                                    ->_n_motor1Speed
-   21 R:20        1 _n_commandF                    ->
-   21 R:20        1 _n_init_coms                   ->
-   21 E:0100      1 _f_commandF                    ->
-   21 E:0100      1 _f_sendString                  ->_f_strlen
-   21 E:0100      1 _f_init_coms                   ->
-   21 R:20        1 _n_sendString                  ->_n_strlen
-   21 E:0100      1 _f_signon                      ->_f_strlen
+   33 R:20        1 _n_commandF                    ->
+   33 R:20        1 _n_init_coms                   ->
+   33 E:0100      1 _f_commandF                    ->
+   33 E:0100      1 _f_sendString                  ->_f_strlen
+   33 E:0100      1 _f_init_coms                   ->
+   33 R:20        1 _n_sendString                  ->_n_strlen
+   33 E:0100      1 _f_signon                      ->_f_strlen
                                                    ->_f_LCD_data_disp
                                                    ->_f_dly
-   21 E:0100      1 _f_init_LCD                    ->_f_dly
+   33 E:0100      1 _f_init_LCD                    ->_f_dly
                                                    ->_f_LCD_command
                                                    ->_f_LCD_clear
-   21 R:20        1 _n_init_LCD                    ->_n_dly
+   33 R:20        1 _n_init_LCD                    ->_n_dly
                                                    ->_n_LCD_command
                                                    ->_n_LCD_clear
-   21 R:20        1 _n_signon                      ->_n_strlen
+   33 R:20        1 _n_signon                      ->_n_strlen
                                                    ->_n_LCD_data_disp
                                                    ->_n_dly
-   21 R:20        1 _n_mode                        ->_n__u_stoa
+   33 R:20        1 _n_mode                        ->_n__u_stoa
                                                    ->_n___print_sputch
                                                    ->_n_printMessage
                                                    ->_n_mems_read
-   21 E:0100      1 _f_mode                        ->_f__u_stoa
+   33 E:0100      1 _f_mode                        ->_f__u_stoa
                                                    ->_f___print_sputch
                                                    ->_f_printMessage
                                                    ->_f_mems_read
-   22 E:0100      1 _f_motor2Direction             ->
-   22 E:0100      1 _f_motor1Direction             ->
-   22 R:20        1 _n_satan                       ->_n_xatan
-   22 E:0100      1 _f_satan                       ->_f_xatan
-   22 R:20        1 _n_motor1Speed                 ->
-   22 R:20        1 _n_motor2Speed                 ->
-   22 E:0100      1 _f_motor2Speed                 ->
-   22 E:0100      1 _f_motor1Speed                 ->
-   22 R:20        1 _n_motor2Direction             ->
-   22 R:20        1 _n_motor1Direction             ->
-   22 R:20        2 _n_mems_read                   ->_n_i2cWrite
+   34 E:0100      1 _f_motor2Direction             ->
+   34 E:0100      1 _f_motor1Direction             ->
+   34 R:20        1 _n_satan                       ->_n_xatan
+   34 E:0100      1 _f_satan                       ->_f_xatan
+   34 R:20        1 _n_motor1Speed                 ->
+   34 R:20        1 _n_motor2Speed                 ->
+   34 E:0100      1 _f_motor2Speed                 ->
+   34 E:0100      1 _f_motor1Speed                 ->
+   34 R:20        1 _n_motor2Direction             ->
+   34 R:20        1 _n_motor1Direction             ->
+   34 R:20        2 _n_mems_read                   ->_n_i2cWrite
                                                    ->_n_i2cStartRead
                                                    ->_n_i2cIsDataReady
                                                    ->_n_printI2CqF
@@ -1385,7 +1402,7 @@ Depth Address    CF Function                       Calls Function
                                                    ->_n__u_stoa
                                                    ->_n___print_sputch
                                                    ->_n_printMessage
-   22 E:0100      2 _f_mems_read                   ->_f_i2cWrite
+   34 E:0100      2 _f_mems_read                   ->_f_i2cWrite
                                                    ->_f_i2cStartRead
                                                    ->_f_i2cIsDataReady
                                                    ->_f_printI2CqF
@@ -1393,77 +1410,77 @@ Depth Address    CF Function                       Calls Function
                                                    ->_f__u_stoa
                                                    ->_f___print_sputch
                                                    ->_f_printMessage
-   23 R:20        1 _n_xatan                       ->_n_expand_coef
-   23 E:0100      1 _f_xatan                       ->_f_expand_coef
-   23 E:0100      1 _f_i2cIsDataReady              ->
-   23 R:20        1 _n_i2cStartRead                ->
-   23 R:20        1 _n_i2cWrite                    ->
-   23 E:0100      1 _f_i2cWrite                    ->
-   23 R:20        1 _n_i2cIsDataReady              ->
-   23 E:0100      1 _f_i2cStartRead                ->
-   23 R:20        1 _n_printI2CqF                  ->
-   23 E:0100      1 _f_printI2CqF                  ->
-   23 E:0100      2 _f_printMessage                ->_f_LCD_clear
+   35 R:20        1 _n_xatan                       ->_n_expand_coef
+   35 E:0100      1 _f_xatan                       ->_f_expand_coef
+   35 E:0100      1 _f_i2cIsDataReady              ->
+   35 R:20        1 _n_i2cStartRead                ->
+   35 R:20        1 _n_i2cWrite                    ->
+   35 E:0100      1 _f_i2cWrite                    ->
+   35 R:20        1 _n_i2cIsDataReady              ->
+   35 E:0100      1 _f_i2cStartRead                ->
+   35 R:20        1 _n_printI2CqF                  ->
+   35 E:0100      1 _f_printI2CqF                  ->
+   35 E:0100      2 _f_printMessage                ->_f_LCD_clear
                                                    ->_f_strlen
                                                    ->_f_LCD_data_disp
                                                    ->_f_dly
-   23 R:20        2 _n_printMessage                ->_n_LCD_clear
+   35 R:20        2 _n_printMessage                ->_n_LCD_clear
                                                    ->_n_strlen
                                                    ->_n_LCD_data_disp
                                                    ->_n_dly
-   23 E:0100      2 _f___print_putromstring        ->_f___print_putch
-   23 R:20        2 _n___print_putromstring        ->_n___print_putch
-   23 E:0100      2 _f__u_stoa                     ->_f__u_ltoa
-   23 R:20        2 _n__u_stoa                     ->_n__u_ltoa
-   23 R:20        3 _n___print_sputch              ->
-   23 E:0100      3 _f___print_sputch              ->
-   24 R:20        1 _n_expand_coef                 ->
-   24 E:0100      1 _f_expand_coef                 ->
-   24 E:0100      1 _f__u_ltoa                     ->_f__u_reverse
+   35 E:0100      2 _f___print_putromstring        ->_f___print_putch
+   35 R:20        2 _n___print_putromstring        ->_n___print_putch
+   35 E:0100      2 _f__u_stoa                     ->_f__u_ltoa
+   35 R:20        2 _n__u_stoa                     ->_n__u_ltoa
+   35 R:20        3 _n___print_sputch              ->
+   35 E:0100      3 _f___print_sputch              ->
+   36 R:20        1 _n_expand_coef                 ->
+   36 E:0100      1 _f_expand_coef                 ->
+   36 E:0100      1 _f__u_ltoa                     ->_f__u_reverse
                                                    ->_f___print_send
-   24 R:20        1 _n__u_ltoa                     ->_n__u_reverse
+   36 R:20        1 _n__u_ltoa                     ->_n__u_reverse
                                                    ->_n___print_send
-   24 R:20        4 _n_LCD_clear                   ->_n_LCD_command
+   36 R:20        4 _n_LCD_clear                   ->_n_LCD_command
                                                    ->_n_dly
-   24 E:0100      4 _f_LCD_clear                   ->_f_LCD_command
+   36 E:0100      4 _f_LCD_clear                   ->_f_LCD_command
                                                    ->_f_dly
-   24 R:20        4 _n_LCD_data_disp               ->_n_set_LCD_control_bus
-                                                   ->_n_dly
-                                                   ->_n_LCD_data_push
-   24 E:0100      4 _f_LCD_data_disp               ->_f_set_LCD_control_bus
-                                                   ->_f_dly
-                                                   ->_f_LCD_data_push
-   25 R:20        1 _n__u_reverse                  ->_n_strlen
-   25 E:0100      1 _f__u_reverse                  ->_f_strlen
-   25 E:0100      2 _f_LCD_command                 ->_f_set_LCD_control_bus
-                                                   ->_f_dly
-                                                   ->_f_LCD_data_push
-   25 R:20        2 _n_LCD_command                 ->_n_set_LCD_control_bus
+   36 R:20        4 _n_LCD_data_disp               ->_n_set_LCD_control_bus
                                                    ->_n_dly
                                                    ->_n_LCD_data_push
-   25 E:0100      2 _f___print_send                ->_f___print_putch
+   36 E:0100      4 _f_LCD_data_disp               ->_f_set_LCD_control_bus
+                                                   ->_f_dly
+                                                   ->_f_LCD_data_push
+   37 R:20        1 _n__u_reverse                  ->_n_strlen
+   37 E:0100      1 _f__u_reverse                  ->_f_strlen
+   37 E:0100      2 _f_LCD_command                 ->_f_set_LCD_control_bus
+                                                   ->_f_dly
+                                                   ->_f_LCD_data_push
+   37 R:20        2 _n_LCD_command                 ->_n_set_LCD_control_bus
+                                                   ->_n_dly
+                                                   ->_n_LCD_data_push
+   37 E:0100      2 _f___print_send                ->_f___print_putch
                                                    ->_f_abs
                                                    ->_f_strlen
-   25 R:20        2 _n___print_send                ->_n___print_putch
+   37 R:20        2 _n___print_send                ->_n___print_putch
                                                    ->_n_abs
                                                    ->_n_strlen
-   26 R:20        1 _n_abs                         ->
-   26 E:0100      1 _f_abs                         ->
-   26 E:0100      2 _f_LCD_data_push               ->
-   26 R:20        2 _n_set_LCD_control_bus         ->
-   26 E:0100      2 _f_set_LCD_control_bus         ->
-   26 R:20        2 _n_LCD_data_push               ->
-   26 E:0100      2 _f___print_putch               ->
-   26 R:20        2 _n___print_putch               ->
-   26 R:20        7 _n_strlen                      ->
-   26 E:0100      7 _f_strlen                      ->
-   26 E:0100      8 _f_dly                         ->
-   26 R:20        8 _n_dly                         ->
+   38 R:20        1 _n_abs                         ->
+   38 E:0100      1 _f_abs                         ->
+   38 E:0100      2 _f_LCD_data_push               ->
+   38 R:20        2 _n_set_LCD_control_bus         ->
+   38 E:0100      2 _f_set_LCD_control_bus         ->
+   38 R:20        2 _n_LCD_data_push               ->
+   38 E:0100      2 _f___print_putch               ->
+   38 R:20        2 _n___print_putch               ->
+   38 R:20        7 _n_strlen                      ->
+   38 E:0100      7 _f_strlen                      ->
+   38 E:0100      8 _f_dly                         ->
+   38 R:20        8 _n_dly                         ->
 
 OUTPUT CHECKSUM
 ===============
-selfbalancingrobot.hex 0F63
-selfbalancingrobot.lod 0F63
+selfbalancingrobot.hex 784A
+selfbalancingrobot.lod 784A
 
 
 

@@ -283,17 +283,12 @@
 <watch-element expression="accXValue" />
 <watch-element expression="gyroXValue" />
 <watch-element expression="accZValue" />
+<watch-element expression="accXValueOld" />
+<watch-element expression="i" />
 </watch-elements>
 
 <!-- breakpoint information -->
 <breakpoints>
-<breakpoint temporary="false" enabled="true" >
-<line-number>255</line-number>
-<pathname>C:\Users\Jordan\Documents\GitHub\thirdyearproject\LCD.C</pathname>
-<address>0</address>
-<command></command>
-<preserve-type>0</preserve-type>
-</breakpoint>
 </breakpoints>
 
 </project>

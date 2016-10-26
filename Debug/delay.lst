@@ -1,4 +1,4 @@
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     00:18:18     page:   1
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:55:17     page:   1
 
 
 PC     Object              I  Line    Source 
@@ -7,7 +7,7 @@ PC     Object              I  Line    Source
                            A     3    ; -nooptlink -regvar -reduceopt -debug -norevaa
                            A     4    ; -alias 
                            A     5    	DEFINE delay_TEXT,SPACE=ROM
-                           A     6    	FILE	"..\..\..\THIRDY~1\THIRDY~1\DELAY.C
+                           A     6    	FILE	"..\..\..\..\DOCUME~1\GITHUB\THIRDY
                            A     7    .debug "C"
                            A     8    	SEGMENT ROM_DATA
                            A     9    
@@ -44,23 +44,23 @@ PC     Object              I  Line    Source
                            A    40    ;    2	
                            A    41    ;    3	//Delay function (appoximate millisecon
                            A    42    ;    4	void dly(unsigned int dly_time){
-                           A    43    .define "j"
+                           A    43    .define "U‹ìjÿh0/J"
                            A    44    .class 4
                            A    45    .reg 17
                            A    46    .type 13
                            A    47    .type 0
                            A    48    .endef
-                           A    49    .define "k"
+                           A    49    .define "U‹ìjÿh0/J"
                            A    50    .class 4
                            A    51    .reg 18
                            A    52    .type 13
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     00:18:18     page:   2
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:55:17     page:   2
 
 
 PC     Object              I  Line    Source delay.src
                            A    53    .type 0
                            A    54    .endef
-                           A    55    .define "i"
+                           A    55    .define "U‹ìjÿh0/J"
                            A    56    .class 4
                            A    57    .reg 19
                            A    58    .type 13
@@ -110,7 +110,7 @@ PC     Object              I  Line    Source delay.src
                            A   102    .line 10
 000038 A6E30F              A   103    	CP	R3,#15
 00003B 1FA6E200            A   104    	CPC	R2,#-0
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     00:18:18     page:   3
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:55:17     page:   3
 
 
 PC     Object              I  Line    Source delay.src
@@ -166,7 +166,7 @@ PC     Object              I  Line    Source delay.src
                            A   154    .type 0
                            A   155    .endef
                            A   156    .begfunc "sdly",16,"_sdly"
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     00:18:18     page:   4
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 25-Oct-16     19:55:17     page:   4
 
 
 PC     Object              I  Line    Source delay.src
@@ -179,7 +179,7 @@ PC     Object              I  Line    Source delay.src
                            A   163    ;   14	
                            A   164    ;   15	//Small delay function
                            A   165    ;   16	void sdly(unsigned int dly_time){
-                           A   166    .define "i"
+                           A   166    .define "U‹ìjÿh0/J"
                            A   167    .class 4
                            A   168    .reg 17
                            A   169    .type 13

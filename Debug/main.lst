@@ -1,4 +1,4 @@
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     12:19:46     page:   1
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 27-Oct-16     00:47:45     page:   1
 
 
 PC     Object              I  Line    Source 
@@ -7,7 +7,7 @@ PC     Object              I  Line    Source
                            A     3    ; -nooptlink -regvar -reduceopt -debug -norevaa
                            A     4    ; -alias 
                            A     5    	DEFINE main_TEXT,SPACE=ROM
-                           A     6    	FILE	"..\..\..\THIRDY~1\THIRDY~1\MAIN.C"
+                           A     6    	FILE	"..\..\..\..\DOCUME~1\GITHUB\THIRDY
                            A     7    .debug "C"
                            A     8    	SEGMENT FAR_DATA
 000000                     A     9    _RELOAD:
@@ -54,7 +54,7 @@ PC     Object              I  Line    Source
                            A    50    .define "field_width"
                            A    51    .value 5
                            A    52    .class 8
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     12:19:46     page:   2
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 27-Oct-16     00:47:45     page:   2
 
 
 PC     Object              I  Line    Source main.src
@@ -110,7 +110,7 @@ PC     Object              I  Line    Source main.src
                            A   102    .class 8
                            A   103    .type 12
                            A   104    .type 0
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     12:19:46     page:   3
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 27-Oct-16     00:47:45     page:   3
 
 
 PC     Object              I  Line    Source main.src
@@ -166,7 +166,7 @@ PC     Object              I  Line    Source main.src
                            A   154    .alias "_command"
                            A   155    .class 69
                            A   156    .value _command
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     12:19:46     page:   4
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 27-Oct-16     00:47:45     page:   4
 
 
 PC     Object              I  Line    Source main.src
@@ -222,7 +222,7 @@ PC     Object              I  Line    Source main.src
                            A   206    .type 0
                            A   207    .endef
 000027                     A   208    _acc_yh:
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     12:19:46     page:   5
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 27-Oct-16     00:47:45     page:   5
 
 
 PC     Object              I  Line    Source main.src
@@ -278,7 +278,7 @@ PC     Object              I  Line    Source main.src
                            A   258    .value _gyro_l
                            A   259    .type 2
                            A   260    .type 0
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     12:19:46     page:   6
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 27-Oct-16     00:47:45     page:   6
 
 
 PC     Object              I  Line    Source main.src
@@ -334,7 +334,7 @@ PC     Object              I  Line    Source main.src
                            A   310    .alias "_gyroYValue"
                            A   311    .class 83
                            A   312    .value _gyroYValue
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     12:19:46     page:   7
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 27-Oct-16     00:47:45     page:   7
 
 
 PC     Object              I  Line    Source main.src
@@ -390,7 +390,7 @@ PC     Object              I  Line    Source main.src
                            A   362    ;___print_send                       IMPORT  --
                            A   363    ;___print_buff                       IMPORT  un
                            A   364    ;___print_putromstring               IMPORT  --
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     12:19:46     page:   8
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 27-Oct-16     00:47:45     page:   8
 
 
 PC     Object              I  Line    Source main.src
@@ -446,7 +446,7 @@ PC     Object              I  Line    Source main.src
 00000E 00                  A   413    	DB	0
                            A   414    	SEGMENT ROM_TEXT
 000000                     A   415    L__2:
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     12:19:46     page:   9
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 27-Oct-16     00:47:45     page:   9
 
 
 PC     Object              I  Line    Source main.src
@@ -464,7 +464,7 @@ PC     Object              I  Line    Source main.src
                            A   426    .type 65
                            A   427    .type 0
                            A   428    .endef
-                           A   429    .begfunc "main",12,"_main"
+                           A   429    .begfunc "main",11,"_main"
                            A   430    ;    1	#include <ez8.h>
                            A   431    ;    2	#include <delay.h>
                            A   432    ;    3	#include <STRING.H>
@@ -475,534 +475,546 @@ PC     Object              I  Line    Source main.src
                            A   437    ;    8	#include <i2c.h>
                            A   438    ;    9	#include <main.h>
                            A   439    ;   10	
-                           A   440    ;   11	
-                           A   441    ;   12	void main(void){
-                           A   442    .define "i"
-                           A   443    .class 4
-                           A   444    .reg 19
-                           A   445    .type 3
-                           A   446    .type 0
-                           A   447    .endef
-                           A   448    .define "tmp"
-                           A   449    .class 4
-                           A   450    .reg -1
-                           A   451    .type 2
-                           A   452    .type 0
-                           A   453    .endef
-                           A   454    .define "inChar"
-                           A   455    .class 1
-                           A   456    .value -25
-                           A   457    .dim 25
-                           A   458    .type 98
-                           A   459    .type 0
-                           A   460    .endef
-000000 5C1B                A   461    	LD	R5,#27
-000002 D6 0000             A   462    	CALL	__b_frameset0
-                           A   463    ;   13		char reser[];
-                           A   464    ;   14		char test[5];
-                           A   465    ;   15		char inChar[25];
-                           A   466    ;   16		char tmp;
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     12:19:46     page:  10
+                           A   440    ;   11	void main(void){
+                           A   441    .define "U‹ìjÿh0/J"
+                           A   442    .class 4
+                           A   443    .reg 19
+                           A   444    .type 3
+                           A   445    .type 0
+                           A   446    .endef
+                           A   447    .define "U‹ìjÿh0/J"
+                           A   448    .class 4
+                           A   449    .reg -1
+                           A   450    .type 2
+                           A   451    .type 0
+                           A   452    .endef
+                           A   453    .define "inChar"
+                           A   454    .class 1
+                           A   455    .value -25
+                           A   456    .dim 25
+                           A   457    .type 98
+                           A   458    .type 0
+                           A   459    .endef
+000000 5C1B                A   460    	LD	R5,#27
+000002 D6 0000             A   461    	CALL	__b_frameset0
+                           A   462    ;   12		char reser[];
+                           A   463    ;   13		char test[5];
+                           A   464    ;   14		char inChar[25];
+                           A   465    ;   15		char tmp;
+                           A   466    ;   16	
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 27-Oct-16     00:47:45     page:  10
 
 
 PC     Object              I  Line    Source main.src
-                           A   467    ;   17		int i;
-                           A   468    ;   18	// 	init_IO();
-                           A   469    ;   19		i2cInit();
-                           A   470    .line 19
-000005 89E4E6              A   471    	LDX	-26(RR14),R4
-000008 89E5E5              A   472    	LDX	-27(RR14),R5
-00000B D6 0000             A   473    	CALL	_i2cInit
-                           A   474    ;   20		init_LCD();
-                           A   475    .line 20
-00000E D6 0000             A   476    	CALL	_init_LCD
-                           A   477    ;   21		signon();
-                           A   478    .line 21
-000011 D6 0000             A   479    	CALL	_signon
-                           A   480    ;   22	// 	printMessage("This is a test", 1);
-                           A   481    ;   23		init_coms();
-                           A   482    .line 23
-000014 D6 0000             A   483    	CALL	_init_coms
-                           A   484    ;   24	// printMessage("This is a test02", 1);
-                           A   485    ;   25		motorInit();
-                           A   486    .line 25
-000017 D6 0000             A   487    	CALL	_motorInit
-                           A   488    ;   26	// 	printMessage("This is a test03", 1)
-                           A   489    ;   27		EI();
-                           A   490    .line 27
-00001A 9F                  A   491    	EI
-                           A   492    ;   28		sendString("AT+NAMErJordan");
-                           A   493    .line 28
-00001B 1F70 00             A   494    	PUSH	#low(L__0)
-00001E 1F70 00             A   495    	PUSH	#high(L__0)
-000021 D6 0000             A   496    	CALL	_sendString
-000024 885EE5              A   497    	LDX	R5,-27(RR14)
-000027 884EE6              A   498    	LDX	R4,-26(RR14)
-00002A 50E0                A   499    	POP	R0
-00002C 50E0                A   500    	POP	R0
-                           A   501    ;   29	// 	printMessage("This is a test04", 1)
-                           A   502    ;   30		rxFlag = 0;
-                           A   503    .line 30
-00002E E9000005            A   504    	LDX	_rxFlag,#-0
-                           A   505    ;   31		command = 0;
-                           A   506    .line 31
-000032 E9000004            A   507    	LDX	_command,#-0
-                           A   508    ;   32		
-                           A   509    ;   33	// 	sendString("got here");
-                           A   510    ;   34		
-                           A   511    ;   35	// 	printMessage("This is a test05", 1)
-                           A   512    ;   36	
-                           A   513    ;   37		while(1){
-000036                     A   514    _1_L_10:
-                           A   515    .line 37
-                           A   516    ;   38			i++;
-                           A   517    .line 38
-000036 A0E4                A   518    	INCW	RR4
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     12:19:46     page:  11
+                           A   467    ;   17		int i = 0;
+                           A   468    .line 17
+000005 B0E4                A   469    	CLR	R4
+000007 B0E5                A   470    	CLR	R5
+                           A   471    ;   18	// 	init_IO();
+                           A   472    ;   19		i2cInit();
+                           A   473    .line 19
+000009 89E4E6              A   474    	LDX	-26(RR14),R4
+00000C 89E5E5              A   475    	LDX	-27(RR14),R5
+00000F D6 0000             A   476    	CALL	_i2cInit
+                           A   477    ;   20		init_LCD();
+                           A   478    .line 20
+000012 D6 0000             A   479    	CALL	_init_LCD
+                           A   480    ;   21		signon();
+                           A   481    .line 21
+000015 D6 0000             A   482    	CALL	_signon
+                           A   483    ;   22	// 	printMessage("This is a test", 1);
+                           A   484    ;   23		init_coms();
+                           A   485    .line 23
+000018 D6 0000             A   486    	CALL	_init_coms
+                           A   487    ;   24	// printMessage("This is a test02", 1);
+                           A   488    ;   25		motorInit();
+                           A   489    .line 25
+00001B D6 0000             A   490    	CALL	_motorInit
+                           A   491    ;   26	// 	printMessage("This is a test03", 1)
+                           A   492    ;   27		EI();
+                           A   493    .line 27
+00001E 9F                  A   494    	EI
+                           A   495    ;   28		sendString("AT+NAMErJordan");
+                           A   496    .line 28
+00001F 1F70 00             A   497    	PUSH	#low(L__0)
+000022 1F70 00             A   498    	PUSH	#high(L__0)
+000025 D6 0000             A   499    	CALL	_sendString
+000028 885EE5              A   500    	LDX	R5,-27(RR14)
+00002B 884EE6              A   501    	LDX	R4,-26(RR14)
+00002E 50E0                A   502    	POP	R0
+000030 50E0                A   503    	POP	R0
+                           A   504    ;   29	// 	printMessage("This is a test04", 1)
+                           A   505    ;   30		rxFlag = 0;
+                           A   506    .line 30
+000032 E9000005            A   507    	LDX	_rxFlag,#-0
+                           A   508    ;   31		command = 0;
+                           A   509    .line 31
+000036 E9000004            A   510    	LDX	_command,#-0
+                           A   511    ;   32	
+                           A   512    ;   33	// 	sendString("got here");
+                           A   513    ;   34	
+                           A   514    ;   35	// 	printMessage("This is a test05", 1)
+                           A   515    ;   36	
+                           A   516    ;   37		while(1){
+00003A                     A   517    _1_L_10:
+                           A   518    .line 37
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 27-Oct-16     00:47:45     page:  11
 
 
 PC     Object              I  Line    Source main.src
-                           A   519    ;   39	// 		mems_read();
-                           A   520    ;   40	// 		dly(50);
-                           A   521    ;   41	// 		
-                           A   522    ;   42			
-                           A   523    ;   43			command = commandF();
-                           A   524    .line 43
-000038 89E4E6              A   525    	LDX	-26(RR14),R4
-00003B 89E5E5              A   526    	LDX	-27(RR14),R5
-00003E D6 0000             A   527    	CALL	_commandF
-000041 885EE5              A   528    	LDX	R5,-27(RR14)
-000044 884EE6              A   529    	LDX	R4,-26(RR14)
-000047 940004              A   530    	LDX	_command,R0
-                           A   531    ;   44			if(command != 0){
-                           A   532    .line 44
-00004A A9000004            A   533    	CPX	_command,#-0
-00004E 6B 54               A   534    	JR	Z,_1_L_7
-                           A   535    ;   45				sprintf(inChar, "Command: %
-                           A   536    .line 45
-000050 1CFF                A   537    	LD	R1,#255
-000052 0CE7                A   538    	LD	R0,#231
-000054 020F                A   539    	ADD	R0,R15
-000056 121E                A   540    	ADC	R1,R14
-000058 941000              A   541    	LDX	___print_out,R1
-00005B 940001              A   542    	LDX	___print_out+1,R0
-00005E 1F70 00             A   543    	PUSH	#low(L__2)
-000061 1F70 00             A   544    	PUSH	#high(L__2)
-000064 D6 0000             A   545    	CALL	___print_putromstring
-000067 50E0                A   546    	POP	R0
-000069 50E0                A   547    	POP	R0
-00006B E8 004000           A   548    	LDX	___print_buff,_command
-00006F E9000001            A   549    	LDX	___print_buff+1,#-0
-000073 D6 0000             A   550    	CALL	___print_send
-000076 1F70 0A             A   551    	PUSH	#low(L__3)
-000079 1F70 00             A   552    	PUSH	#high(L__3)
-00007C D6 0000             A   553    	CALL	___print_putromstring
-00007F 50E0                A   554    	POP	R0
-000081 50E0                A   555    	POP	R0
-000083 1F7000              A   556    	PUSH	#0
-000086 D6 0000             A   557    	CALL	___print_sputch
-000089 50E0                A   558    	POP	R0
-                           A   559    ;   46				sendString(inChar);
-                           A   560    .line 46
-00008B 1CFF                A   561    	LD	R1,#255
-00008D 0CE7                A   562    	LD	R0,#231
-00008F 020F                A   563    	ADD	R0,R15
-000091 121E                A   564    	ADC	R1,R14
-000093 70E0                A   565    	PUSH	R0
-000095 70E1                A   566    	PUSH	R1
-000097 D6 0000             A   567    	CALL	_sendString
-00009A 885EE5              A   568    	LDX	R5,-27(RR14)
-00009D 884EE6              A   569    	LDX	R4,-26(RR14)
-0000A0 50E0                A   570    	POP	R0
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     12:19:46     page:  12
+                           A   519    ;   38			i++;
+                           A   520    .line 38
+00003A A0E4                A   521    	INCW	RR4
+                           A   522    ;   39			// speed = (float) accXValueF()
+                           A   523    ;   40			// motorsSet(speed, 0, loffset,
+                           A   524    ;   41	// 		mems_read();
+                           A   525    ;   42	// 		dly(50);
+                           A   526    ;   43	//
+                           A   527    ;   44			//
+                           A   528    ;   45			command = commandF();
+                           A   529    .line 45
+00003C 89E4E6              A   530    	LDX	-26(RR14),R4
+00003F 89E5E5              A   531    	LDX	-27(RR14),R5
+000042 D6 0000             A   532    	CALL	_commandF
+000045 885EE5              A   533    	LDX	R5,-27(RR14)
+000048 884EE6              A   534    	LDX	R4,-26(RR14)
+00004B 940004              A   535    	LDX	_command,R0
+                           A   536    ;   46			if(command != 0){
+                           A   537    .line 46
+00004E A9000004            A   538    	CPX	_command,#-0
+000052 6B 54               A   539    	JR	Z,_1_L_7
+                           A   540    ;   47				sprintf(inChar, "Command: %
+                           A   541    .line 47
+000054 1CFF                A   542    	LD	R1,#255
+000056 0CE7                A   543    	LD	R0,#231
+000058 020F                A   544    	ADD	R0,R15
+00005A 121E                A   545    	ADC	R1,R14
+00005C 941000              A   546    	LDX	___print_out,R1
+00005F 940001              A   547    	LDX	___print_out+1,R0
+000062 1F70 00             A   548    	PUSH	#low(L__2)
+000065 1F70 00             A   549    	PUSH	#high(L__2)
+000068 D6 0000             A   550    	CALL	___print_putromstring
+00006B 50E0                A   551    	POP	R0
+00006D 50E0                A   552    	POP	R0
+00006F E8 004000           A   553    	LDX	___print_buff,_command
+000073 E9000001            A   554    	LDX	___print_buff+1,#-0
+000077 D6 0000             A   555    	CALL	___print_send
+00007A 1F70 0A             A   556    	PUSH	#low(L__3)
+00007D 1F70 00             A   557    	PUSH	#high(L__3)
+000080 D6 0000             A   558    	CALL	___print_putromstring
+000083 50E0                A   559    	POP	R0
+000085 50E0                A   560    	POP	R0
+000087 1F7000              A   561    	PUSH	#0
+00008A D6 0000             A   562    	CALL	___print_sputch
+00008D 50E0                A   563    	POP	R0
+                           A   564    ;   48				sendString(inChar);
+                           A   565    .line 48
+00008F 1CFF                A   566    	LD	R1,#255
+000091 0CE7                A   567    	LD	R0,#231
+000093 020F                A   568    	ADD	R0,R15
+000095 121E                A   569    	ADC	R1,R14
+000097 70E0                A   570    	PUSH	R0
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 27-Oct-16     00:47:45     page:  12
 
 
 PC     Object              I  Line    Source main.src
-0000A2 50E0                A   571    	POP	R0
-                           A   572    ;   47			}
-0000A4                     A   573    _1_L_7:
-                           A   574    .line 47
-                           A   575    ;   48			if(command == 'w'){
-                           A   576    .line 48
-0000A4 A9770004            A   577    	CPX	_command,#119
-0000A8 EB 38               A   578    	JR	NE,_1_L_6
-                           A   579    ;   49				//  sprintf(inChar, "%c", c
-                           A   580    ;   50				//  sendString(inChar);
-                           A   581    ;   51				//  printMessage(inChar, 1)
-                           A   582    ;   52				speed = speed + 1;
-                           A   583    .line 52
-0000AA 09010007            A   584    	ADDX	_speed+1,#1
-0000AE 19000006            A   585    	ADCX	_speed,#-0
-                           A   586    ;   53				command = 0;
-                           A   587    .line 53
-0000B2 E9000004            A   588    	LDX	_command,#-0
-                           A   589    ;   54				motorsSet(speed, 0, loffset
-                           A   590    .line 54
-0000B6 1F70BB              A   591    	PUSH	#187
-0000B9 1F7001              A   592    	PUSH	#1
-0000BC 1F7095              A   593    	PUSH	#149
-0000BF 1F7001              A   594    	PUSH	#1
-0000C2 1F7000              A   595    	PUSH	#0
-0000C5 1F7000              A   596    	PUSH	#0
-0000C8 C8 0070             A   597    	PUSHX	_speed+1
-0000CB C8 0060             A   598    	PUSHX	_speed
-0000CE D6 0000             A   599    	CALL	_motorsSet
-0000D1 885EE5              A   600    	LDX	R5,-27(RR14)
-0000D4 884EE6              A   601    	LDX	R4,-26(RR14)
-0000D7 2F                  A   602    	ATM	
-0000D8 09080FFF            A   603    	ADDX	4095,#8
-0000DC 19000FFE            A   604    	ADCX	4094,#-0
-                           A   605    ;   55			} else if(command == 's'){
-                           A   606    .line 55
-0000E0 8B 52               A   607    	JR	_1_L_9
-0000E2                     A   608    _1_L_6:
-0000E2 A9730004            A   609    	CPX	_command,#115
-0000E6 EB 38               A   610    	JR	NE,_1_L_4
-                           A   611    ;   56				speed = speed - 1;
-                           A   612    .line 56
-0000E8 09FF0007            A   613    	ADDX	_speed+1,#255
-0000EC 19FF0006            A   614    	ADCX	_speed,#255
-                           A   615    ;   57				command = 0;
-                           A   616    .line 57
-0000F0 E9000004            A   617    	LDX	_command,#-0
-                           A   618    ;   58				motorsSet(speed, 0, loffset
-                           A   619    .line 58
-0000F4 1F70BB              A   620    	PUSH	#187
-0000F7 1F7001              A   621    	PUSH	#1
-0000FA 1F7095              A   622    	PUSH	#149
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     12:19:46     page:  13
+000099 70E1                A   571    	PUSH	R1
+00009B D6 0000             A   572    	CALL	_sendString
+00009E 885EE5              A   573    	LDX	R5,-27(RR14)
+0000A1 884EE6              A   574    	LDX	R4,-26(RR14)
+0000A4 50E0                A   575    	POP	R0
+0000A6 50E0                A   576    	POP	R0
+                           A   577    ;   49			}
+0000A8                     A   578    _1_L_7:
+                           A   579    .line 49
+                           A   580    ;   50			if(command == 'w'){
+                           A   581    .line 50
+0000A8 A9770004            A   582    	CPX	_command,#119
+0000AC EB 38               A   583    	JR	NE,_1_L_6
+                           A   584    ;   51				//  sprintf(inChar, "%c", c
+                           A   585    ;   52				//  sendString(inChar);
+                           A   586    ;   53				//  printMessage(inChar, 1)
+                           A   587    ;   54				speed = speed + 1;
+                           A   588    .line 54
+0000AE 09010007            A   589    	ADDX	_speed+1,#1
+0000B2 19000006            A   590    	ADCX	_speed,#-0
+                           A   591    ;   55				command = 0;
+                           A   592    .line 55
+0000B6 E9000004            A   593    	LDX	_command,#-0
+                           A   594    ;   56				motorsSet(speed, r, roffset
+                           A   595    .line 56
+0000BA 1F70AE              A   596    	PUSH	#174
+0000BD 1F7001              A   597    	PUSH	#1
+0000C0 1F70C2              A   598    	PUSH	#194
+0000C3 1F7001              A   599    	PUSH	#1
+0000C6 1F7000              A   600    	PUSH	#0
+0000C9 1F7000              A   601    	PUSH	#0
+0000CC C8 0070             A   602    	PUSHX	_speed+1
+0000CF C8 0060             A   603    	PUSHX	_speed
+0000D2 D6 0000             A   604    	CALL	_motorsSet
+0000D5 885EE5              A   605    	LDX	R5,-27(RR14)
+0000D8 884EE6              A   606    	LDX	R4,-26(RR14)
+0000DB 2F                  A   607    	ATM	
+0000DC 09080FFF            A   608    	ADDX	4095,#8
+0000E0 19000FFE            A   609    	ADCX	4094,#-0
+                           A   610    ;   57			} else if(command == 's'){
+                           A   611    .line 57
+0000E4 8B 52               A   612    	JR	_1_L_9
+0000E6                     A   613    _1_L_6:
+0000E6 A9730004            A   614    	CPX	_command,#115
+0000EA EB 38               A   615    	JR	NE,_1_L_4
+                           A   616    ;   58				speed = speed - 1;
+                           A   617    .line 58
+0000EC 09FF0007            A   618    	ADDX	_speed+1,#255
+0000F0 19FF0006            A   619    	ADCX	_speed,#255
+                           A   620    ;   59				command = 0;
+                           A   621    .line 59
+0000F4 E9000004            A   622    	LDX	_command,#-0
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 27-Oct-16     00:47:45     page:  13
 
 
 PC     Object              I  Line    Source main.src
-0000FD 1F7001              A   623    	PUSH	#1
-000100 1F7000              A   624    	PUSH	#0
-000103 1F7000              A   625    	PUSH	#0
-000106 C8 0070             A   626    	PUSHX	_speed+1
-000109 C8 0060             A   627    	PUSHX	_speed
-00010C D6 0000             A   628    	CALL	_motorsSet
-00010F 885EE5              A   629    	LDX	R5,-27(RR14)
-000112 884EE6              A   630    	LDX	R4,-26(RR14)
-000115 2F                  A   631    	ATM	
-000116 09080FFF            A   632    	ADDX	4095,#8
-00011A 19000FFE            A   633    	ADCX	4094,#-0
-                           A   634    ;   59			} else if(command == 'm'){
-                           A   635    .line 59
-00011E 8B 14               A   636    	JR	_1_L_9
-000120                     A   637    _1_L_4:
-000120 A96D0004            A   638    	CPX	_command,#109
-000124 EB 0E               A   639    	JR	NE,_1_L_9
-                           A   640    ;   60				tmp = mode(1);
-                           A   641    .line 60
-000126 1F7001              A   642    	PUSH	#1
-000129 D6 0151             A   643    	CALL	_mode
-00012C 885EE5              A   644    	LDX	R5,-27(RR14)
-00012F 884EE6              A   645    	LDX	R4,-26(RR14)
-000132 50E0                A   646    	POP	R0
-                           A   647    ;   61			}
-000134                     A   648    _1_L_9:
-                           A   649    .line 61
-                           A   650    ;   62			
-                           A   651    ;   63			if(i>15000){
-                           A   652    .line 63
-000134 A6E598              A   653    	CP	R5,#152
-000137 1FA6E43A            A   654    	CPC	R4,#58
-00013B 2D 00 36            A   655    	JR	LE,_1_L_10
-                           A   656    ;   64				tmp = mode(0);
-                           A   657    .line 64
-00013E 1F7000              A   658    	PUSH	#0
-000141 D6 0151             A   659    	CALL	_mode
-000144 50E0                A   660    	POP	R0
-                           A   661    ;   65				i=0;
-                           A   662    .line 65
-000146 B0E4                A   663    	CLR	R4
-000148 B0E5                A   664    	CLR	R5
-                           A   665    ;   66			}
-                           A   666    ;   67	// 		dly(100);
-                           A   667    ;   68			
-                           A   668    ;   69		}
+                           A   623    ;   60				motorsSet(speed, r, roffset
+                           A   624    .line 60
+0000F8 1F70AE              A   625    	PUSH	#174
+0000FB 1F7001              A   626    	PUSH	#1
+0000FE 1F70C2              A   627    	PUSH	#194
+000101 1F7001              A   628    	PUSH	#1
+000104 1F7000              A   629    	PUSH	#0
+000107 1F7000              A   630    	PUSH	#0
+00010A C8 0070             A   631    	PUSHX	_speed+1
+00010D C8 0060             A   632    	PUSHX	_speed
+000110 D6 0000             A   633    	CALL	_motorsSet
+000113 885EE5              A   634    	LDX	R5,-27(RR14)
+000116 884EE6              A   635    	LDX	R4,-26(RR14)
+000119 2F                  A   636    	ATM	
+00011A 09080FFF            A   637    	ADDX	4095,#8
+00011E 19000FFE            A   638    	ADCX	4094,#-0
+                           A   639    ;   61			} else if(command == 'm'){
+                           A   640    .line 61
+000122 8B 14               A   641    	JR	_1_L_9
+000124                     A   642    _1_L_4:
+000124 A96D0004            A   643    	CPX	_command,#109
+000128 EB 0E               A   644    	JR	NE,_1_L_9
+                           A   645    ;   62				tmp = mode(1);
+                           A   646    .line 62
+00012A 1F7001              A   647    	PUSH	#1
+00012D D6 0155             A   648    	CALL	_mode
+000130 885EE5              A   649    	LDX	R5,-27(RR14)
+000133 884EE6              A   650    	LDX	R4,-26(RR14)
+000136 50E0                A   651    	POP	R0
+                           A   652    ;   63			}
+000138                     A   653    _1_L_9:
+                           A   654    .line 63
+                           A   655    ;   64			//
+                           A   656    ;   65			if(i>30000){
+                           A   657    .line 65
+000138 A6E530              A   658    	CP	R5,#48
+00013B 1FA6E475            A   659    	CPC	R4,#117
+00013F 2D 00 3A            A   660    	JR	LE,_1_L_10
+                           A   661    ;   66				// sprintf(inChar, "%d", ac
+                           A   662    ;   67				// printMessage(inChar, 1);
+                           A   663    ;   68				tmp = mode(0);
+                           A   664    .line 68
+000142 1F7000              A   665    	PUSH	#0
+000145 D6 0155             A   666    	CALL	_mode
+000148 50E0                A   667    	POP	R0
+                           A   668    ;   69				i=0;
                            A   669    .line 69
-00014A 8D 00 36            A   670    	JR	_1_L_10
-                           A   671    ;   70	}
-                           A   672    .line 70
-00014D D6 0000             A   673    	CALL	__b_framereset
-000150 AF                  A   674    	RET	
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     12:19:46     page:  14
+00014A B0E4                A   670    	CLR	R4
+00014C B0E5                A   671    	CLR	R5
+                           A   672    ;   70			}
+                           A   673    ;   71	// 		dly(100);
+                           A   674    ;   72	
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 27-Oct-16     00:47:45     page:  14
 
 
 PC     Object              I  Line    Source main.src
-                           A   675    .endfunc "main",70,"_main"
-                           A   676    	SEGMENT ROM_DATA
-                           A   677    
-                           A   678    
-                           A   679    ;**************************** _mode ***********
-                           A   680    ;Name                         Addr/Register   S
-                           A   681    ;_mems_read                          IMPORT  --
-                           A   682    ;_printI2Cq                          STATIC    
-                           A   683    ;_printMessage                       IMPORT  --
-                           A   684    ;___print_sputch                     IMPORT  --
-                           A   685    ;__u_stoa                            IMPORT  --
-                           A   686    ;___print_out                        IMPORT    
-                           A   687    ;_speed                              STATIC    
-                           A   688    ;_1tmpSpeed                          STATIC    
-                           A   689    ;_0m                                 STATIC    
-                           A   690    ;inChar                              R15-25    
-                           A   691    ;change                               R15+4    
-                           A   692    
-                           A   693    
-                           A   694    ; Aggregate Stack Size: -25 (words)
-                           A   695    
-                           A   696    
-                           A   697    	.FRAME _n_mode,?_n_mode,RDATA
-                           A   698    	.FCALL _n__u_stoa
-                           A   699    	.FCALL _n___print_sputch
-                           A   700    	.FCALL _n_printMessage
-                           A   701    	.FCALL _n_mems_read
-                           A   702    	.FRAME _f_mode,?_f_mode,EDATA
-                           A   703    	.FCALL _f__u_stoa
-                           A   704    	.FCALL _f___print_sputch
-                           A   705    	.FCALL _f_printMessage
-                           A   706    	.FCALL _f_mems_read
-                           A   707    	SEGMENT FAR_DATA
-000009                     A   708    _0m:
-000009 01                  A   709    	DB	1
-00000A                     A   710    _1tmpSpeed:
-00000A 00                  A   711    	DB	0
-                           A   712    	SEGMENT main_TEXT
-000151                     A   713    _mode:
-                           A   714    .define "_mode"
-                           A   715    .value _mode
-                           A   716    .class 2
-                           A   717    .type 66
-                           A   718    .type 0
-                           A   719    .endef
-                           A   720    .begfunc "mode",73,"_mode"
-                           A   721    .define "change"
-                           A   722    .class 9
-                           A   723    .value 4
-                           A   724    .type 2
+                           A   675    ;   73		}
+                           A   676    .line 73
+00014E 8D 00 3A            A   677    	JR	_1_L_10
+                           A   678    ;   74	}
+                           A   679    .line 74
+000151 D6 0000             A   680    	CALL	__b_framereset
+000154 AF                  A   681    	RET	
+                           A   682    .endfunc "main",74,"_main"
+                           A   683    	SEGMENT ROM_DATA
+                           A   684    
+                           A   685    
+                           A   686    ;**************************** _mode ***********
+                           A   687    ;Name                         Addr/Register   S
+                           A   688    ;_mems_read                          IMPORT  --
+                           A   689    ;_printI2Cq                          STATIC    
+                           A   690    ;_printMessage                       IMPORT  --
+                           A   691    ;___print_sputch                     IMPORT  --
+                           A   692    ;__u_stoa                            IMPORT  --
+                           A   693    ;___print_out                        IMPORT    
+                           A   694    ;_speed                              STATIC    
+                           A   695    ;_1tmpSpeed                          STATIC    
+                           A   696    ;_0m                                 STATIC    
+                           A   697    ;inChar                              R15-25    
+                           A   698    ;change                               R15+4    
+                           A   699    
+                           A   700    
+                           A   701    ; Aggregate Stack Size: -25 (words)
+                           A   702    
+                           A   703    
+                           A   704    	.FRAME _n_mode,?_n_mode,RDATA
+                           A   705    	.FCALL _n__u_stoa
+                           A   706    	.FCALL _n___print_sputch
+                           A   707    	.FCALL _n_printMessage
+                           A   708    	.FCALL _n_mems_read
+                           A   709    	.FRAME _f_mode,?_f_mode,EDATA
+                           A   710    	.FCALL _f__u_stoa
+                           A   711    	.FCALL _f___print_sputch
+                           A   712    	.FCALL _f_printMessage
+                           A   713    	.FCALL _f_mems_read
+                           A   714    	SEGMENT FAR_DATA
+000009                     A   715    _0m:
+000009 01                  A   716    	DB	1
+00000A                     A   717    _1tmpSpeed:
+00000A 00                  A   718    	DB	0
+                           A   719    	SEGMENT main_TEXT
+000155                     A   720    _mode:
+                           A   721    .define "_mode"
+                           A   722    .value _mode
+                           A   723    .class 2
+                           A   724    .type 66
                            A   725    .type 0
                            A   726    .endef
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     12:19:46     page:  15
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 27-Oct-16     00:47:45     page:  15
 
 
 PC     Object              I  Line    Source main.src
-                           A   727    ;   71	
-                           A   728    ;   72	
-                           A   729    ;   73	char mode(char change){
-                           A   730    .define "inChar"
-                           A   731    .class 1
-                           A   732    .value -25
-                           A   733    .dim 25
-                           A   734    .type 98
-                           A   735    .type 0
-                           A   736    .endef
-                           A   737    .define "m"
-                           A   738    .alias "_0m"
-                           A   739    .class 69
-                           A   740    .value _0m
-                           A   741    .type 2
+                           A   727    .begfunc "mode",77,"_mode"
+                           A   728    .define "change"
+                           A   729    .class 9
+                           A   730    .value 4
+                           A   731    .type 2
+                           A   732    .type 0
+                           A   733    .endef
+                           A   734    ;   75	
+                           A   735    ;   76	
+                           A   736    ;   77	char mode(char change){
+                           A   737    .define "inChar"
+                           A   738    .class 1
+                           A   739    .value -25
+                           A   740    .dim 25
+                           A   741    .type 98
                            A   742    .type 0
                            A   743    .endef
-                           A   744    .define "tmpSpeed"
-                           A   745    .alias "_1tmpSpeed"
+                           A   744    .define "m"
+                           A   745    .alias "_0m"
                            A   746    .class 69
-                           A   747    .value _1tmpSpeed
+                           A   747    .value _0m
                            A   748    .type 2
                            A   749    .type 0
                            A   750    .endef
-000151 5C19                A   751    	LD	R5,#25
-000153 D6 0000             A   752    	CALL	__b_frameset0
-                           A   753    ;   74		static char m = 1;
-                           A   754    ;   75		char inChar[25];
-                           A   755    ;   76		static char tmpSpeed = 0;
-                           A   756    ;   77		
-                           A   757    ;   78		if(m){
-                           A   758    .line 78
-000156 A9000009            A   759    	CPX	_0m,#-0
-00015A 6B 5A               A   760    	JR	Z,_2_L_16
-                           A   761    ;   79			if(tmpSpeed != speed){
-                           A   762    .line 79
-00015C 84100A              A   763    	LDX	R1,_1tmpSpeed
-00015F E4E1E0              A   764    	LD	R0,R1
-000162 90E0                A   765    	RL	R0
-000164 3200                A   766    	SBC	R0,R0
-000166 A8 007EE1           A   767    	CPX	R1,_speed+1
-00016A 1FA8 006EE0         A   768    	CPCX	R0,_speed
-00016F 6B 3B               A   769    	JR	Z,_2_L_14
-                           A   770    ;   80				sprintf(inChar, "%d", speed
-                           A   771    .line 80
-000171 1CFF                A   772    	LD	R1,#255
-000173 0CE7                A   773    	LD	R0,#231
-000175 020F                A   774    	ADD	R0,R15
-000177 121E                A   775    	ADC	R1,R14
-000179 941000              A   776    	LDX	___print_out,R1
-00017C 940001              A   777    	LDX	___print_out+1,R0
-00017F C8 0070             A   778    	PUSHX	_speed+1
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     12:19:46     page:  16
+                           A   751    .define "tmpSpeed"
+                           A   752    .alias "_1tmpSpeed"
+                           A   753    .class 69
+                           A   754    .value _1tmpSpeed
+                           A   755    .type 2
+                           A   756    .type 0
+                           A   757    .endef
+000155 5C19                A   758    	LD	R5,#25
+000157 D6 0000             A   759    	CALL	__b_frameset0
+                           A   760    ;   78		static char m = 1;
+                           A   761    ;   79		char inChar[25];
+                           A   762    ;   80		static char tmpSpeed = 0;
+                           A   763    ;   81	
+                           A   764    ;   82		if(m){
+                           A   765    .line 82
+00015A A9000009            A   766    	CPX	_0m,#-0
+00015E 6B 5A               A   767    	JR	Z,_2_L_16
+                           A   768    ;   83			if(tmpSpeed != speed){
+                           A   769    .line 83
+000160 84100A              A   770    	LDX	R1,_1tmpSpeed
+000163 E4E1E0              A   771    	LD	R0,R1
+000166 90E0                A   772    	RL	R0
+000168 3200                A   773    	SBC	R0,R0
+00016A A8 007EE1           A   774    	CPX	R1,_speed+1
+00016E 1FA8 006EE0         A   775    	CPCX	R0,_speed
+000173 6B 3B               A   776    	JR	Z,_2_L_14
+                           A   777    ;   84				sprintf(inChar, "%d", speed
+                           A   778    .line 84
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 27-Oct-16     00:47:45     page:  16
 
 
 PC     Object              I  Line    Source main.src
-000182 C8 0060             A   779    	PUSHX	_speed
-000185 D6 0000             A   780    	CALL	__u_stoa
-000188 50E0                A   781    	POP	R0
-00018A 50E0                A   782    	POP	R0
-00018C 1F7000              A   783    	PUSH	#0
-00018F D6 0000             A   784    	CALL	___print_sputch
-000192 50E0                A   785    	POP	R0
-                           A   786    ;   81				printMessage(inChar, 1);
-                           A   787    .line 81
-000194 1F7001              A   788    	PUSH	#1
-000197 1CFF                A   789    	LD	R1,#255
-000199 0CE7                A   790    	LD	R0,#231
-00019B 020F                A   791    	ADD	R0,R15
-00019D 121E                A   792    	ADC	R1,R14
-00019F 70E0                A   793    	PUSH	R0
-0001A1 70E1                A   794    	PUSH	R1
-0001A3 D6 0000             A   795    	CALL	_printMessage
-0001A6 50E0                A   796    	POP	R0
-0001A8 50E0                A   797    	POP	R0
-0001AA 50E0                A   798    	POP	R0
-                           A   799    ;   82			}
-0001AC                     A   800    _2_L_14:
-                           A   801    .line 82
-                           A   802    ;   83			tmpSpeed = speed;
-                           A   803    .line 83
-0001AC E8 00700A           A   804    	LDX	_1tmpSpeed,_speed+1
-                           A   805    ;   84			printI2Cq = 0;
-                           A   806    .line 84
-0001B0 E9000008            A   807    	LDX	_printI2Cq,#-0
-                           A   808    ;   85		} else {
-                           A   809    .line 85
-0001B4 8B 07               A   810    	JR	_2_L_19
-0001B6                     A   811    _2_L_16:
-                           A   812    ;   86			printI2Cq = 1;
-                           A   813    .line 86
-0001B6 E9010008            A   814    	LDX	_printI2Cq,#1
-                           A   815    ;   87			mems_read();
-                           A   816    .line 87
-0001BA D6 0000             A   817    	CALL	_mems_read
-                           A   818    ;   88		}
-0001BD                     A   819    _2_L_19:
-                           A   820    .line 88
-                           A   821    ;   89		
-                           A   822    ;   90		if(change){
-                           A   823    .line 90
-0001BD 880E04              A   824    	LDX	R0,4(RR14)
-0001C0 4200                A   825    	OR	R0,R0
-0001C2 6B 09               A   826    	JR	Z,_2_L_18
-                           A   827    ;   91			m ^= 0x01;
-                           A   828    .line 91
-0001C4 B9010009            A   829    	XORX	_0m,#1
-                           A   830    ;   92			return m;
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     12:19:46     page:  17
+000175 1CFF                A   779    	LD	R1,#255
+000177 0CE7                A   780    	LD	R0,#231
+000179 020F                A   781    	ADD	R0,R15
+00017B 121E                A   782    	ADC	R1,R14
+00017D 941000              A   783    	LDX	___print_out,R1
+000180 940001              A   784    	LDX	___print_out+1,R0
+000183 C8 0070             A   785    	PUSHX	_speed+1
+000186 C8 0060             A   786    	PUSHX	_speed
+000189 D6 0000             A   787    	CALL	__u_stoa
+00018C 50E0                A   788    	POP	R0
+00018E 50E0                A   789    	POP	R0
+000190 1F7000              A   790    	PUSH	#0
+000193 D6 0000             A   791    	CALL	___print_sputch
+000196 50E0                A   792    	POP	R0
+                           A   793    ;   85				printMessage(inChar, 1);
+                           A   794    .line 85
+000198 1F7001              A   795    	PUSH	#1
+00019B 1CFF                A   796    	LD	R1,#255
+00019D 0CE7                A   797    	LD	R0,#231
+00019F 020F                A   798    	ADD	R0,R15
+0001A1 121E                A   799    	ADC	R1,R14
+0001A3 70E0                A   800    	PUSH	R0
+0001A5 70E1                A   801    	PUSH	R1
+0001A7 D6 0000             A   802    	CALL	_printMessage
+0001AA 50E0                A   803    	POP	R0
+0001AC 50E0                A   804    	POP	R0
+0001AE 50E0                A   805    	POP	R0
+                           A   806    ;   86			}
+0001B0                     A   807    _2_L_14:
+                           A   808    .line 86
+                           A   809    ;   87			tmpSpeed = speed;
+                           A   810    .line 87
+0001B0 E8 00700A           A   811    	LDX	_1tmpSpeed,_speed+1
+                           A   812    ;   88			printI2Cq = 0;
+                           A   813    .line 88
+0001B4 E9000008            A   814    	LDX	_printI2Cq,#-0
+                           A   815    ;   89		} else {
+                           A   816    .line 89
+0001B8 8B 07               A   817    	JR	_2_L_19
+0001BA                     A   818    _2_L_16:
+                           A   819    ;   90			printI2Cq = 1;
+                           A   820    .line 90
+0001BA E9010008            A   821    	LDX	_printI2Cq,#1
+                           A   822    ;   91			mems_read();
+                           A   823    .line 91
+0001BE D6 0000             A   824    	CALL	_mems_read
+                           A   825    ;   92		}
+0001C1                     A   826    _2_L_19:
+                           A   827    .line 92
+                           A   828    ;   93	
+                           A   829    ;   94		if(change){
+                           A   830    .line 94
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 27-Oct-16     00:47:45     page:  17
 
 
 PC     Object              I  Line    Source main.src
-                           A   831    .line 92
-0001C8 840009              A   832    	LDX	R0,_0m
-0001CB 8B 03               A   833    	JR	_2_L_20
-                           A   834    ;   93		} else {
-0001CD                     A   835    _2_L_18:
-                           A   836    .line 93
-                           A   837    ;   94			return m;
-                           A   838    .line 94
-0001CD 840009              A   839    	LDX	R0,_0m
-                           A   840    ;   95		}
-                           A   841    ;   96	
-                           A   842    ;   97	}
-0001D0                     A   843    _2_L_20:
-                           A   844    .line 97
-0001D0 D6 0000             A   845    	CALL	__b_framereset
-0001D3 AF                  A   846    	RET	
-                           A   847    .endfunc "mode",97,"_mode"
-                           A   848    	SEGMENT ROM_DATA
-                           A   849    
-                           A   850    
-                           A   851    ;**************************** _printI2CqF *****
-                           A   852    ;Name                         Addr/Register   S
-                           A   853    ;_printI2Cq                          STATIC    
-                           A   854    
-                           A   855    
-                           A   856    ; Aggregate Stack Size: 0 (words)
+0001C1 880E04              A   831    	LDX	R0,4(RR14)
+0001C4 4200                A   832    	OR	R0,R0
+0001C6 6B 09               A   833    	JR	Z,_2_L_18
+                           A   834    ;   95			m ^= 0x01;
+                           A   835    .line 95
+0001C8 B9010009            A   836    	XORX	_0m,#1
+                           A   837    ;   96			return m;
+                           A   838    .line 96
+0001CC 840009              A   839    	LDX	R0,_0m
+0001CF 8B 03               A   840    	JR	_2_L_20
+                           A   841    ;   97		} else {
+0001D1                     A   842    _2_L_18:
+                           A   843    .line 97
+                           A   844    ;   98			return m;
+                           A   845    .line 98
+0001D1 840009              A   846    	LDX	R0,_0m
+                           A   847    ;   99		}
+                           A   848    ;  100	
+                           A   849    ;  101	}
+0001D4                     A   850    _2_L_20:
+                           A   851    .line 101
+0001D4 D6 0000             A   852    	CALL	__b_framereset
+0001D7 AF                  A   853    	RET	
+                           A   854    .endfunc "mode",101,"_mode"
+                           A   855    	SEGMENT ROM_DATA
+                           A   856    
                            A   857    
-                           A   858    
-                           A   859    	.FRAME _n_printI2CqF,?_n_printI2CqF,RDATA
-                           A   860    	.FRAME _f_printI2CqF,?_f_printI2CqF,EDATA
-                           A   861    	SEGMENT main_TEXT
-0001D4                     A   862    _printI2CqF:
-                           A   863    .define "_printI2CqF"
-                           A   864    .value _printI2CqF
-                           A   865    .class 2
-                           A   866    .type 66
-                           A   867    .type 0
-                           A   868    .endef
-                           A   869    .begfunc "printI2CqF",100,"_printI2CqF"
-0001D4 D6 0000             A   870    	CALL	__b_frameset00
-                           A   871    ;   98	
-                           A   872    ;   99	
-                           A   873    ;  100	char printI2CqF(void){
-                           A   874    ;  101		return printI2Cq;
-                           A   875    .line 101
-0001D7 840008              A   876    	LDX	R0,_printI2Cq
-                           A   877    .line 102
-0001DA D6 0000             A   878    	CALL	__b_framereset
-0001DD AF                  A   879    	RET	
-                           A   880    .endfunc "printI2CqF",102,"_printI2CqF"
-                           A   881    	XREF _mems_read:ROM
-                           A   882    	XREF _i2cInit:ROM
-Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 21-Oct-16     12:19:46     page:  18
+                           A   858    ;**************************** _printI2CqF *****
+                           A   859    ;Name                         Addr/Register   S
+                           A   860    ;_printI2Cq                          STATIC    
+                           A   861    
+                           A   862    
+                           A   863    ; Aggregate Stack Size: 0 (words)
+                           A   864    
+                           A   865    
+                           A   866    	.FRAME _n_printI2CqF,?_n_printI2CqF,RDATA
+                           A   867    	.FRAME _f_printI2CqF,?_f_printI2CqF,EDATA
+                           A   868    	SEGMENT main_TEXT
+0001D8                     A   869    _printI2CqF:
+                           A   870    .define "_printI2CqF"
+                           A   871    .value _printI2CqF
+                           A   872    .class 2
+                           A   873    .type 66
+                           A   874    .type 0
+                           A   875    .endef
+                           A   876    .begfunc "printI2CqF",104,"_printI2CqF"
+0001D8 D6 0000             A   877    	CALL	__b_frameset00
+                           A   878    ;  102	
+                           A   879    ;  103	
+                           A   880    ;  104	char printI2CqF(void){
+                           A   881    ;  105		return printI2Cq;
+                           A   882    .line 105
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 27-Oct-16     00:47:45     page:  18
 
 
 PC     Object              I  Line    Source main.src
-                           A   883    	XREF _commandF:ROM
-                           A   884    	XREF _sendString:ROM
-                           A   885    	XREF _init_coms:ROM
-                           A   886    	XREF _motorsSet:ROM
-                           A   887    	XREF _motorInit:ROM
-                           A   888    	XREF __u_stoa:ROM
-                           A   889    	XREF ___print_putromstring:ROM
-                           A   890    	XREF ___print_sputch:ROM
-                           A   891    	XREF ___print_send:ROM
-                           A   892    	XREF ___print_out:EDATA
-                           A   893    	XREF ___print_buff:EDATA
-                           A   894    	XREF _printMessage:ROM
-                           A   895    	XREF _signon:ROM
-                           A   896    	XREF _init_LCD:ROM
-                           A   897    	XREF __b_framereset:ROM
-                           A   898    	XREF __b_frameset0:ROM
-                           A   899    	XREF __b_frameset00:ROM
-                           A   900    	XDEF _printI2CqF
-                           A   901    	XDEF _mode
-                           A   902    	XDEF _main
-                           A   903    	XDEF _printI2Cq
-                           A   904    	XDEF _speed
-                           A   905    	XDEF _t1Ready
-                           A   906    	XDEF _gyroZValue
-                           A   907    	XDEF _gyroYValue
-                           A   908    	XDEF _gyroXValue
-                           A   909    	XDEF _accZValue
-                           A   910    	XDEF _accYValue
-                           A   911    	XDEF _accXValue
-                           A   912    	XDEF _gyro_val
-                           A   913    	XDEF _gyro_l
-                           A   914    	XDEF _gyro_h
-                           A   915    	XDEF _acc_x
-                           A   916    	XDEF _acc_y
-                           A   917    	XDEF _acc_yl
-                           A   918    	XDEF _acc_yh
-                           A   919    	XDEF _acc_xl
-                           A   920    	XDEF _acc_xh
-                           A   921    	XDEF _accRead
-                           A   922    	XDEF _gyroRead
-                           A   923    	XDEF _rxFlag
-                           A   924    	XDEF _command
-                           A   925    	XDEF _txFinished
-                           A   926    	XDEF _string
-                           A   927    	XDEF _inChar
-                           A   928    	XDEF _RELOAD
-                           A   929    	END
+0001DB 840008              A   883    	LDX	R0,_printI2Cq
+                           A   884    ;  106	}
+                           A   885    .line 106
+0001DE D6 0000             A   886    	CALL	__b_framereset
+0001E1 AF                  A   887    	RET	
+                           A   888    .endfunc "printI2CqF",106,"_printI2CqF"
+                           A   889    	XREF _mems_read:ROM
+                           A   890    	XREF _i2cInit:ROM
+                           A   891    	XREF _commandF:ROM
+                           A   892    	XREF _sendString:ROM
+                           A   893    	XREF _init_coms:ROM
+                           A   894    	XREF _motorsSet:ROM
+                           A   895    	XREF _motorInit:ROM
+                           A   896    	XREF __u_stoa:ROM
+                           A   897    	XREF ___print_putromstring:ROM
+                           A   898    	XREF ___print_sputch:ROM
+                           A   899    	XREF ___print_send:ROM
+                           A   900    	XREF ___print_out:EDATA
+                           A   901    	XREF ___print_buff:EDATA
+                           A   902    	XREF _printMessage:ROM
+                           A   903    	XREF _signon:ROM
+                           A   904    	XREF _init_LCD:ROM
+                           A   905    	XREF __b_framereset:ROM
+                           A   906    	XREF __b_frameset0:ROM
+                           A   907    	XREF __b_frameset00:ROM
+                           A   908    	XDEF _printI2CqF
+                           A   909    	XDEF _mode
+                           A   910    	XDEF _main
+                           A   911    	XDEF _printI2Cq
+                           A   912    	XDEF _speed
+                           A   913    	XDEF _t1Ready
+                           A   914    	XDEF _gyroZValue
+                           A   915    	XDEF _gyroYValue
+                           A   916    	XDEF _gyroXValue
+                           A   917    	XDEF _accZValue
+                           A   918    	XDEF _accYValue
+                           A   919    	XDEF _accXValue
+                           A   920    	XDEF _gyro_val
+                           A   921    	XDEF _gyro_l
+                           A   922    	XDEF _gyro_h
+                           A   923    	XDEF _acc_x
+                           A   924    	XDEF _acc_y
+                           A   925    	XDEF _acc_yl
+                           A   926    	XDEF _acc_yh
+                           A   927    	XDEF _acc_xl
+                           A   928    	XDEF _acc_xh
+                           A   929    	XDEF _accRead
+                           A   930    	XDEF _gyroRead
+                           A   931    	XDEF _rxFlag
+                           A   932    	XDEF _command
+                           A   933    	XDEF _txFinished
+                           A   934    	XDEF _string
+Zilog Z8 Encore! Macro Assembler Version 2.52 (11010702) 27-Oct-16     00:47:45     page:  19
+
+
+PC     Object              I  Line    Source main.src
+                           A   935    	XDEF _inChar
+                           A   936    	XDEF _RELOAD
+                           A   937    	END
 
 
 Errors: 0
 Warnings: 0
-Lines Assembled: 930
+Lines Assembled: 938
